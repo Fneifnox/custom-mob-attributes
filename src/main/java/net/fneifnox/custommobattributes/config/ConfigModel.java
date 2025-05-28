@@ -144,6 +144,16 @@ public class ConfigModel {
     @RestartRequired
     public float scaleMultiplierForCow = 1f;
     @RestartRequired
+    @SectionHeader("Creaking")
+    @Comment("Creaking")
+    public float healthMultiplierForCreaking = 1f;
+    @RestartRequired
+    public float damageMultiplierForCreaking = 1f;
+    @RestartRequired
+    public float speedMultiplierForCreaking = 1f;
+    @RestartRequired
+    public float scaleMultiplierForCreaking = 1f;
+    @RestartRequired
     @SectionHeader("Creeper")
     @Comment("Creeper")
     public float healthMultiplierForCreeper = 1f;
