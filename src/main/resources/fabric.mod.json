@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "custom-mob-attributes",
+	"version": "${version}",
+	"name": "Custom Mob Attributes",
+	"description": "This mod let's you configure the attributes of vanilla mobs. You can change their health, attack damage, movement speed and scale.",
+	"authors": [
+		"Fneifnox"
+	],
+	"contact": {
+		"homepage": "https://discord.gg/bszSDCq5ms",
+		"sources": "https://modrinth.com/mod/custom-mob-attributes"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/custom-mob-attributes/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.fneifnox.custommobattributes.CustomMobAttributes"
+		],
+		"fabric-datagen": [
+			"net.fneifnox.custommobattributes.CustomMobAttributesDataGenerator"
+		]
+	},
+	"mixins": [
+		"custom-mob-attributes.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "1.21, 1.21.1, 1.21.2, 1.21.3",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
