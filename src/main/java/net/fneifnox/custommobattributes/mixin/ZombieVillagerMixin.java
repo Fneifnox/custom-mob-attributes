@@ -1,5 +1,6 @@
 package net.fneifnox.custommobattributes.mixin;
 
+import net.fneifnox.custommobattributes.Updater;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
@@ -17,22 +18,22 @@ public abstract class ZombieVillagerMixin {
     private void onInit(CallbackInfo ci) {
         ZombieVillagerEntity self = (ZombieVillagerEntity) (Object) this;
 
-        EntityAttributeInstance healthAttr = self.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+        EntityAttributeInstance healthAttr = self.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
         if (healthAttr != null) {
             healthAttr.setBaseValue(20.0 * CONFIG.healthMultiplierForZombieVillager() * CONFIG.healthMultiplierForAll());
         }
 
-        EntityAttributeInstance damageAttr = self.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+        EntityAttributeInstance damageAttr = self.getAttributeInstance(Updater.GENERIC_ATTACK_DAMAGE);
         if (damageAttr != null) {
             damageAttr.setBaseValue(3.0 * CONFIG.damageMultiplierForZombieVillager() * CONFIG.damageMultiplierForAll());
         }
 
-        EntityAttributeInstance speedAttr = self.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+        EntityAttributeInstance speedAttr = self.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
         if (speedAttr != null) {
             speedAttr.setBaseValue(0.23000000417232513 * CONFIG.speedMultiplierForZombieVillager() * CONFIG.speedMultiplierForAll());
         }
 
-        EntityAttributeInstance scaleAttr = self.getAttributeInstance(EntityAttributes.GENERIC_SCALE);
+        EntityAttributeInstance scaleAttr = self.getAttributeInstance(Updater.GENERIC_SCALE);
         if (scaleAttr != null) {
             scaleAttr.setBaseValue((float) (1.0 * CONFIG.scaleMultiplierForZombieVillager() * CONFIG.scaleMultiplierForAll()));
         }

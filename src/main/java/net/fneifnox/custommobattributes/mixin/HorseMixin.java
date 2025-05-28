@@ -1,5 +1,6 @@
 package net.fneifnox.custommobattributes.mixin;
 
+import net.fneifnox.custommobattributes.Updater;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.HorseEntity;
@@ -19,7 +20,7 @@ public abstract class HorseMixin {
         HorseEntity self = (HorseEntity) (Object) this;
         Random random = self.getRandom();
 
-        EntityAttributeInstance scaleAttr = self.getAttributeInstance(EntityAttributes.GENERIC_SCALE);
+        EntityAttributeInstance scaleAttr = self.getAttributeInstance(Updater.GENERIC_SCALE);
         if (scaleAttr != null) {
             scaleAttr.setBaseValue((float) (1.0 * CONFIG.scaleMultiplierForHorse() * CONFIG.scaleMultiplierForAll()));
         }
@@ -30,7 +31,7 @@ public abstract class HorseMixin {
         HorseEntity self = (HorseEntity) (Object) this;
 
         // ===== Health =====
-        EntityAttributeInstance healthAttr = self.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+        EntityAttributeInstance healthAttr = self.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
         if (healthAttr != null) {
             double original = healthAttr.getBaseValue();
             double scaled = original * CONFIG.healthMultiplierForHorse() * CONFIG.healthMultiplierForAll();
@@ -38,7 +39,7 @@ public abstract class HorseMixin {
         }
 
         // ===== Speed =====
-        EntityAttributeInstance speedAttr = self.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+        EntityAttributeInstance speedAttr = self.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
         if (speedAttr != null) {
             double original = speedAttr.getBaseValue();
             double scaled = original * CONFIG.speedMultiplierForHorse() * CONFIG.speedMultiplierForAll();

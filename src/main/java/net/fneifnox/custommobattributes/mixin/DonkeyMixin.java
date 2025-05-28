@@ -1,5 +1,6 @@
 package net.fneifnox.custommobattributes.mixin;
 
+import net.fneifnox.custommobattributes.Updater;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -19,7 +20,7 @@ public abstract class DonkeyMixin {
     private void onConstructed(EntityType<? extends DonkeyEntity> entityType, World world, CallbackInfo ci) {
         DonkeyEntity self = (DonkeyEntity)(Object)this;
 
-        EntityAttributeInstance health = self.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+        EntityAttributeInstance health = self.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
         if (health != null) {
             double scaled = health.getBaseValue()
                     * CONFIG.healthMultiplierForDonkey()
@@ -28,7 +29,7 @@ public abstract class DonkeyMixin {
             self.setHealth((float) scaled);
         }
 
-        EntityAttributeInstance speed = self.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+        EntityAttributeInstance speed = self.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
         if (speed != null) {
             double scaled = speed.getBaseValue()
                     * CONFIG.speedMultiplierForDonkey()
@@ -36,7 +37,7 @@ public abstract class DonkeyMixin {
             speed.setBaseValue(scaled);
         }
 
-        EntityAttributeInstance scaleAttr = self.getAttributeInstance(EntityAttributes.GENERIC_SCALE);
+        EntityAttributeInstance scaleAttr = self.getAttributeInstance(Updater.GENERIC_SCALE);
         if (scaleAttr != null) {
             scaleAttr.setBaseValue((float) (1.0 * CONFIG.scaleMultiplierForDonkey() * CONFIG.scaleMultiplierForAll()));
         }

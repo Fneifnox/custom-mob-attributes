@@ -1,5 +1,6 @@
 package net.fneifnox.custommobattributes.mixin;
 
+import net.fneifnox.custommobattributes.Updater;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.SlimeEntity;
@@ -17,7 +18,7 @@ public abstract class SlimeMixin {
     private void onInit(CallbackInfo ci) {
         SlimeEntity self = (SlimeEntity) (Object) this;
 
-        EntityAttributeInstance scaleAttr = self.getAttributeInstance(EntityAttributes.GENERIC_SCALE);
+        EntityAttributeInstance scaleAttr = self.getAttributeInstance(Updater.GENERIC_SCALE);
         if (scaleAttr != null) {
             scaleAttr.setBaseValue((float) (1.0 * CONFIG.scaleMultiplierForSlime() * CONFIG.scaleMultiplierForAll()));
         }
