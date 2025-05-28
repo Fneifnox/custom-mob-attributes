@@ -4,23 +4,25 @@ import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.fneifnox.custommobattributes.Updater;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.passive.CowEntity;
+import net.minecraft.entity.mob.CreakingEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
-@Mixin(CowEntity.class)
+@Mixin(CreakingEntity.class)
 public abstract class CreakingMixin {
 
-    @ModifyReturnValue(method = "createCowAttributes", at = @At("RETURN"))
-    private static DefaultAttributeContainer.Builder modifyCowAttributes(DefaultAttributeContainer.Builder original) {
-        double health = 10.0 * CONFIG.healthMultiplierForCow() * CONFIG.healthMultiplierForAll();
-        double speed = 0.20000000298023224 * CONFIG.speedMultiplierForCow() * CONFIG.speedMultiplierForAll();
-        double scale = 1.0 * CONFIG.scaleMultiplierForCow() * CONFIG.scaleMultiplierForAll();
+    @ModifyReturnValue(method = "createCreakingAttributes", at = @At("RETURN"))
+    private static DefaultAttributeContainer.Builder modifyCreakingAttributes(DefaultAttributeContainer.Builder original) {
+        double health = 1.0 * CONFIG.healthMultiplierForCreaking() * CONFIG.healthMultiplierForAll();
+        double damage = 3.0 * CONFIG.damageMultiplierForCreaking() * CONFIG.damageMultiplierForAll();
+        double speed = 0.4000000059604645 * CONFIG.speedMultiplierForCreaking() * CONFIG.speedMultiplierForAll();
+        double scale = 1.0 * CONFIG.scaleMultiplierForCreaking() * CONFIG.scaleMultiplierForAll();
 
         return original
                 .add(Updater.GENERIC_MAX_HEALTH, health)
+                .add(Updater.GENERIC_ATTACK_DAMAGE, damage)
                 .add(Updater.GENERIC_MOVEMENT_SPEED, speed)
                 .add(Updater.GENERIC_SCALE, scale);
     }
