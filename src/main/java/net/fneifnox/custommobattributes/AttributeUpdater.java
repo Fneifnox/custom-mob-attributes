@@ -6,7 +6,6 @@ import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.*;
 import net.minecraft.entity.passive.*;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.random.Random;
 
 import java.util.Map;
@@ -24,7 +23,10 @@ public class AttributeUpdater {
                 var health = husk.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 20.0 * CONFIG.healthMultiplierForHusk() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        husk.setHealth((float) val);
+                    }
                 }
 
                 var damage = husk.getAttributeInstance(Updater.GENERIC_ATTACK_DAMAGE);
@@ -54,7 +56,10 @@ public class AttributeUpdater {
                 var health = cod.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 3.0 * CONFIG.healthMultiplierForCod() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        cod.setHealth((float) val);
+                    }
                 }
 
                 var speed = cod.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
@@ -112,7 +117,10 @@ public class AttributeUpdater {
                 var health = glow_squid.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 10.0 * CONFIG.healthMultiplierForGlowSquid() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        glow_squid.setHealth((float) val);
+                    }
                 }
 
                 var speed = glow_squid.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
@@ -221,7 +229,10 @@ public class AttributeUpdater {
                 var health = mooshroom.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 10.0 * CONFIG.healthMultiplierForMooshroom() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        mooshroom.setHealth((float) val);
+                    }
                 }
 
                 var speed = mooshroom.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
@@ -279,7 +290,10 @@ public class AttributeUpdater {
                 var health = phantom.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 20.0 * CONFIG.healthMultiplierForPhantom() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        phantom.setHealth((float) val);
+                    }
                 }
 
                 var damage = phantom.getAttributeInstance(Updater.GENERIC_ATTACK_DAMAGE);
@@ -309,7 +323,10 @@ public class AttributeUpdater {
                 var health = pufferfish.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 3.0 * CONFIG.healthMultiplierForPufferfish() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        pufferfish.setHealth((float) val);
+                    }
                 }
 
                 var speed = pufferfish.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
@@ -333,7 +350,10 @@ public class AttributeUpdater {
                 var health = salmon.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 3.0 * CONFIG.healthMultiplierForSalmon() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        salmon.setHealth((float) val);
+                    }
                 }
 
                 var speed = salmon.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
@@ -357,7 +377,10 @@ public class AttributeUpdater {
                 var health = skeleton.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 20.0 * CONFIG.healthMultiplierForSkeleton() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        skeleton.setHealth((float) val);
+                    }
                 }
 
                 var damage = skeleton.getAttributeInstance(Updater.GENERIC_ATTACK_DAMAGE);
@@ -399,7 +422,10 @@ public class AttributeUpdater {
                 var health = stray.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 20.0 * CONFIG.healthMultiplierForStray() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        stray.setHealth((float) val);
+                    }
                 }
 
                 var damage = stray.getAttributeInstance(Updater.GENERIC_ATTACK_DAMAGE);
@@ -463,7 +489,10 @@ public class AttributeUpdater {
                 var health = tropical_fish.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 3.0 * CONFIG.healthMultiplierForTropicalFish() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        tropical_fish.setHealth((float) val);
+                    }
                 }
 
                 var speed = tropical_fish.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
@@ -487,7 +516,10 @@ public class AttributeUpdater {
                 var health = wandering_trader.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 20.0 * CONFIG.healthMultiplierForWanderingTrader() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        wandering_trader.setHealth((float) val);
+                    }
                 }
 
                 var speed = wandering_trader.getAttributeInstance(Updater.GENERIC_MOVEMENT_SPEED);
@@ -511,7 +543,10 @@ public class AttributeUpdater {
                 var health = warden.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 500.0 * CONFIG.healthMultiplierForWarden() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        warden.setHealth((float) val);
+                    }
                 }
 
                 var damage = warden.getAttributeInstance(Updater.GENERIC_ATTACK_DAMAGE);
@@ -541,7 +576,10 @@ public class AttributeUpdater {
                 var health = wither_skeleton.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 20.0 * CONFIG.healthMultiplierForWitherSkeleton() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        wither_skeleton.setHealth((float) val);
+                    }
                 }
 
                 var damage = wither_skeleton.getAttributeInstance(Updater.GENERIC_ATTACK_DAMAGE);
@@ -571,7 +609,10 @@ public class AttributeUpdater {
                 var health = zombie_villager.getAttributeInstance(Updater.GENERIC_MAX_HEALTH);
                 if (health != null) {
                     double val = 20.0 * CONFIG.healthMultiplierForZombieVillager() * CONFIG.healthMultiplierForAll();
-                    if (health.getBaseValue() != val) health.setBaseValue(val);
+                    if (health.getBaseValue() != val) {
+                        health.setBaseValue(val);
+                        zombie_villager.setHealth((float) val);
+                    }
                 }
 
                 var damage = zombie_villager.getAttributeInstance(Updater.GENERIC_ATTACK_DAMAGE);
