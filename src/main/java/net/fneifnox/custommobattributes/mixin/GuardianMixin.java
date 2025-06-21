@@ -15,10 +15,10 @@ public abstract class GuardianMixin {
 
     @ModifyReturnValue(method = "createGuardianAttributes", at = @At("RETURN"))
     private static DefaultAttributeContainer.Builder modifyGuardianAttributes(DefaultAttributeContainer.Builder original) {
-        double health = 30.0 * CONFIG.healthMultiplierForGoat() * CONFIG.healthMultiplierForAll();
-        double damage = 6.0 * CONFIG.damageMultiplierForGoat() * CONFIG.damageMultiplierForAll();
-        double speed = 0.5 * CONFIG.speedMultiplierForGoat() * CONFIG.speedMultiplierForAll();
-        double scale = 1.0 * CONFIG.scaleMultiplierForGoat() * CONFIG.scaleMultiplierForAll();
+        double health = 30.0 * CONFIG.healthMultiplierForGuardian() * CONFIG.healthMultiplierForAll();
+        double damage = 6.0 * CONFIG.damageMultiplierForGuardian() * CONFIG.damageMultiplierForAll();
+        double speed = 0.5 * CONFIG.speedMultiplierForGuardian() * CONFIG.speedMultiplierForAll();
+        double scale = 1.0 * CONFIG.scaleMultiplierForGuardian() * CONFIG.scaleMultiplierForAll();
 
         return original
                 .add(Updater.GENERIC_MAX_HEALTH, health)
