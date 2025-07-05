@@ -216,6 +216,9 @@
   "text.config.custom-mob-attributes.option.scaleMultiplierForLlama": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Magma Cube": "Magma Cube",
+  "text.config.custom-mob-attributes.option.healthMultiplierForMagmaCube": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.damageMultiplierForMagmaCube": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForMagmaCube": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForMagmaCube": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Mooshroom": "Mooshroom",
@@ -331,6 +334,9 @@
   "text.config.custom-mob-attributes.option.scaleMultiplierForSkeletonHorse": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Slime": "Slime",
+  "text.config.custom-mob-attributes.option.healthMultiplierForSlime": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.damageMultiplierForSlime": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForSlime": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForSlime": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Sniffer": "Sniffer",
