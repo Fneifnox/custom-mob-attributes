@@ -92,6 +92,13 @@ public class AttributeUpdater {
             setHealthMultiplier(world, EntityType.BREEZE, CONFIG::healthMultiplierForBreeze);
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.CAMEL, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.CAMEL, CONFIG::healthMultiplierForCamel, null, CONFIG::speedMultiplierForCamel, CONFIG::scaleMultiplierForCamel
+            );
+            setHealthMultiplier(world, EntityType.CAMEL, CONFIG::healthMultiplierForCamel);
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.CAVE_SPIDER, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.CAVE_SPIDER, CONFIG::healthMultiplierForCaveSpider, CONFIG::damageMultiplierForCaveSpider, CONFIG::speedMultiplierForCaveSpider, CONFIG::scaleMultiplierForCaveSpider
@@ -127,11 +134,11 @@ public class AttributeUpdater {
             setHealthMultiplier(world, EntityType.COW, CONFIG::healthMultiplierForCow);
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.CREAKING, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityType.CREEPER, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.CREAKING, CONFIG::healthMultiplierForCreaking, CONFIG::damageMultiplierForCreaking, CONFIG::speedMultiplierForCreaking, CONFIG::scaleMultiplierForCreaking
+            configureEntityAttributes(world, EntityType.CREEPER, CONFIG::healthMultiplierForCreeper, CONFIG::damageMultiplierForCreeper, CONFIG::speedMultiplierForCreeper, CONFIG::scaleMultiplierForCreeper
             );
-            setHealthMultiplier(world, EntityType.CREAKING, CONFIG::healthMultiplierForCreaking);
+            setHealthMultiplier(world, EntityType.CREEPER, CONFIG::healthMultiplierForCreeper);
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.DONKEY, entity -> {
@@ -197,6 +204,13 @@ public class AttributeUpdater {
             setHealthMultiplier(world, EntityType.FOX, CONFIG::healthMultiplierForFox);
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.FROG, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.FROG, CONFIG::healthMultiplierForFrog, CONFIG::damageMultiplierForFrog, CONFIG::speedMultiplierForFrog, CONFIG::scaleMultiplierForFrog
+            );
+            setHealthMultiplier(world, EntityType.FROG, CONFIG::healthMultiplierForFrog);
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.GHAST, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.GHAST, CONFIG::healthMultiplierForGhast, null, CONFIG::speedMultiplierForGhast, CONFIG::scaleMultiplierForGhast
@@ -246,6 +260,13 @@ public class AttributeUpdater {
             setHealthMultiplier(world, EntityType.HUSK, CONFIG::healthMultiplierForHusk);
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.ILLUSIONER, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.ILLUSIONER, CONFIG::healthMultiplierForIllusioner, CONFIG::damageMultiplierForIllusioner, CONFIG::speedMultiplierForIllusioner, CONFIG::scaleMultiplierForIllusioner
+            );
+            setHealthMultiplier(world, EntityType.ILLUSIONER, CONFIG::healthMultiplierForIllusioner);
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.IRON_GOLEM, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.IRON_GOLEM, CONFIG::healthMultiplierForIronGolem, CONFIG::damageMultiplierForIronGolem, CONFIG::speedMultiplierForIronGolem, CONFIG::scaleMultiplierForIronGolem
@@ -253,10 +274,25 @@ public class AttributeUpdater {
             setHealthMultiplier(world, EntityType.IRON_GOLEM, CONFIG::healthMultiplierForIronGolem);
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.LLAMA, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.LLAMA, CONFIG::healthMultiplierForLlama, null, CONFIG::speedMultiplierForLlama, CONFIG::scaleMultiplierForLlama
+            );
+            setHealthMultiplier(world, EntityType.LLAMA, CONFIG::healthMultiplierForLlama);
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.MAGMA_CUBE, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.MAGMA_CUBE, null, null, null, CONFIG::scaleMultiplierForMagmaCube
+            configureEntityAttributes(world, EntityType.MAGMA_CUBE, CONFIG::healthMultiplierForMagmaCube, CONFIG::damageMultiplierForMagmaCube, CONFIG::speedMultiplierForMagmaCube, CONFIG::scaleMultiplierForMagmaCube
             );
+            setHealthMultiplier(world, EntityType.MAGMA_CUBE, CONFIG::healthMultiplierForMagmaCube);
+        });
+
+        ATTRIBUTE_HANDLERS.put(EntityType.MOOSHROOM, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.MOOSHROOM, CONFIG::healthMultiplierForMooshroom, null, CONFIG::speedMultiplierForMooshroom, CONFIG::scaleMultiplierForMooshroom
+            );
+            setHealthMultiplier(world, EntityType.MOOSHROOM, CONFIG::healthMultiplierForMooshroom);
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.MULE, entity -> {
@@ -385,10 +421,25 @@ public class AttributeUpdater {
             setHealthMultiplier(world, EntityType.SKELETON, CONFIG::healthMultiplierForSkeleton);
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.SKELETON_HORSE, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.SKELETON_HORSE, CONFIG::healthMultiplierForSkeletonHorse, null, CONFIG::speedMultiplierForSkeletonHorse, CONFIG::scaleMultiplierForSkeletonHorse
+            );
+            setHealthMultiplier(world, EntityType.SKELETON_HORSE, CONFIG::healthMultiplierForSkeletonHorse);
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.SLIME, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.SLIME, null, null, null, CONFIG::scaleMultiplierForSlime
+            configureEntityAttributes(world, EntityType.SLIME, CONFIG::healthMultiplierForSlime, CONFIG::damageMultiplierForSlime, CONFIG::speedMultiplierForSlime, CONFIG::scaleMultiplierForSlime
             );
+            setHealthMultiplier(world, EntityType.SLIME, CONFIG::healthMultiplierForSlime);
+        });
+
+        ATTRIBUTE_HANDLERS.put(EntityType.SNIFFER, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.SNIFFER, CONFIG::healthMultiplierForSniffer, null, CONFIG::speedMultiplierForSniffer, CONFIG::scaleMultiplierForSniffer
+            );
+            setHealthMultiplier(world, EntityType.SNIFFER, CONFIG::healthMultiplierForSniffer);
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.SNOW_GOLEM, entity -> {
@@ -433,6 +484,13 @@ public class AttributeUpdater {
             setHealthMultiplier(world, EntityType.TADPOLE, CONFIG::healthMultiplierForTadpole);
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.TRADER_LLAMA, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.TRADER_LLAMA, CONFIG::healthMultiplierForTraderLlama, null, CONFIG::speedMultiplierForTraderLlama, CONFIG::scaleMultiplierForTraderLlama
+            );
+            setHealthMultiplier(world, EntityType.TRADER_LLAMA, CONFIG::healthMultiplierForTraderLlama);
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.TROPICAL_FISH, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.TROPICAL_FISH, CONFIG::healthMultiplierForTropicalFish, null, CONFIG::speedMultiplierForTropicalFish, CONFIG::scaleMultiplierForTropicalFish
@@ -468,6 +526,13 @@ public class AttributeUpdater {
             setHealthMultiplier(world, EntityType.VINDICATOR, CONFIG::healthMultiplierForVindicator);
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.WANDERING_TRADER, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.WANDERING_TRADER, CONFIG::healthMultiplierForWanderingTrader, null, CONFIG::speedMultiplierForWanderingTrader, CONFIG::scaleMultiplierForWanderingTrader
+            );
+            setHealthMultiplier(world, EntityType.WANDERING_TRADER, CONFIG::healthMultiplierForWanderingTrader);
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.WARDEN, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.WARDEN, CONFIG::healthMultiplierForWarden, CONFIG::damageMultiplierForWarden, CONFIG::speedMultiplierForWarden, CONFIG::scaleMultiplierForWarden
@@ -489,6 +554,13 @@ public class AttributeUpdater {
             setHealthMultiplier(world, EntityType.WITHER, CONFIG::healthMultiplierForWither);
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.WITHER_SKELETON, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.WITHER_SKELETON, CONFIG::healthMultiplierForWitherSkeleton, CONFIG::damageMultiplierForWitherSkeleton, CONFIG::speedMultiplierForWitherSkeleton, CONFIG::scaleMultiplierForWitherSkeleton
+            );
+            setHealthMultiplier(world, EntityType.WITHER_SKELETON, CONFIG::healthMultiplierForWitherSkeleton);
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.WOLF, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.WOLF, CONFIG::healthMultiplierForWolf, CONFIG::damageMultiplierForWolf, CONFIG::speedMultiplierForWolf, CONFIG::scaleMultiplierForWolf
@@ -508,6 +580,13 @@ public class AttributeUpdater {
             configureEntityAttributes(world, EntityType.ZOMBIE, CONFIG::healthMultiplierForZombie, CONFIG::damageMultiplierForZombie, CONFIG::speedMultiplierForZombie, CONFIG::scaleMultiplierForZombie
             );
             setHealthMultiplier(world, EntityType.ZOMBIE, CONFIG::healthMultiplierForZombie);
+        });
+
+        ATTRIBUTE_HANDLERS.put(EntityType.ZOMBIE_HORSE, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.ZOMBIE_HORSE, CONFIG::healthMultiplierForZombieHorse, null, CONFIG::speedMultiplierForZombieHorse, CONFIG::scaleMultiplierForZombieHorse
+            );
+            setHealthMultiplier(world, EntityType.ZOMBIE_HORSE, CONFIG::healthMultiplierForZombieHorse);
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.ZOMBIE_VILLAGER, entity -> {
@@ -575,11 +654,11 @@ public class AttributeUpdater {
         Predicate<T> predicate = e -> true;
         for (T entity : world.getEntitiesByType(entityType, box, predicate)) {
 
-            var health = entity.getAttributeInstance(EntityAttributes.MAX_HEALTH);
+            var health = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
             if (health != null) {
                 float val = (float) health.getBaseValue() * healthMultiplier.get() * CONFIG.healthMultiplierForAll();
                 if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
+                    updateModifier(entity, EntityAttributes.GENERIC_MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
                     entity.setHealth(val);
                 }
             }
@@ -599,13 +678,13 @@ public class AttributeUpdater {
 
         for (T entity : world.getEntitiesByType(entityType, box, predicate)) {
             if (damageMultiplier != null) {
-                updateModifier(entity, EntityAttributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
+                updateModifier(entity, EntityAttributes.GENERIC_ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
             }
             if (speedMultiplier != null) {
-                updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                updateModifier(entity, EntityAttributes.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
+                updateModifier(entity, EntityAttributes.GENERIC_SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
             }
         }
     }

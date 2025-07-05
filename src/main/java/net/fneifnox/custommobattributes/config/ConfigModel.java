@@ -224,6 +224,9 @@ public class ConfigModel {
     public float scaleMultiplierForLlama = 1f;
     @SectionHeader("Magma Cube")
     @Comment("Magma Cube")
+    public float healthMultiplierForMagmaCube = 1f;
+    public float damageMultiplierForMagmaCube = 1f;
+    public float speedMultiplierForMagmaCube = 1f;
     public float scaleMultiplierForMagmaCube = 1f;
     @SectionHeader("Mooshroom")
     @Comment("Mooshroom")
@@ -339,6 +342,9 @@ public class ConfigModel {
     public float scaleMultiplierForSkeletonHorse = 1f;
     @SectionHeader("Slime")
     @Comment("Slime")
+    public float healthMultiplierForSlime = 1f;
+    public float damageMultiplierForSlime = 1f;
+    public float speedMultiplierForSlime = 1f;
     public float scaleMultiplierForSlime = 1f;
     @SectionHeader("Sniffer")
     @Comment("Sniffer")
