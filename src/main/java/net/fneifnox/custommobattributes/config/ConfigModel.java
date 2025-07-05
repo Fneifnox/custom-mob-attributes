@@ -90,6 +90,12 @@ public class ConfigModel {
     public float healthMultiplierForCow = 1f;
     public float speedMultiplierForCow = 1f;
     public float scaleMultiplierForCow = 1f;
+    @SectionHeader("Creaking")
+    @Comment("Creaking")
+    public float healthMultiplierForCreaking = 1f;
+    public float damageMultiplierForCreaking = 1f;
+    public float speedMultiplierForCreaking = 1f;
+    public float scaleMultiplierForCreaking = 1f;
     @SectionHeader("Creeper")
     @Comment("Creeper")
     public float healthMultiplierForCreeper = 1f;

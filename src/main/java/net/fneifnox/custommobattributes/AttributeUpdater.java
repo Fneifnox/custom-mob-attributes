@@ -2,40 +2,27 @@ package net.fneifnox.custommobattributes;
 
 import io.wispforest.owo.config.Option;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
-import net.fabricmc.fabric.impl.object.builder.FabricEntityTypeImpl;
-import net.fneifnox.custommobattributes.config.CustomMA;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.mob.*;
-import net.minecraft.entity.passive.*;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
-import java.util.WeakHashMap;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-import java.util.function.Predicate;
 
 import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
@@ -45,8 +32,6 @@ public class AttributeUpdater {
     private static final Identifier DAMAGE_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "damage_modifier");
     private static final Identifier SPEED_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "speed_modifier");
     private static final Identifier SCALE_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "scale_modifier");
-
-    private static int ticks = 0;
 
     private static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
 
@@ -140,6 +125,13 @@ public class AttributeUpdater {
             configureEntityAttributes(world, EntityType.COW, CONFIG::healthMultiplierForCow, null, CONFIG::speedMultiplierForCow, CONFIG::scaleMultiplierForCow
             );
             setHealthMultiplier(world, EntityType.COW, CONFIG::healthMultiplierForCow);
+        });
+
+        ATTRIBUTE_HANDLERS.put(EntityType.CREAKING, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.CREAKING, CONFIG::healthMultiplierForCreaking, CONFIG::damageMultiplierForCreaking, CONFIG::speedMultiplierForCreaking, CONFIG::scaleMultiplierForCreaking
+            );
+            setHealthMultiplier(world, EntityType.CREAKING, CONFIG::healthMultiplierForCreaking);
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.DONKEY, entity -> {
@@ -583,11 +575,11 @@ public class AttributeUpdater {
         Predicate<T> predicate = e -> true;
         for (T entity : world.getEntitiesByType(entityType, box, predicate)) {
 
-            var health = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+            var health = entity.getAttributeInstance(EntityAttributes.MAX_HEALTH);
             if (health != null) {
                 float val = (float) health.getBaseValue() * healthMultiplier.get() * CONFIG.healthMultiplierForAll();
                 if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.GENERIC_MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
+                    updateModifier(entity, EntityAttributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
                     entity.setHealth(val);
                 }
             }
@@ -607,13 +599,13 @@ public class AttributeUpdater {
 
         for (T entity : world.getEntitiesByType(entityType, box, predicate)) {
             if (damageMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
+                updateModifier(entity, EntityAttributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
             }
             if (speedMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
+                updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
             }
         }
     }
