@@ -2,27 +2,33 @@ package net.fneifnox.custommobattributes;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fneifnox.custommobattributes.config.CustomMA;
+import net.minecraft.server.MinecraftServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CustomMobAttributes implements ModInitializer {
 	public static final String MOD_ID = "custom-mob-attributes";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	private static MinecraftServer cachedServer;
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
 		CONFIG.load();
 		CONFIG.save();
 
+		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+			cachedServer = server;
+			AttributeUpdater.observeAllConfigChanges(() -> {
+				System.out.println("Config wurde geändert – lade Attribute neu!");
+				AttributeUpdater.reloadConfig(server);
+			});
+		});
+
 		AttributeUpdater.register();
+		System.out.println("TEST 1");
 	}
 
 	public static final CustomMA CONFIG = CustomMA.createAndLoad();
