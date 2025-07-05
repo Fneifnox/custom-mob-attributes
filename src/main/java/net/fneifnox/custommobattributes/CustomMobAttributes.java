@@ -28,7 +28,6 @@ public class CustomMobAttributes implements ModInitializer {
 		});
 
 		AttributeUpdater.register();
-		System.out.println("TEST 1");
 	}
 
 	public static final CustomMA CONFIG = CustomMA.createAndLoad();
