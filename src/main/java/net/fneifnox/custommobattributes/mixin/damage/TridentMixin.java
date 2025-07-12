@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.DrownedEntity;
 import net.minecraft.entity.projectile.TridentEntity;
+import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -16,7 +17,7 @@ public class TridentMixin {
             method = "onEntityHit",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
+                    target = "Lnet/minecraft/entity/Entity;sidedDamage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
             )
     )
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
@@ -27,7 +28,12 @@ public class TridentMixin {
         }
 
         float finalDamage = originalDamage * multiplier;
-        return entity.damage(source, finalDamage);
+        if (entity.getWorld() instanceof ServerWorld serverWorld) {
+            return entity.damage(serverWorld, source, finalDamage);
+        }
+        else {
+            return false;
+        }
     }
 }
 

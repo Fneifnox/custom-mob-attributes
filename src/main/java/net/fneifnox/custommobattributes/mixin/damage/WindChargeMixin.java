@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.BreezeEntity;
 import net.minecraft.entity.projectile.AbstractWindChargeEntity;
+import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -16,10 +17,10 @@ public class WindChargeMixin {
             method = "onEntityHit",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
+                    target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/damage/DamageSource;F)Z"
             )
     )
-    private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
+    private boolean redirectDamage(Entity instance, ServerWorld serverWorld, DamageSource damageSource, float originalDamage) {
         float multiplier = 1f;
         AbstractWindChargeEntity windCharge = (AbstractWindChargeEntity)(Object)this;
         if (windCharge.getOwner() instanceof BreezeEntity) {
@@ -27,6 +28,6 @@ public class WindChargeMixin {
         }
 
         float finalDamage = originalDamage * multiplier;
-        return entity.damage(source, finalDamage);
+        return instance.damage(serverWorld, damageSource, finalDamage);
     }
 }

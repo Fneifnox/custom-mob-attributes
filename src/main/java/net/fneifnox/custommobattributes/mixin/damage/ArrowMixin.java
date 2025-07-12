@@ -6,6 +6,7 @@ import net.minecraft.entity.mob.*;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.SpectralArrowEntity;
+import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -17,7 +18,7 @@ public class ArrowMixin {
     @Redirect(
             method = "onEntityHit", at = @At(
                 value = "INVOKE",
-                target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
+                target = "Lnet/minecraft/entity/Entity;sidedDamage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
             )
     )
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
@@ -41,10 +42,20 @@ public class ArrowMixin {
             }
 
             float finalDamage = originalDamage * multiplier;
-            return entity.damage(source, finalDamage);
+            if (entity.getWorld() instanceof ServerWorld serverWorld) {
+                return entity.damage(serverWorld, source, finalDamage);
+            }
+            else {
+                return false;
+            }
         }
         else {
-            return entity.damage(source, originalDamage);
+            if (entity.getWorld() instanceof ServerWorld serverWorld) {
+                return entity.damage(serverWorld, source, originalDamage);
+            }
+            else {
+                return false;
+            }
         }
     }
 }
