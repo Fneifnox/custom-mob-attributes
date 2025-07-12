@@ -11,10 +11,10 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 public class DragonPurgeMixin {
     @ModifyArg(method = "damageLivingEntities", at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
+            target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/damage/DamageSource;F)Z"
     )
     )
-    private float modifyDamageAmount(float originalDamage) {
+    public float modifyDamageAmount(float originalDamage) {
         float multiplier = CONFIG.damageMultiplierForEnderDragon() * CONFIG.damageMultiplierForAll();
         return originalDamage * multiplier;
     }

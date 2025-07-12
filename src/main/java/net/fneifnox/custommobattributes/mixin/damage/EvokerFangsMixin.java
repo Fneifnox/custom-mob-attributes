@@ -11,7 +11,7 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 public class EvokerFangsMixin {
     @ModifyArg(method = "damage", at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/LivingEntity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
+            target = "Lnet/minecraft/entity/LivingEntity;serverDamage(Lnet/minecraft/entity/damage/DamageSource;F)V"
     )
     )
     private float injectCustomDamage(float originalDamage) {

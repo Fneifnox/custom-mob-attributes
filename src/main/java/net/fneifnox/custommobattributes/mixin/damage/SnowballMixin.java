@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.projectile.thrown.SnowballEntity;
+import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -16,10 +17,10 @@ public class SnowballMixin {
             method = "onEntityHit",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
+                    target = "Lnet/minecraft/entity/Entity;serverDamage(Lnet/minecraft/entity/damage/DamageSource;F)V"
             )
     )
-    private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
+     private void redirectDamage(Entity entity, DamageSource source, float originalDamage) {
         float multiplier = 1f;
         SnowballEntity snowball = (SnowballEntity)(Object)this;
         if (snowball.getOwner() instanceof SnowGolemEntity) {
@@ -27,6 +28,8 @@ public class SnowballMixin {
         }
 
         float finalDamage = originalDamage * multiplier;
-        return entity.damage(source, finalDamage);
+        if (entity.getWorld() instanceof ServerWorld serverWorld) {
+            entity.damage(serverWorld, source, finalDamage);
+        }
     }
 }
