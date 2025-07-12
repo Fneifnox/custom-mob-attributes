@@ -1,10 +1,25 @@
 {
-	"required": true,
-	"package": "net.fneifnox.custommobattributes.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "net.fneifnox.custommobattributes.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "damage.ArrowMixin",
+    "damage.DragonPurgeMixin",
+    "damage.EvokerFangsMixin",
+    "damage.FireballMixin",
+    "damage.LlamaSpitMixin",
+    "damage.ShulkerBulletMixin",
+    "damage.SnowballMixin",
+    "damage.TridentMixin",
+    "damage.WindChargeMixin",
+    "damage.WitherSkullMixin",
+    "movement.AllaySpeedMixin",
+    "movement.FishSpeedMixin",
+    "movement.GhastSpeedMixin",
+    "movement.SquidSpeedMixin",
+    "movement.VexSpeedMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

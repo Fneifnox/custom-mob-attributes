@@ -122,6 +122,7 @@ public class ConfigModel {
     @SectionHeader("Ender Dragon")
     @Comment("Ender Dragon")
     public float healthMultiplierForEnderDragon = 1f;
+    public float damageMultiplierForEnderDragon = 1f;
     public float speedMultiplierForEnderDragon = 1f;
     public float scaleMultiplierForEnderDragon = 1f;
     @SectionHeader("Enderman")
@@ -157,6 +158,7 @@ public class ConfigModel {
     @SectionHeader("Ghast")
     @Comment("Ghast")
     public float healthMultiplierForGhast = 1f;
+    public float damageMultiplierForGhast = 1f;
     public float speedMultiplierForGhast = 1f;
     public float scaleMultiplierForGhast = 1f;
     @SectionHeader("Giant")
@@ -214,6 +216,7 @@ public class ConfigModel {
     @SectionHeader("Llama")
     @Comment("Llama")
     public float healthMultiplierForLlama = 1f;
+    public float damageMultiplierForLlama = 1f;
     public float speedMultiplierForLlama = 1f;
     public float scaleMultiplierForLlama = 1f;
     @SectionHeader("Magma Cube")
@@ -315,7 +318,7 @@ public class ConfigModel {
     @SectionHeader("Shulker")
     @Comment("Shulker")
     public float healthMultiplierForShulker = 1f;
-    public float speedMultiplierForShulker = 1f;
+    public float damageMultiplierForShulker = 1f;
     public float scaleMultiplierForShulker = 1f;
     @SectionHeader("Silverfish")
     @Comment("Silverfish")
@@ -348,6 +351,7 @@ public class ConfigModel {
     @SectionHeader("Snow Golem")
     @Comment("Snow Golem")
     public float healthMultiplierForSnowGolem = 1f;
+    public float damageMultiplierForSnowGolem = 1f;
     public float speedMultiplierForSnowGolem = 1f;
     public float scaleMultiplierForSnowGolem = 1f;
     @SectionHeader("Spider")

@@ -114,6 +114,7 @@
 
   "text.config.custom-mob-attributes.section.Ender Dragon": "Ender Dragon",
   "text.config.custom-mob-attributes.option.healthMultiplierForEnderDragon": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.damageMultiplierForEnderDragon": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.speedMultiplierForEnderDragon": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForEnderDragon": "Scale Multiplier",
 
@@ -149,6 +150,7 @@
 
   "text.config.custom-mob-attributes.section.Ghast": "Ghast",
   "text.config.custom-mob-attributes.option.healthMultiplierForGhast": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.damageMultiplierForGhast": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.speedMultiplierForGhast": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForGhast": "Scale Multiplier",
 
@@ -206,6 +208,7 @@
 
   "text.config.custom-mob-attributes.section.Llama": "Llama",
   "text.config.custom-mob-attributes.option.healthMultiplierForLlama": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.damageMultiplierForLlama": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.speedMultiplierForLlama": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForLlama": "Scale Multiplier",
 
@@ -307,7 +310,7 @@
 
   "text.config.custom-mob-attributes.section.Shulker": "Shulker",
   "text.config.custom-mob-attributes.option.healthMultiplierForShulker": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.speedMultiplierForShulker": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.damageMultiplierForShulker": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForShulker": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Silverfish": "Silverfish",
@@ -340,6 +343,7 @@
 
   "text.config.custom-mob-attributes.section.Snow Golem": "Snow Golem",
   "text.config.custom-mob-attributes.option.healthMultiplierForSnowGolem": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.damageMultiplierForSnowGolem": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.speedMultiplierForSnowGolem": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForSnowGolem": "Scale Multiplier",
 
