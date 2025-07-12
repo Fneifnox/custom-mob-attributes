@@ -589,22 +589,22 @@ public class AttributeUpdater {
                 : e -> e instanceof LivingEntity;
 
         for (T entity : world.getEntitiesByType(entityType, box, predicate)) {
-            var health = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+            var health = entity.getAttributeInstance(EntityAttributes.MAX_HEALTH);
             if (health != null) {
                 float val = (float) health.getBaseValue() * healthMultiplier.get() * CONFIG.healthMultiplierForAll();
                 if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.GENERIC_MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
+                    updateModifier(entity, EntityAttributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
                     entity.setHealth(val);
                 }
             }
             if (damageMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
+                updateModifier(entity, EntityAttributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
             }
             if (speedMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
+                updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
             }
         }
     }
