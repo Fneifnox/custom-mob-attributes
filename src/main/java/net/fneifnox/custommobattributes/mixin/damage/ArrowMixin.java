@@ -6,6 +6,7 @@ import net.minecraft.entity.mob.*;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.SpectralArrowEntity;
+import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -16,35 +17,38 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 public class ArrowMixin {
     @Redirect(
             method = "onEntityHit", at = @At(
-                value = "INVOKE",
-                target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
-            )
+            value = "INVOKE",
+            target = "Lnet/minecraft/entity/Entity;sidedDamage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
+    )
     )
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
-        PersistentProjectileEntity projectile = (PersistentProjectileEntity)(Object)this;
+        PersistentProjectileEntity projectile = (PersistentProjectileEntity) (Object) this;
         if (projectile instanceof SpectralArrowEntity || projectile instanceof ArrowEntity) {
             float multiplier = 1f;
             if ((projectile.getOwner() instanceof SkeletonEntity)) {
                 multiplier = CONFIG.damageMultiplierForSkeleton() * CONFIG.damageMultiplierForAll();
-            }
-            else if (projectile.getOwner() instanceof StrayEntity) {
+            } else if (projectile.getOwner() instanceof StrayEntity) {
                 multiplier = CONFIG.damageMultiplierForStray() * CONFIG.damageMultiplierForAll();
-            }
-            else if (projectile.getOwner() instanceof BoggedEntity) {
+            } else if (projectile.getOwner() instanceof BoggedEntity) {
                 multiplier = CONFIG.damageMultiplierForBogged() * CONFIG.damageMultiplierForAll();
-            }
-            else if (projectile.getOwner() instanceof PiglinEntity) {
+            } else if (projectile.getOwner() instanceof PiglinEntity) {
                 multiplier = CONFIG.damageMultiplierForPiglin() * CONFIG.damageMultiplierForAll();
-            }
-            else if (projectile.getOwner() instanceof PillagerEntity) {
+            } else if (projectile.getOwner() instanceof PillagerEntity) {
                 multiplier = CONFIG.damageMultiplierForPillager() * CONFIG.damageMultiplierForAll();
             }
 
             float finalDamage = originalDamage * multiplier;
-            return entity.damage(source, finalDamage);
-        }
-        else {
-            return entity.damage(source, originalDamage);
+            if (entity.getWorld() instanceof ServerWorld serverWorld) {
+                return entity.damage(serverWorld, source, finalDamage);
+            } else {
+                return false;
+            }
+        } else {
+            if (entity.getWorld() instanceof ServerWorld serverWorld) {
+                return entity.damage(serverWorld, source, originalDamage);
+            } else {
+                return false;
+            }
         }
     }
 }

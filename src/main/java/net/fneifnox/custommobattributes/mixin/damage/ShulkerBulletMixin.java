@@ -11,7 +11,7 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 public class ShulkerBulletMixin {
     @ModifyArg(method = "onEntityHit", at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
+            target = "Lnet/minecraft/entity/Entity;sidedDamage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
     )
     )
     private float injectCustomDamage(float originalDamage) {
