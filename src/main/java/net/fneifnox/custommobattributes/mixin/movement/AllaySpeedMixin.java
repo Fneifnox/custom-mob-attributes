@@ -14,10 +14,10 @@ public abstract class AllaySpeedMixin {
             method = "travel(Lnet/minecraft/util/math/Vec3d;)V",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/passive/AllayEntity;updateVelocity(FLnet/minecraft/util/math/Vec3d;)V"
+                    target = "Lnet/minecraft/entity/passive/AllayEntity;travelFlying(Lnet/minecraft/util/math/Vec3d;F)V"
             )
     )
-    private void modifySpeed(AllayEntity instance, float speed, Vec3d movementInput) {
+    private void modifySpeed(AllayEntity instance, Vec3d movementInput, float speed) {
         float finalSpeed = speed;
         if (instance.isTouchingWater()) {
             finalSpeed = speed * CONFIG.speedMultiplierForAllay() * CONFIG.speedMultiplierForAll();
