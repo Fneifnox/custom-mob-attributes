@@ -127,6 +127,12 @@ public class AttributeUpdater {
             );
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.CREAKING, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.CREAKING, CONFIG::healthMultiplierForCreaking, CONFIG::damageMultiplierForCreaking, CONFIG::speedMultiplierForCreaking, CONFIG::scaleMultiplierForCreaking
+            );
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.DONKEY, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.DONKEY, CONFIG::healthMultiplierForDonkey, null, CONFIG::speedMultiplierForDonkey, CONFIG::scaleMultiplierForDonkey
