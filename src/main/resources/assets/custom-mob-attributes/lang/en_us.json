@@ -183,6 +183,11 @@
   "text.config.custom-mob-attributes.option.speedMultiplierForGuardian": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForGuardian": "Scale Multiplier",
 
+  "text.config.custom-mob-attributes.section.HappyGhast": "Happy Ghast",
+  "text.config.custom-mob-attributes.option.healthMultiplierForHappyGhast": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForHappyGhast": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.scaleMultiplierForHappyGhast": "Scale Multiplier",
+
   "text.config.custom-mob-attributes.section.Hoglin": "Hoglin",
   "text.config.custom-mob-attributes.option.healthMultiplierForHoglin": "Health Multiplier",
   "text.config.custom-mob-attributes.option.damageMultiplierForHoglin": "Damage Multiplier",

@@ -223,6 +223,12 @@ public class AttributeUpdater {
             );
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.HAPPY_GHAST, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.HAPPY_GHAST, CONFIG::healthMultiplierForHappyGhast, null, CONFIG::speedMultiplierForHappyGhast, CONFIG::scaleMultiplierForHappyGhast
+            );
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.HOGLIN, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.HOGLIN, CONFIG::healthMultiplierForHoglin, CONFIG::damageMultiplierForHoglin, CONFIG::speedMultiplierForHoglin, CONFIG::scaleMultiplierForHoglin
@@ -608,6 +614,10 @@ public class AttributeUpdater {
             }
             if (speedMultiplier != null) {
                 updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                if (entity.getAttributeInstance(EntityAttributes.FLYING_SPEED) != null) {
+                    System.out.println("TEST 1");
+                    updateModifier(entity, EntityAttributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                }
             }
             if (scaleMultiplier != null) {
                 updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());

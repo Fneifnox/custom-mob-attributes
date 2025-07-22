@@ -190,6 +190,11 @@ public class ConfigModel {
     public float damageMultiplierForGuardian = 1f;
     public float speedMultiplierForGuardian = 1f;
     public float scaleMultiplierForGuardian = 1f;
+    @SectionHeader("Happy Ghast")
+    @Comment("Happy Ghast")
+    public float healthMultiplierForHappyGhast = 1f;
+    public float speedMultiplierForHappyGhast = 1f;
+    public float scaleMultiplierForHappyGhast = 1f;
     @SectionHeader("Hoglin")
     @Comment("Hoglin")
     public float healthMultiplierForHoglin = 1f;
