@@ -11,15 +11,21 @@
     "damage.ShulkerBulletMixin",
     "damage.SnowballMixin",
     "damage.TridentMixin",
-    "damage.WindChargeMixin",
     "damage.WitherSkullMixin",
     "movement.AllaySpeedMixin",
     "movement.FishSpeedMixin",
     "movement.GhastSpeedMixin",
     "movement.SquidSpeedMixin",
-    "movement.VexSpeedMixin"
+    "movement.VexSpeedMixin",
+    "scale.EntityRidingScaleMixin",
+    "scale.LivingEntityAttributesMixin",
+    "scale.ScaleModifierMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "client": [
+    "scale.LivingEntityRendererMixin",
+    "scale.ShadowRadiusMixin"
+  ]
 }

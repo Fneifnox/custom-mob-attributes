@@ -30,9 +30,6 @@ public class ArrowMixin {
             else if (projectile.getOwner() instanceof StrayEntity) {
                 multiplier = CONFIG.damageMultiplierForStray() * CONFIG.damageMultiplierForAll();
             }
-            else if (projectile.getOwner() instanceof BoggedEntity) {
-                multiplier = CONFIG.damageMultiplierForBogged() * CONFIG.damageMultiplierForAll();
-            }
             else if (projectile.getOwner() instanceof PiglinEntity) {
                 multiplier = CONFIG.damageMultiplierForPiglin() * CONFIG.damageMultiplierForAll();
             }
