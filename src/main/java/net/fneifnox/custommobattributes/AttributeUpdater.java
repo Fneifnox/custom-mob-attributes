@@ -601,7 +601,7 @@ public class AttributeUpdater {
 
         var oldModifier = attrInstance.getModifier(id);
         if (oldModifier != null) {
-            attrInstance.removeModifier(oldModifier);
+            attrInstance.removeModifier(oldModifier.getId());
         }
 
         if (multiplier == 1.0) return;

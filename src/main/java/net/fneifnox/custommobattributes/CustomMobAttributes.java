@@ -43,7 +43,7 @@ public class CustomMobAttributes implements ModInitializer {
 	public static double getScaleAttributeModifierValue(LivingEntity entity, EntityAttribute attribute) {
 		double value = 1.0F;
 
-		if (entity == null) {
+		if (entity == null || entity.getAttributes() == null) {
 			return value;
 		}
 
