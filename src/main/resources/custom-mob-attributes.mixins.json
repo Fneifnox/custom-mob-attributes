@@ -19,7 +19,8 @@
     "movement.VexSpeedMixin",
     "scale.EntityRidingScaleMixin",
     "scale.LivingEntityAttributesMixin",
-    "scale.ScaleModifierMixin"
+    "scale.ScaleModifierMixin",
+    "scale.ShulkerHitboxMixin"
   ],
   "injectors": {
     "defaultRequire": 1
