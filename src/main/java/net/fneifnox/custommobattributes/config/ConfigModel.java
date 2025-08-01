@@ -20,11 +20,6 @@ public class ConfigModel {
     public float damageMultiplierForAllay = 1f;
     public float speedMultiplierForAllay = 1f;
     public float scaleMultiplierForAllay = 1f;
-    @SectionHeader("Armadillo")
-    @Comment("Armadillo")
-    public float healthMultiplierForArmadillo = 1f;
-    public float speedMultiplierForArmadillo = 1f;
-    public float scaleMultiplierForArmadillo = 1f;
     @SectionHeader("Axolotl")
     @Comment("Axolotl")
     public float healthMultiplierForAxolotl = 1f;
@@ -46,18 +41,6 @@ public class ConfigModel {
     public float damageMultiplierForBlaze = 1f;
     public float speedMultiplierForBlaze = 1f;
     public float scaleMultiplierForBlaze = 1f;
-    @SectionHeader("Bogged")
-    @Comment("Bogged")
-    public float healthMultiplierForBogged = 1f;
-    public float damageMultiplierForBogged = 1f;
-    public float speedMultiplierForBogged = 1f;
-    public float scaleMultiplierForBogged = 1f;
-    @SectionHeader("Breeze")
-    @Comment("Breeze")
-    public float healthMultiplierForBreeze = 1f;
-    public float damageMultiplierForBreeze = 1f;
-    public float speedMultiplierForBreeze = 1f;
-    public float scaleMultiplierForBreeze = 1f;
     @SectionHeader("Camel")
     @Comment("Camel")
     public float healthMultiplierForCamel = 1f;

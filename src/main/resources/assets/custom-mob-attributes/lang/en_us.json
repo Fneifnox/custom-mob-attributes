@@ -13,11 +13,6 @@
   "text.config.custom-mob-attributes.option.speedMultiplierForAllay": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForAllay": "Scale Multiplier",
 
-  "text.config.custom-mob-attributes.section.Armadillo": "Armadillo",
-  "text.config.custom-mob-attributes.option.healthMultiplierForArmadillo": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.speedMultiplierForArmadillo": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.scaleMultiplierForArmadillo": "Scale Multiplier",
-
   "text.config.custom-mob-attributes.section.Axolotl": "Axolotl",
   "text.config.custom-mob-attributes.option.healthMultiplierForAxolotl": "Health Multiplier",
   "text.config.custom-mob-attributes.option.damageMultiplierForAxolotl": "Damage Multiplier",
@@ -38,18 +33,6 @@
   "text.config.custom-mob-attributes.option.damageMultiplierForBlaze": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.speedMultiplierForBlaze": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForBlaze": "Scale Multiplier",
-
-  "text.config.custom-mob-attributes.section.Bogged": "Bogged",
-  "text.config.custom-mob-attributes.option.healthMultiplierForBogged": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.damageMultiplierForBogged": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.speedMultiplierForBogged": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.scaleMultiplierForBogged": "Scale Multiplier",
-
-  "text.config.custom-mob-attributes.section.Breeze": "Breeze",
-  "text.config.custom-mob-attributes.option.healthMultiplierForBreeze": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.damageMultiplierForBreeze": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.speedMultiplierForBreeze": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.scaleMultiplierForBreeze": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Camel": "Camel",
   "text.config.custom-mob-attributes.option.healthMultiplierForCamel": "Health Multiplier",
