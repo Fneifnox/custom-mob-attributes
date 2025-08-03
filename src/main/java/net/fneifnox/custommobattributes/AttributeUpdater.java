@@ -134,7 +134,7 @@ public class AttributeUpdater {
 
         ATTRIBUTE_HANDLERS.put(EntityType.ENDER_DRAGON, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.ENDER_DRAGON, CONFIG::healthMultiplierForEnderDragon, null, CONFIG::speedMultiplierForEnderDragon, CONFIG::scaleMultiplierForEnderDragon
+            configureEntityAttributes(world, EntityType.ENDER_DRAGON, CONFIG::healthMultiplierForEnderDragon, CONFIG::damageMultiplierForEnderDragon, null, null
             );
         });
 
