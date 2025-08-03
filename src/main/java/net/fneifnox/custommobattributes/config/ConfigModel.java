@@ -123,8 +123,6 @@ public class ConfigModel {
     @Comment("Ender Dragon")
     public float healthMultiplierForEnderDragon = 1f;
     public float damageMultiplierForEnderDragon = 1f;
-    public float speedMultiplierForEnderDragon = 1f;
-    public float scaleMultiplierForEnderDragon = 1f;
     @SectionHeader("Enderman")
     @Comment("Enderman")
     public float healthMultiplierForEnderman = 1f;
