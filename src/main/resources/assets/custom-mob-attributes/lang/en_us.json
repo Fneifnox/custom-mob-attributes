@@ -115,8 +115,6 @@
   "text.config.custom-mob-attributes.section.Ender Dragon": "Ender Dragon",
   "text.config.custom-mob-attributes.option.healthMultiplierForEnderDragon": "Health Multiplier",
   "text.config.custom-mob-attributes.option.damageMultiplierForEnderDragon": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.speedMultiplierForEnderDragon": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.scaleMultiplierForEnderDragon": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Enderman": "Enderman",
   "text.config.custom-mob-attributes.option.healthMultiplierForEnderman": "Health Multiplier",
