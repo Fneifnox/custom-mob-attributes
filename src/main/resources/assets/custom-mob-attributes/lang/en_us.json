@@ -13,6 +13,11 @@
   "text.config.custom-mob-attributes.option.speedMultiplierForAllay": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForAllay": "Scale Multiplier",
 
+  "text.config.custom-mob-attributes.section.Armadillo": "Armadillo",
+  "text.config.custom-mob-attributes.option.healthMultiplierForArmadillo": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForArmadillo": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.scaleMultiplierForArmadillo": "Scale Multiplier",
+
   "text.config.custom-mob-attributes.section.Axolotl": "Axolotl",
   "text.config.custom-mob-attributes.option.healthMultiplierForAxolotl": "Health Multiplier",
   "text.config.custom-mob-attributes.option.damageMultiplierForAxolotl": "Damage Multiplier",

@@ -9,6 +9,7 @@ import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Box;
@@ -45,6 +46,12 @@ public class AttributeUpdater {
         ATTRIBUTE_HANDLERS.put(EntityType.AXOLOTL, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.AXOLOTL, CONFIG::healthMultiplierForAxolotl, CONFIG::damageMultiplierForAxolotl, CONFIG::speedMultiplierForAxolotl, CONFIG::scaleMultiplierForAxolotl
+            );
+        });
+
+        ATTRIBUTE_HANDLERS.put(EntityType.ARMADILLO, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.ARMADILLO, CONFIG::healthMultiplierForArmadillo, null, CONFIG::speedMultiplierForArmadillo, CONFIG::scaleMultiplierForArmadillo
             );
         });
 
@@ -585,14 +592,14 @@ public class AttributeUpdater {
                 updateModifier(entity, EntityAttributes.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, CustomMobAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
+                updateModifier(entity, EntityAttributes.GENERIC_SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
             }
         }
     }
 
     private static void updateModifier(
             LivingEntity entity,
-            EntityAttribute entry,
+            RegistryEntry<EntityAttribute> entry,
             UUID id,
             double multiplier
     ) {
@@ -601,7 +608,7 @@ public class AttributeUpdater {
 
         var oldModifier = attrInstance.getModifier(id);
         if (oldModifier != null) {
-            attrInstance.removeModifier(oldModifier.getId());
+            attrInstance.removeModifier(oldModifier);
         }
 
         if (multiplier == 1.0) return;
@@ -611,7 +618,7 @@ public class AttributeUpdater {
                 id,
                 "attribute modifier",
                 amount,
-                EntityAttributeModifier.Operation.ADDITION
+                EntityAttributeModifier.Operation.ADD_VALUE
         );
         attrInstance.addPersistentModifier(modifier);
     }
