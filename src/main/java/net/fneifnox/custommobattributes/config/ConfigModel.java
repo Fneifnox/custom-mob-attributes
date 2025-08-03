@@ -20,6 +20,11 @@ public class ConfigModel {
     public float damageMultiplierForAllay = 1f;
     public float speedMultiplierForAllay = 1f;
     public float scaleMultiplierForAllay = 1f;
+    @SectionHeader("Armadillo")
+    @Comment("Armadillo")
+    public float healthMultiplierForArmadillo = 1f;
+    public float speedMultiplierForArmadillo = 1f;
+    public float scaleMultiplierForArmadillo = 1f;
     @SectionHeader("Axolotl")
     @Comment("Axolotl")
     public float healthMultiplierForAxolotl = 1f;

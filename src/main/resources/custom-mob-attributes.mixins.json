@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "net.fneifnox.custommobattributes.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
     "damage.ArrowMixin",
     "damage.DragonPurgeMixin",
@@ -16,18 +16,9 @@
     "movement.FishSpeedMixin",
     "movement.GhastSpeedMixin",
     "movement.SquidSpeedMixin",
-    "movement.VexSpeedMixin",
-    "scale.EntityRidingScaleMixin",
-    "scale.LivingEntityAttributesMixin",
-    "scale.ScaleModifierMixin",
-    "scale.ShulkerHitboxMixin"
+    "movement.VexSpeedMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "client": [
-    "scale.LivingEntityRendererMixin",
-    "scale.ShadowRadiusMixin",
-    "scale.WitherEntityRendererMixin"
-  ]
+  }
 }
