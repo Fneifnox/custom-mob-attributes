@@ -11,6 +11,7 @@ import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.MathHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,6 +53,6 @@ public class CustomMobAttributes implements ModInitializer {
 			value = instance.getValue();
 		}
 
-		return Math.clamp(value, 0.0625, 16.0);
+		return MathHelper.clamp(value, 0.0625, 16.0);
 	}
 }
