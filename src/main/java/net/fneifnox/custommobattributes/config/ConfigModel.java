@@ -34,11 +34,13 @@ public class ConfigModel {
     @SectionHeader("Bat")
     @Comment("Bat")
     public float healthMultiplierForBat = 1f;
+    public float speedMultiplierForBat = 1f;
     public float scaleMultiplierForBat = 1f;
     @SectionHeader("Bee")
     @Comment("Bee")
     public float healthMultiplierForBee = 1f;
     public float damageMultiplierForBee = 1f;
+    public float speedMultiplierForBee = 1f;
     public float scaleMultiplierForBee = 1f;
     @SectionHeader("Blaze")
     @Comment("Blaze")
