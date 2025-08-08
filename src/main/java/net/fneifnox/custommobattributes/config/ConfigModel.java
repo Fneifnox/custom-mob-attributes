@@ -475,4 +475,24 @@ public class ConfigModel {
     public float damageMultiplierForZombifiedPiglin = 1f;
     public float speedMultiplierForZombifiedPiglin = 1f;
     public float scaleMultiplierForZombifiedPiglin = 1f;
+
+    @SectionHeader("Modded Mobs")
+    @Comment("Modded Mobs")
+    @Nest
+    public VanillaBackport vanillaBackport = new VanillaBackport();
+    public static class VanillaBackport {
+        @SectionHeader("Creaking")
+        @Comment("Creaking")
+        public float healthMultiplierForCreaking = 1f;
+        public float damageMultiplierForCreaking = 1f;
+        public float speedMultiplierForCreaking = 1f;
+        public float scaleMultiplierForCreaking = 1f;
+        @SectionHeader("Happy Ghast")
+        @Comment("Happy Ghast")
+        public float healthMultiplierForHappyGhast = 1f;
+        public float damageMultiplierForHappyGhast = 1f;
+        public float speedMultiplierForHappyGhast = 1f;
+        public float scaleMultiplierForHappyGhast = 1f;
+
+    }
 }
