@@ -2,6 +2,7 @@ package net.fneifnox.custommobattributes;
 
 import io.wispforest.owo.config.Option;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -34,18 +35,12 @@ public class AttributeUpdater {
     private static final Identifier SPEED_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "speed_modifier");
     private static final Identifier SCALE_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "scale_modifier");
 
-    private static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
+    public static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
 
     public static void initAttributeHandlers() {
         ATTRIBUTE_HANDLERS.put(EntityType.ALLAY, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.ALLAY, CONFIG::healthMultiplierForAllay, CONFIG::damageMultiplierForAllay, CONFIG::speedMultiplierForAllay, CONFIG::scaleMultiplierForAllay
-            );
-        });
-
-        ATTRIBUTE_HANDLERS.put(EntityType.ARMADILLO, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.ARMADILLO, CONFIG::healthMultiplierForArmadillo, null, CONFIG::speedMultiplierForArmadillo, CONFIG::scaleMultiplierForArmadillo
             );
         });
 
@@ -57,31 +52,19 @@ public class AttributeUpdater {
 
         ATTRIBUTE_HANDLERS.put(EntityType.BAT, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BAT, CONFIG::healthMultiplierForBat, null, null, CONFIG::scaleMultiplierForBat
+            configureEntityAttributes(world, EntityType.BAT, CONFIG::healthMultiplierForBat, null, CONFIG::speedMultiplierForBat, CONFIG::scaleMultiplierForBat
             );
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.BEE, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BEE, CONFIG::healthMultiplierForBee, CONFIG::damageMultiplierForBee, null, CONFIG::scaleMultiplierForBee
+            configureEntityAttributes(world, EntityType.BEE, CONFIG::healthMultiplierForBee, CONFIG::damageMultiplierForBee, CONFIG::speedMultiplierForBee, CONFIG::scaleMultiplierForBee
             );
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.BLAZE, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.BLAZE, CONFIG::healthMultiplierForBlaze, CONFIG::damageMultiplierForBlaze, CONFIG::speedMultiplierForBlaze, CONFIG::scaleMultiplierForBlaze
-            );
-        });
-
-        ATTRIBUTE_HANDLERS.put(EntityType.BOGGED, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BOGGED, CONFIG::healthMultiplierForBogged, CONFIG::damageMultiplierForBogged, CONFIG::speedMultiplierForBogged, CONFIG::scaleMultiplierForBogged
-            );
-        });
-
-        ATTRIBUTE_HANDLERS.put(EntityType.BREEZE, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BREEZE, CONFIG::healthMultiplierForBreeze, CONFIG::damageMultiplierForBreeze, CONFIG::speedMultiplierForBreeze, CONFIG::scaleMultiplierForBreeze
             );
         });
 
@@ -615,7 +598,6 @@ public class AttributeUpdater {
             if (speedMultiplier != null) {
                 updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
                 if (entity.getAttributeInstance(EntityAttributes.FLYING_SPEED) != null) {
-                    System.out.println("TEST 1");
                     updateModifier(entity, EntityAttributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
                 }
             }
