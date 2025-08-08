@@ -2,6 +2,8 @@ package net.fneifnox.custommobattributes;
 
 import io.wispforest.owo.config.Option;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fneifnox.custommobattributes.compat.VanillaBackportCompat;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -33,7 +35,7 @@ public class AttributeUpdater {
     private static final UUID SPEED_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174002");
     private static final UUID SCALE_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174003");
 
-    private static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
+    public static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
 
     public static void initAttributeHandlers() {
         ATTRIBUTE_HANDLERS.put(EntityType.ALLAY, entity -> {
@@ -518,6 +520,10 @@ public class AttributeUpdater {
 
     public static void register() {
         initAttributeHandlers();
+
+        if (FabricLoader.getInstance().isModLoaded("vanillabackport")) {
+            VanillaBackportCompat.initVanillaBackportAttributeHandlers();
+        }
 
         ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
             if (entity instanceof LivingEntity living && !world.isClient) {
