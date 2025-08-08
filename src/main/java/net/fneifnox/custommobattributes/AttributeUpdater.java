@@ -2,6 +2,8 @@ package net.fneifnox.custommobattributes;
 
 import io.wispforest.owo.config.Option;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fneifnox.custommobattributes.compat.VanillaBackportCompat;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -9,10 +11,8 @@ import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -29,23 +30,17 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 public class AttributeUpdater {
 
-    private static final Identifier HEALTH_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "health_modifier");
-    private static final Identifier DAMAGE_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "damage_modifier");
-    private static final Identifier SPEED_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "speed_modifier");
-    private static final Identifier SCALE_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "scale_modifier");
+    private static final UUID HEALTH_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
+    private static final UUID DAMAGE_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174001");
+    private static final UUID SPEED_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174002");
+    private static final UUID SCALE_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174003");
 
-    private static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
+    public static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
 
     public static void initAttributeHandlers() {
         ATTRIBUTE_HANDLERS.put(EntityType.ALLAY, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.ALLAY, CONFIG::healthMultiplierForAllay, CONFIG::damageMultiplierForAllay, CONFIG::speedMultiplierForAllay, CONFIG::scaleMultiplierForAllay
-            );
-        });
-
-        ATTRIBUTE_HANDLERS.put(EntityType.ARMADILLO, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.ARMADILLO, CONFIG::healthMultiplierForArmadillo, null, CONFIG::speedMultiplierForArmadillo, CONFIG::scaleMultiplierForArmadillo
             );
         });
 
@@ -57,31 +52,19 @@ public class AttributeUpdater {
 
         ATTRIBUTE_HANDLERS.put(EntityType.BAT, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BAT, CONFIG::healthMultiplierForBat, null, null, CONFIG::scaleMultiplierForBat
+            configureEntityAttributes(world, EntityType.BAT, CONFIG::healthMultiplierForBat, null, CONFIG::speedMultiplierForBat, CONFIG::scaleMultiplierForBat
             );
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.BEE, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BEE, CONFIG::healthMultiplierForBee, CONFIG::damageMultiplierForBee, null, CONFIG::scaleMultiplierForBee
+            configureEntityAttributes(world, EntityType.BEE, CONFIG::healthMultiplierForBee, CONFIG::damageMultiplierForBee, CONFIG::speedMultiplierForBee, CONFIG::scaleMultiplierForBee
             );
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.BLAZE, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.BLAZE, CONFIG::healthMultiplierForBlaze, CONFIG::damageMultiplierForBlaze, CONFIG::speedMultiplierForBlaze, CONFIG::scaleMultiplierForBlaze
-            );
-        });
-
-        ATTRIBUTE_HANDLERS.put(EntityType.BOGGED, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BOGGED, CONFIG::healthMultiplierForBogged, CONFIG::damageMultiplierForBogged, CONFIG::speedMultiplierForBogged, CONFIG::scaleMultiplierForBogged
-            );
-        });
-
-        ATTRIBUTE_HANDLERS.put(EntityType.BREEZE, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BREEZE, CONFIG::healthMultiplierForBreeze, CONFIG::damageMultiplierForBreeze, CONFIG::speedMultiplierForBreeze, CONFIG::scaleMultiplierForBreeze
             );
         });
 
@@ -544,6 +527,10 @@ public class AttributeUpdater {
     public static void register() {
         initAttributeHandlers();
 
+        if (FabricLoader.getInstance().isModLoaded("vanillabackport")) {
+            VanillaBackportCompat.initVanillaBackportAttributeHandlers();
+        }
+
         ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
             if (entity instanceof LivingEntity living && !world.isClient) {
                 Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(entity.getType());
@@ -595,30 +582,33 @@ public class AttributeUpdater {
                 : e -> e instanceof LivingEntity;
 
         for (T entity : world.getEntitiesByType(entityType, box, predicate)) {
-            var health = entity.getAttributeInstance(EntityAttributes.MAX_HEALTH);
+            var health = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
             if (health != null) {
                 float val = (float) health.getBaseValue() * healthMultiplier.get() * CONFIG.healthMultiplierForAll();
                 if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
+                    updateModifier(entity, EntityAttributes.GENERIC_MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
                     entity.setHealth(val);
                 }
             }
             if (damageMultiplier != null) {
-                updateModifier(entity, EntityAttributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
+                updateModifier(entity, EntityAttributes.GENERIC_ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
             }
             if (speedMultiplier != null) {
-                updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                updateModifier(entity, EntityAttributes.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                if (entity.getAttributeInstance(EntityAttributes.GENERIC_FLYING_SPEED) != null) {
+                    updateModifier(entity, EntityAttributes.GENERIC_FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                }
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
+                updateModifier(entity, CustomMobAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
             }
         }
     }
 
     private static void updateModifier(
             LivingEntity entity,
-            RegistryEntry<EntityAttribute> entry,
-            Identifier id,
+            EntityAttribute entry,
+            UUID id,
             double multiplier
     ) {
         var attrInstance = entity.getAttributeInstance(entry);
@@ -626,7 +616,7 @@ public class AttributeUpdater {
 
         var oldModifier = attrInstance.getModifier(id);
         if (oldModifier != null) {
-            attrInstance.removeModifier(oldModifier);
+            attrInstance.removeModifier(oldModifier.getId());
         }
 
         if (multiplier == 1.0) return;
@@ -634,8 +624,9 @@ public class AttributeUpdater {
         double amount = attrInstance.getBaseValue() * (multiplier - 1);
         EntityAttributeModifier modifier = new EntityAttributeModifier(
                 id,
+                "attribute modifier",
                 amount,
-                EntityAttributeModifier.Operation.ADD_VALUE
+                EntityAttributeModifier.Operation.ADDITION
         );
         attrInstance.addPersistentModifier(modifier);
     }

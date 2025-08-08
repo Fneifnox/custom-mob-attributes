@@ -13,7 +13,7 @@
     "damage.TridentMixin",
     "damage.WindChargeMixin",
     "damage.WitherSkullMixin",
-    "movement.AllaySpeedMixin",
+    "movement.BatSpeedMixin",
     "movement.FishSpeedMixin",
     "movement.GhastSpeedMixin",
     "movement.SquidSpeedMixin",
