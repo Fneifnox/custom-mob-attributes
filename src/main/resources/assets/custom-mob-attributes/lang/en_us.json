@@ -21,11 +21,13 @@
 
   "text.config.custom-mob-attributes.section.Bat": "Bat",
   "text.config.custom-mob-attributes.option.healthMultiplierForBat": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForBat": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForBat": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Bee": "Bee",
   "text.config.custom-mob-attributes.option.healthMultiplierForBee": "Health Multiplier",
   "text.config.custom-mob-attributes.option.damageMultiplierForBee": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForBee": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForBee": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Blaze": "Blaze",
