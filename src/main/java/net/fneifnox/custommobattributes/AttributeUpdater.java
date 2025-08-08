@@ -52,13 +52,13 @@ public class AttributeUpdater {
 
         ATTRIBUTE_HANDLERS.put(EntityType.BAT, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BAT, CONFIG::healthMultiplierForBat, null, null, CONFIG::scaleMultiplierForBat
+            configureEntityAttributes(world, EntityType.BAT, CONFIG::healthMultiplierForBat, null, CONFIG::speedMultiplierForBat, CONFIG::scaleMultiplierForBat
             );
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.BEE, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BEE, CONFIG::healthMultiplierForBee, CONFIG::damageMultiplierForBee, null, CONFIG::scaleMultiplierForBee
+            configureEntityAttributes(world, EntityType.BEE, CONFIG::healthMultiplierForBee, CONFIG::damageMultiplierForBee, CONFIG::speedMultiplierForBee, CONFIG::scaleMultiplierForBee
             );
         });
 
@@ -589,6 +589,9 @@ public class AttributeUpdater {
             }
             if (speedMultiplier != null) {
                 updateModifier(entity, EntityAttributes.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                if (entity.getAttributeInstance(EntityAttributes.GENERIC_FLYING_SPEED) != null) {
+                    updateModifier(entity, EntityAttributes.GENERIC_FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                }
             }
             if (scaleMultiplier != null) {
                 updateModifier(entity, CustomMobAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
