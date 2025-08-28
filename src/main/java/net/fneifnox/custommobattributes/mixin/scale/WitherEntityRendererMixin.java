@@ -20,7 +20,7 @@ public class WitherEntityRendererMixin {
             cancellable = true
     )
     public void changeWitherScale(WitherEntity wither, MatrixStack matrixStack, float f, CallbackInfo ci) {
-        float g = 2.0F * (float) CustomMobAttributes.getScaleAttributeModifierValue(wither, CustomMobAttributes.SCALE);
+        float g = 2.0F * (float) wither.getAttributeValue(CustomMobAttributes.SCALE);
         int i = wither.getInvulnerableTimer();
         if (i > 0) {
             g -= ((float)i - f) / 220.0F * 0.5F;

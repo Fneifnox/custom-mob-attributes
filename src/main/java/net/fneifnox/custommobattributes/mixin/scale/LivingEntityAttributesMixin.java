@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityAttributesMixin {
     @ModifyReturnValue(method = "createLivingAttributes", at = @At("RETURN"))
-    private static DefaultAttributeContainer.Builder addModelScaleAttribute(DefaultAttributeContainer.Builder builder) {
+    private static DefaultAttributeContainer.Builder addScaleAttribute(DefaultAttributeContainer.Builder builder) {
         return builder.add(CustomMobAttributes.SCALE);
     }
 }
