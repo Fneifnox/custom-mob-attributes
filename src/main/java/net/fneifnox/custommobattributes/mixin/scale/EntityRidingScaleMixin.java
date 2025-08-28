@@ -14,15 +14,15 @@ public abstract class EntityRidingScaleMixin {
     @Inject(method = "updatePassengerPosition(Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/Entity$PositionUpdater;)V",
             at = @At("HEAD"), cancellable = true)
     private void onUpdatePassengerPosition(Entity passenger, Entity.PositionUpdater positionUpdater, CallbackInfo ci) {
-        LivingEntity self = (LivingEntity)(Object)this;
+        LivingEntity livingEntity = (LivingEntity)(Object)this;
         if (!((Object)(this) instanceof LivingEntity)) return;
-        if (!self.hasPassenger(passenger)) return;
+        if (!livingEntity.hasPassenger(passenger)) return;
 
-        double scale = CustomMobAttributes.getScaleAttributeModifierValue(self, CustomMobAttributes.SCALE);
+        double scale = livingEntity.getAttributeValue(CustomMobAttributes.SCALE);
 
-        double posX = self.getX();
-        double posY = self.getY() + (self.getHeight() - (self.getHeight() / scale / 1.85));
-        double posZ = self.getZ();
+        double posX = livingEntity.getX();
+        double posY = livingEntity.getY() + (livingEntity.getHeight() - (livingEntity.getHeight() / scale / 1.85));
+        double posZ = livingEntity.getZ();
 
         positionUpdater.accept(passenger, posX, posY, posZ);
 
