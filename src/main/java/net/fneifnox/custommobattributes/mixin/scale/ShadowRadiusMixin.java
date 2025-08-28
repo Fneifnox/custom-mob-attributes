@@ -34,7 +34,6 @@ public abstract class ShadowRadiusMixin<T extends Entity> {
             baseShadowRadius = this.shadowRadius;
         }
 
-        // Schatten skalieren
         this.shadowRadius = baseShadowRadius * (float) scale;
     }
 }
