@@ -20,28 +20,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
-        LivingEntity entity = (LivingEntity)(Object)this;
-        double scale = CustomMobAttributes.getScaleAttributeModifierValue(entity, CustomMobAttributes.SCALE);
+        LivingEntity livingEntity = (LivingEntity)(Object)this;
+        double scale = CustomMobAttributes.getScaleAttributeModifierValue(livingEntity, CustomMobAttributes.SCALE);
 
         if (scale != this.lastScale) {
             this.lastScale = scale;
-            entity.calculateDimensions();
+            livingEntity.calculateDimensions();
         }
     }
 
-    @ModifyReturnValue(method = "getDimensions", at = @At("RETURN"))
-    private EntityDimensions modifyDimensions(EntityDimensions original) {
-        LivingEntity entity = (LivingEntity) (Object) this;
-        double scale = CustomMobAttributes.getScaleAttributeModifierValue(entity, CustomMobAttributes.SCALE);
-
-        EntityDimensions base = entity.getType().getDimensions();
-        if (entity instanceof WitherEntity) {
-            System.out.println("Original width: " + base.width + ", height: " + base.height);
-        }
-        EntityDimensions scaled = base.scaled((float)scale);
-        if (entity instanceof WitherEntity) {
-            System.out.println("Scaled width: " + scaled.width + ", height: " + scaled.height);
-        }
-        return scaled;
+    @ModifyReturnValue(method = "getScaleFactor", at = @At("RETURN"))
+    public float modifyScaleFactor(float original) {
+        LivingEntity livingEntity = (LivingEntity)(Object)this;
+        return (float) (livingEntity.isBaby() ? (0.5f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE)) : (1.0f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE)));
     }
 }

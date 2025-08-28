@@ -12,11 +12,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ShulkerHitboxMixin {
 
     @Inject(method = "calculateBoundingBox()Lnet/minecraft/util/math/Box;", at = @At("RETURN"), cancellable = true)
-    private void onCalculateBoundingBox(CallbackInfoReturnable<Box> cir) {
+    private void changeShulkerScale(CallbackInfoReturnable<Box> cir) {
         ShulkerEntity shulker = (ShulkerEntity)(Object)this;
         Box originalBox = cir.getReturnValue();
 
-        double scale = CustomMobAttributes.getScaleAttributeModifierValue(shulker, CustomMobAttributes.SCALE);
+        double scale = shulker.getAttributeValue(CustomMobAttributes.SCALE);
 
         double cx = (originalBox.minX + originalBox.maxX) / 2.0;
         double cz = (originalBox.minZ + originalBox.maxZ) / 2.0;
