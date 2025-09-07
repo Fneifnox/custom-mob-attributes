@@ -489,12 +489,6 @@ public class ConfigModel {
     @Nest
     public VanillaBackport vanillaBackport = new VanillaBackport();
     public static class VanillaBackport {
-        @SectionHeader("Creaking")
-        @Comment("Creaking")
-        public float healthMultiplierForCreaking = 1f;
-        public float damageMultiplierForCreaking = 1f;
-        public float speedMultiplierForCreaking = 1f;
-        public float scaleMultiplierForCreaking = 1f;
         @SectionHeader("Happy Ghast")
         @Comment("Happy Ghast")
         public float healthMultiplierForHappyGhast = 1f;
