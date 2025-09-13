@@ -3,7 +3,7 @@ package net.fneifnox.custommobattributes;
 import io.wispforest.owo.config.Option;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.loader.api.FabricLoader;
-import net.fneifnox.custommobattributes.compat.VanillaBackportCompat;
+import net.fneifnox.custommobattributes.compat.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -276,7 +276,7 @@ public class AttributeUpdater {
 
         ATTRIBUTE_HANDLERS.put(EntityType.PHANTOM, entity -> {
             World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.PHANTOM, CONFIG::healthMultiplierForPhantom, CONFIG::damageMultiplierForPhantom, CONFIG::speedMultiplierForPhantom, CONFIG::scaleMultiplierForPhantom
+            configureEntityAttributes(world, EntityType.PHANTOM, CONFIG::healthMultiplierForPhantom, CONFIG::damageMultiplierForPhantom, null, CONFIG::scaleMultiplierForPhantom
             );
         });
 
@@ -525,6 +525,30 @@ public class AttributeUpdater {
 
         if (FabricLoader.getInstance().isModLoaded("vanillabackport")) {
             VanillaBackportCompat.initVanillaBackportAttributeHandlers();
+        }
+
+        if (FabricLoader.getInstance().isModLoaded("frycmobvariants")) {
+            MobVariantsCompat.initMobVariantsAttributeHandlers();
+        }
+
+        if (FabricLoader.getInstance().isModLoaded("betterend")) {
+            BetterEndCompat.initBetterEndAttributeHandlers();
+        }
+
+        if (FabricLoader.getInstance().isModLoaded("betternether")) {
+            BetterNetherCompat.initBetterNetherAttributeHandlers();
+        }
+
+        if (FabricLoader.getInstance().isModLoaded("variantsandventures")) {
+            VariantsAndVenturesCompat.initVariantsAndVenturesAttributeHandlers();
+        }
+
+        if (FabricLoader.getInstance().isModLoaded("friendsandfoes")) {
+            FriendsAndFoesCompat.initFriendsAndFoesAttributeHandlers();
+        }
+
+        if (FabricLoader.getInstance().isModLoaded("takesapillage")) {
+            ItTakesAPillageContinuationCompat.initItTakesAPillageContinuationAttributeHandlers();
         }
 
         ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
