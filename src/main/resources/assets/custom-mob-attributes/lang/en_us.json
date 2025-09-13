@@ -255,7 +255,6 @@
   "text.config.custom-mob-attributes.section.Phantom": "Phantom",
   "text.config.custom-mob-attributes.option.healthMultiplierForPhantom": "Health Multiplier",
   "text.config.custom-mob-attributes.option.damageMultiplierForPhantom": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.speedMultiplierForPhantom": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForPhantom": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Pig": "Pig",
@@ -483,5 +482,280 @@
   "text.config.custom-mob-attributes.option.vanillaBackport.healthMultiplierForHappyGhast": "Health Multiplier",
   "text.config.custom-mob-attributes.option.vanillaBackport.damageMultiplierForHappyGhast": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.vanillaBackport.speedMultiplierForHappyGhast": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.vanillaBackport.scaleMultiplierForHappyGhast": "Scale Multiplier"
+
+  "text.config.custom-mob-attributes.category.mobVariants": "Mob Variants",
+
+  "text.config.custom-mob-attributes.section.Armored Spider": "Armored Spider",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForArmoredSpider": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForArmoredSpider": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForArmoredSpider": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForArmoredSpider": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Bloated Corpse": "Bloated Corpse",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForBloatedCorpse": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForBloatedCorpse": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForBloatedCorpse": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForBloatedCorpse": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Cave Creeper": "Cave Creeper",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForCaveCreeper": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForCaveCreeper": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForCaveCreeper": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForCaveCreeper": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Corsair": "Corsair",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForCorsair": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForCorsair": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForCorsair": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForCorsair": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Executioner": "Executioner",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForExecutioner": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForExecutioner": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForExecutioner": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForExecutioner": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Explorer": "Explorer",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForExplorer": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForExplorer": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForExplorer": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForExplorer": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Forgotten": "Forgotten",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForForgotten": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForForgotten": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForForgotten": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForForgotten": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Frozen Zombie": "Frozen Zombie",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForFrozenZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForFrozenZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForFrozenZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForFrozenZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Infected Piglin": "Infected Piglin",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForInfectedPiglin": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForInfectedPiglin": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForInfectedPiglin": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForInfectedPiglin": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Infected Piglin Brute": "Infected Piglin Brute",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForInfectedPiglinBrute": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForInfectedPiglinBrute": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForInfectedPiglinBrute": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForInfectedPiglinBrute": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Lava Slime": "Lava Slime",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForLavaSlime": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForLavaSlime": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForLavaSlime": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForLavaSlime": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Nightmare": "Nightmare",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForNightmare": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForNightmare": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForNightmare": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForNightmare": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Soul Stealer": "Soul Stealer",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForSoulStealer": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForSoulStealer": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForSoulStealer": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForSoulStealer": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Toxic Slime": "Toxic Slime",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForToxicSlime": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForToxicSlime": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForToxicSlime": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForToxicSlime": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Tropical Spider": "Tropical Spider",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForTropicalSpider": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForTropicalSpider": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForTropicalSpider": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForTropicalSpider": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Undead Warrior": "Undead Warrior",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForUndeadWarrior": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForUndeadWarrior": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForUndeadWarrior": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForUndeadWarrior": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Zombified Piglin Brute": "Zombified Piglin Brute",
+  "text.config.custom-mob-attributes.option.mobVariants.healthMultiplierForZombifiedPiglinBrute": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.damageMultiplierForZombifiedPiglinBrute": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.speedMultiplierForZombifiedPiglinBrute": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.mobVariants.scaleMultiplierForZombifiedPiglinBrute": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.betterEnd": "BetterEnd",
+
+  "text.config.custom-mob-attributes.section.Cubozoa": "Cubozoa",
+  "text.config.custom-mob-attributes.option.betterEnd.healthMultiplierForCubozoa": "Health Multiplier",
+
+  "text.config.custom-mob-attributes.section.Dragonfly": "Dragonfly",
+  "text.config.custom-mob-attributes.option.betterEnd.healthMultiplierForDragonfly": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterEnd.scaleMultiplierForDragonfly": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.End Fish": "End Fish",
+  "text.config.custom-mob-attributes.option.betterEnd.healthMultiplierForEndFish": "Health Multiplier",
+
+  "text.config.custom-mob-attributes.section.End Slime": "End Slime",
+  "text.config.custom-mob-attributes.option.betterEnd.healthMultiplierForEndSlime": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterEnd.damageMultiplierForEndSlime": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.betterEnd.speedMultiplierForEndSlime": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.betterEnd.scaleMultiplierForEndSlime": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Shadow Walker": "Shadow Walker",
+  "text.config.custom-mob-attributes.option.betterEnd.healthMultiplierForShadowWalker": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterEnd.damageMultiplierForShadowWalker": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.betterEnd.speedMultiplierForShadowWalker": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.betterEnd.scaleMultiplierForShadowWalker": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Silk Moth": "Silk Moth",
+  "text.config.custom-mob-attributes.option.betterEnd.healthMultiplierForSilkMoth": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterEnd.scaleMultiplierForSilkMoth": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.betterNether": "BetterNether",
+
+  "text.config.custom-mob-attributes.section.Firefly": "Firefly",
+  "text.config.custom-mob-attributes.option.betterNether.healthMultiplierForFirefly": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.damageMultiplierForFirefly": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.scaleMultiplierForFirefly": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Flying Pig": "Flying Pig",
+  "text.config.custom-mob-attributes.option.betterNether.healthMultiplierForFlyingPig": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.damageMultiplierForFlyingPig": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.speedMultiplierForFlyingPig": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.scaleMultiplierForFlyingPig": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Hydrogen Jellyfish": "Hydrogen Jellyfish",
+  "text.config.custom-mob-attributes.option.betterNether.healthMultiplierForHydrogenJellyfish": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.damageMultiplierForHydrogenJellyfish": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.scaleMultiplierForHydrogenJellyfish": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Jungle Skeleton": "Jungle Skeleton",
+  "text.config.custom-mob-attributes.option.betterNether.healthMultiplierForJungleSkeleton": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.damageMultiplierForJungleSkeleton": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.speedMultiplierForJungleSkeleton": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.scaleMultiplierForJungleSkeleton": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Naga": "Naga",
+  "text.config.custom-mob-attributes.option.betterNether.healthMultiplierForNaga": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.damageMultiplierForNaga": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.speedMultiplierForNaga": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.scaleMultiplierForNaga": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Skull": "Skull",
+  "text.config.custom-mob-attributes.option.betterNether.healthMultiplierForSkull": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.damageMultiplierForSkull": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.betterNether.scaleMultiplierForSkull": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.variantsAndVentures": "Variants&Ventures",
+
+  "text.config.custom-mob-attributes.section.Gelid": "Gelid",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.healthMultiplierForGelid": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.damageMultiplierForGelid": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.speedMultiplierForGelid": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.scaleMultiplierForGelid": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Murk": "Murk",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.healthMultiplierForMurk": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.damageMultiplierForMurk": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.speedMultiplierForMurk": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.scaleMultiplierForMurk": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Thicket": "Thicket",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.healthMultiplierForThicket": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.damageMultiplierForThicket": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.speedMultiplierForThicket": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.scaleMultiplierForThicket": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Verdant": "Verdant",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.healthMultiplierForVerdant": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.damageMultiplierForVerdant": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.speedMultiplierForVerdant": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.variantsAndVentures.scaleMultiplierForVerdant": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.friendsAndFoes": "Friends&Foes",
+
+  "text.config.custom-mob-attributes.section.Copper Golem": "Copper Golem",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForCopperGolem": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForCopperGolem": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForCopperGolem": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForCopperGolem": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Crab": "Crab",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForCrab": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForCrab": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForCrab": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForCrab": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Glare": "Glare",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForGlare": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForGlare": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForGlare": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForGlare": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Iceologer": "Iceologer",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForIceologer": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForIceologer": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForIceologer": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForIceologer": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Mauler": "Mauler",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForMauler": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForMauler": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForMauler": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForMauler": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Moobloom": "Moobloom",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForMoobloom": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForMoobloom": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForMoobloom": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForMoobloom": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Rascal": "Rascal",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForRascal": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForRascal": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForRascal": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForRascal": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Tuff Golem": "Tuff Golem",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForTuffGolem": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForTuffGolem": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForTuffGolem": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForTuffGolem": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Wildfire": "Wildfire",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForWildfire": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForWildfire": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForWildfire": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForWildfire": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.itTakesAPillageContinuation": "It Takes a Pillage Continuation",
+
+  "text.config.custom-mob-attributes.section.Archer": "Archer",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.healthMultiplierForArcher": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.damageMultiplierForArcher": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.speedMultiplierForArcher": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.scaleMultiplierForArcher": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Clay Golem": "Clay Golem",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.healthMultiplierForClayGolem": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.damageMultiplierForClayGolem": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.speedMultiplierForClayGolem": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.scaleMultiplierForClayGolem": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Legioner": "Legioner",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.healthMultiplierForLegioner": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.damageMultiplierForLegioner": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.speedMultiplierForLegioner": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.scaleMultiplierForLegioner": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Skirmisher": "Skirmisher",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.healthMultiplierForSkirmisher": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.damageMultiplierForSkirmisher": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.speedMultiplierForSkirmisher": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.scaleMultiplierForSkirmisher": "Scale Multiplier"
+
 }
