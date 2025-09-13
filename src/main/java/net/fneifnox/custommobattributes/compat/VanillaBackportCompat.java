@@ -22,9 +22,8 @@ public class VanillaBackportCompat {
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(happyGhast, entity -> {
             World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, happyGhast, CONFIG.vanillaBackport::healthMultiplierForHappyGhast, CONFIG.vanillaBackport::damageMultiplierForHappyGhast, CONFIG.vanillaBackport::speedMultiplierForHappyGhast, CONFIG.vanillaBackport::scaleMultiplierForHappyGhast
+            AttributeUpdater.configureEntityAttributes(world, happyGhast, CONFIG.vanillaBackport::healthMultiplierForHappyGhast, CONFIG.vanillaBackport::damageMultiplierForHappyGhast, CONFIG.vanillaBackport::speedMultiplierForHappyGhast, null
             );
         });
-
     }
 }
