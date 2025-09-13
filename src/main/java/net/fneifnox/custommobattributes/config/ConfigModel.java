@@ -491,15 +491,6 @@ public class ConfigModel {
     @SectionHeader("Modded Mobs")
     @Comment("Modded Mobs")
     @Nest
-    public VanillaBackport vanillaBackport = new VanillaBackport();
-    public static class VanillaBackport {
-        @SectionHeader("Happy Ghast")
-        @Comment("Happy Ghast")
-        public float healthMultiplierForHappyGhast = 1f;
-        public float damageMultiplierForHappyGhast = 1f;
-        public float speedMultiplierForHappyGhast = 1f;
-    }
-    @Nest
     public MobVariants mobVariants = new MobVariants();
     public static class MobVariants {
         @SectionHeader("Armored Spider")

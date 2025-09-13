@@ -3,7 +3,7 @@ package net.fneifnox.custommobattributes;
 import io.wispforest.owo.config.Option;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.loader.api.FabricLoader;
-import net.fneifnox.custommobattributes.compat.VanillaBackportCompat;
+import net.fneifnox.custommobattributes.compat.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -534,10 +534,6 @@ public class AttributeUpdater {
 
     public static void register() {
         initAttributeHandlers();
-
-        if (FabricLoader.getInstance().isModLoaded("vanillabackport")) {
-            VanillaBackportCompat.initVanillaBackportAttributeHandlers();
-        }
 
         if (FabricLoader.getInstance().isModLoaded("frycmobvariants")) {
             MobVariantsCompat.initMobVariantsAttributeHandlers();

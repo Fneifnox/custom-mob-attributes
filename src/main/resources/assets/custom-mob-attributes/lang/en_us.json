@@ -481,12 +481,6 @@
   "text.config.custom-mob-attributes.option.scaleMultiplierForZombifiedPiglin": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Modded Mobs": "Modded Mobs",
-  "text.config.custom-mob-attributes.category.vanillaBackport": "Vanilla Backport",
-
-  "text.config.custom-mob-attributes.section.Happy Ghast": "Happy Ghast",
-  "text.config.custom-mob-attributes.option.vanillaBackport.healthMultiplierForHappyGhast": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.vanillaBackport.damageMultiplierForHappyGhast": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.vanillaBackport.speedMultiplierForHappyGhast": "Speed Multiplier",
 
   "text.config.custom-mob-attributes.category.mobVariants": "Mob Variants",
 
