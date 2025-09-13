@@ -25,11 +25,11 @@ public class CustomMobAttributes implements ModInitializer {
 		CONFIG.load();
 		CONFIG.save();
 
+		// Moved register() into this so that modded mobs work without any issues
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+			AttributeUpdater.register();
 			AttributeUpdater.observeAllConfigChanges(() -> AttributeUpdater.reloadConfig(server));
 		});
-
-		AttributeUpdater.register();
 	}
 
 	public static final EntityAttribute SCALE = registerAttribute("scale", 1.0, 0.0625, 16.0);
