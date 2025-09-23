@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
         LivingEntity livingEntity = (LivingEntity)(Object)this;
-        double scale = CustomMobAttributes.getScaleAttributeModifierValue(livingEntity, CustomMobAttributes.SCALE);
+        double scale = livingEntity.getAttributeValue(CustomMobAttributes.SCALE);
 
         if (scale != this.lastScale) {
             this.lastScale = scale;

@@ -28,7 +28,7 @@ public abstract class ShadowRadiusMixin<T extends Entity> {
     @Inject(method = "render", at = @At("HEAD"))
     private void changeEntityShadow(T entity, float entityYaw, float partialTicks, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int packedLight, CallbackInfo ci) {
         if (!(entity instanceof LivingEntity)) return;
-        double scale = CustomMobAttributes.getScaleAttributeModifierValue((LivingEntity) entity, CustomMobAttributes.SCALE);
+        double scale = ((LivingEntity) entity).getAttributeValue(CustomMobAttributes.SCALE);
 
         if (baseShadowRadius == null) {
             baseShadowRadius = this.shadowRadius;
