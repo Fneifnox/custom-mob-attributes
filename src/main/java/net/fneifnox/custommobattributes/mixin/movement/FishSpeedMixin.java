@@ -11,15 +11,9 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 @Mixin(FishEntity.class)
 public abstract class FishSpeedMixin {
 
-    @Redirect(
-            method = "travel(Lnet/minecraft/util/math/Vec3d;)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/entity/passive/FishEntity;updateVelocity(FLnet/minecraft/util/math/Vec3d;)V"
-            )
-    )
+    @Redirect(method = "travel(Lnet/minecraft/util/math/Vec3d;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/FishEntity;updateVelocity(FLnet/minecraft/util/math/Vec3d;)V"))
     private void modifySpeed(FishEntity instance, float speed, Vec3d movementInput) {
-        float finalSpeed = speed;
+        double finalSpeed = speed;
 
         if (instance instanceof CodEntity) {
             finalSpeed = speed * CONFIG.speedMultiplierForCod() * CONFIG.speedMultiplierForAll();
@@ -37,6 +31,6 @@ public abstract class FishSpeedMixin {
             finalSpeed = speed * CONFIG.speedMultiplierForTadpole() * CONFIG.speedMultiplierForAll();
         }
 
-        instance.updateVelocity(finalSpeed, movementInput);
+        instance.updateVelocity((float) finalSpeed, movementInput);
     }
 }
