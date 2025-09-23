@@ -807,32 +807,6 @@
   "text.config.custom-mob-attributes.option.deeperAndDarker.speedMultiplierForStalker": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.deeperAndDarker.scaleMultiplierForStalker": "Scale Multiplier",
 
-  "text.config.custom-mob-attributes.category.promenade": "Promenade",
-
-  "text.config.custom-mob-attributes.section.Capybara": "Capybara",
-  "text.config.custom-mob-attributes.option.promenade.healthMultiplierForCapybara": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.damageMultiplierForCapybara": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.speedMultiplierForCapybara": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.scaleMultiplierForCapybara": "Scale Multiplier",
-
-  "text.config.custom-mob-attributes.section.Duck": "Duck",
-  "text.config.custom-mob-attributes.option.promenade.healthMultiplierForDuck": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.damageMultiplierForDuck": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.speedMultiplierForDuck": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.scaleMultiplierForDuck": "Scale Multiplier",
-
-  "text.config.custom-mob-attributes.section.Lush Creeper": "Lush Creeper",
-  "text.config.custom-mob-attributes.option.promenade.healthMultiplierForLushCreeper": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.damageMultiplierForLushCreeper": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.speedMultiplierForLushCreeper": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.scaleMultiplierForLushCreeper": "Scale Multiplier",
-
-  "text.config.custom-mob-attributes.section.Sunken": "Sunken",
-  "text.config.custom-mob-attributes.option.promenade.healthMultiplierForSunken": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.damageMultiplierForSunken": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.speedMultiplierForSunken": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.promenade.scaleMultiplierForSunken": "Scale Multiplier",
-
   "text.config.custom-mob-attributes.category.illagerInvasion": "Illager Invasion",
 
   "text.config.custom-mob-attributes.section.Alchemist": "Alchemist",

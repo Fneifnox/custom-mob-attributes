@@ -66,9 +66,6 @@ public class AttributeUpdater {
         if (FabricLoader.getInstance().isModLoaded("deeperdarker")) {
             DeeperAndDarkerCompat.initDeeperAndDarkerAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("promenade")) {
-            PromenadeCompat.initPromenadeAttributeHandlers();
-        }
         if (FabricLoader.getInstance().isModLoaded("illagerinvasion")) {
             IllagerInvasionCompat.initIllagerInvasionAttributeHandlers();
         }
