@@ -9,13 +9,9 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 @Mixin(WitherSkullEntity.class)
 public class WitherSkullMixin {
-    @ModifyArg(method = "onEntityHit", at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
-    )
-    )
+    @ModifyArg(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private float injectCustomDamage(float originalDamage) {
-        float multiplier = CONFIG.damageMultiplierForWither() * CONFIG.damageMultiplierForAll();
-        return originalDamage * multiplier;
+        double multiplier = CONFIG.damageMultiplierForWither() * CONFIG.damageMultiplierForAll();
+        return (float) (originalDamage * multiplier);
     }
 }

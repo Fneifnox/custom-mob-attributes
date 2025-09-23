@@ -10,758 +10,878 @@ import io.wispforest.owo.config.annotation.*;
 public class ConfigModel {
     @SectionHeader("All Mobs")
     @Comment("All Mobs")
-    public float healthMultiplierForAll = 1f;
-    public float damageMultiplierForAll = 1f;
-    public float speedMultiplierForAll = 1f;
-    public float scaleMultiplierForAll = 1f;
+    public double healthMultiplierForAll = 1f;
+    public double damageMultiplierForAll = 1f;
+    public double speedMultiplierForAll = 1f;
+    public double scaleMultiplierForAll = 1f;
     @SectionHeader("Allay")
     @Comment("Allay")
-    public float healthMultiplierForAllay = 1f;
-    public float damageMultiplierForAllay = 1f;
-    public float speedMultiplierForAllay = 1f;
-    public float scaleMultiplierForAllay = 1f;
+    public double healthMultiplierForAllay = 1f;
+    public double damageMultiplierForAllay = 1f;
+    public double speedMultiplierForAllay = 1f;
+    public double scaleMultiplierForAllay = 1f;
     @SectionHeader("Axolotl")
     @Comment("Axolotl")
-    public float healthMultiplierForAxolotl = 1f;
-    public float damageMultiplierForAxolotl = 1f;
-    public float speedMultiplierForAxolotl = 1f;
-    public float scaleMultiplierForAxolotl = 1f;
+    public double healthMultiplierForAxolotl = 1f;
+    public double damageMultiplierForAxolotl = 1f;
+    public double speedMultiplierForAxolotl = 1f;
+    public double scaleMultiplierForAxolotl = 1f;
     @SectionHeader("Bat")
     @Comment("Bat")
-    public float healthMultiplierForBat = 1f;
-    public float speedMultiplierForBat = 1f;
-    public float scaleMultiplierForBat = 1f;
+    public double healthMultiplierForBat = 1f;
+    public double speedMultiplierForBat = 1f;
+    public double scaleMultiplierForBat = 1f;
     @SectionHeader("Bee")
     @Comment("Bee")
-    public float healthMultiplierForBee = 1f;
-    public float damageMultiplierForBee = 1f;
-    public float speedMultiplierForBee = 1f;
-    public float scaleMultiplierForBee = 1f;
+    public double healthMultiplierForBee = 1f;
+    public double damageMultiplierForBee = 1f;
+    public double speedMultiplierForBee = 1f;
+    public double scaleMultiplierForBee = 1f;
     @SectionHeader("Blaze")
     @Comment("Blaze")
-    public float healthMultiplierForBlaze = 1f;
-    public float damageMultiplierForBlaze = 1f;
-    public float speedMultiplierForBlaze = 1f;
-    public float scaleMultiplierForBlaze = 1f;
+    public double healthMultiplierForBlaze = 1f;
+    public double damageMultiplierForBlaze = 1f;
+    public double speedMultiplierForBlaze = 1f;
+    public double scaleMultiplierForBlaze = 1f;
     @SectionHeader("Camel")
     @Comment("Camel")
-    public float healthMultiplierForCamel = 1f;
-    public float speedMultiplierForCamel = 1f;
-    public float scaleMultiplierForCamel = 1f;
+    public double healthMultiplierForCamel = 1f;
+    public double speedMultiplierForCamel = 1f;
+    public double scaleMultiplierForCamel = 1f;
     @SectionHeader("Cat")
     @Comment("Cat")
-    public float healthMultiplierForCat = 1f;
-    public float damageMultiplierForCat = 1f;
-    public float speedMultiplierForCat = 1f;
-    public float scaleMultiplierForCat = 1f;
+    public double healthMultiplierForCat = 1f;
+    public double damageMultiplierForCat = 1f;
+    public double speedMultiplierForCat = 1f;
+    public double scaleMultiplierForCat = 1f;
     @SectionHeader("Cave Spider")
     @Comment("Cave Spider")
-    public float healthMultiplierForCaveSpider = 1f;
-    public float damageMultiplierForCaveSpider = 1f;
-    public float speedMultiplierForCaveSpider = 1f;
-    public float scaleMultiplierForCaveSpider = 1f;
+    public double healthMultiplierForCaveSpider = 1f;
+    public double damageMultiplierForCaveSpider = 1f;
+    public double speedMultiplierForCaveSpider = 1f;
+    public double scaleMultiplierForCaveSpider = 1f;
     @SectionHeader("Chicken")
     @Comment("Chicken")
-    public float healthMultiplierForChicken = 1f;
-    public float speedMultiplierForChicken = 1f;
-    public float scaleMultiplierForChicken = 1f;
+    public double healthMultiplierForChicken = 1f;
+    public double speedMultiplierForChicken = 1f;
+    public double scaleMultiplierForChicken = 1f;
     @SectionHeader("Cod")
     @Comment("Cod")
-    public float healthMultiplierForCod = 1f;
-    public float speedMultiplierForCod = 1f;
-    public float scaleMultiplierForCod = 1f;
+    public double healthMultiplierForCod = 1f;
+    public double speedMultiplierForCod = 1f;
+    public double scaleMultiplierForCod = 1f;
     @SectionHeader("Cow")
     @Comment("Cow")
-    public float healthMultiplierForCow = 1f;
-    public float speedMultiplierForCow = 1f;
-    public float scaleMultiplierForCow = 1f;
+    public double healthMultiplierForCow = 1f;
+    public double speedMultiplierForCow = 1f;
+    public double scaleMultiplierForCow = 1f;
     @SectionHeader("Creeper")
     @Comment("Creeper")
-    public float healthMultiplierForCreeper = 1f;
-    public float damageMultiplierForCreeper = 1f;
-    public float speedMultiplierForCreeper = 1f;
-    public float scaleMultiplierForCreeper = 1f;
+    public double healthMultiplierForCreeper = 1f;
+    public double damageMultiplierForCreeper = 1f;
+    public double speedMultiplierForCreeper = 1f;
+    public double scaleMultiplierForCreeper = 1f;
     @SectionHeader("Dolphin")
     @Comment("Dolphin")
-    public float healthMultiplierForDolphin = 1f;
-    public float damageMultiplierForDolphin = 1f;
-    public float speedMultiplierForDolphin = 1f;
-    public float scaleMultiplierForDolphin = 1f;
+    public double healthMultiplierForDolphin = 1f;
+    public double damageMultiplierForDolphin = 1f;
+    public double speedMultiplierForDolphin = 1f;
+    public double scaleMultiplierForDolphin = 1f;
     @SectionHeader("Donkey")
     @Comment("Donkey")
-    public float healthMultiplierForDonkey = 1f;
-    public float speedMultiplierForDonkey = 1f;
-    public float scaleMultiplierForDonkey = 1f;
+    public double healthMultiplierForDonkey = 1f;
+    public double speedMultiplierForDonkey = 1f;
+    public double scaleMultiplierForDonkey = 1f;
     @SectionHeader("Drowned")
     @Comment("Drowned")
-    public float healthMultiplierForDrowned = 1f;
-    public float damageMultiplierForDrowned = 1f;
-    public float speedMultiplierForDrowned = 1f;
-    public float scaleMultiplierForDrowned = 1f;
+    public double healthMultiplierForDrowned = 1f;
+    public double damageMultiplierForDrowned = 1f;
+    public double speedMultiplierForDrowned = 1f;
+    public double scaleMultiplierForDrowned = 1f;
     @SectionHeader("Elder Guardian")
     @Comment("Elder Guardian")
-    public float healthMultiplierForElderGuardian = 1f;
-    public float damageMultiplierForElderGuardian = 1f;
-    public float speedMultiplierForElderGuardian = 1f;
-    public float scaleMultiplierForElderGuardian = 1f;
+    public double healthMultiplierForElderGuardian = 1f;
+    public double damageMultiplierForElderGuardian = 1f;
+    public double speedMultiplierForElderGuardian = 1f;
+    public double scaleMultiplierForElderGuardian = 1f;
     @SectionHeader("Ender Dragon")
     @Comment("Ender Dragon")
-    public float healthMultiplierForEnderDragon = 1f;
-    public float damageMultiplierForEnderDragon = 1f;
+    public double healthMultiplierForEnderDragon = 1f;
+    public double damageMultiplierForEnderDragon = 1f;
     @SectionHeader("Enderman")
     @Comment("Enderman")
-    public float healthMultiplierForEnderman = 1f;
-    public float damageMultiplierForEnderman = 1f;
-    public float speedMultiplierForEnderman = 1f;
-    public float scaleMultiplierForEnderman = 1f;
+    public double healthMultiplierForEnderman = 1f;
+    public double damageMultiplierForEnderman = 1f;
+    public double speedMultiplierForEnderman = 1f;
+    public double scaleMultiplierForEnderman = 1f;
     @SectionHeader("Endermite")
     @Comment("Endermite")
-    public float healthMultiplierForEndermite = 1f;
-    public float damageMultiplierForEndermite = 1f;
-    public float speedMultiplierForEndermite = 1f;
-    public float scaleMultiplierForEndermite = 1f;
+    public double healthMultiplierForEndermite = 1f;
+    public double damageMultiplierForEndermite = 1f;
+    public double speedMultiplierForEndermite = 1f;
+    public double scaleMultiplierForEndermite = 1f;
     @SectionHeader("Evoker")
     @Comment("Evoker")
-    public float healthMultiplierForEvoker = 1f;
-    public float damageMultiplierForEvoker = 1f;
-    public float speedMultiplierForEvoker = 1f;
-    public float scaleMultiplierForEvoker = 1f;
+    public double healthMultiplierForEvoker = 1f;
+    public double damageMultiplierForEvoker = 1f;
+    public double speedMultiplierForEvoker = 1f;
+    public double scaleMultiplierForEvoker = 1f;
     @SectionHeader("Fox")
     @Comment("Fox")
-    public float healthMultiplierForFox = 1f;
-    public float damageMultiplierForFox = 1f;
-    public float speedMultiplierForFox = 1f;
-    public float scaleMultiplierForFox = 1f;
+    public double healthMultiplierForFox = 1f;
+    public double damageMultiplierForFox = 1f;
+    public double speedMultiplierForFox = 1f;
+    public double scaleMultiplierForFox = 1f;
     @SectionHeader("Frog")
     @Comment("Frog")
-    public float healthMultiplierForFrog = 1f;
-    public float damageMultiplierForFrog = 1f;
-    public float speedMultiplierForFrog = 1f;
-    public float scaleMultiplierForFrog = 1f;
+    public double healthMultiplierForFrog = 1f;
+    public double damageMultiplierForFrog = 1f;
+    public double speedMultiplierForFrog = 1f;
+    public double scaleMultiplierForFrog = 1f;
     @SectionHeader("Ghast")
     @Comment("Ghast")
-    public float healthMultiplierForGhast = 1f;
-    public float damageMultiplierForGhast = 1f;
-    public float speedMultiplierForGhast = 1f;
-    public float scaleMultiplierForGhast = 1f;
+    public double healthMultiplierForGhast = 1f;
+    public double damageMultiplierForGhast = 1f;
+    public double speedMultiplierForGhast = 1f;
+    public double scaleMultiplierForGhast = 1f;
     @SectionHeader("Giant")
     @Comment("Giant")
-    public float healthMultiplierForGiant = 1f;
-    public float damageMultiplierForGiant = 1f;
-    public float speedMultiplierForGiant = 1f;
-    public float scaleMultiplierForGiant = 1f;
+    public double healthMultiplierForGiant = 1f;
+    public double damageMultiplierForGiant = 1f;
+    public double speedMultiplierForGiant = 1f;
+    public double scaleMultiplierForGiant = 1f;
     @SectionHeader("Glow Squid")
     @Comment("Glow Squid")
-    public float healthMultiplierForGlowSquid = 1f;
-    public float speedMultiplierForGlowSquid = 1f;
-    public float scaleMultiplierForGlowSquid = 1f;
+    public double healthMultiplierForGlowSquid = 1f;
+    public double speedMultiplierForGlowSquid = 1f;
+    public double scaleMultiplierForGlowSquid = 1f;
     @SectionHeader("Goat")
     @Comment("Goat")
-    public float healthMultiplierForGoat = 1f;
-    public float damageMultiplierForGoat = 1f;
-    public float speedMultiplierForGoat = 1f;
-    public float scaleMultiplierForGoat = 1f;
+    public double healthMultiplierForGoat = 1f;
+    public double damageMultiplierForGoat = 1f;
+    public double speedMultiplierForGoat = 1f;
+    public double scaleMultiplierForGoat = 1f;
     @SectionHeader("Guardian")
     @Comment("Guardian")
-    public float healthMultiplierForGuardian = 1f;
-    public float damageMultiplierForGuardian = 1f;
-    public float speedMultiplierForGuardian = 1f;
-    public float scaleMultiplierForGuardian = 1f;
+    public double healthMultiplierForGuardian = 1f;
+    public double damageMultiplierForGuardian = 1f;
+    public double speedMultiplierForGuardian = 1f;
+    public double scaleMultiplierForGuardian = 1f;
     @SectionHeader("Hoglin")
     @Comment("Hoglin")
-    public float healthMultiplierForHoglin = 1f;
-    public float damageMultiplierForHoglin = 1f;
-    public float speedMultiplierForHoglin = 1f;
-    public float scaleMultiplierForHoglin = 1f;
+    public double healthMultiplierForHoglin = 1f;
+    public double damageMultiplierForHoglin = 1f;
+    public double speedMultiplierForHoglin = 1f;
+    public double scaleMultiplierForHoglin = 1f;
     @SectionHeader("Horse")
     @Comment("Horse")
-    public float healthMultiplierForHorse = 1f;
-    public float speedMultiplierForHorse = 1f;
-    public float scaleMultiplierForHorse = 1f;
+    public double healthMultiplierForHorse = 1f;
+    public double speedMultiplierForHorse = 1f;
+    public double scaleMultiplierForHorse = 1f;
     @SectionHeader("Husk")
     @Comment("Husk")
-    public float healthMultiplierForHusk = 1f;
-    public float damageMultiplierForHusk = 1f;
-    public float speedMultiplierForHusk = 1f;
-    public float scaleMultiplierForHusk = 1f;
+    public double healthMultiplierForHusk = 1f;
+    public double damageMultiplierForHusk = 1f;
+    public double speedMultiplierForHusk = 1f;
+    public double scaleMultiplierForHusk = 1f;
     @SectionHeader("Illusioner")
     @Comment("Illusioner")
-    public float healthMultiplierForIllusioner = 1f;
-    public float damageMultiplierForIllusioner = 1f;
-    public float speedMultiplierForIllusioner = 1f;
-    public float scaleMultiplierForIllusioner = 1f;
+    public double healthMultiplierForIllusioner = 1f;
+    public double damageMultiplierForIllusioner = 1f;
+    public double speedMultiplierForIllusioner = 1f;
+    public double scaleMultiplierForIllusioner = 1f;
     @SectionHeader("Iron Golem")
     @Comment("Iron Golem")
-    public float healthMultiplierForIronGolem = 1f;
-    public float damageMultiplierForIronGolem = 1f;
-    public float speedMultiplierForIronGolem = 1f;
-    public float scaleMultiplierForIronGolem = 1f;
+    public double healthMultiplierForIronGolem = 1f;
+    public double damageMultiplierForIronGolem = 1f;
+    public double speedMultiplierForIronGolem = 1f;
+    public double scaleMultiplierForIronGolem = 1f;
     @SectionHeader("Llama")
     @Comment("Llama")
-    public float healthMultiplierForLlama = 1f;
-    public float damageMultiplierForLlama = 1f;
-    public float speedMultiplierForLlama = 1f;
-    public float scaleMultiplierForLlama = 1f;
+    public double healthMultiplierForLlama = 1f;
+    public double damageMultiplierForLlama = 1f;
+    public double speedMultiplierForLlama = 1f;
+    public double scaleMultiplierForLlama = 1f;
     @SectionHeader("Magma Cube")
     @Comment("Magma Cube")
-    public float healthMultiplierForMagmaCube = 1f;
-    public float damageMultiplierForMagmaCube = 1f;
-    public float speedMultiplierForMagmaCube = 1f;
-    public float scaleMultiplierForMagmaCube = 1f;
+    public double healthMultiplierForMagmaCube = 1f;
+    public double damageMultiplierForMagmaCube = 1f;
+    public double speedMultiplierForMagmaCube = 1f;
+    public double scaleMultiplierForMagmaCube = 1f;
     @SectionHeader("Mooshroom")
     @Comment("Mooshroom")
-    public float healthMultiplierForMooshroom = 1f;
-    public float speedMultiplierForMooshroom = 1f;
-    public float scaleMultiplierForMooshroom = 1f;
+    public double healthMultiplierForMooshroom = 1f;
+    public double speedMultiplierForMooshroom = 1f;
+    public double scaleMultiplierForMooshroom = 1f;
     @SectionHeader("Mule")
     @Comment("Mule")
-    public float healthMultiplierForMule = 1f;
-    public float speedMultiplierForMule = 1f;
-    public float scaleMultiplierForMule = 1f;
+    public double healthMultiplierForMule = 1f;
+    public double speedMultiplierForMule = 1f;
+    public double scaleMultiplierForMule = 1f;
     @SectionHeader("Ocelot")
     @Comment("Ocelot")
-    public float healthMultiplierForOcelot = 1f;
-    public float damageMultiplierForOcelot = 1f;
-    public float speedMultiplierForOcelot = 1f;
-    public float scaleMultiplierForOcelot = 1f;
+    public double healthMultiplierForOcelot = 1f;
+    public double damageMultiplierForOcelot = 1f;
+    public double speedMultiplierForOcelot = 1f;
+    public double scaleMultiplierForOcelot = 1f;
     @SectionHeader("Panda")
     @Comment("Panda")
-    public float healthMultiplierForPanda = 1f;
-    public float damageMultiplierForPanda = 1f;
-    public float speedMultiplierForPanda = 1f;
-    public float scaleMultiplierForPanda = 1f;
+    public double healthMultiplierForPanda = 1f;
+    public double damageMultiplierForPanda = 1f;
+    public double speedMultiplierForPanda = 1f;
+    public double scaleMultiplierForPanda = 1f;
     @SectionHeader("Parrot")
     @Comment("Parrot")
-    public float healthMultiplierForParrot = 1f;
-    public float damageMultiplierForParrot = 1f;
-    public float speedMultiplierForParrot = 1f;
-    public float scaleMultiplierForParrot = 1f;
+    public double healthMultiplierForParrot = 1f;
+    public double damageMultiplierForParrot = 1f;
+    public double speedMultiplierForParrot = 1f;
+    public double scaleMultiplierForParrot = 1f;
     @SectionHeader("Phantom")
     @Comment("Phantom")
-    public float healthMultiplierForPhantom = 1f;
-    public float damageMultiplierForPhantom = 1f;
-    public float scaleMultiplierForPhantom = 1f;
+    public double healthMultiplierForPhantom = 1f;
+    public double damageMultiplierForPhantom = 1f;
+    public double scaleMultiplierForPhantom = 1f;
     @SectionHeader("Pig")
     @Comment("Pig")
-    public float healthMultiplierForPig = 1f;
-    public float speedMultiplierForPig = 1f;
-    public float scaleMultiplierForPig = 1f;
+    public double healthMultiplierForPig = 1f;
+    public double speedMultiplierForPig = 1f;
+    public double scaleMultiplierForPig = 1f;
     @SectionHeader("Piglin")
     @Comment("Piglin")
-    public float healthMultiplierForPiglin = 1f;
-    public float damageMultiplierForPiglin = 1f;
-    public float speedMultiplierForPiglin = 1f;
-    public float scaleMultiplierForPiglin = 1f;
+    public double healthMultiplierForPiglin = 1f;
+    public double damageMultiplierForPiglin = 1f;
+    public double speedMultiplierForPiglin = 1f;
+    public double scaleMultiplierForPiglin = 1f;
     @SectionHeader("Piglin Brute")
     @Comment("Piglin Brute")
-    public float healthMultiplierForPiglinBrute = 1f;
-    public float damageMultiplierForPiglinBrute = 1f;
-    public float speedMultiplierForPiglinBrute = 1f;
-    public float scaleMultiplierForPiglinBrute = 1f;
+    public double healthMultiplierForPiglinBrute = 1f;
+    public double damageMultiplierForPiglinBrute = 1f;
+    public double speedMultiplierForPiglinBrute = 1f;
+    public double scaleMultiplierForPiglinBrute = 1f;
     @SectionHeader("Pillager")
     @Comment("Pillager")
-    public float healthMultiplierForPillager = 1f;
-    public float damageMultiplierForPillager = 1f;
-    public float speedMultiplierForPillager = 1f;
-    public float scaleMultiplierForPillager = 1f;
+    public double healthMultiplierForPillager = 1f;
+    public double damageMultiplierForPillager = 1f;
+    public double speedMultiplierForPillager = 1f;
+    public double scaleMultiplierForPillager = 1f;
     @SectionHeader("Polar Bear")
     @Comment("Polar Bear")
-    public float healthMultiplierForPolarBear = 1f;
-    public float damageMultiplierForPolarBear = 1f;
-    public float speedMultiplierForPolarBear = 1f;
-    public float scaleMultiplierForPolarBear = 1f;
+    public double healthMultiplierForPolarBear = 1f;
+    public double damageMultiplierForPolarBear = 1f;
+    public double speedMultiplierForPolarBear = 1f;
+    public double scaleMultiplierForPolarBear = 1f;
     @SectionHeader("Pufferfish")
     @Comment("Pufferfish")
-    public float healthMultiplierForPufferfish = 1f;
-    public float speedMultiplierForPufferfish = 1f;
-    public float scaleMultiplierForPufferfish = 1f;
+    public double healthMultiplierForPufferfish = 1f;
+    public double speedMultiplierForPufferfish = 1f;
+    public double scaleMultiplierForPufferfish = 1f;
     @SectionHeader("Rabbit")
     @Comment("Rabbit")
-    public float healthMultiplierForRabbit = 1f;
-    public float damageMultiplierForRabbit = 1f;
-    public float speedMultiplierForRabbit = 1f;
-    public float scaleMultiplierForRabbit = 1f;
+    public double healthMultiplierForRabbit = 1f;
+    public double damageMultiplierForRabbit = 1f;
+    public double speedMultiplierForRabbit = 1f;
+    public double scaleMultiplierForRabbit = 1f;
     @SectionHeader("Ravager")
     @Comment("Ravager")
-    public float healthMultiplierForRavager = 1f;
-    public float damageMultiplierForRavager = 1f;
-    public float speedMultiplierForRavager = 1f;
-    public float scaleMultiplierForRavager = 1f;
+    public double healthMultiplierForRavager = 1f;
+    public double damageMultiplierForRavager = 1f;
+    public double speedMultiplierForRavager = 1f;
+    public double scaleMultiplierForRavager = 1f;
     @SectionHeader("Salmon")
     @Comment("Salmon")
-    public float healthMultiplierForSalmon = 1f;
-    public float speedMultiplierForSalmon = 1f;
-    public float scaleMultiplierForSalmon = 1f;
+    public double healthMultiplierForSalmon = 1f;
+    public double speedMultiplierForSalmon = 1f;
+    public double scaleMultiplierForSalmon = 1f;
     @SectionHeader("Sheep")
     @Comment("Sheep")
-    public float healthMultiplierForSheep = 1f;
-    public float speedMultiplierForSheep = 1f;
-    public float scaleMultiplierForSheep = 1f;
+    public double healthMultiplierForSheep = 1f;
+    public double speedMultiplierForSheep = 1f;
+    public double scaleMultiplierForSheep = 1f;
     @SectionHeader("Shulker")
     @Comment("Shulker")
-    public float healthMultiplierForShulker = 1f;
-    public float damageMultiplierForShulker = 1f;
-    public float scaleMultiplierForShulker = 1f;
+    public double healthMultiplierForShulker = 1f;
+    public double damageMultiplierForShulker = 1f;
+    public double scaleMultiplierForShulker = 1f;
     @SectionHeader("Silverfish")
     @Comment("Silverfish")
-    public float healthMultiplierForSilverfish = 1f;
-    public float damageMultiplierForSilverfish = 1f;
-    public float speedMultiplierForSilverfish = 1f;
-    public float scaleMultiplierForSilverfish = 1f;
+    public double healthMultiplierForSilverfish = 1f;
+    public double damageMultiplierForSilverfish = 1f;
+    public double speedMultiplierForSilverfish = 1f;
+    public double scaleMultiplierForSilverfish = 1f;
     @SectionHeader("Skeleton")
     @Comment("Skeleton")
-    public float healthMultiplierForSkeleton = 1f;
-    public float damageMultiplierForSkeleton = 1f;
-    public float speedMultiplierForSkeleton = 1f;
-    public float scaleMultiplierForSkeleton = 1f;
+    public double healthMultiplierForSkeleton = 1f;
+    public double damageMultiplierForSkeleton = 1f;
+    public double speedMultiplierForSkeleton = 1f;
+    public double scaleMultiplierForSkeleton = 1f;
     @SectionHeader("Skeleton Horse")
     @Comment("Skeleton Horse")
-    public float healthMultiplierForSkeletonHorse = 1f;
-    public float speedMultiplierForSkeletonHorse = 1f;
-    public float scaleMultiplierForSkeletonHorse = 1f;
+    public double healthMultiplierForSkeletonHorse = 1f;
+    public double speedMultiplierForSkeletonHorse = 1f;
+    public double scaleMultiplierForSkeletonHorse = 1f;
     @SectionHeader("Slime")
     @Comment("Slime")
-    public float healthMultiplierForSlime = 1f;
-    public float damageMultiplierForSlime = 1f;
-    public float speedMultiplierForSlime = 1f;
-    public float scaleMultiplierForSlime = 1f;
+    public double healthMultiplierForSlime = 1f;
+    public double damageMultiplierForSlime = 1f;
+    public double speedMultiplierForSlime = 1f;
+    public double scaleMultiplierForSlime = 1f;
     @SectionHeader("Sniffer")
     @Comment("Sniffer")
-    public float healthMultiplierForSniffer = 1f;
-    public float speedMultiplierForSniffer = 1f;
-    public float scaleMultiplierForSniffer = 1f;
+    public double healthMultiplierForSniffer = 1f;
+    public double speedMultiplierForSniffer = 1f;
+    public double scaleMultiplierForSniffer = 1f;
     @SectionHeader("Snow Golem")
     @Comment("Snow Golem")
-    public float healthMultiplierForSnowGolem = 1f;
-    public float damageMultiplierForSnowGolem = 1f;
-    public float speedMultiplierForSnowGolem = 1f;
-    public float scaleMultiplierForSnowGolem = 1f;
+    public double healthMultiplierForSnowGolem = 1f;
+    public double damageMultiplierForSnowGolem = 1f;
+    public double speedMultiplierForSnowGolem = 1f;
+    public double scaleMultiplierForSnowGolem = 1f;
     @SectionHeader("Spider")
     @Comment("Spider")
-    public float healthMultiplierForSpider = 1f;
-    public float damageMultiplierForSpider = 1f;
-    public float speedMultiplierForSpider = 1f;
-    public float scaleMultiplierForSpider = 1f;
+    public double healthMultiplierForSpider = 1f;
+    public double damageMultiplierForSpider = 1f;
+    public double speedMultiplierForSpider = 1f;
+    public double scaleMultiplierForSpider = 1f;
     @SectionHeader("Squid")
     @Comment("Squid")
-    public float healthMultiplierForSquid = 1f;
-    public float speedMultiplierForSquid = 1f;
-    public float scaleMultiplierForSquid = 1f;
+    public double healthMultiplierForSquid = 1f;
+    public double speedMultiplierForSquid = 1f;
+    public double scaleMultiplierForSquid = 1f;
     @SectionHeader("Stray")
     @Comment("Stray")
-    public float healthMultiplierForStray = 1f;
-    public float damageMultiplierForStray = 1f;
-    public float speedMultiplierForStray = 1f;
-    public float scaleMultiplierForStray = 1f;
+    public double healthMultiplierForStray = 1f;
+    public double damageMultiplierForStray = 1f;
+    public double speedMultiplierForStray = 1f;
+    public double scaleMultiplierForStray = 1f;
     @SectionHeader("Spider")
     @Comment("Strider")
-    public float healthMultiplierForStrider = 1f;
-    public float speedMultiplierForStrider = 1f;
-    public float scaleMultiplierForStrider = 1f;
+    public double healthMultiplierForStrider = 1f;
+    public double speedMultiplierForStrider = 1f;
+    public double scaleMultiplierForStrider = 1f;
     @SectionHeader("Tadpole")
     @Comment("Tadpole")
-    public float healthMultiplierForTadpole = 1f;
-    public float speedMultiplierForTadpole = 1f;
-    public float scaleMultiplierForTadpole = 1f;
+    public double healthMultiplierForTadpole = 1f;
+    public double speedMultiplierForTadpole = 1f;
+    public double scaleMultiplierForTadpole = 1f;
     @SectionHeader("Trader Llama")
     @Comment("Trader Llama")
-    public float healthMultiplierForTraderLlama = 1f;
-    public float speedMultiplierForTraderLlama = 1f;
-    public float scaleMultiplierForTraderLlama = 1f;
+    public double healthMultiplierForTraderLlama = 1f;
+    public double speedMultiplierForTraderLlama = 1f;
+    public double scaleMultiplierForTraderLlama = 1f;
     @SectionHeader("Tropical Fish")
     @Comment("Tropical Fish")
-    public float healthMultiplierForTropicalFish = 1f;
-    public float speedMultiplierForTropicalFish = 1f;
-    public float scaleMultiplierForTropicalFish = 1f;
+    public double healthMultiplierForTropicalFish = 1f;
+    public double speedMultiplierForTropicalFish = 1f;
+    public double scaleMultiplierForTropicalFish = 1f;
     @SectionHeader("Turtle")
     @Comment("Turtle")
-    public float healthMultiplierForTurtle = 1f;
-    public float speedMultiplierForTurtle = 1f;
-    public float scaleMultiplierForTurtle = 1f;
+    public double healthMultiplierForTurtle = 1f;
+    public double speedMultiplierForTurtle = 1f;
+    public double scaleMultiplierForTurtle = 1f;
     @SectionHeader("Vex")
     @Comment("Vex")
-    public float healthMultiplierForVex = 1f;
-    public float damageMultiplierForVex = 1f;
-    public float speedMultiplierForVex = 1f;
-    public float scaleMultiplierForVex = 1f;
+    public double healthMultiplierForVex = 1f;
+    public double damageMultiplierForVex = 1f;
+    public double speedMultiplierForVex = 1f;
+    public double scaleMultiplierForVex = 1f;
     @SectionHeader("Villager")
     @Comment("Villager")
-    public float healthMultiplierForVillager = 1f;
-    public float speedMultiplierForVillager = 1f;
-    public float scaleMultiplierForVillager = 1f;
+    public double healthMultiplierForVillager = 1f;
+    public double speedMultiplierForVillager = 1f;
+    public double scaleMultiplierForVillager = 1f;
     @SectionHeader("Vindicator")
     @Comment("Vindicator")
-    public float healthMultiplierForVindicator = 1f;
-    public float damageMultiplierForVindicator = 1f;
-    public float speedMultiplierForVindicator = 1f;
-    public float scaleMultiplierForVindicator = 1f;
+    public double healthMultiplierForVindicator = 1f;
+    public double damageMultiplierForVindicator = 1f;
+    public double speedMultiplierForVindicator = 1f;
+    public double scaleMultiplierForVindicator = 1f;
     @SectionHeader("Wandering Trader")
     @Comment("Wandering Trader")
-    public float healthMultiplierForWanderingTrader = 1f;
-    public float speedMultiplierForWanderingTrader = 1f;
-    public float scaleMultiplierForWanderingTrader = 1f;
+    public double healthMultiplierForWanderingTrader = 1f;
+    public double speedMultiplierForWanderingTrader = 1f;
+    public double scaleMultiplierForWanderingTrader = 1f;
     @SectionHeader("Warden")
     @Comment("Warden")
-    public float healthMultiplierForWarden = 1f;
-    public float damageMultiplierForWarden = 1f;
-    public float speedMultiplierForWarden = 1f;
-    public float scaleMultiplierForWarden = 1f;
+    public double healthMultiplierForWarden = 1f;
+    public double damageMultiplierForWarden = 1f;
+    public double speedMultiplierForWarden = 1f;
+    public double scaleMultiplierForWarden = 1f;
     @SectionHeader("Witch")
     @Comment("Witch")
-    public float healthMultiplierForWitch = 1f;
-    public float damageMultiplierForWitch = 1f;
-    public float speedMultiplierForWitch = 1f;
-    public float scaleMultiplierForWitch = 1f;
+    public double healthMultiplierForWitch = 1f;
+    public double damageMultiplierForWitch = 1f;
+    public double speedMultiplierForWitch = 1f;
+    public double scaleMultiplierForWitch = 1f;
     @SectionHeader("Wither")
     @Comment("Wither")
-    public float healthMultiplierForWither = 1f;
-    public float damageMultiplierForWither = 1f;
-    public float speedMultiplierForWither = 1f;
-    public float scaleMultiplierForWither = 1f;
+    public double healthMultiplierForWither = 1f;
+    public double damageMultiplierForWither = 1f;
+    public double speedMultiplierForWither = 1f;
+    public double scaleMultiplierForWither = 1f;
     @SectionHeader("Wither Skeleton")
     @Comment("Wither Skeleton")
-    public float healthMultiplierForWitherSkeleton = 1f;
-    public float damageMultiplierForWitherSkeleton = 1f;
-    public float speedMultiplierForWitherSkeleton = 1f;
-    public float scaleMultiplierForWitherSkeleton = 1f;
+    public double healthMultiplierForWitherSkeleton = 1f;
+    public double damageMultiplierForWitherSkeleton = 1f;
+    public double speedMultiplierForWitherSkeleton = 1f;
+    public double scaleMultiplierForWitherSkeleton = 1f;
     @SectionHeader("Wolf")
     @Comment("Wolf")
-    public float healthMultiplierForWolf = 1f;
-    public float damageMultiplierForWolf = 1f;
-    public float speedMultiplierForWolf = 1f;
-    public float scaleMultiplierForWolf = 1f;
+    public double healthMultiplierForWolf = 1f;
+    public double damageMultiplierForWolf = 1f;
+    public double speedMultiplierForWolf = 1f;
+    public double scaleMultiplierForWolf = 1f;
     @SectionHeader("Zoglin")
     @Comment("Zoglin")
-    public float healthMultiplierForZoglin = 1f;
-    public float damageMultiplierForZoglin = 1f;
-    public float speedMultiplierForZoglin = 1f;
-    public float scaleMultiplierForZoglin = 1f;
+    public double healthMultiplierForZoglin = 1f;
+    public double damageMultiplierForZoglin = 1f;
+    public double speedMultiplierForZoglin = 1f;
+    public double scaleMultiplierForZoglin = 1f;
     @SectionHeader("Zombie")
     @Comment("Zombie")
-    public float healthMultiplierForZombie = 1f;
-    public float damageMultiplierForZombie = 1f;
-    public float speedMultiplierForZombie = 1f;
-    public float scaleMultiplierForZombie = 1f;
+    public double healthMultiplierForZombie = 1f;
+    public double damageMultiplierForZombie = 1f;
+    public double speedMultiplierForZombie = 1f;
+    public double scaleMultiplierForZombie = 1f;
     @SectionHeader("Zombie Horse")
     @Comment("Zombie Horse")
-    public float healthMultiplierForZombieHorse= 1f;
-    public float speedMultiplierForZombieHorse = 1f;
-    public float scaleMultiplierForZombieHorse = 1f;
+    public double healthMultiplierForZombieHorse= 1f;
+    public double speedMultiplierForZombieHorse = 1f;
+    public double scaleMultiplierForZombieHorse = 1f;
     @SectionHeader("Zombie Villager")
     @Comment("Zombie Villager")
-    public float healthMultiplierForZombieVillager = 1f;
-    public float damageMultiplierForZombieVillager = 1f;
-    public float speedMultiplierForZombieVillager = 1f;
-    public float scaleMultiplierForZombieVillager = 1f;
+    public double healthMultiplierForZombieVillager = 1f;
+    public double damageMultiplierForZombieVillager = 1f;
+    public double speedMultiplierForZombieVillager = 1f;
+    public double scaleMultiplierForZombieVillager = 1f;
     @SectionHeader("Zombified Piglin")
     @Comment("Zombified Piglin")
-    public float healthMultiplierForZombifiedPiglin = 1f;
-    public float damageMultiplierForZombifiedPiglin = 1f;
-    public float speedMultiplierForZombifiedPiglin = 1f;
-    public float scaleMultiplierForZombifiedPiglin = 1f;
+    public double healthMultiplierForZombifiedPiglin = 1f;
+    public double damageMultiplierForZombifiedPiglin = 1f;
+    public double speedMultiplierForZombifiedPiglin = 1f;
+    public double scaleMultiplierForZombifiedPiglin = 1f;
 
     @SectionHeader("Modded Mobs")
     @Comment("Modded Mobs")
-    @Nest
-    public VanillaBackport vanillaBackport = new VanillaBackport();
-    public static class VanillaBackport {
-        @SectionHeader("Creaking")
-        @Comment("Creaking")
-        public float healthMultiplierForCreaking = 1f;
-        public float damageMultiplierForCreaking = 1f;
-        public float speedMultiplierForCreaking = 1f;
-        public float scaleMultiplierForCreaking = 1f;
-        @SectionHeader("Happy Ghast")
-        @Comment("Happy Ghast")
-        public float healthMultiplierForHappyGhast = 1f;
-        public float damageMultiplierForHappyGhast = 1f;
-        public float speedMultiplierForHappyGhast = 1f;
-    }
-    @Nest
-    public MobVariants mobVariants = new MobVariants();
-    public static class MobVariants {
-        @SectionHeader("Armored Spider")
-        @Comment("Armored Spider")
-        public float healthMultiplierForArmoredSpider = 1f;
-        public float damageMultiplierForArmoredSpider = 1f;
-        public float speedMultiplierForArmoredSpider = 1f;
-        public float scaleMultiplierForArmoredSpider = 1f;
-        @SectionHeader("Bloated Corpse")
-        @Comment("Bloated Corpse")
-        public float healthMultiplierForBloatedCorpse = 1f;
-        public float damageMultiplierForBloatedCorpse = 1f;
-        public float speedMultiplierForBloatedCorpse = 1f;
-        public float scaleMultiplierForBloatedCorpse = 1f;
-        @SectionHeader("Cave Creeper")
-        @Comment("Cave Creeper")
-        public float healthMultiplierForCaveCreeper = 1f;
-        public float damageMultiplierForCaveCreeper = 1f;
-        public float speedMultiplierForCaveCreeper = 1f;
-        public float scaleMultiplierForCaveCreeper = 1f;
-        @SectionHeader("Corsair")
-        @Comment("Corsair")
-        public float healthMultiplierForCorsair = 1f;
-        public float damageMultiplierForCorsair = 1f;
-        public float speedMultiplierForCorsair = 1f;
-        public float scaleMultiplierForCorsair = 1f;
-        @SectionHeader("Executioner")
-        @Comment("Executioner")
-        public float healthMultiplierForExecutioner = 1f;
-        public float damageMultiplierForExecutioner = 1f;
-        public float speedMultiplierForExecutioner = 1f;
-        public float scaleMultiplierForExecutioner = 1f;
-        @SectionHeader("Explorer")
-        @Comment("Explorer")
-        public float healthMultiplierForExplorer = 1f;
-        public float damageMultiplierForExplorer = 1f;
-        public float speedMultiplierForExplorer = 1f;
-        public float scaleMultiplierForExplorer = 1f;
-        @SectionHeader("Forgotten")
-        @Comment("Forgotten")
-        public float healthMultiplierForForgotten = 1f;
-        public float damageMultiplierForForgotten = 1f;
-        public float speedMultiplierForForgotten = 1f;
-        public float scaleMultiplierForForgotten = 1f;
-        @SectionHeader("Frozen Zombie")
-        @Comment("Frozen Zombie")
-        public float healthMultiplierForFrozenZombie = 1f;
-        public float damageMultiplierForFrozenZombie = 1f;
-        public float speedMultiplierForFrozenZombie = 1f;
-        public float scaleMultiplierForFrozenZombie = 1f;
-        @SectionHeader("Infected Piglin")
-        @Comment("Infected Piglin")
-        public float healthMultiplierForInfectedPiglin = 1f;
-        public float damageMultiplierForInfectedPiglin = 1f;
-        public float speedMultiplierForInfectedPiglin = 1f;
-        public float scaleMultiplierForInfectedPiglin = 1f;
-        @SectionHeader("Infected Piglin Brute")
-        @Comment("Infected Piglin Brute")
-        public float healthMultiplierForInfectedPiglinBrute = 1f;
-        public float damageMultiplierForInfectedPiglinBrute = 1f;
-        public float speedMultiplierForInfectedPiglinBrute = 1f;
-        public float scaleMultiplierForInfectedPiglinBrute = 1f;
-        @SectionHeader("Lava Slime")
-        @Comment("Lava Slime")
-        public float healthMultiplierForLavaSlime = 1f;
-        public float damageMultiplierForLavaSlime = 1f;
-        public float speedMultiplierForLavaSlime = 1f;
-        public float scaleMultiplierForLavaSlime = 1f;
-        @SectionHeader("Nightmare")
-        @Comment("Nightmare")
-        public float healthMultiplierForNightmare = 1f;
-        public float damageMultiplierForNightmare = 1f;
-        public float speedMultiplierForNightmare = 1f;
-        public float scaleMultiplierForNightmare = 1f;
-        @SectionHeader("Soul Stealer")
-        @Comment("Soul Stealer")
-        public float healthMultiplierForSoulStealer = 1f;
-        public float damageMultiplierForSoulStealer = 1f;
-        public float speedMultiplierForSoulStealer = 1f;
-        public float scaleMultiplierForSoulStealer = 1f;
-        @SectionHeader("Toxic Slime")
-        @Comment("Toxic Slime")
-        public float healthMultiplierForToxicSlime = 1f;
-        public float damageMultiplierForToxicSlime = 1f;
-        public float speedMultiplierForToxicSlime = 1f;
-        public float scaleMultiplierForToxicSlime = 1f;
-        @SectionHeader("Tropical Spider")
-        @Comment("Tropical Spider")
-        public float healthMultiplierForTropicalSpider = 1f;
-        public float damageMultiplierForTropicalSpider = 1f;
-        public float speedMultiplierForTropicalSpider = 1f;
-        public float scaleMultiplierForTropicalSpider = 1f;
-        @SectionHeader("Undead Warrior")
-        @Comment("Undead Warrior")
-        public float healthMultiplierForUndeadWarrior = 1f;
-        public float damageMultiplierForUndeadWarrior = 1f;
-        public float speedMultiplierForUndeadWarrior = 1f;
-        public float scaleMultiplierForUndeadWarrior = 1f;
-        @SectionHeader("Zombified Piglin Brute")
-        @Comment("Zombified Piglin Brute")
-        public float healthMultiplierForZombifiedPiglinBrute = 1f;
-        public float damageMultiplierForZombifiedPiglinBrute = 1f;
-        public float speedMultiplierForZombifiedPiglinBrute = 1f;
-        public float scaleMultiplierForZombifiedPiglinBrute = 1f;
-    }
     @Nest
     public BetterEnd betterEnd = new BetterEnd();
     public static class BetterEnd {
         @SectionHeader("Cubozoa")
         @Comment("Cubozoa")
-        public float healthMultiplierForCubozoa = 1f;
+        public double healthMultiplierForCubozoa = 1f;
         @SectionHeader("Dragonfly")
         @Comment("Dragonfly")
-        public float healthMultiplierForDragonfly = 1f;
-        public float scaleMultiplierForDragonfly = 1f;
+        public double healthMultiplierForDragonfly = 1f;
+        public double scaleMultiplierForDragonfly = 1f;
         @SectionHeader("End Fish")
         @Comment("End Fish")
-        public float healthMultiplierForEndFish = 1f;
+        public double healthMultiplierForEndFish = 1f;
         @SectionHeader("End Slime")
         @Comment("End Slime")
-        public float healthMultiplierForEndSlime = 1f;
-        public float damageMultiplierForEndSlime = 1f;
-        public float speedMultiplierForEndSlime = 1f;
-        public float scaleMultiplierForEndSlime = 1f;
+        public double healthMultiplierForEndSlime = 1f;
+        public double damageMultiplierForEndSlime = 1f;
+        public double speedMultiplierForEndSlime = 1f;
+        public double scaleMultiplierForEndSlime = 1f;
         @SectionHeader("Shadow Walker")
         @Comment("Shadow Walker")
-        public float healthMultiplierForShadowWalker = 1f;
-        public float damageMultiplierForShadowWalker = 1f;
-        public float speedMultiplierForShadowWalker = 1f;
-        public float scaleMultiplierForShadowWalker = 1f;
+        public double healthMultiplierForShadowWalker = 1f;
+        public double damageMultiplierForShadowWalker = 1f;
+        public double speedMultiplierForShadowWalker = 1f;
+        public double scaleMultiplierForShadowWalker = 1f;
         @SectionHeader("Silk Moth")
         @Comment("Silk Moth")
-        public float healthMultiplierForSilkMoth = 1f;
-        public float scaleMultiplierForSilkMoth = 1f;
+        public double healthMultiplierForSilkMoth = 1f;
+        public double scaleMultiplierForSilkMoth = 1f;
     }
     @Nest
     public BetterNether betterNether = new BetterNether();
     public static class BetterNether {
         @SectionHeader("Firefly")
         @Comment("Firefly")
-        public float healthMultiplierForFirefly = 1f;
-        public float damageMultiplierForFirefly = 1f;
-        public float scaleMultiplierForFirefly = 1f;
+        public double healthMultiplierForFirefly = 1f;
+        public double damageMultiplierForFirefly = 1f;
+        public double scaleMultiplierForFirefly = 1f;
         @SectionHeader("Flying Pig")
         @Comment("Flying Pig")
-        public float healthMultiplierForFlyingPig = 1f;
-        public float damageMultiplierForFlyingPig = 1f;
-        public float speedMultiplierForFlyingPig = 1f;
-        public float scaleMultiplierForFlyingPig = 1f;
+        public double healthMultiplierForFlyingPig = 1f;
+        public double damageMultiplierForFlyingPig = 1f;
+        public double speedMultiplierForFlyingPig = 1f;
+        public double scaleMultiplierForFlyingPig = 1f;
         @SectionHeader("Hydrogen Jellyfish")
         @Comment("Hydrogen Jellyfish")
-        public float healthMultiplierForHydrogenJellyfish = 1f;
-        public float damageMultiplierForHydrogenJellyfish = 1f;
-        public float scaleMultiplierForHydrogenJellyfish = 1f;
+        public double healthMultiplierForHydrogenJellyfish = 1f;
+        public double damageMultiplierForHydrogenJellyfish = 1f;
+        public double scaleMultiplierForHydrogenJellyfish = 1f;
         @SectionHeader("Jungle Skeleton")
         @Comment("Jungle Skeleton")
-        public float healthMultiplierForJungleSkeleton = 1f;
-        public float damageMultiplierForJungleSkeleton = 1f;
-        public float speedMultiplierForJungleSkeleton = 1f;
-        public float scaleMultiplierForJungleSkeleton = 1f;
+        public double healthMultiplierForJungleSkeleton = 1f;
+        public double damageMultiplierForJungleSkeleton = 1f;
+        public double speedMultiplierForJungleSkeleton = 1f;
+        public double scaleMultiplierForJungleSkeleton = 1f;
         @SectionHeader("Naga")
         @Comment("Naga")
-        public float healthMultiplierForNaga = 1f;
-        public float damageMultiplierForNaga = 1f;
-        public float speedMultiplierForNaga = 1f;
-        public float scaleMultiplierForNaga = 1f;
+        public double healthMultiplierForNaga = 1f;
+        public double damageMultiplierForNaga = 1f;
+        public double speedMultiplierForNaga = 1f;
+        public double scaleMultiplierForNaga = 1f;
         @SectionHeader("Skull")
         @Comment("Skull")
-        public float healthMultiplierForSkull = 1f;
-        public float damageMultiplierForSkull = 1f;
-        public float scaleMultiplierForSkull = 1f;
+        public double healthMultiplierForSkull = 1f;
+        public double damageMultiplierForSkull = 1f;
+        public double scaleMultiplierForSkull = 1f;
     }
     @Nest
-    public VariantsAndVentures variantsAndVentures = new VariantsAndVentures();
-    public static class VariantsAndVentures {
-        @SectionHeader("Gelid")
-        @Comment("Gelid")
-        public float healthMultiplierForGelid = 1f;
-        public float damageMultiplierForGelid = 1f;
-        public float speedMultiplierForGelid = 1f;
-        public float scaleMultiplierForGelid = 1f;
-        @SectionHeader("Murk")
-        @Comment("Murk")
-        public float healthMultiplierForMurk = 1f;
-        public float damageMultiplierForMurk = 1f;
-        public float speedMultiplierForMurk = 1f;
-        public float scaleMultiplierForMurk = 1f;
-        @SectionHeader("Thicket")
-        @Comment("Thicket")
-        public float healthMultiplierForThicket = 1f;
-        public float damageMultiplierForThicket = 1f;
-        public float speedMultiplierForThicket = 1f;
-        public float scaleMultiplierForThicket = 1f;
-        @SectionHeader("Verdant")
-        @Comment("Verdant")
-        public float healthMultiplierForVerdant = 1f;
-        public float damageMultiplierForVerdant = 1f;
-        public float speedMultiplierForVerdant = 1f;
-        public float scaleMultiplierForVerdant = 1f;
+    public DeeperAndDarker deeperAndDarker = new DeeperAndDarker();
+    public static class DeeperAndDarker {
+        @SectionHeader("Angler Fish")
+        @Comment("Angler Fish")
+        public double healthMultiplierForAnglerFish = 1f;
+        public double damageMultiplierForAnglerFish = 1f;
+        public double speedMultiplierForAnglerFish = 1f;
+        public double scaleMultiplierForAnglerFish = 1f;
+        @SectionHeader("Sculk Centipede")
+        @Comment("Sculk Centipede")
+        public double healthMultiplierForSculkCentipede = 1f;
+        public double damageMultiplierForSculkCentipede = 1f;
+        public double speedMultiplierForSculkCentipede = 1f;
+        public double scaleMultiplierForSculkCentipede = 1f;
+        @SectionHeader("Sculk Leech")
+        @Comment("Sculk Leech")
+        public double healthMultiplierForSculkLeech = 1f;
+        public double damageMultiplierForSculkLeech = 1f;
+        public double speedMultiplierForSculkLeech = 1f;
+        public double scaleMultiplierForSculkLeech = 1f;
+        @SectionHeader("Sculk Snapper")
+        @Comment("Sculk Snapper")
+        public double healthMultiplierForSculkSnapper = 1f;
+        public double damageMultiplierForSculkSnapper = 1f;
+        public double speedMultiplierForSculkSnapper = 1f;
+        public double scaleMultiplierForSculkSnapper = 1f;
+        @SectionHeader("Shattered")
+        @Comment("Shattered")
+        public double healthMultiplierForShattered = 1f;
+        public double damageMultiplierForShattered = 1f;
+        public double speedMultiplierForShattered = 1f;
+        public double scaleMultiplierForShattered = 1f;
+        @SectionHeader("Shriek Worm")
+        @Comment("Shriek Worm")
+        public double healthMultiplierForShriekWorm = 1f;
+        public double damageMultiplierForShriekWorm = 1f;
+        public double scaleMultiplierForShriekWorm = 1f;
+        @SectionHeader("Sludge")
+        @Comment("Sludge")
+        public double healthMultiplierForSludge = 1f;
+        public double damageMultiplierForSludge = 1f;
+        public double speedMultiplierForSludge = 1f;
+        public double scaleMultiplierForSludge = 1f;
+        @SectionHeader("Stalker")
+        @Comment("Stalker")
+        public double healthMultiplierForStalker = 1f;
+        public double damageMultiplierForStalker = 1f;
+        public double speedMultiplierForStalker = 1f;
+        public double scaleMultiplierForStalker = 1f;
     }
     @Nest
     public FriendsAndFoes friendsAndFoes = new FriendsAndFoes();
     public static class FriendsAndFoes {
         @SectionHeader("Copper Golem")
         @Comment("Copper Golem")
-        public float healthMultiplierForCopperGolem = 1f;
-        public float damageMultiplierForCopperGolem = 1f;
-        public float speedMultiplierForCopperGolem = 1f;
-        public float scaleMultiplierForCopperGolem = 1f;
+        public double healthMultiplierForCopperGolem = 1f;
+        public double damageMultiplierForCopperGolem = 1f;
+        public double speedMultiplierForCopperGolem = 1f;
+        public double scaleMultiplierForCopperGolem = 1f;
         @SectionHeader("Crab")
         @Comment("Crab")
-        public float healthMultiplierForCrab = 1f;
-        public float damageMultiplierForCrab = 1f;
-        public float speedMultiplierForCrab = 1f;
-        public float scaleMultiplierForCrab = 1f;
+        public double healthMultiplierForCrab = 1f;
+        public double damageMultiplierForCrab = 1f;
+        public double speedMultiplierForCrab = 1f;
+        public double scaleMultiplierForCrab = 1f;
         @SectionHeader("Glare")
         @Comment("Glare")
-        public float healthMultiplierForGlare = 1f;
-        public float damageMultiplierForGlare = 1f;
-        public float speedMultiplierForGlare = 1f;
-        public float scaleMultiplierForGlare = 1f;
+        public double healthMultiplierForGlare = 1f;
+        public double damageMultiplierForGlare = 1f;
+        public double speedMultiplierForGlare = 1f;
+        public double scaleMultiplierForGlare = 1f;
         @SectionHeader("Iceologer")
         @Comment("Iceologer")
-        public float healthMultiplierForIceologer = 1f;
-        public float damageMultiplierForIceologer = 1f;
-        public float speedMultiplierForIceologer = 1f;
-        public float scaleMultiplierForIceologer = 1f;
+        public double healthMultiplierForIceologer = 1f;
+        public double damageMultiplierForIceologer = 1f;
+        public double speedMultiplierForIceologer = 1f;
+        public double scaleMultiplierForIceologer = 1f;
         @SectionHeader("Mauler")
         @Comment("Mauler")
-        public float healthMultiplierForMauler = 1f;
-        public float damageMultiplierForMauler = 1f;
-        public float speedMultiplierForMauler = 1f;
-        public float scaleMultiplierForMauler = 1f;
+        public double healthMultiplierForMauler = 1f;
+        public double damageMultiplierForMauler = 1f;
+        public double speedMultiplierForMauler = 1f;
+        public double scaleMultiplierForMauler = 1f;
         @SectionHeader("Moobloom")
         @Comment("Moobloom")
-        public float healthMultiplierForMoobloom = 1f;
-        public float damageMultiplierForMoobloom = 1f;
-        public float speedMultiplierForMoobloom = 1f;
-        public float scaleMultiplierForMoobloom = 1f;
+        public double healthMultiplierForMoobloom = 1f;
+        public double damageMultiplierForMoobloom = 1f;
+        public double speedMultiplierForMoobloom = 1f;
+        public double scaleMultiplierForMoobloom = 1f;
         @SectionHeader("Rascal")
         @Comment("Rascal")
-        public float healthMultiplierForRascal = 1f;
-        public float damageMultiplierForRascal = 1f;
-        public float speedMultiplierForRascal = 1f;
-        public float scaleMultiplierForRascal = 1f;
+        public double healthMultiplierForRascal = 1f;
+        public double damageMultiplierForRascal = 1f;
+        public double speedMultiplierForRascal = 1f;
+        public double scaleMultiplierForRascal = 1f;
         @SectionHeader("Tuff Golem")
         @Comment("Tuff Golem")
-        public float healthMultiplierForTuffGolem = 1f;
-        public float damageMultiplierForTuffGolem = 1f;
-        public float speedMultiplierForTuffGolem = 1f;
-        public float scaleMultiplierForTuffGolem = 1f;
+        public double healthMultiplierForTuffGolem = 1f;
+        public double damageMultiplierForTuffGolem = 1f;
+        public double speedMultiplierForTuffGolem = 1f;
+        public double scaleMultiplierForTuffGolem = 1f;
         @SectionHeader("Wildfire")
         @Comment("Wildfire")
-        public float healthMultiplierForWildfire = 1f;
-        public float damageMultiplierForWildfire = 1f;
-        public float speedMultiplierForWildfire = 1f;
-        public float scaleMultiplierForWildfire = 1f;
+        public double healthMultiplierForWildfire = 1f;
+        public double damageMultiplierForWildfire = 1f;
+        public double speedMultiplierForWildfire = 1f;
+        public double scaleMultiplierForWildfire = 1f;
+    }
+    @Nest
+    public IllagerInvasion illagerInvasion = new IllagerInvasion();
+    public static class IllagerInvasion {
+        @SectionHeader("Alchemist")
+        @Comment("Alchemist")
+        public double healthMultiplierForAlchemist = 1f;
+        public double damageMultiplierForAlchemist = 1f;
+        public double speedMultiplierForAlchemist = 1f;
+        public double scaleMultiplierForAlchemist = 1f;
+        @SectionHeader("Archivist")
+        @Comment("Archivist")
+        public double healthMultiplierForArchivist = 1f;
+        public double damageMultiplierForArchivist = 1f;
+        public double speedMultiplierForArchivist = 1f;
+        public double scaleMultiplierForArchivist = 1f;
+        @SectionHeader("Basher")
+        @Comment("Basher")
+        public double healthMultiplierForBasher = 1f;
+        public double damageMultiplierForBasher = 1f;
+        public double speedMultiplierForBasher = 1f;
+        public double scaleMultiplierForBasher = 1f;
+        @SectionHeader("Firecaller")
+        @Comment("Firecaller")
+        public double healthMultiplierForFirecaller = 1f;
+        public double damageMultiplierForFirecaller = 1f;
+        public double speedMultiplierForFirecaller = 1f;
+        public double scaleMultiplierForFirecaller = 1f;
+        @SectionHeader("Inquisitor")
+        @Comment("Inquisitor")
+        public double healthMultiplierForInquisitor = 1f;
+        public double damageMultiplierForInquisitor = 1f;
+        public double speedMultiplierForInquisitor = 1f;
+        public double scaleMultiplierForInquisitor = 1f;
+        @SectionHeader("Invoker")
+        @Comment("Invoker")
+        public double healthMultiplierForInvoker = 1f;
+        public double damageMultiplierForInvoker = 1f;
+        public double speedMultiplierForInvoker = 1f;
+        public double scaleMultiplierForInvoker = 1f;
+        @SectionHeader("Marauder")
+        @Comment("Marauder")
+        public double healthMultiplierForMarauder = 1f;
+        public double damageMultiplierForMarauder = 1f;
+        public double speedMultiplierForMarauder = 1f;
+        public double scaleMultiplierForMarauder = 1f;
+        @SectionHeader("Necromancer")
+        @Comment("Necromancer")
+        public double healthMultiplierForNecromancer = 1f;
+        public double damageMultiplierForNecromancer = 1f;
+        public double speedMultiplierForNecromancer = 1f;
+        public double scaleMultiplierForNecromancer = 1f;
+        @SectionHeader("Provoker")
+        @Comment("Provoker")
+        public double healthMultiplierForProvoker = 1f;
+        public double damageMultiplierForProvoker = 1f;
+        public double speedMultiplierForProvoker = 1f;
+        public double scaleMultiplierForProvoker = 1f;
+        @SectionHeader("Sorcerer")
+        @Comment("Sorcerer")
+        public double healthMultiplierForSorcerer = 1f;
+        public double damageMultiplierForSorcerer = 1f;
+        public double speedMultiplierForSorcerer = 1f;
+        public double scaleMultiplierForSorcerer = 1f;
+        @SectionHeader("Surrendered")
+        @Comment("Surrendered")
+        public double healthMultiplierForSurrendered = 1f;
+        public double damageMultiplierForSurrendered = 1f;
+        public double scaleMultiplierForSurrendered = 1f;
     }
     @Nest
     public ItTakesAPillageContinuation itTakesAPillageContinuation = new ItTakesAPillageContinuation();
     public static class ItTakesAPillageContinuation {
         @SectionHeader("Archer")
         @Comment("Archer")
-        public float healthMultiplierForArcher = 1f;
-        public float damageMultiplierForArcher = 1f;
-        public float speedMultiplierForArcher = 1f;
-        public float scaleMultiplierForArcher = 1f;
+        public double healthMultiplierForArcher = 1f;
+        public double damageMultiplierForArcher = 1f;
+        public double speedMultiplierForArcher = 1f;
+        public double scaleMultiplierForArcher = 1f;
         @SectionHeader("Clay Golem")
         @Comment("Clay Golem")
-        public float healthMultiplierForClayGolem = 1f;
-        public float damageMultiplierForClayGolem = 1f;
-        public float speedMultiplierForClayGolem = 1f;
-        public float scaleMultiplierForClayGolem = 1f;
+        public double healthMultiplierForClayGolem = 1f;
+        public double damageMultiplierForClayGolem = 1f;
+        public double speedMultiplierForClayGolem = 1f;
+        public double scaleMultiplierForClayGolem = 1f;
         @SectionHeader("Legioner")
         @Comment("Legioner")
-        public float healthMultiplierForLegioner = 1f;
-        public float damageMultiplierForLegioner = 1f;
-        public float speedMultiplierForLegioner = 1f;
-        public float scaleMultiplierForLegioner = 1f;
+        public double healthMultiplierForLegioner = 1f;
+        public double damageMultiplierForLegioner = 1f;
+        public double speedMultiplierForLegioner = 1f;
+        public double scaleMultiplierForLegioner = 1f;
         @SectionHeader("Skirmisher")
         @Comment("Skirmisher")
-        public float healthMultiplierForSkirmisher = 1f;
-        public float damageMultiplierForSkirmisher = 1f;
-        public float speedMultiplierForSkirmisher = 1f;
-        public float scaleMultiplierForSkirmisher = 1f;
+        public double healthMultiplierForSkirmisher = 1f;
+        public double damageMultiplierForSkirmisher = 1f;
+        public double speedMultiplierForSkirmisher = 1f;
+        public double scaleMultiplierForSkirmisher = 1f;
+    }
+    @Nest
+    public MobVariants mobVariants = new MobVariants();
+    public static class MobVariants {
+        @SectionHeader("Armored Spider")
+        @Comment("Armored Spider")
+        public double healthMultiplierForArmoredSpider = 1f;
+        public double damageMultiplierForArmoredSpider = 1f;
+        public double speedMultiplierForArmoredSpider = 1f;
+        public double scaleMultiplierForArmoredSpider = 1f;
+        @SectionHeader("Bloated Corpse")
+        @Comment("Bloated Corpse")
+        public double healthMultiplierForBloatedCorpse = 1f;
+        public double damageMultiplierForBloatedCorpse = 1f;
+        public double speedMultiplierForBloatedCorpse = 1f;
+        public double scaleMultiplierForBloatedCorpse = 1f;
+        @SectionHeader("Cave Creeper")
+        @Comment("Cave Creeper")
+        public double healthMultiplierForCaveCreeper = 1f;
+        public double damageMultiplierForCaveCreeper = 1f;
+        public double speedMultiplierForCaveCreeper = 1f;
+        public double scaleMultiplierForCaveCreeper = 1f;
+        @SectionHeader("Corsair")
+        @Comment("Corsair")
+        public double healthMultiplierForCorsair = 1f;
+        public double damageMultiplierForCorsair = 1f;
+        public double speedMultiplierForCorsair = 1f;
+        public double scaleMultiplierForCorsair = 1f;
+        @SectionHeader("Executioner")
+        @Comment("Executioner")
+        public double healthMultiplierForExecutioner = 1f;
+        public double damageMultiplierForExecutioner = 1f;
+        public double speedMultiplierForExecutioner = 1f;
+        public double scaleMultiplierForExecutioner = 1f;
+        @SectionHeader("Explorer")
+        @Comment("Explorer")
+        public double healthMultiplierForExplorer = 1f;
+        public double damageMultiplierForExplorer = 1f;
+        public double speedMultiplierForExplorer = 1f;
+        public double scaleMultiplierForExplorer = 1f;
+        @SectionHeader("Forgotten")
+        @Comment("Forgotten")
+        public double healthMultiplierForForgotten = 1f;
+        public double damageMultiplierForForgotten = 1f;
+        public double speedMultiplierForForgotten = 1f;
+        public double scaleMultiplierForForgotten = 1f;
+        @SectionHeader("Frozen Zombie")
+        @Comment("Frozen Zombie")
+        public double healthMultiplierForFrozenZombie = 1f;
+        public double damageMultiplierForFrozenZombie = 1f;
+        public double speedMultiplierForFrozenZombie = 1f;
+        public double scaleMultiplierForFrozenZombie = 1f;
+        @SectionHeader("Infected Piglin")
+        @Comment("Infected Piglin")
+        public double healthMultiplierForInfectedPiglin = 1f;
+        public double damageMultiplierForInfectedPiglin = 1f;
+        public double speedMultiplierForInfectedPiglin = 1f;
+        public double scaleMultiplierForInfectedPiglin = 1f;
+        @SectionHeader("Infected Piglin Brute")
+        @Comment("Infected Piglin Brute")
+        public double healthMultiplierForInfectedPiglinBrute = 1f;
+        public double damageMultiplierForInfectedPiglinBrute = 1f;
+        public double speedMultiplierForInfectedPiglinBrute = 1f;
+        public double scaleMultiplierForInfectedPiglinBrute = 1f;
+        @SectionHeader("Lava Slime")
+        @Comment("Lava Slime")
+        public double healthMultiplierForLavaSlime = 1f;
+        public double damageMultiplierForLavaSlime = 1f;
+        public double speedMultiplierForLavaSlime = 1f;
+        public double scaleMultiplierForLavaSlime = 1f;
+        @SectionHeader("Nightmare")
+        @Comment("Nightmare")
+        public double healthMultiplierForNightmare = 1f;
+        public double damageMultiplierForNightmare = 1f;
+        public double speedMultiplierForNightmare = 1f;
+        public double scaleMultiplierForNightmare = 1f;
+        @SectionHeader("Soul Stealer")
+        @Comment("Soul Stealer")
+        public double healthMultiplierForSoulStealer = 1f;
+        public double damageMultiplierForSoulStealer = 1f;
+        public double speedMultiplierForSoulStealer = 1f;
+        public double scaleMultiplierForSoulStealer = 1f;
+        @SectionHeader("Toxic Slime")
+        @Comment("Toxic Slime")
+        public double healthMultiplierForToxicSlime = 1f;
+        public double damageMultiplierForToxicSlime = 1f;
+        public double speedMultiplierForToxicSlime = 1f;
+        public double scaleMultiplierForToxicSlime = 1f;
+        @SectionHeader("Tropical Spider")
+        @Comment("Tropical Spider")
+        public double healthMultiplierForTropicalSpider = 1f;
+        public double damageMultiplierForTropicalSpider = 1f;
+        public double speedMultiplierForTropicalSpider = 1f;
+        public double scaleMultiplierForTropicalSpider = 1f;
+        @SectionHeader("Undead Warrior")
+        @Comment("Undead Warrior")
+        public double healthMultiplierForUndeadWarrior = 1f;
+        public double damageMultiplierForUndeadWarrior = 1f;
+        public double speedMultiplierForUndeadWarrior = 1f;
+        public double scaleMultiplierForUndeadWarrior = 1f;
+        @SectionHeader("Zombified Piglin Brute")
+        @Comment("Zombified Piglin Brute")
+        public double healthMultiplierForZombifiedPiglinBrute = 1f;
+        public double damageMultiplierForZombifiedPiglinBrute = 1f;
+        public double speedMultiplierForZombifiedPiglinBrute = 1f;
+        public double scaleMultiplierForZombifiedPiglinBrute = 1f;
+    }
+    @Nest
+    public VanillaBackport vanillaBackport = new VanillaBackport();
+    public static class VanillaBackport {
+        @SectionHeader("Creaking")
+        @Comment("Creaking")
+        public double healthMultiplierForCreaking = 1f;
+        public double damageMultiplierForCreaking = 1f;
+        public double speedMultiplierForCreaking = 1f;
+        public double scaleMultiplierForCreaking = 1f;
+        @SectionHeader("Happy Ghast")
+        @Comment("Happy Ghast")
+        public double healthMultiplierForHappyGhast = 1f;
+        public double damageMultiplierForHappyGhast = 1f;
+        public double speedMultiplierForHappyGhast = 1f;
+    }
+    @Nest
+    public VariantsAndVentures variantsAndVentures = new VariantsAndVentures();
+    public static class VariantsAndVentures {
+        @SectionHeader("Gelid")
+        @Comment("Gelid")
+        public double healthMultiplierForGelid = 1f;
+        public double damageMultiplierForGelid = 1f;
+        public double speedMultiplierForGelid = 1f;
+        public double scaleMultiplierForGelid = 1f;
+        @SectionHeader("Murk")
+        @Comment("Murk")
+        public double healthMultiplierForMurk = 1f;
+        public double damageMultiplierForMurk = 1f;
+        public double speedMultiplierForMurk = 1f;
+        public double scaleMultiplierForMurk = 1f;
+        @SectionHeader("Thicket")
+        @Comment("Thicket")
+        public double healthMultiplierForThicket = 1f;
+        public double damageMultiplierForThicket = 1f;
+        public double speedMultiplierForThicket = 1f;
+        public double scaleMultiplierForThicket = 1f;
+        @SectionHeader("Verdant")
+        @Comment("Verdant")
+        public double healthMultiplierForVerdant = 1f;
+        public double damageMultiplierForVerdant = 1f;
+        public double speedMultiplierForVerdant = 1f;
+        public double scaleMultiplierForVerdant = 1f;
     }
 }
