@@ -14,11 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Environment(EnvType.CLIENT)
 @Mixin(WitherEntityRenderer.class)
 public class WitherEntityRendererMixin {
-    @Inject(
-            method = "scale(Lnet/minecraft/entity/boss/WitherEntity;Lnet/minecraft/client/util/math/MatrixStack;F)V",
-            at = @At("HEAD"),
-            cancellable = true
-    )
+    @Inject(method = "scale(Lnet/minecraft/entity/boss/WitherEntity;Lnet/minecraft/client/util/math/MatrixStack;F)V", at = @At("HEAD"), cancellable = true)
     public void changeWitherScale(WitherEntity wither, MatrixStack matrixStack, float f, CallbackInfo ci) {
         float g = 2.0F * (float) wither.getAttributeValue(CustomMobAttributes.SCALE);
         int i = wither.getInvulnerableTimer();
