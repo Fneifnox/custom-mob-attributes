@@ -12,22 +12,16 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 @Mixin(TridentEntity.class)
 public class TridentMixin {
-    @Redirect(
-            method = "onEntityHit",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
-            )
-    )
+    @Redirect(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
-        float multiplier = 1f;
+        double multiplier = 1f;
         TridentEntity trident = (TridentEntity)(Object)this;
         if (trident.getOwner() instanceof DrownedEntity) {
             multiplier = CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
         }
 
-        float finalDamage = originalDamage * multiplier;
-        return entity.damage(source, finalDamage);
+        double finalDamage = originalDamage * multiplier;
+        return entity.damage(source, (float) finalDamage);
     }
 }
 

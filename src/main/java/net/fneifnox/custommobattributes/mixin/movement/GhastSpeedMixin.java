@@ -16,13 +16,7 @@ public abstract class GhastSpeedMixin extends MoveControl {
         super(entity);
     }
 
-    @Redirect(
-            method = "tick()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/util/math/Vec3d;multiply(D)Lnet/minecraft/util/math/Vec3d;"
-            )
-    )
+    @Redirect(method = "tick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;multiply(D)Lnet/minecraft/util/math/Vec3d;"))
     private Vec3d redirectMultiply(Vec3d vec, double scale) {
         if (scale == 0.5d) {
             return vec.multiply(scale);
