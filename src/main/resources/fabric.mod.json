@@ -3,15 +3,16 @@
 	"id": "custom-mob-attributes",
 	"version": "${version}",
 	"name": "Custom Mob Attributes",
-	"description": "This mod let's you configure the attributes of vanilla mobs. You can change their health, attack damage, movement speed and scale.",
+	"description": "This mod let's you configure the attributes of vanilla and modded mobs. You can change their health, attack damage, movement speed and scale.",
 	"authors": [
 		"Fneifnox"
 	],
 	"contact": {
 		"homepage": "https://discord.gg/bszSDCq5ms",
-		"sources": "https://modrinth.com/mod/custom-mob-attributes"
+		"sources": "https://github.com/Fneifnox/custom-mob-attributes",
+		"issues": "https://github.com/Fneifnox/custom-mob-attributes/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "Fneifnox's License",
 	"icon": "assets/custom-mob-attributes/icon.png",
 	"environment": "*",
 	"entrypoints": {

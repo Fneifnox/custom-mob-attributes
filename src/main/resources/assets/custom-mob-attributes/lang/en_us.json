@@ -755,6 +755,121 @@
   "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.healthMultiplierForSkirmisher": "Health Multiplier",
   "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.damageMultiplierForSkirmisher": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.speedMultiplierForSkirmisher": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.scaleMultiplierForSkirmisher": "Scale Multiplier"
+  "text.config.custom-mob-attributes.option.itTakesAPillageContinuation.scaleMultiplierForSkirmisher": "Scale Multiplier",
 
+  "text.config.custom-mob-attributes.category.deeperAndDarker": "Deeper and Darker",
+
+  "text.config.custom-mob-attributes.section.Angler Fish": "Angler Fish",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.healthMultiplierForAnglerFish": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.damageMultiplierForAnglerFish": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.speedMultiplierForAnglerFish": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.scaleMultiplierForAnglerFish": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Sculk Centipede": "Sculk Centipede",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.healthMultiplierForSculkCentipede": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.damageMultiplierForSculkCentipede": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.speedMultiplierForSculkCentipede": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.scaleMultiplierForSculkCentipede": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Sculk Leech": "Sculk Leech",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.healthMultiplierForSculkLeech": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.damageMultiplierForSculkLeech": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.speedMultiplierForSculkLeech": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.scaleMultiplierForSculkLeech": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Sculk Snapper": "Sculk Snapper",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.healthMultiplierForSculkSnapper": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.damageMultiplierForSculkSnapper": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.speedMultiplierForSculkSnapper": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.scaleMultiplierForSculkSnapper": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Shattered": "Shattered",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.healthMultiplierForShattered": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.damageMultiplierForShattered": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.speedMultiplierForShattered": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.scaleMultiplierForShattered": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Shriek Worm": "Shriek Worm",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.healthMultiplierForShriekWorm": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.damageMultiplierForShriekWorm": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.scaleMultiplierForShriekWorm": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Sludge": "Sludge",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.healthMultiplierForSludge": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.damageMultiplierForSludge": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.speedMultiplierForSludge": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.scaleMultiplierForSludge": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Stalker": "Stalker",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.healthMultiplierForStalker": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.damageMultiplierForStalker": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.speedMultiplierForStalker": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.deeperAndDarker.scaleMultiplierForStalker": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.illagerInvasion": "Illager Invasion",
+
+  "text.config.custom-mob-attributes.section.Alchemist": "Alchemist",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForAlchemist": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForAlchemist": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForAlchemist": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForAlchemist": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Archivist": "Archivist",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForArchivist": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForArchivist": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForArchivist": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForArchivist": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Basher": "Basher",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForBasher": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForBasher": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForBasher": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForBasher": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Firecaller": "Firecaller",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForFirecaller": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForFirecaller": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForFirecaller": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForFirecaller": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Inquisitor": "Inquisitor",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForInquisitor": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForInquisitor": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForInquisitor": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForInquisitor": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Invoker": "Invoker",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForInvoker": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForInvoker": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForInvoker": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForInvoker": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Marauder": "Marauder",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForMarauder": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForMarauder": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForMarauder": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForMarauder": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Necromancer": "Necromancer",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForNecromancer": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForNecromancer": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForNecromancer": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForNecromancer": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Provoker": "Provoker",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForProvoker": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForProvoker": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForProvoker": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForProvoker": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Sorcerer": "Sorcerer",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForSorcerer": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForSorcerer": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.speedMultiplierForSorcerer": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForSorcerer": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Surrendered": "Surrendered",
+  "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForSurrendered": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForSurrendered": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForSurrendered": "Scale Multiplier"
 }
