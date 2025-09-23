@@ -26,6 +26,7 @@
     "defaultRequire": 1
   },
   "client": [
+    "scale.CreeperEntityRendererMixin",
     "scale.LivingEntityRendererMixin",
     "scale.ShadowRadiusMixin",
     "scale.WitherEntityRendererMixin"
