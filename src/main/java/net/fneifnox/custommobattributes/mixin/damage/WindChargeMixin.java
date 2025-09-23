@@ -12,21 +12,15 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 @Mixin(AbstractWindChargeEntity.class)
 public class WindChargeMixin {
-    @Redirect(
-            method = "onEntityHit",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
-            )
-    )
+    @Redirect(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
-        float multiplier = 1f;
+        double multiplier = 1f;
         AbstractWindChargeEntity windCharge = (AbstractWindChargeEntity)(Object)this;
         if (windCharge.getOwner() instanceof BreezeEntity) {
             multiplier = CONFIG.damageMultiplierForBreeze() * CONFIG.damageMultiplierForAll();
         }
 
-        float finalDamage = originalDamage * multiplier;
-        return entity.damage(source, finalDamage);
+        double finalDamage = originalDamage * multiplier;
+        return entity.damage(source, (float) finalDamage);
     }
 }

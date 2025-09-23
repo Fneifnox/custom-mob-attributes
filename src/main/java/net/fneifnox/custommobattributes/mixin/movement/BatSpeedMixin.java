@@ -32,6 +32,5 @@ public class BatSpeedMixin {
                         (Math.signum(e) * 0.699999988079071 - finalVec3d.y) * 0.10000000149011612 * CONFIG.speedMultiplierForBat() * CONFIG.speedMultiplierForAll(),
                         (Math.signum(f) * 0.5 - finalVec3d.z) * 0.10000000149011612 * CONFIG.speedMultiplierForBat() * CONFIG.speedMultiplierForAll());
         return finalVec3d2;
-
     }
 }

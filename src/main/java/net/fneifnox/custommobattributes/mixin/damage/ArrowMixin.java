@@ -20,16 +20,11 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 @Mixin(PersistentProjectileEntity.class)
 public class ArrowMixin {
-    @Redirect(
-            method = "onEntityHit", at = @At(
-                value = "INVOKE",
-                target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
-            )
-    )
+    @Redirect(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
         PersistentProjectileEntity projectile = (PersistentProjectileEntity)(Object)this;
         if (projectile instanceof SpectralArrowEntity || projectile instanceof ArrowEntity) {
-            float multiplier = 1f;
+            double multiplier = 1f;
             if ((projectile.getOwner() instanceof SkeletonEntity)) {
                 multiplier = CONFIG.damageMultiplierForSkeleton() * CONFIG.damageMultiplierForAll();
             }
@@ -82,10 +77,28 @@ public class ArrowMixin {
                         multiplier = CONFIG.itTakesAPillageContinuation.damageMultiplierForArcher() * CONFIG.damageMultiplierForAll();
                     }
                 }
+                if (FabricLoader.getInstance().isModLoaded("illagerinvasion")) {
+                    EntityType alchemist = Registries.ENTITY_TYPE.get(Identifier.of("illagerinvasion", "alchemist"));
+                    EntityType provoker = Registries.ENTITY_TYPE.get(Identifier.of("illagerinvasion", "provoker"));
+
+                    if (Objects.requireNonNull(projectile.getOwner()).getType() == alchemist) {
+                        multiplier = CONFIG.illagerInvasion.damageMultiplierForAlchemist() * CONFIG.damageMultiplierForAll();
+                    }
+                    else if (Objects.requireNonNull(projectile.getOwner()).getType() == provoker) {
+                        multiplier = CONFIG.illagerInvasion.damageMultiplierForProvoker() * CONFIG.damageMultiplierForAll();
+                    }
+                }
+                if (FabricLoader.getInstance().isModLoaded("promenade")) {
+                    EntityType sunken = Registries.ENTITY_TYPE.get(Identifier.of("promenade", "sunken"));
+
+                    if (Objects.requireNonNull(projectile.getOwner()).getType() == sunken) {
+                        multiplier = CONFIG.promenade.damageMultiplierForSunken() * CONFIG.damageMultiplierForAll();
+                    }
+                }
             }
 
-            float finalDamage = originalDamage * multiplier;
-            return entity.damage(source, finalDamage);
+            double finalDamage = originalDamage * multiplier;
+            return entity.damage(source, (float) finalDamage);
         }
         else {
             return entity.damage(source, originalDamage);
