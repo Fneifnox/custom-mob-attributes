@@ -47,18 +47,6 @@ public class Vanilla {
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.BOGGED, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BOGGED, CONFIG::healthMultiplierForBogged, CONFIG::damageMultiplierForBogged, CONFIG::speedMultiplierForBogged, CONFIG::scaleMultiplierForBogged
-            );
-        });
-
-        ATTRIBUTE_HANDLERS.put(EntityType.BREEZE, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BREEZE, CONFIG::healthMultiplierForBreeze, CONFIG::damageMultiplierForBreeze, CONFIG::speedMultiplierForBreeze, CONFIG::scaleMultiplierForBreeze
-            );
-        });
-
         ATTRIBUTE_HANDLERS.put(EntityType.CAMEL, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.CAMEL, CONFIG::healthMultiplierForCamel, null, CONFIG::speedMultiplierForCamel, CONFIG::scaleMultiplierForCamel
