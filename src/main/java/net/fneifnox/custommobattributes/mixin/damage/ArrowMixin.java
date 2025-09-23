@@ -21,16 +21,11 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 @Mixin(PersistentProjectileEntity.class)
 public class ArrowMixin {
-    @Redirect(
-            method = "onEntityHit", at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/entity/Entity;sidedDamage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
-    )
-    )
+    @Redirect(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;sidedDamage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
         PersistentProjectileEntity projectile = (PersistentProjectileEntity)(Object)this;
         if (projectile instanceof SpectralArrowEntity || projectile instanceof ArrowEntity) {
-            float multiplier = 1f;
+            double multiplier = 1f;
             if ((projectile.getOwner() instanceof SkeletonEntity)) {
                 multiplier = CONFIG.damageMultiplierForSkeleton() * CONFIG.damageMultiplierForAll();
             }
@@ -83,11 +78,22 @@ public class ArrowMixin {
                         multiplier = CONFIG.itTakesAPillageContinuation.damageMultiplierForArcher() * CONFIG.damageMultiplierForAll();
                     }
                 }
+                if (FabricLoader.getInstance().isModLoaded("illagerinvasion")) {
+                    EntityType alchemist = Registries.ENTITY_TYPE.get(Identifier.of("illagerinvasion", "alchemist"));
+                    EntityType provoker = Registries.ENTITY_TYPE.get(Identifier.of("illagerinvasion", "provoker"));
+
+                    if (Objects.requireNonNull(projectile.getOwner()).getType() == alchemist) {
+                        multiplier = CONFIG.illagerInvasion.damageMultiplierForAlchemist() * CONFIG.damageMultiplierForAll();
+                    }
+                    else if (Objects.requireNonNull(projectile.getOwner()).getType() == provoker) {
+                        multiplier = CONFIG.illagerInvasion.damageMultiplierForProvoker() * CONFIG.damageMultiplierForAll();
+                    }
+                }
             }
 
-            float finalDamage = originalDamage * multiplier;
+            double finalDamage = originalDamage * multiplier;
             if (entity.getWorld() instanceof ServerWorld serverWorld) {
-                return entity.damage(serverWorld, source, finalDamage);
+                return entity.damage(serverWorld, source, (float) finalDamage);
             } else {
                 return false;
             }

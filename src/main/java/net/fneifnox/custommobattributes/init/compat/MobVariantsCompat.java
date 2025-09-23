@@ -1,4 +1,4 @@
-package net.fneifnox.custommobattributes.compat;
+package net.fneifnox.custommobattributes.init.compat;
 
 import net.fneifnox.custommobattributes.AttributeUpdater;
 import net.minecraft.entity.EntityType;
