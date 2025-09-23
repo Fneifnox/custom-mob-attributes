@@ -88,13 +88,6 @@ public class ArrowMixin {
                         multiplier = CONFIG.illagerInvasion.damageMultiplierForProvoker() * CONFIG.damageMultiplierForAll();
                     }
                 }
-                if (FabricLoader.getInstance().isModLoaded("promenade")) {
-                    EntityType sunken = Registries.ENTITY_TYPE.get(Identifier.of("promenade", "sunken"));
-
-                    if (Objects.requireNonNull(projectile.getOwner()).getType() == sunken) {
-                        multiplier = CONFIG.promenade.damageMultiplierForSunken() * CONFIG.damageMultiplierForAll();
-                    }
-                }
             }
 
             double finalDamage = originalDamage * multiplier;

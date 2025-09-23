@@ -859,34 +859,6 @@ public class ConfigModel {
         public double scaleMultiplierForZombifiedPiglinBrute = 1f;
     }
     @Nest
-    public Promenade promenade = new Promenade();
-    public static class Promenade {
-        @SectionHeader("Capybara")
-        @Comment("Capybara")
-        public double healthMultiplierForCapybara = 1f;
-        public double damageMultiplierForCapybara = 1f;
-        public double speedMultiplierForCapybara = 1f;
-        public double scaleMultiplierForCapybara = 1f;
-        @SectionHeader("Duck")
-        @Comment("Duck")
-        public double healthMultiplierForDuck = 1f;
-        public double damageMultiplierForDuck = 1f;
-        public double speedMultiplierForDuck = 1f;
-        public double scaleMultiplierForDuck = 1f;
-        @SectionHeader("Lush Creeper")
-        @Comment("Lush Creeper")
-        public double healthMultiplierForLushCreeper = 1f;
-        public double damageMultiplierForLushCreeper = 1f;
-        public double speedMultiplierForLushCreeper = 1f;
-        public double scaleMultiplierForLushCreeper = 1f;
-        @SectionHeader("Sunken")
-        @Comment("Sunken")
-        public double healthMultiplierForSunken = 1f;
-        public double damageMultiplierForSunken = 1f;
-        public double speedMultiplierForSunken = 1f;
-        public double scaleMultiplierForSunken = 1f;
-    }
-    @Nest
     public VanillaBackport vanillaBackport = new VanillaBackport();
     public static class VanillaBackport {
         @SectionHeader("Creaking")
