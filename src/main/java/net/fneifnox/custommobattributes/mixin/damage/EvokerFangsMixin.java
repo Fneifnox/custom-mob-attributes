@@ -9,13 +9,9 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 @Mixin(EvokerFangsEntity.class)
 public class EvokerFangsMixin {
-    @ModifyArg(method = "damage", at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/entity/LivingEntity;serverDamage(Lnet/minecraft/entity/damage/DamageSource;F)V"
-    )
-    )
+    @ModifyArg(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;serverDamage(Lnet/minecraft/entity/damage/DamageSource;F)V"))
     private float injectCustomDamage(float originalDamage) {
-        float multiplier = CONFIG.damageMultiplierForEvoker() * CONFIG.damageMultiplierForAll();
-        return originalDamage * multiplier;
+        double multiplier = CONFIG.damageMultiplierForEvoker() * CONFIG.damageMultiplierForAll();
+        return (float) (originalDamage * multiplier);
     }
 }
