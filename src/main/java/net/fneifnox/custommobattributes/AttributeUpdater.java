@@ -68,7 +68,7 @@ public class AttributeUpdater {
         }
 
         ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
-            if (entity instanceof LivingEntity living && !world.isClient) {
+            if (entity instanceof LivingEntity living && !world.isClient()) {
                 Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(entity.getType());
                 if (handler != null) {
                     handler.accept(living);

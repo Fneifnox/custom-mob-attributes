@@ -17,25 +17,25 @@ public class VariantsAndVenturesCompat {
         EntityType verdant = Registries.ENTITY_TYPE.get(Identifier.of("variantsandventures", "verdant"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(gelid, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, gelid, CONFIG.variantsAndVentures::healthMultiplierForGelid, CONFIG.variantsAndVentures::damageMultiplierForGelid, CONFIG.variantsAndVentures::speedMultiplierForGelid, CONFIG.variantsAndVentures::scaleMultiplierForGelid
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(murk, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, murk, CONFIG.variantsAndVentures::healthMultiplierForMurk, CONFIG.variantsAndVentures::damageMultiplierForMurk, CONFIG.variantsAndVentures::speedMultiplierForMurk, CONFIG.variantsAndVentures::scaleMultiplierForMurk
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(thicket, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, thicket, CONFIG.variantsAndVentures::healthMultiplierForThicket, CONFIG.variantsAndVentures::damageMultiplierForThicket, CONFIG.variantsAndVentures::speedMultiplierForThicket, CONFIG.variantsAndVentures::scaleMultiplierForThicket
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(verdant, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, verdant, CONFIG.variantsAndVentures::healthMultiplierForVerdant, CONFIG.variantsAndVentures::damageMultiplierForVerdant, CONFIG.variantsAndVentures::speedMultiplierForVerdant, CONFIG.variantsAndVentures::scaleMultiplierForVerdant
             );
         });

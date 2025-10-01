@@ -80,6 +80,11 @@
   "text.config.custom-mob-attributes.option.speedMultiplierForCod": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForCod": "Scale Multiplier",
 
+  "text.config.custom-mob-attributes.section.Copper Golem": "Copper Golem",
+  "text.config.custom-mob-attributes.option.healthMultiplierForCopperGolem": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForCopperGolem": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.scaleMultiplierForCopperGolem": "Scale Multiplier",
+
   "text.config.custom-mob-attributes.section.Cow": "Cow",
   "text.config.custom-mob-attributes.option.healthMultiplierForCow": "Health Multiplier",
   "text.config.custom-mob-attributes.option.speedMultiplierForCow": "Speed Multiplier",
@@ -676,12 +681,6 @@
   "text.config.custom-mob-attributes.option.variantsAndVentures.scaleMultiplierForVerdant": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.category.friendsAndFoes": "Friends&Foes",
-
-  "text.config.custom-mob-attributes.section.Copper Golem": "Copper Golem",
-  "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForCopperGolem": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.friendsAndFoes.damageMultiplierForCopperGolem": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.friendsAndFoes.speedMultiplierForCopperGolem": "Speed Multiplier",
-  "text.config.custom-mob-attributes.option.friendsAndFoes.scaleMultiplierForCopperGolem": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Crab": "Crab",
   "text.config.custom-mob-attributes.option.friendsAndFoes.healthMultiplierForCrab": "Health Multiplier",

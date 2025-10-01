@@ -92,14 +92,14 @@ public class ArrowMixin {
             }
 
             double finalDamage = originalDamage * multiplier;
-            if (entity.getWorld() instanceof ServerWorld serverWorld) {
+            if (entity.getEntityWorld() instanceof ServerWorld serverWorld) {
                 return entity.damage(serverWorld, source, (float) finalDamage);
             } else {
                 return false;
             }
         }
         else {
-            if (entity.getWorld() instanceof ServerWorld serverWorld) {
+            if (entity.getEntityWorld() instanceof ServerWorld serverWorld) {
                 return entity.damage(serverWorld, source, originalDamage);
             }
             else {
