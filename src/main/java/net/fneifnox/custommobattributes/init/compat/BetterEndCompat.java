@@ -19,37 +19,37 @@ public class BetterEndCompat {
         EntityType silkMoth = Registries.ENTITY_TYPE.get(Identifier.of("betterend", "silk_moth"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(cubozoa, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, cubozoa, CONFIG.betterEnd::healthMultiplierForCubozoa, null, null, null
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(dragonfly, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, dragonfly, CONFIG.betterEnd::healthMultiplierForDragonfly, null, null, CONFIG.betterEnd::scaleMultiplierForDragonfly
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(endFish, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, endFish, CONFIG.betterEnd::healthMultiplierForEndFish, null, null, null
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(endSlime, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, endSlime, CONFIG.betterEnd::healthMultiplierForEndSlime, CONFIG.betterEnd::damageMultiplierForEndSlime, CONFIG.betterEnd::speedMultiplierForEndSlime, CONFIG.betterEnd::scaleMultiplierForEndSlime
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(shadowWalker, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, shadowWalker, CONFIG.betterEnd::healthMultiplierForShadowWalker, CONFIG.betterEnd::damageMultiplierForShadowWalker, CONFIG.betterEnd::speedMultiplierForShadowWalker, CONFIG.betterEnd::scaleMultiplierForShadowWalker
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(silkMoth, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, silkMoth, CONFIG.betterEnd::healthMultiplierForSilkMoth, null, null, CONFIG.betterEnd::scaleMultiplierForSilkMoth
             );
         });

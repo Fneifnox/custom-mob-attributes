@@ -17,25 +17,25 @@ public class ItTakesAPillageContinuationCompat {
         EntityType skirmisher = Registries.ENTITY_TYPE.get(Identifier.of("takesapillage", "skirmisher"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(archer, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, archer, CONFIG.itTakesAPillageContinuation::healthMultiplierForArcher, CONFIG.itTakesAPillageContinuation::damageMultiplierForArcher, CONFIG.itTakesAPillageContinuation::speedMultiplierForArcher, CONFIG.itTakesAPillageContinuation::scaleMultiplierForArcher
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(clayGolem, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, clayGolem, CONFIG.itTakesAPillageContinuation::healthMultiplierForClayGolem, CONFIG.itTakesAPillageContinuation::damageMultiplierForClayGolem, CONFIG.itTakesAPillageContinuation::speedMultiplierForClayGolem, CONFIG.itTakesAPillageContinuation::scaleMultiplierForClayGolem
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(legioner, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, legioner, CONFIG.itTakesAPillageContinuation::healthMultiplierForLegioner, CONFIG.itTakesAPillageContinuation::damageMultiplierForLegioner, CONFIG.itTakesAPillageContinuation::speedMultiplierForLegioner, CONFIG.itTakesAPillageContinuation::scaleMultiplierForLegioner
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(skirmisher, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, skirmisher, CONFIG.itTakesAPillageContinuation::healthMultiplierForSkirmisher, CONFIG.itTakesAPillageContinuation::damageMultiplierForSkirmisher, CONFIG.itTakesAPillageContinuation::speedMultiplierForSkirmisher, CONFIG.itTakesAPillageContinuation::scaleMultiplierForSkirmisher
             );
         });

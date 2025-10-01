@@ -87,6 +87,11 @@ public class ConfigModel {
     public double healthMultiplierForCod = 1f;
     public double speedMultiplierForCod = 1f;
     public double scaleMultiplierForCod = 1f;
+    @SectionHeader("Copper Golem")
+    @Comment("Copper Golem")
+    public double healthMultiplierForCopperGolem = 1f;
+    public double speedMultiplierForCopperGolem = 1f;
+    public double scaleMultiplierForCopperGolem = 1f;
     @SectionHeader("Cow")
     @Comment("Cow")
     public double healthMultiplierForCow = 1f;
@@ -611,12 +616,6 @@ public class ConfigModel {
     @Nest
     public FriendsAndFoes friendsAndFoes = new FriendsAndFoes();
     public static class FriendsAndFoes {
-        @SectionHeader("Copper Golem")
-        @Comment("Copper Golem")
-        public double healthMultiplierForCopperGolem = 1f;
-        public double damageMultiplierForCopperGolem = 1f;
-        public double speedMultiplierForCopperGolem = 1f;
-        public double scaleMultiplierForCopperGolem = 1f;
         @SectionHeader("Crab")
         @Comment("Crab")
         public double healthMultiplierForCrab = 1f;

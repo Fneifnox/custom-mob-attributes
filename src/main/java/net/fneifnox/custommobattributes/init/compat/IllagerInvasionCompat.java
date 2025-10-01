@@ -24,67 +24,67 @@ public class IllagerInvasionCompat {
         EntityType surrendered = Registries.ENTITY_TYPE.get(Identifier.of("illagerinvasion", "surrendered"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(alchemist, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, alchemist, CONFIG.illagerInvasion::healthMultiplierForAlchemist, CONFIG.illagerInvasion::damageMultiplierForAlchemist, CONFIG.illagerInvasion::speedMultiplierForAlchemist, CONFIG.illagerInvasion::scaleMultiplierForAlchemist
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(archivist, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, archivist, CONFIG.illagerInvasion::healthMultiplierForArchivist, CONFIG.illagerInvasion::damageMultiplierForArchivist, CONFIG.illagerInvasion::speedMultiplierForArchivist, CONFIG.illagerInvasion::scaleMultiplierForArchivist
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(basher, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, basher, CONFIG.illagerInvasion::healthMultiplierForBasher, CONFIG.illagerInvasion::damageMultiplierForBasher, CONFIG.illagerInvasion::speedMultiplierForBasher, CONFIG.illagerInvasion::scaleMultiplierForBasher
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(firecaller, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, firecaller, CONFIG.illagerInvasion::healthMultiplierForFirecaller, CONFIG.illagerInvasion::damageMultiplierForFirecaller, CONFIG.illagerInvasion::speedMultiplierForFirecaller, CONFIG.illagerInvasion::scaleMultiplierForFirecaller
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(inquisitor, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, inquisitor, CONFIG.illagerInvasion::healthMultiplierForInquisitor, CONFIG.illagerInvasion::damageMultiplierForInquisitor, CONFIG.illagerInvasion::speedMultiplierForInquisitor, CONFIG.illagerInvasion::scaleMultiplierForInquisitor
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(invoker, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, invoker, CONFIG.illagerInvasion::healthMultiplierForInvoker, CONFIG.illagerInvasion::damageMultiplierForInvoker, CONFIG.illagerInvasion::speedMultiplierForInvoker, CONFIG.illagerInvasion::scaleMultiplierForInvoker
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(marauder, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, marauder, CONFIG.illagerInvasion::healthMultiplierForMarauder, CONFIG.illagerInvasion::damageMultiplierForMarauder, CONFIG.illagerInvasion::speedMultiplierForMarauder, CONFIG.illagerInvasion::scaleMultiplierForMarauder
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(necromancer, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, necromancer, CONFIG.illagerInvasion::healthMultiplierForNecromancer, CONFIG.illagerInvasion::damageMultiplierForNecromancer, CONFIG.illagerInvasion::speedMultiplierForNecromancer, CONFIG.illagerInvasion::scaleMultiplierForNecromancer
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(provoker, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, provoker, CONFIG.illagerInvasion::healthMultiplierForProvoker, CONFIG.illagerInvasion::damageMultiplierForProvoker, CONFIG.illagerInvasion::speedMultiplierForProvoker, CONFIG.illagerInvasion::scaleMultiplierForProvoker
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sorcerer, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, sorcerer, CONFIG.illagerInvasion::healthMultiplierForSorcerer, CONFIG.illagerInvasion::damageMultiplierForSorcerer, CONFIG.illagerInvasion::speedMultiplierForSorcerer, CONFIG.illagerInvasion::scaleMultiplierForSorcerer
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(surrendered, entity -> {
-            World world = entity.getWorld();
+            World world = entity.getEntityWorld();
             AttributeUpdater.configureEntityAttributes(world, surrendered, CONFIG.illagerInvasion::healthMultiplierForSurrendered, CONFIG.illagerInvasion::damageMultiplierForSurrendered, null, CONFIG.illagerInvasion::scaleMultiplierForSurrendered
             );
         });

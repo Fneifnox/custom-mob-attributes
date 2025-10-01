@@ -22,7 +22,7 @@ public class SnowballMixin {
         }
 
         double finalDamage = originalDamage * multiplier;
-        if (entity.getWorld() instanceof ServerWorld serverWorld) {
+        if (entity.getEntityWorld() instanceof ServerWorld serverWorld) {
             entity.damage(serverWorld, source, (float) finalDamage);
         }
     }
