@@ -95,6 +95,12 @@ public class Vanilla {
             );
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.CREAKING, entity -> {
+            World world = entity.getWorld();
+            configureEntityAttributes(world, EntityType.CREAKING, CONFIG::healthMultiplierForCreaking, CONFIG::damageMultiplierForCreaking, CONFIG::speedMultiplierForCreaking, CONFIG::scaleMultiplierForCreaking
+            );
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.CREEPER, entity -> {
             World world = entity.getWorld();
             configureEntityAttributes(world, EntityType.CREEPER, CONFIG::healthMultiplierForCreeper, CONFIG::damageMultiplierForCreeper, CONFIG::speedMultiplierForCreeper, CONFIG::scaleMultiplierForCreeper
