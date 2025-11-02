@@ -101,6 +101,12 @@ public class Vanilla {
             );
         });
 
+        ATTRIBUTE_HANDLERS.put(EntityType.CREAKING, entity -> {
+            World world = entity.getEntityWorld();
+            configureEntityAttributes(world, EntityType.CREAKING, CONFIG::healthMultiplierForCreaking, CONFIG::damageMultiplierForCreaking, CONFIG::speedMultiplierForCreaking, CONFIG::scaleMultiplierForCreaking
+            );
+        });
+
         ATTRIBUTE_HANDLERS.put(EntityType.CREEPER, entity -> {
             World world = entity.getEntityWorld();
             configureEntityAttributes(world, EntityType.CREEPER, CONFIG::healthMultiplierForCreeper, CONFIG::damageMultiplierForCreeper, CONFIG::speedMultiplierForCreeper, CONFIG::scaleMultiplierForCreeper
@@ -194,6 +200,12 @@ public class Vanilla {
         ATTRIBUTE_HANDLERS.put(EntityType.GUARDIAN, entity -> {
             World world = entity.getEntityWorld();
             configureEntityAttributes(world, EntityType.GUARDIAN, CONFIG::healthMultiplierForGuardian, CONFIG::damageMultiplierForGuardian, CONFIG::speedMultiplierForGuardian, CONFIG::scaleMultiplierForGuardian
+            );
+        });
+
+        ATTRIBUTE_HANDLERS.put(EntityType.HAPPY_GHAST, entity -> {
+            World world = entity.getEntityWorld();
+            configureEntityAttributes(world, EntityType.HAPPY_GHAST, CONFIG::healthMultiplierForHappyGhast, null, CONFIG::speedMultiplierForHappyGhast, CONFIG::scaleMultiplierForHappyGhast
             );
         });
 
