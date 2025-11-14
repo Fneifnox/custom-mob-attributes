@@ -32,6 +32,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
     @ModifyReturnValue(method = "getScaleFactor", at = @At("RETURN"))
     public float modifyScaleFactor(float original) {
         LivingEntity livingEntity = (LivingEntity)(Object)this;
-        return (float) (livingEntity.isBaby() ? (0.5f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE)) : (1.0f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE)));
+        if (livingEntity.getAttributes() != null) {
+            return (float) (livingEntity.isBaby() ? (0.5f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE)) : (1.0f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE)));
+        }
+        return 1f;
     }
 }
