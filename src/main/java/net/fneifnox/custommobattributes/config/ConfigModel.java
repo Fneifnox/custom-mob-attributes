@@ -376,7 +376,7 @@ public class ConfigModel {
     public double damageMultiplierForStray = 1f;
     public double speedMultiplierForStray = 1f;
     public double scaleMultiplierForStray = 1f;
-    @SectionHeader("Spider")
+    @SectionHeader("Strider")
     @Comment("Strider")
     public double healthMultiplierForStrider = 1f;
     public double speedMultiplierForStrider = 1f;
