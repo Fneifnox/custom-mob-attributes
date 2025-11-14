@@ -4,7 +4,6 @@ import net.fneifnox.custommobattributes.AttributeUpdater;
 import net.minecraft.entity.EntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 
 import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
@@ -21,50 +20,42 @@ public class DeeperAndDarkerCompat {
         EntityType stalker = Registries.ENTITY_TYPE.get(Identifier.of("deeperdarker", "stalker"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(anglerFish, entity -> {
-            World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, anglerFish, CONFIG.deeperAndDarker::healthMultiplierForAnglerFish, CONFIG.deeperAndDarker::damageMultiplierForAnglerFish, CONFIG.deeperAndDarker::speedMultiplierForAnglerFish, CONFIG.deeperAndDarker::scaleMultiplierForAnglerFish
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), anglerFish, CONFIG.deeperAndDarker::healthMultiplierForAnglerFish, CONFIG.deeperAndDarker::damageMultiplierForAnglerFish, CONFIG.deeperAndDarker::speedMultiplierForAnglerFish, CONFIG.deeperAndDarker::scaleMultiplierForAnglerFish
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sculkCentipede, entity -> {
-            World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, sculkCentipede, CONFIG.deeperAndDarker::healthMultiplierForSculkCentipede, CONFIG.deeperAndDarker::damageMultiplierForSculkCentipede, CONFIG.deeperAndDarker::speedMultiplierForSculkCentipede, CONFIG.deeperAndDarker::scaleMultiplierForSculkCentipede
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), sculkCentipede, CONFIG.deeperAndDarker::healthMultiplierForSculkCentipede, CONFIG.deeperAndDarker::damageMultiplierForSculkCentipede, CONFIG.deeperAndDarker::speedMultiplierForSculkCentipede, CONFIG.deeperAndDarker::scaleMultiplierForSculkCentipede
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sculkLeech, entity -> {
-            World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, sculkLeech, CONFIG.deeperAndDarker::healthMultiplierForSculkLeech, CONFIG.deeperAndDarker::damageMultiplierForSculkLeech, CONFIG.deeperAndDarker::speedMultiplierForSculkLeech, CONFIG.deeperAndDarker::scaleMultiplierForSculkLeech
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), sculkLeech, CONFIG.deeperAndDarker::healthMultiplierForSculkLeech, CONFIG.deeperAndDarker::damageMultiplierForSculkLeech, CONFIG.deeperAndDarker::speedMultiplierForSculkLeech, CONFIG.deeperAndDarker::scaleMultiplierForSculkLeech
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sculkSnapper, entity -> {
-            World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, sculkSnapper, CONFIG.deeperAndDarker::healthMultiplierForSculkSnapper, CONFIG.deeperAndDarker::damageMultiplierForSculkSnapper, CONFIG.deeperAndDarker::speedMultiplierForSculkSnapper, CONFIG.deeperAndDarker::scaleMultiplierForSculkSnapper
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), sculkSnapper, CONFIG.deeperAndDarker::healthMultiplierForSculkSnapper, CONFIG.deeperAndDarker::damageMultiplierForSculkSnapper, CONFIG.deeperAndDarker::speedMultiplierForSculkSnapper, CONFIG.deeperAndDarker::scaleMultiplierForSculkSnapper
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(shattered, entity -> {
-            World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, shattered, CONFIG.deeperAndDarker::healthMultiplierForShattered, CONFIG.deeperAndDarker::damageMultiplierForShattered, CONFIG.deeperAndDarker::speedMultiplierForShattered, CONFIG.deeperAndDarker::scaleMultiplierForShattered
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), shattered, CONFIG.deeperAndDarker::healthMultiplierForShattered, CONFIG.deeperAndDarker::damageMultiplierForShattered, CONFIG.deeperAndDarker::speedMultiplierForShattered, CONFIG.deeperAndDarker::scaleMultiplierForShattered
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(shriekWorm, entity -> {
-            World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, shriekWorm, CONFIG.deeperAndDarker::healthMultiplierForShriekWorm, CONFIG.deeperAndDarker::damageMultiplierForShriekWorm, null, CONFIG.deeperAndDarker::scaleMultiplierForShriekWorm
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), shriekWorm, CONFIG.deeperAndDarker::healthMultiplierForShriekWorm, CONFIG.deeperAndDarker::damageMultiplierForShriekWorm, null, CONFIG.deeperAndDarker::scaleMultiplierForShriekWorm
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sludge, entity -> {
-            World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, sludge, CONFIG.deeperAndDarker::healthMultiplierForSludge, CONFIG.deeperAndDarker::damageMultiplierForSludge, CONFIG.deeperAndDarker::speedMultiplierForSludge, CONFIG.deeperAndDarker::scaleMultiplierForSludge
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), sludge, CONFIG.deeperAndDarker::healthMultiplierForSludge, CONFIG.deeperAndDarker::damageMultiplierForSludge, CONFIG.deeperAndDarker::speedMultiplierForSludge, CONFIG.deeperAndDarker::scaleMultiplierForSludge
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(stalker, entity -> {
-            World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, stalker, CONFIG.deeperAndDarker::healthMultiplierForStalker, CONFIG.deeperAndDarker::damageMultiplierForStalker, CONFIG.deeperAndDarker::speedMultiplierForStalker, CONFIG.deeperAndDarker::scaleMultiplierForStalker
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), stalker, CONFIG.deeperAndDarker::healthMultiplierForStalker, CONFIG.deeperAndDarker::damageMultiplierForStalker, CONFIG.deeperAndDarker::speedMultiplierForStalker, CONFIG.deeperAndDarker::scaleMultiplierForStalker
             );
         });
     }
