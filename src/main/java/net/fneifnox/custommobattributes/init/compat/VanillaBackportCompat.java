@@ -4,7 +4,6 @@ import net.fneifnox.custommobattributes.AttributeUpdater;
 import net.minecraft.entity.EntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 
 import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
@@ -14,8 +13,7 @@ public class VanillaBackportCompat {
         EntityType happyGhast = Registries.ENTITY_TYPE.get(Identifier.of("vanillabackport", "happy_ghast"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(happyGhast, entity -> {
-            World world = entity.getWorld();
-            AttributeUpdater.configureEntityAttributes(world, happyGhast, CONFIG.vanillaBackport::healthMultiplierForHappyGhast, CONFIG.vanillaBackport::damageMultiplierForHappyGhast, CONFIG.vanillaBackport::speedMultiplierForHappyGhast, null
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), happyGhast, CONFIG.vanillaBackport::healthMultiplierForHappyGhast, CONFIG.vanillaBackport::damageMultiplierForHappyGhast, CONFIG.vanillaBackport::speedMultiplierForHappyGhast, null
             );
         });
     }
