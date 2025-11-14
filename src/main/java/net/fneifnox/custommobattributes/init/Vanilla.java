@@ -16,8 +16,7 @@ public class Vanilla {
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.ARMADILLO, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.ARMADILLO, CONFIG::healthMultiplierForArmadillo, null, CONFIG::speedMultiplierForArmadillo, CONFIG::scaleMultiplierForArmadillo
+            configureEntityAttributes(entity.getWorld(), EntityType.ARMADILLO, CONFIG::healthMultiplierForArmadillo, null, CONFIG::speedMultiplierForArmadillo, CONFIG::scaleMultiplierForArmadillo
             );
         });
 
