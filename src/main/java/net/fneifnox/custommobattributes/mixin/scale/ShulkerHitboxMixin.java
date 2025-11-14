@@ -16,7 +16,13 @@ public class ShulkerHitboxMixin {
         ShulkerEntity shulker = (ShulkerEntity)(Object)this;
         Box originalBox = cir.getReturnValue();
 
-        double scale = shulker.getAttributeValue(CustomMobAttributes.SCALE);
+        double scale;
+        if (shulker.getAttributes() != null) {
+            scale = shulker.getAttributeValue(CustomMobAttributes.SCALE);
+        }
+        else {
+            scale = 1f;
+        }
 
         // Mittelpunkt auf X und Z
         double cx = (originalBox.minX + originalBox.maxX) / 2.0;
