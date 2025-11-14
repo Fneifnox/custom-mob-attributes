@@ -16,8 +16,7 @@ public class Vanilla {
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.ARMADILLO, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.ARMADILLO, CONFIG::healthMultiplierForArmadillo, null, CONFIG::speedMultiplierForArmadillo, CONFIG::scaleMultiplierForArmadillo
+            configureEntityAttributes(entity.getWorld(), EntityType.ARMADILLO, CONFIG::healthMultiplierForArmadillo, null, CONFIG::speedMultiplierForArmadillo, CONFIG::scaleMultiplierForArmadillo
             );
         });
 
@@ -42,14 +41,12 @@ public class Vanilla {
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.BOGGED, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BOGGED, CONFIG::healthMultiplierForBogged, CONFIG::damageMultiplierForBogged, CONFIG::speedMultiplierForBogged, CONFIG::scaleMultiplierForBogged
+            configureEntityAttributes(entity.getWorld(), EntityType.BOGGED, CONFIG::healthMultiplierForBogged, CONFIG::damageMultiplierForBogged, CONFIG::speedMultiplierForBogged, CONFIG::scaleMultiplierForBogged
             );
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.BREEZE, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.BREEZE, CONFIG::healthMultiplierForBreeze, CONFIG::damageMultiplierForBreeze, CONFIG::speedMultiplierForBreeze, CONFIG::scaleMultiplierForBreeze
+            configureEntityAttributes(entity.getWorld(), EntityType.BREEZE, CONFIG::healthMultiplierForBreeze, CONFIG::damageMultiplierForBreeze, CONFIG::speedMultiplierForBreeze, CONFIG::scaleMultiplierForBreeze
             );
         });
 
@@ -84,8 +81,7 @@ public class Vanilla {
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.CREAKING, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.CREAKING, CONFIG::healthMultiplierForCreaking, CONFIG::damageMultiplierForCreaking, CONFIG::speedMultiplierForCreaking, CONFIG::scaleMultiplierForCreaking
+            configureEntityAttributes(entity.getWorld(), EntityType.CREAKING, CONFIG::healthMultiplierForCreaking, CONFIG::damageMultiplierForCreaking, CONFIG::speedMultiplierForCreaking, CONFIG::scaleMultiplierForCreaking
             );
         });
 
@@ -170,8 +166,7 @@ public class Vanilla {
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.HAPPY_GHAST, entity -> {
-            World world = entity.getWorld();
-            configureEntityAttributes(world, EntityType.HAPPY_GHAST, CONFIG::healthMultiplierForHappyGhast, null, CONFIG::speedMultiplierForHappyGhast, CONFIG::scaleMultiplierForHappyGhast
+            configureEntityAttributes(entity.getWorld(), EntityType.HAPPY_GHAST, CONFIG::healthMultiplierForHappyGhast, null, CONFIG::speedMultiplierForHappyGhast, CONFIG::scaleMultiplierForHappyGhast
             );
         });
 
