@@ -1,25 +1,24 @@
 package net.fneifnox.custommobattributes.init.compat;
 
+import net.fneifnox.custommobattributes.config.Config;
 import net.fneifnox.custommobattributes.AttributeUpdater;
-import net.minecraft.entity.EntityType;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
-
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 
 public class VanillaBackportCompat {
 
     public static void initVanillaBackportAttributeHandlers() {
-        EntityType creaking = Registries.ENTITY_TYPE.get(Identifier.of("vanillabackport", "creaking"));
-        EntityType happyGhast = Registries.ENTITY_TYPE.get(Identifier.of("vanillabackport", "happy_ghast"));
+        EntityType creaking = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("vanillabackport", "creaking"));
+        EntityType happyGhast = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("vanillabackport", "happy_ghast"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(creaking, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), creaking, CONFIG.vanillaBackport::healthMultiplierForCreaking, CONFIG.vanillaBackport::damageMultiplierForCreaking, CONFIG.vanillaBackport::speedMultiplierForCreaking, CONFIG.vanillaBackport::scaleMultiplierForCreaking
+            AttributeUpdater.configureEntityAttributes(entity.level(), creaking, Config.VANILLA_BACKPORT.healthMultiplierForCreaking, Config.VANILLA_BACKPORT.damageMultiplierForCreaking, Config.VANILLA_BACKPORT.speedMultiplierForCreaking, Config.VANILLA_BACKPORT.scaleMultiplierForCreaking
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(happyGhast, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), happyGhast, CONFIG.vanillaBackport::healthMultiplierForHappyGhast, CONFIG.vanillaBackport::damageMultiplierForHappyGhast, CONFIG.vanillaBackport::speedMultiplierForHappyGhast, null
+            AttributeUpdater.configureEntityAttributes(entity.level(), happyGhast, Config.VANILLA_BACKPORT.healthMultiplierForHappyGhast, Config.VANILLA_BACKPORT.damageMultiplierForHappyGhast, Config.VANILLA_BACKPORT.speedMultiplierForHappyGhast, null
             );
         });
     }

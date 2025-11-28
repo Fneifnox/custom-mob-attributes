@@ -1,36 +1,36 @@
 package net.fneifnox.custommobattributes.mixin.movement;
 
-import net.minecraft.entity.passive.*;
-import net.minecraft.util.math.Vec3d;
+import net.fneifnox.custommobattributes.config.Config;
+import net.minecraft.world.entity.animal.*;
+import net.minecraft.world.entity.animal.frog.Tadpole;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
-
-@Mixin(FishEntity.class)
+@Mixin(AbstractFish.class)
 public abstract class FishSpeedMixin {
 
-    @Redirect(method = "travel(Lnet/minecraft/util/math/Vec3d;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/FishEntity;updateVelocity(FLnet/minecraft/util/math/Vec3d;)V"))
-    private void modifySpeed(FishEntity instance, float speed, Vec3d movementInput) {
+    @Redirect(method = "travel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/animal/AbstractFish;moveRelative(FLnet/minecraft/world/phys/Vec3;)V"))
+    private void modifySpeed(AbstractFish instance, float speed, Vec3 movementInput) {
         double finalSpeed = speed;
 
-        if (instance instanceof CodEntity) {
-            finalSpeed = speed * CONFIG.speedMultiplierForCod() * CONFIG.speedMultiplierForAll();
+        if (instance instanceof Cod) {
+            finalSpeed = speed * Config.VANILLA.speedMultiplierForCod.get() * Config.VANILLA.speedMultiplierForAll.get();
         }
-        else if (instance instanceof TropicalFishEntity) {
-            finalSpeed = speed * CONFIG.speedMultiplierForTropicalFish() * CONFIG.speedMultiplierForAll();
+        else if (instance instanceof TropicalFish) {
+            finalSpeed = speed * Config.VANILLA.speedMultiplierForTropicalFish.get() * Config.VANILLA.speedMultiplierForAll.get();
         }
-        else if (instance instanceof SalmonEntity) {
-            finalSpeed = speed * CONFIG.speedMultiplierForSalmon() * CONFIG.speedMultiplierForAll();
+        else if (instance instanceof Salmon) {
+            finalSpeed = speed * Config.VANILLA.speedMultiplierForSalmon.get() * Config.VANILLA.speedMultiplierForAll.get();
         }
-        else if (instance instanceof PufferfishEntity) {
-            finalSpeed = speed * CONFIG.speedMultiplierForPufferfish() * CONFIG.speedMultiplierForAll();
+        else if (instance instanceof Pufferfish) {
+            finalSpeed = speed * Config.VANILLA.speedMultiplierForPufferfish.get() * Config.VANILLA.speedMultiplierForAll.get();
         }
-        else if (instance instanceof TadpoleEntity) {
-            finalSpeed = speed * CONFIG.speedMultiplierForTadpole() * CONFIG.speedMultiplierForAll();
+        else if (instance instanceof Tadpole) {
+            finalSpeed = speed * Config.VANILLA.speedMultiplierForTadpole.get() * Config.VANILLA.speedMultiplierForAll.get();
         }
 
-        instance.updateVelocity((float) finalSpeed, movementInput);
+        instance.moveRelative((float) finalSpeed, movementInput);
     }
 }

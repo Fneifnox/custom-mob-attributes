@@ -1,28 +1,27 @@
 package net.fneifnox.custommobattributes.mixin.movement;
 
-import net.minecraft.entity.ai.control.MoveControl;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.util.math.Vec3d;
+import net.fneifnox.custommobattributes.config.Config;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.control.MoveControl;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
-
-@Mixin(targets = "net.minecraft.entity.mob.GhastEntity$GhastMoveControl")
+@Mixin(targets = "net.minecraft.world.entity.monster.Ghast$GhastMoveControl")
 public abstract class GhastSpeedMixin extends MoveControl {
 
-    public GhastSpeedMixin(MobEntity entity) {
+    public GhastSpeedMixin(Mob entity) {
         super(entity);
     }
 
-    @Redirect(method = "tick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;multiply(D)Lnet/minecraft/util/math/Vec3d;"))
-    private Vec3d redirectMultiply(Vec3d vec, double scale) {
+    @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/Vec3;scale(D)Lnet/minecraft/world/phys/Vec3;"))
+    private Vec3 redirectMultiply(Vec3 vec, double scale) {
         if (scale == 0.5d) {
-            return vec.multiply(scale);
+            return vec.scale(scale);
         }
 
-        double speedMultiplier = CONFIG.speedMultiplierForGhast() * CONFIG.speedMultiplierForAll();
-        return vec.multiply(scale * speedMultiplier);
+        double speedMultiplier = Config.VANILLA.speedMultiplierForGhast.get() * Config.VANILLA.speedMultiplierForAll.get();
+        return vec.scale(scale * speedMultiplier);
     }
 }

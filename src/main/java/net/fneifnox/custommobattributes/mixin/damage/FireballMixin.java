@@ -1,17 +1,16 @@
 package net.fneifnox.custommobattributes.mixin.damage;
 
-import net.minecraft.entity.projectile.FireballEntity;
+import net.fneifnox.custommobattributes.config.Config;
+import net.minecraft.world.entity.projectile.LargeFireball;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
-
-@Mixin(FireballEntity.class)
+@Mixin(LargeFireball.class)
 public class FireballMixin {
-    @ModifyArg(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
+    @ModifyArg(method = "onHitEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"))
     private float injectCustomDamage(float originalDamage) {
-        double multiplier = CONFIG.damageMultiplierForGhast() * CONFIG.damageMultiplierForAll();
+        double multiplier = Config.VANILLA.damageMultiplierForGhast.get() * Config.VANILLA.damageMultiplierForAll.get();
         return (float) (originalDamage * multiplier);
     }
 }

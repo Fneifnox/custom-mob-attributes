@@ -1,28 +1,23 @@
 package net.fneifnox.custommobattributes;
 
-import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fneifnox.custommobattributes.config.CustomMA;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CustomMobAttributes implements ModInitializer {
-	public static final String MOD_ID = "custom-mob-attributes";
+import static net.fneifnox.custommobattributes.config.Config.*;
+
+@Mod(CustomMobAttributes.MOD_ID)
+@Mod.EventBusSubscriber(modid = CustomMobAttributes.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+public class CustomMobAttributes {
+	public static final String MOD_ID = "custom_mob_attributes";
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	@Override
-	public void onInitialize() {
-		CONFIG.load();
-		CONFIG.save();
+	public CustomMobAttributes(FMLJavaModLoadingContext context) {
+		context.registerConfig(ModConfig.Type.SERVER, CONFIG);
 
-		// Moved register() into this so that modded mobs work without any issues
-		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
-			AttributeUpdater.register();
-			AttributeUpdater.observeAllConfigChanges(() -> AttributeUpdater.reloadConfig(server));
-		});
+		AttributeUpdater.register();
 	}
-
-	public static final CustomMA CONFIG = CustomMA.createAndLoad();
 }
