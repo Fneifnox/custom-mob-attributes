@@ -1,26 +1,25 @@
 package net.fneifnox.custommobattributes.mixin.damage;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.passive.SnowGolemEntity;
-import net.minecraft.entity.projectile.thrown.SnowballEntity;
+import net.fneifnox.custommobattributes.config.Config;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.animal.SnowGolem;
+import net.minecraft.world.entity.projectile.Snowball;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
-
-@Mixin(SnowballEntity.class)
+@Mixin(Snowball.class)
 public class SnowballMixin {
-    @Redirect(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
+    @Redirect(method = "onHitEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
         double multiplier = 1f;
-        SnowballEntity snowball = (SnowballEntity)(Object)this;
-        if (snowball.getOwner() instanceof SnowGolemEntity) {
-            multiplier = CONFIG.damageMultiplierForSnowGolem() * CONFIG.damageMultiplierForAll();
+        Snowball snowball = (Snowball)(Object)this;
+        if (snowball.getOwner() instanceof SnowGolem) {
+            multiplier = Config.VANILLA.damageMultiplierForSnowGolem.get() * Config.VANILLA.damageMultiplierForAll.get();
         }
 
         double finalDamage = originalDamage * multiplier;
-        return entity.damage(source, (float) finalDamage);
+        return entity.hurt(source, (float) finalDamage);
     }
 }

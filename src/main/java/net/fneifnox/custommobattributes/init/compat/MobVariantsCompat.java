@@ -1,115 +1,114 @@
 package net.fneifnox.custommobattributes.init.compat;
 
+import net.fneifnox.custommobattributes.config.Config;
 import net.fneifnox.custommobattributes.AttributeUpdater;
-import net.minecraft.entity.EntityType;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
-
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 
 public class MobVariantsCompat {
 
     public static void initMobVariantsAttributeHandlers() {
-        EntityType armoredSpider = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "armored_spider"));
-        EntityType bloatedCorpse = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "bloated_corpse"));
-        EntityType caveCreeper = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "cave_creeper"));
-        EntityType corsair = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "corsair"));
-        EntityType executioner = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "executioner"));
-        EntityType explorer = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "explorer"));
-        EntityType forgotten = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "forgotten"));
-        EntityType frozenZombie = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "frozen_zombie"));
-        EntityType infectedPiglin = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "infected_piglin"));
-        EntityType InfectedPiglinBrute = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "infected_piglin_brute"));
-        EntityType lavaSlime = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "lava_slime"));
-        EntityType nightmare = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "nightmare"));
-        EntityType soulStealer = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "soul_stealer"));
-        EntityType toxicSlime = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "toxic_slime"));
-        EntityType tropicalSpider = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "tropical_spider"));
-        EntityType undeadWarrior = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "undead_warrior"));
-        EntityType zombifiedPiglinBrute = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "zombified_piglin_brute"));
+        EntityType armoredSpider = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "armored_spider"));
+        EntityType bloatedCorpse = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "bloated_corpse"));
+        EntityType caveCreeper = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "cave_creeper"));
+        EntityType corsair = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "corsair"));
+        EntityType executioner = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "executioner"));
+        EntityType explorer = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "explorer"));
+        EntityType forgotten = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "forgotten"));
+        EntityType frozenZombie = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "frozen_zombie"));
+        EntityType infectedPiglin = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "infected_piglin"));
+        EntityType InfectedPiglinBrute = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "infected_piglin_brute"));
+        EntityType lavaSlime = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "lava_slime"));
+        EntityType nightmare = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "nightmare"));
+        EntityType soulStealer = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "soul_stealer"));
+        EntityType toxicSlime = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "toxic_slime"));
+        EntityType tropicalSpider = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "tropical_spider"));
+        EntityType undeadWarrior = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "undead_warrior"));
+        EntityType zombifiedPiglinBrute = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "zombified_piglin_brute"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(armoredSpider, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), armoredSpider, CONFIG.mobVariants::healthMultiplierForArmoredSpider, CONFIG.mobVariants::damageMultiplierForArmoredSpider, CONFIG.mobVariants::speedMultiplierForArmoredSpider, CONFIG.mobVariants::scaleMultiplierForArmoredSpider
+            AttributeUpdater.configureEntityAttributes(entity.level(), armoredSpider, Config.MOB_VARIANTS.healthMultiplierForArmoredSpider, Config.MOB_VARIANTS.damageMultiplierForArmoredSpider, Config.MOB_VARIANTS.speedMultiplierForArmoredSpider, Config.MOB_VARIANTS.scaleMultiplierForArmoredSpider
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(bloatedCorpse, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), bloatedCorpse, CONFIG.mobVariants::healthMultiplierForBloatedCorpse, CONFIG.mobVariants::damageMultiplierForBloatedCorpse, CONFIG.mobVariants::speedMultiplierForBloatedCorpse, CONFIG.mobVariants::scaleMultiplierForBloatedCorpse
+            AttributeUpdater.configureEntityAttributes(entity.level(), bloatedCorpse, Config.MOB_VARIANTS.healthMultiplierForBloatedCorpse, Config.MOB_VARIANTS.damageMultiplierForBloatedCorpse, Config.MOB_VARIANTS.speedMultiplierForBloatedCorpse, Config.MOB_VARIANTS.scaleMultiplierForBloatedCorpse
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(caveCreeper, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), caveCreeper, CONFIG.mobVariants::healthMultiplierForCaveCreeper, CONFIG.mobVariants::damageMultiplierForCaveCreeper, CONFIG.mobVariants::speedMultiplierForCaveCreeper, CONFIG.mobVariants::scaleMultiplierForCaveCreeper
+            AttributeUpdater.configureEntityAttributes(entity.level(), caveCreeper, Config.MOB_VARIANTS.healthMultiplierForCaveCreeper, Config.MOB_VARIANTS.damageMultiplierForCaveCreeper, Config.MOB_VARIANTS.speedMultiplierForCaveCreeper, Config.MOB_VARIANTS.scaleMultiplierForCaveCreeper
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(corsair, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), corsair, CONFIG.mobVariants::healthMultiplierForCorsair, CONFIG.mobVariants::damageMultiplierForCorsair, CONFIG.mobVariants::speedMultiplierForCorsair, CONFIG.mobVariants::scaleMultiplierForCorsair
+            AttributeUpdater.configureEntityAttributes(entity.level(), corsair, Config.MOB_VARIANTS.healthMultiplierForCorsair, Config.MOB_VARIANTS.damageMultiplierForCorsair, Config.MOB_VARIANTS.speedMultiplierForCorsair, Config.MOB_VARIANTS.scaleMultiplierForCorsair
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(executioner, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), executioner, CONFIG.mobVariants::healthMultiplierForExecutioner, CONFIG.mobVariants::damageMultiplierForExecutioner, CONFIG.mobVariants::speedMultiplierForExecutioner, CONFIG.mobVariants::scaleMultiplierForExecutioner
+            AttributeUpdater.configureEntityAttributes(entity.level(), executioner, Config.MOB_VARIANTS.healthMultiplierForExecutioner, Config.MOB_VARIANTS.damageMultiplierForExecutioner, Config.MOB_VARIANTS.speedMultiplierForExecutioner, Config.MOB_VARIANTS.scaleMultiplierForExecutioner
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(explorer, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), explorer, CONFIG.mobVariants::healthMultiplierForExplorer, CONFIG.mobVariants::damageMultiplierForExplorer, CONFIG.mobVariants::speedMultiplierForExplorer, CONFIG.mobVariants::scaleMultiplierForExplorer
+            AttributeUpdater.configureEntityAttributes(entity.level(), explorer, Config.MOB_VARIANTS.healthMultiplierForExplorer, Config.MOB_VARIANTS.damageMultiplierForExplorer, Config.MOB_VARIANTS.speedMultiplierForExplorer, Config.MOB_VARIANTS.scaleMultiplierForExplorer
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(forgotten, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), forgotten, CONFIG.mobVariants::healthMultiplierForForgotten, CONFIG.mobVariants::damageMultiplierForForgotten, CONFIG.mobVariants::speedMultiplierForForgotten, CONFIG.mobVariants::scaleMultiplierForForgotten
+            AttributeUpdater.configureEntityAttributes(entity.level(), forgotten, Config.MOB_VARIANTS.healthMultiplierForForgotten, Config.MOB_VARIANTS.damageMultiplierForForgotten, Config.MOB_VARIANTS.speedMultiplierForForgotten, Config.MOB_VARIANTS.scaleMultiplierForForgotten
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(frozenZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), frozenZombie, CONFIG.mobVariants::healthMultiplierForFrozenZombie, CONFIG.mobVariants::damageMultiplierForFrozenZombie, CONFIG.mobVariants::speedMultiplierForFrozenZombie, CONFIG.mobVariants::scaleMultiplierForFrozenZombie
+            AttributeUpdater.configureEntityAttributes(entity.level(), frozenZombie, Config.MOB_VARIANTS.healthMultiplierForFrozenZombie, Config.MOB_VARIANTS.damageMultiplierForFrozenZombie, Config.MOB_VARIANTS.speedMultiplierForFrozenZombie, Config.MOB_VARIANTS.scaleMultiplierForFrozenZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(infectedPiglin, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), infectedPiglin, CONFIG.mobVariants::healthMultiplierForInfectedPiglin, CONFIG.mobVariants::damageMultiplierForInfectedPiglin, CONFIG.mobVariants::speedMultiplierForInfectedPiglin, CONFIG.mobVariants::scaleMultiplierForInfectedPiglin
+            AttributeUpdater.configureEntityAttributes(entity.level(), infectedPiglin, Config.MOB_VARIANTS.healthMultiplierForInfectedPiglin, Config.MOB_VARIANTS.damageMultiplierForInfectedPiglin, Config.MOB_VARIANTS.speedMultiplierForInfectedPiglin, Config.MOB_VARIANTS.scaleMultiplierForInfectedPiglin
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(InfectedPiglinBrute, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), InfectedPiglinBrute, CONFIG.mobVariants::healthMultiplierForInfectedPiglinBrute, CONFIG.mobVariants::damageMultiplierForInfectedPiglinBrute, CONFIG.mobVariants::speedMultiplierForInfectedPiglinBrute, CONFIG.mobVariants::scaleMultiplierForInfectedPiglinBrute
+            AttributeUpdater.configureEntityAttributes(entity.level(), InfectedPiglinBrute, Config.MOB_VARIANTS.healthMultiplierForInfectedPiglinBrute, Config.MOB_VARIANTS.damageMultiplierForInfectedPiglinBrute, Config.MOB_VARIANTS.speedMultiplierForInfectedPiglinBrute, Config.MOB_VARIANTS.scaleMultiplierForInfectedPiglinBrute
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(lavaSlime, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), lavaSlime, CONFIG.mobVariants::healthMultiplierForLavaSlime, CONFIG.mobVariants::damageMultiplierForLavaSlime, CONFIG.mobVariants::speedMultiplierForLavaSlime, CONFIG.mobVariants::scaleMultiplierForLavaSlime
+            AttributeUpdater.configureEntityAttributes(entity.level(), lavaSlime, Config.MOB_VARIANTS.healthMultiplierForLavaSlime, Config.MOB_VARIANTS.damageMultiplierForLavaSlime, Config.MOB_VARIANTS.speedMultiplierForLavaSlime, Config.MOB_VARIANTS.scaleMultiplierForLavaSlime
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(nightmare, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), nightmare, CONFIG.mobVariants::healthMultiplierForNightmare, CONFIG.mobVariants::damageMultiplierForNightmare, CONFIG.mobVariants::speedMultiplierForNightmare, CONFIG.mobVariants::scaleMultiplierForNightmare
+            AttributeUpdater.configureEntityAttributes(entity.level(), nightmare, Config.MOB_VARIANTS.healthMultiplierForNightmare, Config.MOB_VARIANTS.damageMultiplierForNightmare, Config.MOB_VARIANTS.speedMultiplierForNightmare, Config.MOB_VARIANTS.scaleMultiplierForNightmare
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(soulStealer, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), soulStealer, CONFIG.mobVariants::healthMultiplierForSoulStealer, CONFIG.mobVariants::damageMultiplierForSoulStealer, CONFIG.mobVariants::speedMultiplierForSoulStealer, CONFIG.mobVariants::scaleMultiplierForSoulStealer
+            AttributeUpdater.configureEntityAttributes(entity.level(), soulStealer, Config.MOB_VARIANTS.healthMultiplierForSoulStealer, Config.MOB_VARIANTS.damageMultiplierForSoulStealer, Config.MOB_VARIANTS.speedMultiplierForSoulStealer, Config.MOB_VARIANTS.scaleMultiplierForSoulStealer
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(toxicSlime, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), toxicSlime, CONFIG.mobVariants::healthMultiplierForToxicSlime, CONFIG.mobVariants::damageMultiplierForToxicSlime, CONFIG.mobVariants::speedMultiplierForToxicSlime, CONFIG.mobVariants::scaleMultiplierForToxicSlime
+            AttributeUpdater.configureEntityAttributes(entity.level(), toxicSlime, Config.MOB_VARIANTS.healthMultiplierForToxicSlime, Config.MOB_VARIANTS.damageMultiplierForToxicSlime, Config.MOB_VARIANTS.speedMultiplierForToxicSlime, Config.MOB_VARIANTS.scaleMultiplierForToxicSlime
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(tropicalSpider, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), tropicalSpider, CONFIG.mobVariants::healthMultiplierForTropicalSpider, CONFIG.mobVariants::damageMultiplierForTropicalSpider, CONFIG.mobVariants::speedMultiplierForTropicalSpider, CONFIG.mobVariants::scaleMultiplierForTropicalSpider
+            AttributeUpdater.configureEntityAttributes(entity.level(), tropicalSpider, Config.MOB_VARIANTS.healthMultiplierForTropicalSpider, Config.MOB_VARIANTS.damageMultiplierForTropicalSpider, Config.MOB_VARIANTS.speedMultiplierForTropicalSpider, Config.MOB_VARIANTS.scaleMultiplierForTropicalSpider
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(undeadWarrior, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), undeadWarrior, CONFIG.mobVariants::healthMultiplierForUndeadWarrior, CONFIG.mobVariants::damageMultiplierForUndeadWarrior, CONFIG.mobVariants::speedMultiplierForUndeadWarrior, CONFIG.mobVariants::scaleMultiplierForUndeadWarrior
+            AttributeUpdater.configureEntityAttributes(entity.level(), undeadWarrior, Config.MOB_VARIANTS.healthMultiplierForUndeadWarrior, Config.MOB_VARIANTS.damageMultiplierForUndeadWarrior, Config.MOB_VARIANTS.speedMultiplierForUndeadWarrior, Config.MOB_VARIANTS.scaleMultiplierForUndeadWarrior
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(zombifiedPiglinBrute, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), zombifiedPiglinBrute, CONFIG.mobVariants::healthMultiplierForZombifiedPiglinBrute, CONFIG.mobVariants::damageMultiplierForZombifiedPiglinBrute, CONFIG.mobVariants::speedMultiplierForZombifiedPiglinBrute, CONFIG.mobVariants::scaleMultiplierForZombifiedPiglinBrute
+            AttributeUpdater.configureEntityAttributes(entity.level(), zombifiedPiglinBrute, Config.MOB_VARIANTS.healthMultiplierForZombifiedPiglinBrute, Config.MOB_VARIANTS.damageMultiplierForZombifiedPiglinBrute, Config.MOB_VARIANTS.speedMultiplierForZombifiedPiglinBrute, Config.MOB_VARIANTS.scaleMultiplierForZombifiedPiglinBrute
             );
         });
     }

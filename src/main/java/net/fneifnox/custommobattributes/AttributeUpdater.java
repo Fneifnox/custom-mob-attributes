@@ -1,156 +1,165 @@
 package net.fneifnox.custommobattributes;
 
-import io.wispforest.owo.config.Option;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
-import net.fabricmc.loader.api.FabricLoader;
+import net.fneifnox.custommobattributes.config.Config;
 import net.fneifnox.custommobattributes.init.Vanilla;
 import net.fneifnox.custommobattributes.init.compat.*;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttribute;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.boss.dragon.EnderDragonEntity;
-import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 
-import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
-
+@Mod.EventBusSubscriber(modid = CustomMobAttributes.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AttributeUpdater {
 
-    private static final Identifier HEALTH_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "health_modifier");
-    private static final Identifier DAMAGE_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "damage_modifier");
-    private static final Identifier SPEED_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "speed_modifier");
-    private static final Identifier SCALE_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "scale_modifier");
+    private static final ResourceLocation HEALTH_MODIFIER_UUID = ResourceLocation.fromNamespaceAndPath("custom_mob_attributes", "health_modifier");
+    private static final ResourceLocation DAMAGE_MODIFIER_UUID = ResourceLocation.fromNamespaceAndPath("custom_mob_attributes", "damage_modifier");
+    private static final ResourceLocation SPEED_MODIFIER_UUID = ResourceLocation.fromNamespaceAndPath("custom_mob_attributes", "speed_modifier");
+    private static final ResourceLocation SCALE_MODIFIER_UUID = ResourceLocation.fromNamespaceAndPath("custom_mob_attributes", "scale_modifier");
 
     public static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
+    private static final Map<LivingEntity, Integer> pendingEntities = new ConcurrentHashMap<>();
 
     public static void register() {
         Vanilla.initVanillaAttributeHandlers();
 
-        if (FabricLoader.getInstance().isModLoaded("vanillabackport")) {
+        if (ModList.get().isLoaded("vanillabackport")) {
             VanillaBackportCompat.initVanillaBackportAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("frycmobvariants")) {
+        if (ModList.get().isLoaded("frycmobvariants")) {
             MobVariantsCompat.initMobVariantsAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("betterend")) {
+        if (ModList.get().isLoaded("betterend")) {
             BetterEndCompat.initBetterEndAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("betternether")) {
+        if (ModList.get().isLoaded("betternether")) {
             BetterNetherCompat.initBetterNetherAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("variantsandventures")) {
+        if (ModList.get().isLoaded("variantsandventures")) {
             VariantsAndVenturesCompat.initVariantsAndVenturesAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("friendsandfoes")) {
+        if (ModList.get().isLoaded("friendsandfoes")) {
             FriendsAndFoesCompat.initFriendsAndFoesAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("takesapillage")) {
+        if (ModList.get().isLoaded("takesapillage")) {
             ItTakesAPillageContinuationCompat.initItTakesAPillageContinuationAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("deeperdarker")) {
+        if (ModList.get().isLoaded("deeperdarker")) {
             DeeperAndDarkerCompat.initDeeperAndDarkerAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("illagerinvasion")) {
+        if (ModList.get().isLoaded("illagerinvasion")) {
             IllagerInvasionCompat.initIllagerInvasionAttributeHandlers();
         }
-
-        ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
-            if (entity instanceof LivingEntity living && !world.isClient) {
-                Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(entity.getType());
-                if (handler != null) {
-                    handler.accept(living);
-                }
-            }
-        });
     }
 
-    public static void reloadConfig(MinecraftServer server) {
-        for (ServerWorld world : server.getWorlds()) {
-            for (Entity entity : world.iterateEntities()) {
-                if (!(entity instanceof LivingEntity living)) continue;
+    @SubscribeEvent
+    public static void onEntityJoinWorld(EntityJoinLevelEvent event) {
+        Entity entity = event.getEntity();
+        Level world = event.getLevel();
 
-                Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(entity.getType());
-                if (handler != null) {
-                    handler.accept(living);
-                }
+        if (entity instanceof LivingEntity living && !world.isClientSide()) {
+            Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(entity.getType());
+            if (handler != null) {
+                pendingEntities.put(living, 0);
             }
         }
     }
 
-    public static void observeAllConfigChanges(Runnable callback) {
-        for (Field field : CONFIG.getClass().getDeclaredFields()) {
-            if (!Option.class.isAssignableFrom(field.getType())) continue;
-            field.setAccessible(true);
-            try {
-                @SuppressWarnings("unchecked")
-                Option<Object> option = (Option<Object>) field.get(CONFIG);
-                option.observe(val -> callback.run());
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
+    @SubscribeEvent
+    public static void onServerTick(TickEvent.ServerTickEvent event) {
+        if (event.phase == TickEvent.Phase.END) {
+            Iterator<Map.Entry<LivingEntity, Integer>> it = pendingEntities.entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry<LivingEntity, Integer> entry = it.next();
+                LivingEntity entity = entry.getKey();
+                int ticks = entry.getValue() + 1;
+
+                if (!entity.isAlive()) {
+                    it.remove();
+                    continue;
+                }
+
+                if (ticks >= 1) {
+                    var type = entity.getType();
+                    Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(type);
+                    if (handler != null) {
+                        handler.accept(entity);
+                    }
+                    it.remove();
+                } else {
+                    entry.setValue(ticks);
+                }
             }
         }
     }
 
     public static <T extends LivingEntity> void configureEntityAttributes(
-            World world,
+            Level world,
             EntityType<T> entityType,
             @Nullable Supplier<Double> healthMultiplier,
             @Nullable Supplier<Double> damageMultiplier,
             @Nullable Supplier<Double> speedMultiplier,
             @Nullable Supplier<Double> scaleMultiplier
     ) {
-        Box box = new Box(new Vec3d(-1_000_000, -1_000_000, -1_000_000), new Vec3d(1_000_000, 1_000_000, 1_000_000));
+        AABB box = new AABB(new Vec3(-1_000_000, -1_000_000, -1_000_000), new Vec3(1_000_000, 1_000_000, 1_000_000));
         Predicate<Entity> predicate = entityType == EntityType.ENDER_DRAGON
-                ? e -> e instanceof EnderDragonEntity
+                ? e -> e instanceof EnderDragon
                 : e -> e instanceof LivingEntity;
 
-        for (T entity : world.getEntitiesByType(entityType, box, predicate)) {
-            var health = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+        for (T entity : world.getEntities(entityType, box, predicate)) {
+            var health = entity.getAttribute(Attributes.MAX_HEALTH);
             if (health != null) {
-                double val = health.getBaseValue() * healthMultiplier.get() * CONFIG.healthMultiplierForAll();
+                double val = health.getBaseValue() * healthMultiplier.get() * Config.VANILLA.healthMultiplierForAll.get();
                 if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.GENERIC_MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
+                    updateModifier(entity, Attributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * Config.VANILLA.healthMultiplierForAll.get());
                     entity.setHealth((float) val);
                 }
             }
             if (damageMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
+                updateModifier(entity, Attributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * Config.VANILLA.damageMultiplierForAll.get());
             }
             if (speedMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
-                if (entity.getAttributeInstance(EntityAttributes.GENERIC_FLYING_SPEED) != null) {
-                    updateModifier(entity, EntityAttributes.GENERIC_FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+                updateModifier(entity, Attributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * Config.VANILLA.speedMultiplierForAll.get());
+                if (entity.getAttribute(Attributes.FLYING_SPEED) != null) {
+                    updateModifier(entity, Attributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * Config.VANILLA.speedMultiplierForAll.get());
                 }
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
+                updateModifier(entity, Attributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * Config.VANILLA.scaleMultiplierForAll.get());
             }
         }
     }
 
     private static void updateModifier(
             LivingEntity entity,
-            RegistryEntry<EntityAttribute> entry,
-            Identifier id,
+            Holder<Attribute> entry,
+            ResourceLocation id,
             double multiplier
     ) {
-        var attrInstance = entity.getAttributeInstance(entry);
+        var attrInstance = entity.getAttribute(entry);
         if (attrInstance == null) return;
 
         var oldModifier = attrInstance.getModifier(id);
@@ -161,12 +170,12 @@ public class AttributeUpdater {
         if (multiplier == 1.0) return;
 
         double amount = attrInstance.getBaseValue() * (multiplier - 1);
-        EntityAttributeModifier modifier = new EntityAttributeModifier(
+        AttributeModifier modifier = new AttributeModifier(
                 id,
                 amount,
-                EntityAttributeModifier.Operation.ADD_VALUE
+                AttributeModifier.Operation.ADD_VALUE
         );
-        attrInstance.addPersistentModifier(modifier);
+        attrInstance.addPermanentModifier(modifier);
     }
 }
 

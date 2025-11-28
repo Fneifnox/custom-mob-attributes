@@ -1,18 +1,17 @@
 package net.fneifnox.custommobattributes.mixin.movement;
 
-import net.minecraft.entity.passive.SquidEntity;
+import net.fneifnox.custommobattributes.config.Config;
+import net.minecraft.world.entity.animal.Squid;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
-
-@Mixin(SquidEntity.class)
+@Mixin(Squid.class)
 public class SquidSpeedMixin {
 
-    @Redirect(method = "tickMovement()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/SquidEntity;setVelocity(DDD)V"))
-    private void redirectSetVelocity(SquidEntity instance, double x, double y, double z) {
-        double speedMultiplier = CONFIG.speedMultiplierForSquid() * CONFIG.speedMultiplierForAll();
-        instance.setVelocity(x * speedMultiplier, y * speedMultiplier, z * speedMultiplier);
+    @Redirect(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/animal/Squid;setDeltaMovement(DDD)V"))
+    private void redirectSetVelocity(Squid instance, double x, double y, double z) {
+        double speedMultiplier = Config.VANILLA.speedMultiplierForSquid.get() * Config.VANILLA.speedMultiplierForAll.get();
+        instance.setDeltaMovement(x * speedMultiplier, y * speedMultiplier, z * speedMultiplier);
     }
 }
