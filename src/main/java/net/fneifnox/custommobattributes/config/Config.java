@@ -72,10 +72,6 @@ public class Config
         public final ForgeConfigSpec.DoubleValue speedMultiplierForAllay;
         public final ForgeConfigSpec.DoubleValue scaleMultiplierForAllay;
 
-        public final ForgeConfigSpec.DoubleValue healthMultiplierForArmadillo;
-        public final ForgeConfigSpec.DoubleValue speedMultiplierForArmadillo;
-        public final ForgeConfigSpec.DoubleValue scaleMultiplierForArmadillo;
-
         public final ForgeConfigSpec.DoubleValue healthMultiplierForAxolotl;
         public final ForgeConfigSpec.DoubleValue damageMultiplierForAxolotl;
         public final ForgeConfigSpec.DoubleValue speedMultiplierForAxolotl;
@@ -94,16 +90,6 @@ public class Config
         public final ForgeConfigSpec.DoubleValue damageMultiplierForBlaze;
         public final ForgeConfigSpec.DoubleValue speedMultiplierForBlaze;
         public final ForgeConfigSpec.DoubleValue scaleMultiplierForBlaze;
-
-        public final ForgeConfigSpec.DoubleValue healthMultiplierForBogged;
-        public final ForgeConfigSpec.DoubleValue damageMultiplierForBogged;
-        public final ForgeConfigSpec.DoubleValue speedMultiplierForBogged;
-        public final ForgeConfigSpec.DoubleValue scaleMultiplierForBogged;
-
-        public final ForgeConfigSpec.DoubleValue healthMultiplierForBreeze;
-        public final ForgeConfigSpec.DoubleValue damageMultiplierForBreeze;
-        public final ForgeConfigSpec.DoubleValue speedMultiplierForBreeze;
-        public final ForgeConfigSpec.DoubleValue scaleMultiplierForBreeze;
 
         public final ForgeConfigSpec.DoubleValue healthMultiplierForCamel;
         public final ForgeConfigSpec.DoubleValue speedMultiplierForCamel;
@@ -463,12 +449,6 @@ public class Config
             scaleMultiplierForAllay = builder.defineInRange("scaleMultiplierForAllay", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             builder.pop();
 
-            builder.push("Armadillo");
-            healthMultiplierForArmadillo = builder.defineInRange("healthMultiplierForArmadillo", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            speedMultiplierForArmadillo = builder.defineInRange("speedMultiplierForArmadillo", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            scaleMultiplierForArmadillo = builder.defineInRange("scaleMultiplierForArmadillo", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            builder.pop();
-
             builder.push("Axolotl");
             healthMultiplierForAxolotl = builder.defineInRange("healthMultiplierForAxolotl", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             damageMultiplierForAxolotl = builder.defineInRange("damageMultiplierForAxolotl", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
@@ -494,20 +474,6 @@ public class Config
             damageMultiplierForBlaze = builder.defineInRange("damageMultiplierForBlaze", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             speedMultiplierForBlaze = builder.defineInRange("speedMultiplierForBlaze", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             scaleMultiplierForBlaze = builder.defineInRange("scaleMultiplierForBlaze", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            builder.pop();
-
-            builder.push("Bogged");
-            healthMultiplierForBogged = builder.defineInRange("healthMultiplierForBogged", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            damageMultiplierForBogged = builder.defineInRange("damageMultiplierForBogged", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            speedMultiplierForBogged = builder.defineInRange("speedMultiplierForBogged", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            scaleMultiplierForBogged = builder.defineInRange("scaleMultiplierForBogged", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            builder.pop();
-
-            builder.push("Breeze");
-            healthMultiplierForBreeze = builder.defineInRange("healthMultiplierForBreeze", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            damageMultiplierForBreeze = builder.defineInRange("damageMultiplierForBreeze", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            speedMultiplierForBreeze = builder.defineInRange("speedMultiplierForBreeze", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            scaleMultiplierForBreeze = builder.defineInRange("scaleMultiplierForBreeze", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             builder.pop();
 
             builder.push("Camel");

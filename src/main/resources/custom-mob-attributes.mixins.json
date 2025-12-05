@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "net.fneifnox.custommobattributes.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
     "damage.ArrowMixin",
     "damage.DragonPurgeMixin",
@@ -11,15 +11,39 @@
     "damage.ShulkerBulletMixin",
     "damage.SnowballMixin",
     "damage.TridentMixin",
-    "damage.WindChargeMixin",
     "damage.WitherSkullMixin",
     "movement.BatSpeedMixin",
     "movement.FishSpeedMixin",
     "movement.GhastSpeedMixin",
     "movement.SquidSpeedMixin",
-    "movement.VexSpeedMixin"
+    "movement.VexSpeedMixin",
+    "scale.EntityRidingScaleMixin",
+    "scale.LivingEntityAttributesMixin",
+    "scale.ScaleModifierMixin",
+    "scale.ShulkerHitboxMixin",
+    "scale.TurtleEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "client": [
+    "scale.BatEntityRendererMixin",
+    "scale.CaveSpiderEntityRendererMixin",
+    "scale.CreeperEntityRendererMixin",
+    "scale.ElderGuardianEntityRendererMixin",
+    "scale.GhastEntityRendererMixin",
+    "scale.GiantEntityRendererMixin",
+    "scale.IllagerEntityRendererMixin",
+    "scale.LivingEntityRendererMixin",
+    "scale.MagmaCubeEntityRendererMixin",
+    "scale.PhantomEntityRendererMixin",
+    "scale.ShadowRadiusMixin",
+    "scale.SlimeEntityRendererMixin",
+    "scale.StriderEntityRendererMixin",
+    "scale.VillagerEntityRendererMixin",
+    "scale.WanderingTraderEntityRendererMixin",
+    "scale.WitchEntityRendererMixin",
+    "scale.WitherEntityRendererMixin",
+    "scale.WitherSkeletonEntityRendererMixin"
+  ]
 }

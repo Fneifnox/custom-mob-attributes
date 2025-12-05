@@ -15,11 +15,6 @@ public class Vanilla {
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ARMADILLO, entity -> {
-            configureEntityAttributes(entity.level(), EntityType.ARMADILLO, Config.VANILLA.healthMultiplierForArmadillo, null, Config.VANILLA.speedMultiplierForArmadillo, Config.VANILLA.scaleMultiplierForArmadillo
-            );
-        });
-
         ATTRIBUTE_HANDLERS.put(EntityType.AXOLOTL, entity -> {
             configureEntityAttributes(entity.level(), EntityType.AXOLOTL, Config.VANILLA.healthMultiplierForAxolotl, Config.VANILLA.damageMultiplierForAxolotl, Config.VANILLA.speedMultiplierForAxolotl, Config.VANILLA.scaleMultiplierForAxolotl
             );
@@ -37,16 +32,6 @@ public class Vanilla {
 
         ATTRIBUTE_HANDLERS.put(EntityType.BLAZE, entity -> {
             configureEntityAttributes(entity.level(), EntityType.BLAZE, Config.VANILLA.healthMultiplierForBlaze, Config.VANILLA.damageMultiplierForBlaze, Config.VANILLA.speedMultiplierForBlaze, Config.VANILLA.scaleMultiplierForBlaze
-            );
-        });
-
-        ATTRIBUTE_HANDLERS.put(EntityType.BOGGED, entity -> {
-            configureEntityAttributes(entity.level(), EntityType.BOGGED, Config.VANILLA.healthMultiplierForBogged, Config.VANILLA.damageMultiplierForBogged, Config.VANILLA.speedMultiplierForBogged, Config.VANILLA.scaleMultiplierForBogged
-            );
-        });
-
-        ATTRIBUTE_HANDLERS.put(EntityType.BREEZE, entity -> {
-            configureEntityAttributes(entity.level(), EntityType.BREEZE, Config.VANILLA.healthMultiplierForBreeze, Config.VANILLA.damageMultiplierForBreeze, Config.VANILLA.speedMultiplierForBreeze, Config.VANILLA.scaleMultiplierForBreeze
             );
         });
 
@@ -77,6 +62,11 @@ public class Vanilla {
 
         ATTRIBUTE_HANDLERS.put(EntityType.COW, entity -> {
             configureEntityAttributes(entity.level(), EntityType.COW, Config.VANILLA.healthMultiplierForCow, null, Config.VANILLA.speedMultiplierForCow, Config.VANILLA.scaleMultiplierForCow
+            );
+        });
+// TODO
+        ATTRIBUTE_HANDLERS.put(EntityType.CREEPER, entity -> {
+            configureEntityAttributes(entity.level(), EntityType.CREEPER, Config.VANILLA.healthMultiplierForCreeper, Config.VANILLA.damageMultiplierForCreeper, Config.VANILLA.speedMultiplierForCreeper, Config.VANILLA.scaleMultiplierForCreeper
             );
         });
 
