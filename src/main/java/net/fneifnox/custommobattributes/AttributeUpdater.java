@@ -27,6 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -35,10 +36,10 @@ import java.util.function.Supplier;
 @Mod.EventBusSubscriber(modid = CustomMobAttributes.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AttributeUpdater {
 
-    private static final ResourceLocation HEALTH_MODIFIER_UUID = ResourceLocation.fromNamespaceAndPath("custom_mob_attributes", "health_modifier");
-    private static final ResourceLocation DAMAGE_MODIFIER_UUID = ResourceLocation.fromNamespaceAndPath("custom_mob_attributes", "damage_modifier");
-    private static final ResourceLocation SPEED_MODIFIER_UUID = ResourceLocation.fromNamespaceAndPath("custom_mob_attributes", "speed_modifier");
-    private static final ResourceLocation SCALE_MODIFIER_UUID = ResourceLocation.fromNamespaceAndPath("custom_mob_attributes", "scale_modifier");
+    private static final UUID HEALTH_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
+    private static final UUID DAMAGE_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174001");
+    private static final UUID SPEED_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174002");
+    private static final UUID SCALE_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174003");
 
     public static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
     private static final Map<LivingEntity, Integer> pendingEntities = new ConcurrentHashMap<>();
@@ -148,15 +149,15 @@ public class AttributeUpdater {
                 }
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, Attributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * Config.VANILLA.scaleMultiplierForAll.get());
+                updateModifier(entity, CustomMobAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * Config.VANILLA.scaleMultiplierForAll.get());
             }
         }
     }
 
     private static void updateModifier(
             LivingEntity entity,
-            Holder<Attribute> entry,
-            ResourceLocation id,
+            Attribute entry,
+            UUID id,
             double multiplier
     ) {
         var attrInstance = entity.getAttribute(entry);
@@ -164,7 +165,7 @@ public class AttributeUpdater {
 
         var oldModifier = attrInstance.getModifier(id);
         if (oldModifier != null) {
-            attrInstance.removeModifier(oldModifier);
+            attrInstance.removeModifier(oldModifier.getId());
         }
 
         if (multiplier == 1.0) return;
@@ -172,8 +173,9 @@ public class AttributeUpdater {
         double amount = attrInstance.getBaseValue() * (multiplier - 1);
         AttributeModifier modifier = new AttributeModifier(
                 id,
+                "attribute modifier",
                 amount,
-                AttributeModifier.Operation.ADD_VALUE
+                AttributeModifier.Operation.ADDITION
         );
         attrInstance.addPermanentModifier(modifier);
     }

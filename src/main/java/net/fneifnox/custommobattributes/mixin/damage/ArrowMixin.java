@@ -6,7 +6,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.monster.Bogged;
 import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Stray;
@@ -33,9 +32,6 @@ public class ArrowMixin {
             }
             else if (projectile.getOwner() instanceof Stray) {
                 multiplier = Config.VANILLA.damageMultiplierForStray.get() * Config.VANILLA.damageMultiplierForAll.get();
-            }
-            else if (projectile.getOwner() instanceof Bogged) {
-                multiplier = Config.VANILLA.damageMultiplierForBogged.get() * Config.VANILLA.damageMultiplierForAll.get();
             }
             else if (projectile.getOwner() instanceof Piglin) {
                 multiplier = Config.VANILLA.damageMultiplierForPiglin.get() * Config.VANILLA.damageMultiplierForAll.get();
