@@ -3,6 +3,7 @@ package net.fneifnox.custommobattributes.mixin.damage;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.*;
 import net.minecraft.entity.projectile.ArrowEntity;
@@ -23,9 +24,9 @@ public class ArrowMixin {
     @Redirect(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
         PersistentProjectileEntity projectile = (PersistentProjectileEntity)(Object)this;
-        if (projectile instanceof SpectralArrowEntity || projectile instanceof ArrowEntity) {
+        if (projectile instanceof SpectralArrowEntity && projectile.getOwner() instanceof LivingEntity || projectile instanceof ArrowEntity && projectile.getOwner() instanceof LivingEntity) {
             double multiplier = 1f;
-            if ((projectile.getOwner() instanceof SkeletonEntity)) {
+            if (projectile.getOwner() instanceof SkeletonEntity) {
                 multiplier = CONFIG.damageMultiplierForSkeleton() * CONFIG.damageMultiplierForAll();
             }
             else if (projectile.getOwner() instanceof StrayEntity) {
@@ -45,10 +46,10 @@ public class ArrowMixin {
                     EntityType infectedPiglin = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "infected_piglin"));
                     EntityType undeadWarrior = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "undead_warrior"));
 
-                    if (Objects.requireNonNull(projectile.getOwner()).getType() == infectedPiglin) {
+                    if (projectile.getOwner().getType() == infectedPiglin) {
                         multiplier = CONFIG.mobVariants.damageMultiplierForInfectedPiglin() * CONFIG.damageMultiplierForAll();
                     }
-                    else if (Objects.requireNonNull(projectile.getOwner()).getType() == undeadWarrior) {
+                    else if (projectile.getOwner().getType() == undeadWarrior) {
                         multiplier = CONFIG.mobVariants.damageMultiplierForUndeadWarrior() * CONFIG.damageMultiplierForAll();
                     }
                 }
