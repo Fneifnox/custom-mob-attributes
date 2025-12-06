@@ -26,9 +26,9 @@ public class ArrowMixin {
     @Redirect(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
         AbstractArrow projectile = (AbstractArrow)(Object)this;
-        if (projectile instanceof SpectralArrow || projectile instanceof Arrow) {
+        if (projectile instanceof SpectralArrowEntity && projectile.getOwner() instanceof LivingEntity || projectile instanceof ArrowEntity && projectile.getOwner() instanceof LivingEntity) {
             double multiplier = 1f;
-            if ((projectile.getOwner() instanceof Skeleton)) {
+            if (projectile.getOwner() instanceof Skeleton) {
                 multiplier = Config.VANILLA.damageMultiplierForSkeleton.get() * Config.VANILLA.damageMultiplierForAll.get();
             }
             else if (projectile.getOwner() instanceof Stray) {
@@ -48,10 +48,10 @@ public class ArrowMixin {
                     EntityType infectedPiglin = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "infected_piglin"));
                     EntityType undeadWarrior = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("frycmobvariants", "undead_warrior"));
 
-                    if (Objects.requireNonNull(projectile.getOwner()).getType() == infectedPiglin) {
+                    if (projectile.getOwner().getType() == infectedPiglin) {
                         multiplier = Config.MOB_VARIANTS.damageMultiplierForInfectedPiglin.get() * Config.VANILLA.damageMultiplierForAll.get();
                     }
-                    else if (Objects.requireNonNull(projectile.getOwner()).getType() == undeadWarrior) {
+                    else if (projectile.getOwner().getType() == undeadWarrior) {
                         multiplier = Config.MOB_VARIANTS.damageMultiplierForUndeadWarrior.get() * Config.VANILLA.damageMultiplierForAll.get();
                     }
                 }
