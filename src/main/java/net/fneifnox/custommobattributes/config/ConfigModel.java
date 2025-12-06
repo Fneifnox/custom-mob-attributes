@@ -865,6 +865,16 @@ public class ConfigModel {
         public double scaleMultiplierForZombifiedPiglinBrute = 1f;
     }
     @Nest
+    public Ribbits ribbits = new Ribbits();
+    public static class Ribbits {
+        @SectionHeader("Ribbit")
+        @Comment("Ribbit")
+        public double healthMultiplierForRibbit = 1f;
+        public double damageMultiplierForRibbit = 1f;
+        public double speedMultiplierForRibbit = 1f;
+        public double scaleMultiplierForRibbit = 1f;
+    }
+    @Nest
     public VanillaBackport vanillaBackport = new VanillaBackport();
     public static class VanillaBackport {
         @SectionHeader("Creaking")
@@ -906,5 +916,99 @@ public class ConfigModel {
         public double damageMultiplierForVerdant = 1f;
         public double speedMultiplierForVerdant = 1f;
         public double scaleMultiplierForVerdant = 1f;
+    }
+    @Nest
+    public ZombieVariants zombieVariants = new ZombieVariants();
+    public static class ZombieVariants {
+        @SectionHeader("Badlands Zombie")
+        @Comment("Badlands Zombie")
+        public double healthMultiplierForBadlandsZombie = 1f;
+        public double damageMultiplierForBadlandsZombie = 1f;
+        public double speedMultiplierForBadlandsZombie = 1f;
+        public double scaleMultiplierForBadlandsZombie = 1f;
+        @SectionHeader("Bamboo Zombie")
+        @Comment("Bamboo Zombie")
+        public double healthMultiplierForBambooZombie = 1f;
+        public double damageMultiplierForBambooZombie = 1f;
+        public double speedMultiplierForBambooZombie = 1f;
+        public double scaleMultiplierForBambooZombie = 1f;
+        @SectionHeader("Cave Zombie")
+        @Comment("Cave Zombie")
+        public double healthMultiplierForCaveZombie = 1f;
+        public double damageMultiplierForCaveZombie = 1f;
+        public double speedMultiplierForCaveZombie = 1f;
+        public double scaleMultiplierForCaveZombie = 1f;
+        @SectionHeader("Cherry Zombie")
+        @Comment("Cherry Zombie")
+        public double healthMultiplierForCherryZombie = 1f;
+        public double damageMultiplierForCherryZombie = 1f;
+        public double speedMultiplierForCherryZombie = 1f;
+        public double scaleMultiplierForCherryZombie = 1f;
+        @SectionHeader("Deep Dark Zombie")
+        @Comment("Deep Dark Zombie")
+        public double healthMultiplierForDeepDarkZombie = 1f;
+        public double damageMultiplierForDeepDarkZombie = 1f;
+        public double speedMultiplierForDeepDarkZombie = 1f;
+        public double scaleMultiplierForDeepDarkZombie = 1f;
+        @SectionHeader("Desert Zombie")
+        @Comment("Desert Zombie")
+        public double healthMultiplierForDesertZombie = 1f;
+        public double damageMultiplierForDesertZombie = 1f;
+        public double speedMultiplierForDesertZombie = 1f;
+        public double scaleMultiplierForDesertZombie = 1f;
+        @SectionHeader("Dripstone Zombie")
+        @Comment("Dripstone Zombie")
+        public double healthMultiplierForDripstoneZombie = 1f;
+        public double damageMultiplierForDripstoneZombie = 1f;
+        public double speedMultiplierForDripstoneZombie = 1f;
+        public double scaleMultiplierForDripstoneZombie = 1f;
+        @SectionHeader("Frozen Zombie")
+        @Comment("Frozen Zombie")
+        public double healthMultiplierForFrozenZombie = 1f;
+        public double damageMultiplierForFrozenZombie = 1f;
+        public double speedMultiplierForFrozenZombie = 1f;
+        public double scaleMultiplierForFrozenZombie = 1f;
+        @SectionHeader("Jungle Zombie")
+        @Comment("Jungle Zombie")
+        public double healthMultiplierForJungleZombie = 1f;
+        public double damageMultiplierForJungleZombie = 1f;
+        public double speedMultiplierForJungleZombie = 1f;
+        public double scaleMultiplierForJungleZombie = 1f;
+        @SectionHeader("Lush Zombie")
+        @Comment("Lush Zombie")
+        public double healthMultiplierForLushZombie = 1f;
+        public double damageMultiplierForLushZombie = 1f;
+        public double speedMultiplierForLushZombie = 1f;
+        public double scaleMultiplierForLushZombie = 1f;
+        @SectionHeader("Mangrove Zombie")
+        @Comment("Mangrove Zombie")
+        public double healthMultiplierForMangroveZombie = 1f;
+        public double damageMultiplierForMangroveZombie = 1f;
+        public double speedMultiplierForMangroveZombie = 1f;
+        public double scaleMultiplierForMangroveZombie = 1f;
+        @SectionHeader("Mushroom Zombie")
+        @Comment("Mushroom Zombie")
+        public double healthMultiplierForMushroomZombie = 1f;
+        public double damageMultiplierForMushroomZombie = 1f;
+        public double speedMultiplierForMushroomZombie = 1f;
+        public double scaleMultiplierForMushroomZombie = 1f;
+        @SectionHeader("Pale Garden Zombie")
+        @Comment("Pale Garden Zombie")
+        public double healthMultiplierForPaleGardenZombie = 1f;
+        public double damageMultiplierForPaleGardenZombie = 1f;
+        public double speedMultiplierForPaleGardenZombie = 1f;
+        public double scaleMultiplierForPaleGardenZombie = 1f;
+        @SectionHeader("Savanna Zombie")
+        @Comment("Savanna Zombie")
+        public double healthMultiplierForSavannaZombie = 1f;
+        public double damageMultiplierForSavannaZombie = 1f;
+        public double speedMultiplierForSavannaZombie = 1f;
+        public double scaleMultiplierForSavannaZombie = 1f;
+        @SectionHeader("Swamp Zombie")
+        @Comment("Swamp Zombie")
+        public double healthMultiplierForSwampZombie = 1f;
+        public double damageMultiplierForSwampZombie = 1f;
+        public double speedMultiplierForSwampZombie = 1f;
+        public double scaleMultiplierForSwampZombie = 1f;
     }
 }
