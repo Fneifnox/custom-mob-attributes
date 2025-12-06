@@ -66,6 +66,12 @@ public class AttributeUpdater {
         if (FabricLoader.getInstance().isModLoaded("illagerinvasion")) {
             IllagerInvasionCompat.initIllagerInvasionAttributeHandlers();
         }
+        if (FabricLoader.getInstance().isModLoaded("zombie_variants")) {
+            ZombieVariantsCompat.initZombieVariantsAttributeHandlers();
+        }
+        if (FabricLoader.getInstance().isModLoaded("ribbits")) {
+            RibbitsCompat.initRibbitsAttributeHandlers();
+        }
 
         ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
             if (entity instanceof LivingEntity living && !world.isClient()) {
