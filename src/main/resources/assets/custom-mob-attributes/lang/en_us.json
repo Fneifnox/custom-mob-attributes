@@ -857,5 +857,105 @@
   "text.config.custom-mob-attributes.section.Surrendered": "Surrendered",
   "text.config.custom-mob-attributes.option.illagerInvasion.healthMultiplierForSurrendered": "Health Multiplier",
   "text.config.custom-mob-attributes.option.illagerInvasion.damageMultiplierForSurrendered": "Damage Multiplier",
-  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForSurrendered": "Scale Multiplier"
+  "text.config.custom-mob-attributes.option.illagerInvasion.scaleMultiplierForSurrendered": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.zombieVariants": "Zombie Variants",
+
+  "text.config.custom-mob-attributes.section.Badlands Zombie": "Badlands Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForBadlandsZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForBadlandsZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForBadlandsZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForBadlandsZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Bamboo Zombie": "Bamboo Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForBambooZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForBambooZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForBambooZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForBambooZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Cave Zombie": "Cave Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForCaveZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForCaveZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForCaveZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForCaveZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Cherry Zombie": "Cherry Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForCherryZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForCherryZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForCherryZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForCherryZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Deep Dark Zombie": "Deep Dark Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForDeepDarkZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForDeepDarkZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForDeepDarkZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForDeepDarkZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Desert Zombie": "Desert Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForDesertZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForDesertZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForDesertZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForDesertZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Dripstone Zombie": "Dripstone Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForDripstoneZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForDripstoneZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForDripstoneZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForDripstoneZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Frozen Zombie": "Frozen Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForFrozenZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForFrozenZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForFrozenZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForFrozenZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Jungle Zombie": "Jungle Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForJungleZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForJungleZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForJungleZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForJungleZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Lush Zombie": "Lush Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForLushZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForLushZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForLushZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForLushZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Mangrove Zombie": "Mangrove Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForMangroveZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForMangroveZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForMangroveZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForMangroveZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Mushroom Zombie": "Mushroom Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForMushroomZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForMushroomZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForMushroomZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForMushroomZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Pale Garden Zombie": "Pale Garden Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForPaleGardenZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForPaleGardenZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForPaleGardenZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForPaleGardenZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Savanna Zombie": "Savanna Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForSavannaZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForSavannaZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForSavannaZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForSavannaZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Swamp Zombie": "Swamp Zombie",
+  "text.config.custom-mob-attributes.option.zombieVariants.healthMultiplierForSwampZombie": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.damageMultiplierForSwampZombie": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.speedMultiplierForSwampZombie": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.zombieVariants.scaleMultiplierForSwampZombie": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.ribbits": "Ribbits",
+
+  "text.config.custom-mob-attributes.section.Ribbit": "Ribbit",
+  "text.config.custom-mob-attributes.option.ribbits.healthMultiplierForRibbit": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.ribbits.damageMultiplierForRibbit": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.ribbits.speedMultiplierForRibbit": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.ribbits.scaleMultiplierForRibbit": "Scale Multiplier"
 }
