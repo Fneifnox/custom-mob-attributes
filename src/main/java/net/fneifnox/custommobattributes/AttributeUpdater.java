@@ -74,6 +74,12 @@ public class AttributeUpdater {
         if (ModList.get().isLoaded("illagerinvasion")) {
             IllagerInvasionCompat.initIllagerInvasionAttributeHandlers();
         }
+        if (FabricLoader.getInstance().isModLoaded("zombie_variants")) {
+            ZombieVariantsCompat.initZombieVariantsAttributeHandlers();
+        }
+        if (FabricLoader.getInstance().isModLoaded("ribbits")) {
+            RibbitsCompat.initRibbitsAttributeHandlers();
+        }
     }
 
     @SubscribeEvent
