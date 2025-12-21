@@ -8,12 +8,20 @@ import io.wispforest.owo.config.annotation.*;
 @Modmenu(modId = "custom-mob-attributes")
 @Config(name = "custom-mob-attributes", wrapperName = "CustomMA")
 public class ConfigModel {
+    @Comment("Whether babies should also be affected by the multipliers of their parents")
+    public boolean parentsAlsoAffectBabies = true;
     @SectionHeader("All Mobs")
     @Comment("All Mobs")
     public double healthMultiplierForAll = 1f;
     public double damageMultiplierForAll = 1f;
     public double speedMultiplierForAll = 1f;
     public double scaleMultiplierForAll = 1f;
+    @SectionHeader("All Baby Mobs")
+    @Comment("All Baby Mobs")
+    public double healthMultiplierForBabyAll = 1f;
+    public double damageMultiplierForBabyAll = 1f;
+    public double speedMultiplierForBabyAll = 1f;
+    public double scaleMultiplierForBabyAll = 1f;
     @SectionHeader("Allay")
     @Comment("Allay")
     public double healthMultiplierForAllay = 1f;
@@ -25,12 +33,27 @@ public class ConfigModel {
     public double healthMultiplierForArmadillo = 1f;
     public double speedMultiplierForArmadillo = 1f;
     public double scaleMultiplierForArmadillo = 1f;
+    @Nest
+    public BabyArmadillo babyArmadillo = new BabyArmadillo();
+    public static class BabyArmadillo {
+        public double healthMultiplierForBabyArmadillo = 1f;
+        public double speedMultiplierForBabyArmadillo = 1f;
+        public double scaleMultiplierForBabyArmadillo = 1f;
+    }
     @SectionHeader("Axolotl")
     @Comment("Axolotl")
     public double healthMultiplierForAxolotl = 1f;
     public double damageMultiplierForAxolotl = 1f;
     public double speedMultiplierForAxolotl = 1f;
     public double scaleMultiplierForAxolotl = 1f;
+    @Nest
+    public BabyAxolotl babyAxolotl = new BabyAxolotl();
+    public static class BabyAxolotl {
+        public double healthMultiplierForBabyAxolotl = 1f;
+        public double damageMultiplierForBabyAxolotl = 1f;
+        public double speedMultiplierForBabyAxolotl = 1f;
+        public double scaleMultiplierForBabyAxolotl = 1f;
+    }
     @SectionHeader("Bat")
     @Comment("Bat")
     public double healthMultiplierForBat = 1f;
@@ -42,6 +65,14 @@ public class ConfigModel {
     public double damageMultiplierForBee = 1f;
     public double speedMultiplierForBee = 1f;
     public double scaleMultiplierForBee = 1f;
+    @Nest
+    public BabyBee babyBee = new BabyBee();
+    public static class BabyBee {
+        public double healthMultiplierForBabyBee = 1f;
+        public double damageMultiplierForBabyBee = 1f;
+        public double speedMultiplierForBabyBee = 1f;
+        public double scaleMultiplierForBabyBee = 1f;
+    }
     @SectionHeader("Blaze")
     @Comment("Blaze")
     public double healthMultiplierForBlaze = 1f;
@@ -65,12 +96,27 @@ public class ConfigModel {
     public double healthMultiplierForCamel = 1f;
     public double speedMultiplierForCamel = 1f;
     public double scaleMultiplierForCamel = 1f;
+    @Nest
+    public BabyCamel babyCamel = new BabyCamel();
+    public static class BabyCamel {
+        public double healthMultiplierForBabyCamel = 1f;
+        public double speedMultiplierForBabyCamel = 1f;
+        public double scaleMultiplierForBabyCamel = 1f;
+    }
     @SectionHeader("Cat")
     @Comment("Cat")
     public double healthMultiplierForCat = 1f;
     public double damageMultiplierForCat = 1f;
     public double speedMultiplierForCat = 1f;
     public double scaleMultiplierForCat = 1f;
+    @Nest
+    public BabyCat babyCat = new BabyCat();
+    public static class BabyCat {
+        public double healthMultiplierForBabyCat = 1f;
+        public double damageMultiplierForBabyCat = 1f;
+        public double speedMultiplierForBabyCat = 1f;
+        public double scaleMultiplierForBabyCat = 1f;
+    }
     @SectionHeader("Cave Spider")
     @Comment("Cave Spider")
     public double healthMultiplierForCaveSpider = 1f;
@@ -82,6 +128,13 @@ public class ConfigModel {
     public double healthMultiplierForChicken = 1f;
     public double speedMultiplierForChicken = 1f;
     public double scaleMultiplierForChicken = 1f;
+    @Nest
+    public BabyChicken babyChicken = new BabyChicken();
+    public static class BabyChicken {
+        public double healthMultiplierForBabyChicken = 1f;
+        public double speedMultiplierForBabyChicken = 1f;
+        public double scaleMultiplierForBabyChicken = 1f;
+    }
     @SectionHeader("Cod")
     @Comment("Cod")
     public double healthMultiplierForCod = 1f;
@@ -92,6 +145,14 @@ public class ConfigModel {
     public double healthMultiplierForCow = 1f;
     public double speedMultiplierForCow = 1f;
     public double scaleMultiplierForCow = 1f;
+    @Nest
+    public BabyCow babyCow = new BabyCow();
+    public static class BabyCow {
+        public double healthMultiplierForBabyCow = 1f;
+        public double damageMultiplierForBabyCow = 1f;
+        public double speedMultiplierForBabyCow = 1f;
+        public double scaleMultiplierForBabyCow = 1f;
+    }
     @SectionHeader("Creaking")
     @Comment("Creaking")
     public double healthMultiplierForCreaking = 1f;
@@ -110,17 +171,40 @@ public class ConfigModel {
     public double damageMultiplierForDolphin = 1f;
     public double speedMultiplierForDolphin = 1f;
     public double scaleMultiplierForDolphin = 1f;
+    @Nest
+    public BabyDolphin babyDolphin = new BabyDolphin();
+    public static class BabyDolphin {
+        public double healthMultiplierForBabyDolphin = 1f;
+        public double damageMultiplierForBabyDolphin = 1f;
+        public double speedMultiplierForBabyDolphin = 1f;
+        public double scaleMultiplierForBabyDolphin = 1f;
+    }
     @SectionHeader("Donkey")
     @Comment("Donkey")
     public double healthMultiplierForDonkey = 1f;
     public double speedMultiplierForDonkey = 1f;
     public double scaleMultiplierForDonkey = 1f;
+    @Nest
+    public BabyDonkey babyDonkey = new BabyDonkey();
+    public static class BabyDonkey {
+        public double healthMultiplierForBabyDonkey = 1f;
+        public double speedMultiplierForBabyDonkey = 1f;
+        public double scaleMultiplierForBabyDonkey = 1f;
+    }
     @SectionHeader("Drowned")
     @Comment("Drowned")
     public double healthMultiplierForDrowned = 1f;
     public double damageMultiplierForDrowned = 1f;
     public double speedMultiplierForDrowned = 1f;
     public double scaleMultiplierForDrowned = 1f;
+    @Nest
+    public BabyDrowned babyDrowned = new BabyDrowned();
+    public static class BabyDrowned {
+        public double healthMultiplierForBabyDrowned = 1f;
+        public double damageMultiplierForBabyDrowned = 1f;
+        public double speedMultiplierForBabyDrowned = 1f;
+        public double scaleMultiplierForBabyDrowned = 1f;
+    }
     @SectionHeader("Elder Guardian")
     @Comment("Elder Guardian")
     public double healthMultiplierForElderGuardian = 1f;
@@ -155,6 +239,14 @@ public class ConfigModel {
     public double damageMultiplierForFox = 1f;
     public double speedMultiplierForFox = 1f;
     public double scaleMultiplierForFox = 1f;
+    @Nest
+    public BabyFox babyFox = new BabyFox();
+    public static class BabyFox {
+        public double healthMultiplierForBabyFox = 1f;
+        public double damageMultiplierForBabyFox = 1f;
+        public double speedMultiplierForBabyFox = 1f;
+        public double scaleMultiplierForBabyFox = 1f;
+    }
     @SectionHeader("Frog")
     @Comment("Frog")
     public double healthMultiplierForFrog = 1f;
@@ -178,12 +270,27 @@ public class ConfigModel {
     public double healthMultiplierForGlowSquid = 1f;
     public double speedMultiplierForGlowSquid = 1f;
     public double scaleMultiplierForGlowSquid = 1f;
+    @Nest
+    public BabyGlowSquid babyGlowSquid = new BabyGlowSquid();
+    public static class BabyGlowSquid {
+        public double healthMultiplierForBabyGlowSquid = 1f;
+        public double speedMultiplierForBabyGlowSquid = 1f;
+        public double scaleMultiplierForBabyGlowSquid = 1f;
+    }
     @SectionHeader("Goat")
     @Comment("Goat")
     public double healthMultiplierForGoat = 1f;
     public double damageMultiplierForGoat = 1f;
     public double speedMultiplierForGoat = 1f;
     public double scaleMultiplierForGoat = 1f;
+    @Nest
+    public BabyGoat babyGoat = new BabyGoat();
+    public static class BabyGoat {
+        public double healthMultiplierForBabyGoat = 1f;
+        public double damageMultiplierForBabyGoat = 1f;
+        public double speedMultiplierForBabyGoat = 1f;
+        public double scaleMultiplierForBabyGoat = 1f;
+    }
     @SectionHeader("Guardian")
     @Comment("Guardian")
     public double healthMultiplierForGuardian = 1f;
@@ -196,17 +303,40 @@ public class ConfigModel {
     public double damageMultiplierForHoglin = 1f;
     public double speedMultiplierForHoglin = 1f;
     public double scaleMultiplierForHoglin = 1f;
+    @Nest
+    public BabyHoglin babyHoglin = new BabyHoglin();
+    public static class BabyHoglin {
+        public double healthMultiplierForBabyHoglin = 1f;
+        public double damageMultiplierForBabyHoglin = 1f;
+        public double speedMultiplierForBabyHoglin = 1f;
+        public double scaleMultiplierForBabyHoglin = 1f;
+    }
     @SectionHeader("Horse")
     @Comment("Horse")
     public double healthMultiplierForHorse = 1f;
     public double speedMultiplierForHorse = 1f;
     public double scaleMultiplierForHorse = 1f;
+    @Nest
+    public BabyHorse babyHorse = new BabyHorse();
+    public static class BabyHorse {
+        public double healthMultiplierForBabyHorse = 1f;
+        public double speedMultiplierForBabyHorse = 1f;
+        public double scaleMultiplierForBabyHorse = 1f;
+    }
     @SectionHeader("Husk")
     @Comment("Husk")
     public double healthMultiplierForHusk = 1f;
     public double damageMultiplierForHusk = 1f;
     public double speedMultiplierForHusk = 1f;
     public double scaleMultiplierForHusk = 1f;
+    @Nest
+    public BabyHusk babyHusk = new BabyHusk();
+    public static class BabyHusk {
+        public double healthMultiplierForBabyHusk = 1f;
+        public double damageMultiplierForBabyHusk = 1f;
+        public double speedMultiplierForBabyHusk = 1f;
+        public double scaleMultiplierForBabyHusk = 1f;
+    }
     @SectionHeader("Illusioner")
     @Comment("Illusioner")
     public double healthMultiplierForIllusioner = 1f;
@@ -225,6 +355,14 @@ public class ConfigModel {
     public double damageMultiplierForLlama = 1f;
     public double speedMultiplierForLlama = 1f;
     public double scaleMultiplierForLlama = 1f;
+    @Nest
+    public BabyLlama babyLlama = new BabyLlama();
+    public static class BabyLlama {
+        public double healthMultiplierForBabyLlama = 1f;
+        public double damageMultiplierForBabyLlama = 1f;
+        public double speedMultiplierForBabyLlama = 1f;
+        public double scaleMultiplierForBabyLlama = 1f;
+    }
     @SectionHeader("Magma Cube")
     @Comment("Magma Cube")
     public double healthMultiplierForMagmaCube = 1f;
@@ -236,23 +374,53 @@ public class ConfigModel {
     public double healthMultiplierForMooshroom = 1f;
     public double speedMultiplierForMooshroom = 1f;
     public double scaleMultiplierForMooshroom = 1f;
+    @Nest
+    public BabyMooshroom babyMooshroom = new BabyMooshroom();
+    public static class BabyMooshroom {
+        public double healthMultiplierForBabyMooshroom = 1f;
+        public double speedMultiplierForBabyMooshroom = 1f;
+        public double scaleMultiplierForBabyMooshroom = 1f;
+    }
     @SectionHeader("Mule")
     @Comment("Mule")
     public double healthMultiplierForMule = 1f;
     public double speedMultiplierForMule = 1f;
     public double scaleMultiplierForMule = 1f;
+    @Nest
+    public BabyMule babyMule = new BabyMule();
+    public static class BabyMule {
+        public double healthMultiplierForBabyMule = 1f;
+        public double speedMultiplierForBabyMule = 1f;
+        public double scaleMultiplierForBabyMule = 1f;
+    }
     @SectionHeader("Ocelot")
     @Comment("Ocelot")
     public double healthMultiplierForOcelot = 1f;
     public double damageMultiplierForOcelot = 1f;
     public double speedMultiplierForOcelot = 1f;
     public double scaleMultiplierForOcelot = 1f;
+    @Nest
+    public BabyOcelot babyOcelot = new BabyOcelot();
+    public static class BabyOcelot {
+        public double healthMultiplierForBabyOcelot = 1f;
+        public double damageMultiplierForBabyOcelot = 1f;
+        public double speedMultiplierForBabyOcelot = 1f;
+        public double scaleMultiplierForBabyOcelot = 1f;
+    }
     @SectionHeader("Panda")
     @Comment("Panda")
     public double healthMultiplierForPanda = 1f;
     public double damageMultiplierForPanda = 1f;
     public double speedMultiplierForPanda = 1f;
     public double scaleMultiplierForPanda = 1f;
+    @Nest
+    public BabyPanda babyPanda = new BabyPanda();
+    public static class BabyPanda {
+        public double healthMultiplierForBabyPanda = 1f;
+        public double damageMultiplierForBabyPanda = 1f;
+        public double speedMultiplierForBabyPanda = 1f;
+        public double scaleMultiplierForBabyPanda = 1f;
+    }
     @SectionHeader("Parrot")
     @Comment("Parrot")
     public double healthMultiplierForParrot = 1f;
@@ -269,12 +437,27 @@ public class ConfigModel {
     public double healthMultiplierForPig = 1f;
     public double speedMultiplierForPig = 1f;
     public double scaleMultiplierForPig = 1f;
+    @Nest
+    public BabyPig babyPig = new BabyPig();
+    public static class BabyPig {
+        public double healthMultiplierForBabyPig = 1f;
+        public double speedMultiplierForBabyPig = 1f;
+        public double scaleMultiplierForBabyPig = 1f;
+    }
     @SectionHeader("Piglin")
     @Comment("Piglin")
     public double healthMultiplierForPiglin = 1f;
     public double damageMultiplierForPiglin = 1f;
     public double speedMultiplierForPiglin = 1f;
     public double scaleMultiplierForPiglin = 1f;
+    @Nest
+    public BabyPiglin babyPiglin = new BabyPiglin();
+    public static class BabyPiglin {
+        public double healthMultiplierForBabyPiglin = 1f;
+        public double damageMultiplierForBabyPiglin = 1f;
+        public double speedMultiplierForBabyPiglin = 1f;
+        public double scaleMultiplierForBabyPiglin = 1f;
+    }
     @SectionHeader("Piglin Brute")
     @Comment("Piglin Brute")
     public double healthMultiplierForPiglinBrute = 1f;
@@ -293,6 +476,13 @@ public class ConfigModel {
     public double damageMultiplierForPolarBear = 1f;
     public double speedMultiplierForPolarBear = 1f;
     public double scaleMultiplierForPolarBear = 1f;
+    @Nest
+    public BabyPolarBear babyPolarBear = new BabyPolarBear();
+    public static class BabyPolarBear {
+        public double healthMultiplierForBabyPolarBear = 1f;
+        public double speedMultiplierForBabyPolarBear = 1f;
+        public double scaleMultiplierForBabyPolarBear = 1f;
+    }
     @SectionHeader("Pufferfish")
     @Comment("Pufferfish")
     public double healthMultiplierForPufferfish = 1f;
@@ -304,6 +494,14 @@ public class ConfigModel {
     public double damageMultiplierForRabbit = 1f;
     public double speedMultiplierForRabbit = 1f;
     public double scaleMultiplierForRabbit = 1f;
+    @Nest
+    public BabyRabbit babyRabbit = new BabyRabbit();
+    public static class BabyRabbit {
+        public double healthMultiplierForBabyRabbit = 1f;
+        public double damageMultiplierForBabyRabbit = 1f;
+        public double speedMultiplierForBabyRabbit = 1f;
+        public double scaleMultiplierForBabyRabbit = 1f;
+    }
     @SectionHeader("Ravager")
     @Comment("Ravager")
     public double healthMultiplierForRavager = 1f;
@@ -320,6 +518,13 @@ public class ConfigModel {
     public double healthMultiplierForSheep = 1f;
     public double speedMultiplierForSheep = 1f;
     public double scaleMultiplierForSheep = 1f;
+    @Nest
+    public BabySheep babySheep = new BabySheep();
+    public static class BabySheep {
+        public double healthMultiplierForBabySheep = 1f;
+        public double speedMultiplierForBabySheep = 1f;
+        public double scaleMultiplierForBabySheep = 1f;
+    }
     @SectionHeader("Shulker")
     @Comment("Shulker")
     public double healthMultiplierForShulker = 1f;
@@ -342,6 +547,13 @@ public class ConfigModel {
     public double healthMultiplierForSkeletonHorse = 1f;
     public double speedMultiplierForSkeletonHorse = 1f;
     public double scaleMultiplierForSkeletonHorse = 1f;
+    @Nest
+    public BabySkeletonHorse babySkeletonHorse = new BabySkeletonHorse();
+    public static class BabySkeletonHorse {
+        public double healthMultiplierForBabySkeletonHorse = 1f;
+        public double speedMultiplierForBabySkeletonHorse = 1f;
+        public double scaleMultiplierForBabySkeletonHorse = 1f;
+    }
     @SectionHeader("Slime")
     @Comment("Slime")
     public double healthMultiplierForSlime = 1f;
@@ -353,6 +565,13 @@ public class ConfigModel {
     public double healthMultiplierForSniffer = 1f;
     public double speedMultiplierForSniffer = 1f;
     public double scaleMultiplierForSniffer = 1f;
+    @Nest
+    public BabySniffer babySniffer = new BabySniffer();
+    public static class BabySniffer {
+        public double healthMultiplierForBabySniffer = 1f;
+        public double speedMultiplierForBabySniffer = 1f;
+        public double scaleMultiplierForBabySniffer = 1f;
+    }
     @SectionHeader("Snow Golem")
     @Comment("Snow Golem")
     public double healthMultiplierForSnowGolem = 1f;
@@ -370,6 +589,13 @@ public class ConfigModel {
     public double healthMultiplierForSquid = 1f;
     public double speedMultiplierForSquid = 1f;
     public double scaleMultiplierForSquid = 1f;
+    @Nest
+    public BabySquid babySquid = new BabySquid();
+    public static class BabySquid {
+        public double healthMultiplierForBabySquid = 1f;
+        public double speedMultiplierForBabySquid = 1f;
+        public double scaleMultiplierForBabySquid = 1f;
+    }
     @SectionHeader("Stray")
     @Comment("Stray")
     public double healthMultiplierForStray = 1f;
@@ -381,6 +607,13 @@ public class ConfigModel {
     public double healthMultiplierForStrider = 1f;
     public double speedMultiplierForStrider = 1f;
     public double scaleMultiplierForStrider = 1f;
+    @Nest
+    public BabyStrider babyStrider = new BabyStrider();
+    public static class BabyStrider {
+        public double healthMultiplierForBabyStrider = 1f;
+        public double speedMultiplierForBabyStrider = 1f;
+        public double scaleMultiplierForBabyStrider = 1f;
+    }
     @SectionHeader("Tadpole")
     @Comment("Tadpole")
     public double healthMultiplierForTadpole = 1f;
@@ -389,8 +622,17 @@ public class ConfigModel {
     @SectionHeader("Trader Llama")
     @Comment("Trader Llama")
     public double healthMultiplierForTraderLlama = 1f;
+    public double damageMultiplierForTraderLlama = 1f;
     public double speedMultiplierForTraderLlama = 1f;
     public double scaleMultiplierForTraderLlama = 1f;
+    @Nest
+    public BabyTraderLlama babyTraderLlama = new BabyTraderLlama();
+    public static class BabyTraderLlama {
+        public double healthMultiplierForBabyTraderLlama = 1f;
+        public double damageMultiplierForBabyTraderLlama = 1f;
+        public double speedMultiplierForBabyTraderLlama = 1f;
+        public double scaleMultiplierForBabyTraderLlama = 1f;
+    }
     @SectionHeader("Tropical Fish")
     @Comment("Tropical Fish")
     public double healthMultiplierForTropicalFish = 1f;
@@ -401,6 +643,13 @@ public class ConfigModel {
     public double healthMultiplierForTurtle = 1f;
     public double speedMultiplierForTurtle = 1f;
     public double scaleMultiplierForTurtle = 1f;
+    @Nest
+    public BabyTurtle babyTurtle = new BabyTurtle();
+    public static class BabyTurtle {
+        public double healthMultiplierForBabyTurtle = 1f;
+        public double speedMultiplierForBabyTurtle = 1f;
+        public double scaleMultiplierForBabyTurtle = 1f;
+    }
     @SectionHeader("Vex")
     @Comment("Vex")
     public double healthMultiplierForVex = 1f;
@@ -412,6 +661,13 @@ public class ConfigModel {
     public double healthMultiplierForVillager = 1f;
     public double speedMultiplierForVillager = 1f;
     public double scaleMultiplierForVillager = 1f;
+    @Nest
+    public BabyVillager babyVillager = new BabyVillager();
+    public static class BabyVillager {
+        public double healthMultiplierForBabyVillager = 1f;
+        public double speedMultiplierForBabyVillager = 1f;
+        public double scaleMultiplierForBabyVillager = 1f;
+    }
     @SectionHeader("Vindicator")
     @Comment("Vindicator")
     public double healthMultiplierForVindicator = 1f;
@@ -453,35 +709,82 @@ public class ConfigModel {
     public double damageMultiplierForWolf = 1f;
     public double speedMultiplierForWolf = 1f;
     public double scaleMultiplierForWolf = 1f;
+    @Nest
+    public BabyWolf babyWolf = new BabyWolf();
+    public static class BabyWolf {
+        public double healthMultiplierForBabyWolf = 1f;
+        public double damageMultiplierForBabyWolf = 1f;
+        public double speedMultiplierForBabyWolf = 1f;
+        public double scaleMultiplierForBabyWolf = 1f;
+    }
     @SectionHeader("Zoglin")
     @Comment("Zoglin")
     public double healthMultiplierForZoglin = 1f;
     public double damageMultiplierForZoglin = 1f;
     public double speedMultiplierForZoglin = 1f;
     public double scaleMultiplierForZoglin = 1f;
+    @Nest
+    public BabyZoglin babyZoglin = new BabyZoglin();
+    public static class BabyZoglin {
+        public double healthMultiplierForBabyZoglin = 1f;
+        public double damageMultiplierForBabyZoglin = 1f;
+        public double speedMultiplierForBabyZoglin = 1f;
+        public double scaleMultiplierForBabyZoglin = 1f;
+    }
     @SectionHeader("Zombie")
     @Comment("Zombie")
     public double healthMultiplierForZombie = 1f;
     public double damageMultiplierForZombie = 1f;
     public double speedMultiplierForZombie = 1f;
     public double scaleMultiplierForZombie = 1f;
+    @Nest
+    public BabyZombie babyZombie = new BabyZombie();
+    public static class BabyZombie {
+        public double healthMultiplierForBabyZombie = 1f;
+        public double damageMultiplierForBabyZombie = 1f;
+        public double speedMultiplierForBabyZombie = 1f;
+        public double scaleMultiplierForBabyZombie = 1f;
+    }
     @SectionHeader("Zombie Horse")
     @Comment("Zombie Horse")
     public double healthMultiplierForZombieHorse= 1f;
     public double speedMultiplierForZombieHorse = 1f;
     public double scaleMultiplierForZombieHorse = 1f;
+    @Nest
+    public BabyZombieHorse babyZombieHorse = new BabyZombieHorse();
+    public static class BabyZombieHorse {
+        public double healthMultiplierForBabyZombieHorse = 1f;
+        public double speedMultiplierForBabyZombieHorse = 1f;
+        public double scaleMultiplierForBabyZombieHorse = 1f;
+    }
     @SectionHeader("Zombie Villager")
     @Comment("Zombie Villager")
     public double healthMultiplierForZombieVillager = 1f;
     public double damageMultiplierForZombieVillager = 1f;
     public double speedMultiplierForZombieVillager = 1f;
     public double scaleMultiplierForZombieVillager = 1f;
+    @Nest
+    public BabyZombieVillager babyZombieVillager = new BabyZombieVillager();
+    public static class BabyZombieVillager {
+        public double healthMultiplierForBabyZombieVillager = 1f;
+        public double damageMultiplierForBabyZombieVillager = 1f;
+        public double speedMultiplierForBabyZombieVillager = 1f;
+        public double scaleMultiplierForBabyZombieVillager = 1f;
+    }
     @SectionHeader("Zombified Piglin")
     @Comment("Zombified Piglin")
     public double healthMultiplierForZombifiedPiglin = 1f;
     public double damageMultiplierForZombifiedPiglin = 1f;
     public double speedMultiplierForZombifiedPiglin = 1f;
     public double scaleMultiplierForZombifiedPiglin = 1f;
+    @Nest
+    public BabyZombifiedPiglin babyZombifiedPiglin = new BabyZombifiedPiglin();
+    public static class BabyZombifiedPiglin {
+        public double healthMultiplierForBabyZombifiedPiglin = 1f;
+        public double damageMultiplierForBabyZombifiedPiglin = 1f;
+        public double speedMultiplierForBabyZombifiedPiglin = 1f;
+        public double scaleMultiplierForBabyZombifiedPiglin = 1f;
+    }
 
     @SectionHeader("Modded Mobs")
     @Comment("Modded Mobs")
@@ -877,12 +1180,6 @@ public class ConfigModel {
     @Nest
     public VanillaBackport vanillaBackport = new VanillaBackport();
     public static class VanillaBackport {
-        @SectionHeader("Creaking")
-        @Comment("Creaking")
-        public double healthMultiplierForCreaking = 1f;
-        public double damageMultiplierForCreaking = 1f;
-        public double speedMultiplierForCreaking = 1f;
-        public double scaleMultiplierForCreaking = 1f;
         @SectionHeader("Happy Ghast")
         @Comment("Happy Ghast")
         public double healthMultiplierForHappyGhast = 1f;
