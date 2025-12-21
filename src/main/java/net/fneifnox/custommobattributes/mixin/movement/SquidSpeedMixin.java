@@ -11,7 +11,7 @@ public class SquidSpeedMixin {
 
     @Redirect(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/animal/Squid;setDeltaMovement(DDD)V"))
     private void redirectSetVelocity(Squid instance, double x, double y, double z) {
-        double speedMultiplier = Config.VANILLA.speedMultiplierForSquid.get() * Config.VANILLA.speedMultiplierForAll.get();
+        double speedMultiplier = instance.isBaby() ? CONFIG.babySquid.speedMultiplierForBabySquid() * CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForSquid() * CONFIG.speedMultiplierForAll();
         instance.setDeltaMovement(x * speedMultiplier, y * speedMultiplier, z * speedMultiplier);
     }
 }
