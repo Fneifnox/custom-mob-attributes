@@ -12,7 +12,7 @@ public class SquidSpeedMixin {
 
     @Redirect(method = "tickMovement()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/SquidEntity;setVelocity(DDD)V"))
     private void redirectSetVelocity(SquidEntity instance, double x, double y, double z) {
-        double speedMultiplier = CONFIG.speedMultiplierForSquid() * CONFIG.speedMultiplierForAll();
+        double speedMultiplier = instance.isBaby() ? CONFIG.babySquid.speedMultiplierForBabySquid() * CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForSquid() * CONFIG.speedMultiplierForAll();
         instance.setVelocity(x * speedMultiplier, y * speedMultiplier, z * speedMultiplier);
     }
 }
