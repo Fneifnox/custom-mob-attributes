@@ -127,25 +127,49 @@ public class AttributeUpdater {
                 : e -> e instanceof LivingEntity;
 
         for (T entity : world.getEntitiesByType(entityType, box, predicate)) {
-            var health = entity.getAttributeInstance(EntityAttributes.MAX_HEALTH);
-            if (health != null) {
-                double val = health.getBaseValue() * healthMultiplier.get() * CONFIG.healthMultiplierForAll();
-                if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForAll());
-                    entity.setHealth((float) val);
+            if (CONFIG.parentsAlsoAffectBabies() && entity.isBaby()) {
+                var health = entity.getAttributeInstance(EntityAttributes.MAX_HEALTH);
+                if (health != null) {
+                    double val = health.getBaseValue() * healthMultiplier.get() * CONFIG.healthMultiplierForBabyAll() * CONFIG.healthMultiplierForAll();
+                    if (health.getValue() != val) {
+                        updateModifier(entity, EntityAttributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * CONFIG.healthMultiplierForBabyAll() * CONFIG.healthMultiplierForAll());
+                        entity.setHealth((float) val);
+                    }
+                }
+                if (damageMultiplier != null) {
+                    updateModifier(entity, EntityAttributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForAll());
+                }
+                if (speedMultiplier != null) {
+                    updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForAll());
+                    if (entity.getAttributeInstance(EntityAttributes.FLYING_SPEED) != null) {
+                        updateModifier(entity, EntityAttributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForAll());
+                    }
+                }
+                if (scaleMultiplier != null) {
+                    updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForBabyAll() * CONFIG.scaleMultiplierForAll());
                 }
             }
-            if (damageMultiplier != null) {
-                updateModifier(entity, EntityAttributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * CONFIG.damageMultiplierForAll());
-            }
-            if (speedMultiplier != null) {
-                updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
-                if (entity.getAttributeInstance(EntityAttributes.FLYING_SPEED) != null) {
-                    updateModifier(entity, EntityAttributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * CONFIG.speedMultiplierForAll());
+            else {
+                var health = entity.getAttributeInstance(EntityAttributes.MAX_HEALTH);
+                if (health != null) {
+                    double val = health.getBaseValue() * healthMultiplier.get() * (entity.isBaby() ? CONFIG.healthMultiplierForBabyAll() : CONFIG.healthMultiplierForAll());
+                    if (health.getValue() != val) {
+                        updateModifier(entity, EntityAttributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * (entity.isBaby() ? CONFIG.healthMultiplierForBabyAll() : CONFIG.healthMultiplierForAll()));
+                        entity.setHealth((float) val);
+                    }
                 }
-            }
-            if (scaleMultiplier != null) {
-                updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * CONFIG.scaleMultiplierForAll());
+                if (damageMultiplier != null) {
+                    updateModifier(entity, EntityAttributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * (entity.isBaby() ? CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForAll()));
+                }
+                if (speedMultiplier != null) {
+                    updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForAll()));
+                    if (entity.getAttributeInstance(EntityAttributes.FLYING_SPEED) != null) {
+                        updateModifier(entity, EntityAttributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForAll()));
+                    }
+                }
+                if (scaleMultiplier != null) {
+                    updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * (entity.isBaby() ? CONFIG.scaleMultiplierForBabyAll() : CONFIG.scaleMultiplierForAll()));
+                }
             }
         }
     }
