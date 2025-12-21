@@ -27,77 +27,77 @@ public class ZombieVariantsCompat {
         EntityType swampZombie = Registries.ENTITY_TYPE.get(Identifier.of("zombie_variants", "mushroom_zombie"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(badlandsZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), badlandsZombie, CONFIG.zombieVariants::healthMultiplierForBadlandsZombie, CONFIG.zombieVariants::damageMultiplierForBadlandsZombie, CONFIG.zombieVariants::speedMultiplierForBadlandsZombie, CONFIG.zombieVariants::scaleMultiplierForBadlandsZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), badlandsZombie, CONFIG.zombieVariants::healthMultiplierForBadlandsZombie, CONFIG.zombieVariants::damageMultiplierForBadlandsZombie, CONFIG.zombieVariants::speedMultiplierForBadlandsZombie, CONFIG.zombieVariants::scaleMultiplierForBadlandsZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(bambooZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), bambooZombie, CONFIG.zombieVariants::healthMultiplierForBambooZombie, CONFIG.zombieVariants::damageMultiplierForBambooZombie, CONFIG.zombieVariants::speedMultiplierForBambooZombie, CONFIG.zombieVariants::scaleMultiplierForBambooZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), bambooZombie, CONFIG.zombieVariants::healthMultiplierForBambooZombie, CONFIG.zombieVariants::damageMultiplierForBambooZombie, CONFIG.zombieVariants::speedMultiplierForBambooZombie, CONFIG.zombieVariants::scaleMultiplierForBambooZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(caveZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), caveZombie, CONFIG.zombieVariants::healthMultiplierForCaveZombie, CONFIG.zombieVariants::damageMultiplierForCaveZombie, CONFIG.zombieVariants::speedMultiplierForCaveZombie, CONFIG.zombieVariants::scaleMultiplierForCaveZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), caveZombie, CONFIG.zombieVariants::healthMultiplierForCaveZombie, CONFIG.zombieVariants::damageMultiplierForCaveZombie, CONFIG.zombieVariants::speedMultiplierForCaveZombie, CONFIG.zombieVariants::scaleMultiplierForCaveZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(cherryZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), cherryZombie, CONFIG.zombieVariants::healthMultiplierForCherryZombie, CONFIG.zombieVariants::damageMultiplierForCherryZombie, CONFIG.zombieVariants::speedMultiplierForCherryZombie, CONFIG.zombieVariants::scaleMultiplierForCherryZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), cherryZombie, CONFIG.zombieVariants::healthMultiplierForCherryZombie, CONFIG.zombieVariants::damageMultiplierForCherryZombie, CONFIG.zombieVariants::speedMultiplierForCherryZombie, CONFIG.zombieVariants::scaleMultiplierForCherryZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(deepDarkZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), deepDarkZombie, CONFIG.zombieVariants::healthMultiplierForDeepDarkZombie, CONFIG.zombieVariants::damageMultiplierForDeepDarkZombie, CONFIG.zombieVariants::speedMultiplierForDeepDarkZombie, CONFIG.zombieVariants::scaleMultiplierForDeepDarkZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), deepDarkZombie, CONFIG.zombieVariants::healthMultiplierForDeepDarkZombie, CONFIG.zombieVariants::damageMultiplierForDeepDarkZombie, CONFIG.zombieVariants::speedMultiplierForDeepDarkZombie, CONFIG.zombieVariants::scaleMultiplierForDeepDarkZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(desertZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), desertZombie, CONFIG.zombieVariants::healthMultiplierForDesertZombie, CONFIG.zombieVariants::damageMultiplierForDesertZombie, CONFIG.zombieVariants::speedMultiplierForDesertZombie, CONFIG.zombieVariants::scaleMultiplierForDesertZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), desertZombie, CONFIG.zombieVariants::healthMultiplierForDesertZombie, CONFIG.zombieVariants::damageMultiplierForDesertZombie, CONFIG.zombieVariants::speedMultiplierForDesertZombie, CONFIG.zombieVariants::scaleMultiplierForDesertZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(dripstoneZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), dripstoneZombie, CONFIG.zombieVariants::healthMultiplierForDripstoneZombie, CONFIG.zombieVariants::damageMultiplierForDripstoneZombie, CONFIG.zombieVariants::speedMultiplierForDripstoneZombie, CONFIG.zombieVariants::scaleMultiplierForDripstoneZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), dripstoneZombie, CONFIG.zombieVariants::healthMultiplierForDripstoneZombie, CONFIG.zombieVariants::damageMultiplierForDripstoneZombie, CONFIG.zombieVariants::speedMultiplierForDripstoneZombie, CONFIG.zombieVariants::scaleMultiplierForDripstoneZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(frozenZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), frozenZombie, CONFIG.zombieVariants::healthMultiplierForFrozenZombie, CONFIG.zombieVariants::damageMultiplierForFrozenZombie, CONFIG.zombieVariants::speedMultiplierForFrozenZombie, CONFIG.zombieVariants::scaleMultiplierForFrozenZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), frozenZombie, CONFIG.zombieVariants::healthMultiplierForFrozenZombie, CONFIG.zombieVariants::damageMultiplierForFrozenZombie, CONFIG.zombieVariants::speedMultiplierForFrozenZombie, CONFIG.zombieVariants::scaleMultiplierForFrozenZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(jungleZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), jungleZombie, CONFIG.zombieVariants::healthMultiplierForJungleZombie, CONFIG.zombieVariants::damageMultiplierForJungleZombie, CONFIG.zombieVariants::speedMultiplierForJungleZombie, CONFIG.zombieVariants::scaleMultiplierForJungleZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), jungleZombie, CONFIG.zombieVariants::healthMultiplierForJungleZombie, CONFIG.zombieVariants::damageMultiplierForJungleZombie, CONFIG.zombieVariants::speedMultiplierForJungleZombie, CONFIG.zombieVariants::scaleMultiplierForJungleZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(lushZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), lushZombie, CONFIG.zombieVariants::healthMultiplierForLushZombie, CONFIG.zombieVariants::damageMultiplierForLushZombie, CONFIG.zombieVariants::speedMultiplierForLushZombie, CONFIG.zombieVariants::scaleMultiplierForLushZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), lushZombie, CONFIG.zombieVariants::healthMultiplierForLushZombie, CONFIG.zombieVariants::damageMultiplierForLushZombie, CONFIG.zombieVariants::speedMultiplierForLushZombie, CONFIG.zombieVariants::scaleMultiplierForLushZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(mangroveZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), mangroveZombie, CONFIG.zombieVariants::healthMultiplierForMangroveZombie, CONFIG.zombieVariants::damageMultiplierForMangroveZombie, CONFIG.zombieVariants::speedMultiplierForMangroveZombie, CONFIG.zombieVariants::scaleMultiplierForMangroveZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), mangroveZombie, CONFIG.zombieVariants::healthMultiplierForMangroveZombie, CONFIG.zombieVariants::damageMultiplierForMangroveZombie, CONFIG.zombieVariants::speedMultiplierForMangroveZombie, CONFIG.zombieVariants::scaleMultiplierForMangroveZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(mushroomZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), mushroomZombie, CONFIG.zombieVariants::healthMultiplierForMushroomZombie, CONFIG.zombieVariants::damageMultiplierForMushroomZombie, CONFIG.zombieVariants::speedMultiplierForMushroomZombie, CONFIG.zombieVariants::scaleMultiplierForMushroomZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), mushroomZombie, CONFIG.zombieVariants::healthMultiplierForMushroomZombie, CONFIG.zombieVariants::damageMultiplierForMushroomZombie, CONFIG.zombieVariants::speedMultiplierForMushroomZombie, CONFIG.zombieVariants::scaleMultiplierForMushroomZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(paleGardenZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), paleGardenZombie, CONFIG.zombieVariants::healthMultiplierForPaleGardenZombie, CONFIG.zombieVariants::damageMultiplierForPaleGardenZombie, CONFIG.zombieVariants::speedMultiplierForPaleGardenZombie, CONFIG.zombieVariants::scaleMultiplierForPaleGardenZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), paleGardenZombie, CONFIG.zombieVariants::healthMultiplierForPaleGardenZombie, CONFIG.zombieVariants::damageMultiplierForPaleGardenZombie, CONFIG.zombieVariants::speedMultiplierForPaleGardenZombie, CONFIG.zombieVariants::scaleMultiplierForPaleGardenZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(savannaZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), savannaZombie, CONFIG.zombieVariants::healthMultiplierForSavannaZombie, CONFIG.zombieVariants::damageMultiplierForSavannaZombie, CONFIG.zombieVariants::speedMultiplierForSavannaZombie, CONFIG.zombieVariants::scaleMultiplierForSavannaZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), savannaZombie, CONFIG.zombieVariants::healthMultiplierForSavannaZombie, CONFIG.zombieVariants::damageMultiplierForSavannaZombie, CONFIG.zombieVariants::speedMultiplierForSavannaZombie, CONFIG.zombieVariants::scaleMultiplierForSavannaZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(swampZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), swampZombie, CONFIG.zombieVariants::healthMultiplierForSwampZombie, CONFIG.zombieVariants::damageMultiplierForSwampZombie, CONFIG.zombieVariants::speedMultiplierForSwampZombie, CONFIG.zombieVariants::scaleMultiplierForSwampZombie
+            AttributeUpdater.configureEntityAttributes(entity.getEntityWorld(), swampZombie, CONFIG.zombieVariants::healthMultiplierForSwampZombie, CONFIG.zombieVariants::damageMultiplierForSwampZombie, CONFIG.zombieVariants::speedMultiplierForSwampZombie, CONFIG.zombieVariants::scaleMultiplierForSwampZombie
             );
         });
     }
