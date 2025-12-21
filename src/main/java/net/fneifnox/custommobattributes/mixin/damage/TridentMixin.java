@@ -18,7 +18,12 @@ public class TridentMixin {
         double multiplier = 1f;
         TridentEntity trident = (TridentEntity)(Object)this;
         if (trident.getOwner() instanceof DrownedEntity) {
-            multiplier = CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
+            if (CONFIG.parentsAlsoAffectBabies() && ((DrownedEntity) trident.getOwner()).isBaby()) {
+                multiplier = CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
+            }
+            else {
+                multiplier = ((DrownedEntity) trident.getOwner()).isBaby() ? CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
+            }
         }
 
         double finalDamage = originalDamage * multiplier;
