@@ -22,47 +22,47 @@ public class FriendsAndFoesCompat {
 
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(copperGolem, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), copperGolem, CONFIG.friendsAndFoes::healthMultiplierForCopperGolem, CONFIG.friendsAndFoes::damageMultiplierForCopperGolem, CONFIG.friendsAndFoes::speedMultiplierForCopperGolem, CONFIG.friendsAndFoes::scaleMultiplierForCopperGolem
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.friendsAndFoes::healthMultiplierForCopperGolem, CONFIG.friendsAndFoes::damageMultiplierForCopperGolem, CONFIG.friendsAndFoes::speedMultiplierForCopperGolem, CONFIG.friendsAndFoes::scaleMultiplierForCopperGolem
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(crab, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), crab, CONFIG.friendsAndFoes::healthMultiplierForCrab, CONFIG.friendsAndFoes::damageMultiplierForCrab, CONFIG.friendsAndFoes::speedMultiplierForCrab, CONFIG.friendsAndFoes::scaleMultiplierForCrab
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.friendsAndFoes::healthMultiplierForCrab, CONFIG.friendsAndFoes::damageMultiplierForCrab, CONFIG.friendsAndFoes::speedMultiplierForCrab, CONFIG.friendsAndFoes::scaleMultiplierForCrab
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(glare, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), glare, CONFIG.friendsAndFoes::healthMultiplierForGlare, CONFIG.friendsAndFoes::damageMultiplierForGlare, CONFIG.friendsAndFoes::speedMultiplierForGlare, CONFIG.friendsAndFoes::scaleMultiplierForGlare
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.friendsAndFoes::healthMultiplierForGlare, CONFIG.friendsAndFoes::damageMultiplierForGlare, CONFIG.friendsAndFoes::speedMultiplierForGlare, CONFIG.friendsAndFoes::scaleMultiplierForGlare
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(iceologer, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), iceologer, CONFIG.friendsAndFoes::healthMultiplierForIceologer, CONFIG.friendsAndFoes::damageMultiplierForIceologer, CONFIG.friendsAndFoes::speedMultiplierForIceologer, CONFIG.friendsAndFoes::scaleMultiplierForIceologer
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.friendsAndFoes::healthMultiplierForIceologer, CONFIG.friendsAndFoes::damageMultiplierForIceologer, CONFIG.friendsAndFoes::speedMultiplierForIceologer, CONFIG.friendsAndFoes::scaleMultiplierForIceologer
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(mauler, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), mauler, CONFIG.friendsAndFoes::healthMultiplierForMauler, CONFIG.friendsAndFoes::damageMultiplierForMauler, CONFIG.friendsAndFoes::speedMultiplierForMauler, CONFIG.friendsAndFoes::scaleMultiplierForMauler
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.friendsAndFoes::healthMultiplierForMauler, CONFIG.friendsAndFoes::damageMultiplierForMauler, CONFIG.friendsAndFoes::speedMultiplierForMauler, CONFIG.friendsAndFoes::scaleMultiplierForMauler
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(moobloom, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), moobloom, CONFIG.friendsAndFoes::healthMultiplierForMoobloom, CONFIG.friendsAndFoes::damageMultiplierForMoobloom, CONFIG.friendsAndFoes::speedMultiplierForMoobloom, CONFIG.friendsAndFoes::scaleMultiplierForMoobloom
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.friendsAndFoes::healthMultiplierForMoobloom, CONFIG.friendsAndFoes::damageMultiplierForMoobloom, CONFIG.friendsAndFoes::speedMultiplierForMoobloom, CONFIG.friendsAndFoes::scaleMultiplierForMoobloom
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(rascal, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), rascal, CONFIG.friendsAndFoes::healthMultiplierForRascal, CONFIG.friendsAndFoes::damageMultiplierForRascal, CONFIG.friendsAndFoes::speedMultiplierForRascal, CONFIG.friendsAndFoes::scaleMultiplierForRascal
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.friendsAndFoes::healthMultiplierForRascal, CONFIG.friendsAndFoes::damageMultiplierForRascal, CONFIG.friendsAndFoes::speedMultiplierForRascal, CONFIG.friendsAndFoes::scaleMultiplierForRascal
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(tuffGolem, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), tuffGolem, CONFIG.friendsAndFoes::healthMultiplierForTuffGolem, CONFIG.friendsAndFoes::damageMultiplierForTuffGolem, CONFIG.friendsAndFoes::speedMultiplierForTuffGolem, CONFIG.friendsAndFoes::scaleMultiplierForTuffGolem
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.friendsAndFoes::healthMultiplierForTuffGolem, CONFIG.friendsAndFoes::damageMultiplierForTuffGolem, CONFIG.friendsAndFoes::speedMultiplierForTuffGolem, CONFIG.friendsAndFoes::scaleMultiplierForTuffGolem
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(wildfire, entity -> {
-                AttributeUpdater.configureEntityAttributes(entity.getWorld(), wildfire, CONFIG.friendsAndFoes::healthMultiplierForWildfire, CONFIG.friendsAndFoes::damageMultiplierForWildfire, CONFIG.friendsAndFoes::speedMultiplierForWildfire, CONFIG.friendsAndFoes::scaleMultiplierForWildfire
+                AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.friendsAndFoes::healthMultiplierForWildfire, CONFIG.friendsAndFoes::damageMultiplierForWildfire, CONFIG.friendsAndFoes::speedMultiplierForWildfire, CONFIG.friendsAndFoes::scaleMultiplierForWildfire
             );
         });
     }

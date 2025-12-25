@@ -18,7 +18,7 @@ public class TridentMixin {
         double multiplier = 1f;
         TridentEntity trident = (TridentEntity)(Object)this;
         if (trident.getOwner() instanceof DrownedEntity) {
-            if (CONFIG.parentsAlsoAffectBabies() && ((DrownedEntity) trident.getOwner()).isBaby()) {
+            if (CONFIG.adultsAlsoAffectBabies() && ((DrownedEntity) trident.getOwner()).isBaby()) {
                 multiplier = CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
             }
             else {
