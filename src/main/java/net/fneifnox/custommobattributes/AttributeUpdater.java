@@ -82,8 +82,6 @@ public class AttributeUpdater {
                 }
             }
         });
-
-
     }
 
     public static void reloadConfig(MinecraftServer server) {
