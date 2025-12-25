@@ -13,7 +13,7 @@ public class RibbitsCompat {
         EntityType ribbit = Registries.ENTITY_TYPE.get(Identifier.of("ribbits", "ribbit"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(ribbit, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), ribbit, CONFIG.ribbits::healthMultiplierForRibbit, CONFIG.ribbits::damageMultiplierForRibbit, CONFIG.ribbits::speedMultiplierForRibbit, CONFIG.ribbits::scaleMultiplierForRibbit
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.ribbits::healthMultiplierForRibbit, CONFIG.ribbits::damageMultiplierForRibbit, CONFIG.ribbits::speedMultiplierForRibbit, CONFIG.ribbits::scaleMultiplierForRibbit
             );
         });
     }

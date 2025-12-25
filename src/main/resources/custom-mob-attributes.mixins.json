@@ -3,6 +3,7 @@
   "package": "net.fneifnox.custommobattributes.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "baby.PassiveEntityMixin",
     "damage.ArrowMixin",
     "damage.DragonPurgeMixin",
     "damage.EvokerFangsMixin",
