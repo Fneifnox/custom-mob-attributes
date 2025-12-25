@@ -250,7 +250,7 @@ public class Vanilla {
 
         ATTRIBUTE_HANDLERS.put(EntityType.HAPPY_GHAST, entity -> {
             if (entity.isBaby()) {
-                configureEntityAttributes(entity.getEntityWorld(), entity, CONFIG.babyHappyGhast::healthMultiplierForBabyHappyGhast, null, CONFIG.babyHappyGhast::speedMultiplierForBabyHappyGhast, CONFIG.babyHappyGhast::scaleMultiplierForBabyHappyGhast
+                configureEntityAttributes(entity.getEntityWorld(), entity, CONFIG.babyHappyGhast::healthMultiplierForBabyHappyGhast, null, CONFIG.babyHappyGhast::speedMultiplierForBabyHappyGhast, CONFIG.babyHappyGhast::scaleMultiplierForBabyHappyGhast, CONFIG::healthMultiplierForHappyGhast, null, CONFIG::speedMultiplierForHappyGhast, CONFIG::scaleMultiplierForHappyGhast
                 );
             }
             else {
