@@ -8,8 +8,8 @@ import io.wispforest.owo.config.annotation.*;
 @Modmenu(modId = "custom-mob-attributes")
 @Config(name = "custom-mob-attributes", wrapperName = "CustomMA")
 public class ConfigModel {
-    @Comment("Whether babies should also be affected by the multipliers of their parents")
-    public boolean parentsAlsoAffectBabies = true;
+    @Comment("Whether babies should also be affected by the multipliers of their adult version")
+    public boolean adultsAlsoAffectBabies = true;
     @SectionHeader("All Mobs")
     @Comment("All Mobs")
     public double healthMultiplierForAll = 1f;
@@ -149,7 +149,6 @@ public class ConfigModel {
     public BabyCow babyCow = new BabyCow();
     public static class BabyCow {
         public double healthMultiplierForBabyCow = 1f;
-        public double damageMultiplierForBabyCow = 1f;
         public double speedMultiplierForBabyCow = 1f;
         public double scaleMultiplierForBabyCow = 1f;
     }

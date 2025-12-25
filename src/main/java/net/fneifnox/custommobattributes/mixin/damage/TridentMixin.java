@@ -14,9 +14,14 @@ public class TridentMixin {
     @Redirect(method = "onHitEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
         double multiplier = 1f;
-        ThrownTrident trident = (ThrownTrident)(Object)this;
-        if (trident.getOwner() instanceof Drowned) {
-            multiplier = Config.VANILLA.damageMultiplierForDrowned.get() * Config.VANILLA.damageMultiplierForAll.get();
+        TridentEntity trident = (TridentEntity)(Object)this;
+        if (trident.getOwner() instanceof DrownedEntity) {
+            if (CONFIG.adultsAlsoAffectBabies() && ((DrownedEntity) trident.getOwner()).isBaby()) {
+                multiplier = CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
+            }
+            else {
+                multiplier = ((DrownedEntity) trident.getOwner()).isBaby() ? CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
+            }
         }
 
         double finalDamage = originalDamage * multiplier;
