@@ -13,7 +13,7 @@ public class VanillaBackportCompat {
         EntityType happyGhast = Registries.ENTITY_TYPE.get(Identifier.of("vanillabackport", "happy_ghast"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(happyGhast, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), happyGhast, CONFIG.vanillaBackport::healthMultiplierForHappyGhast, CONFIG.vanillaBackport::damageMultiplierForHappyGhast, CONFIG.vanillaBackport::speedMultiplierForHappyGhast, null
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.vanillaBackport::healthMultiplierForHappyGhast, CONFIG.vanillaBackport::damageMultiplierForHappyGhast, CONFIG.vanillaBackport::speedMultiplierForHappyGhast, null
             );
         });
     }
