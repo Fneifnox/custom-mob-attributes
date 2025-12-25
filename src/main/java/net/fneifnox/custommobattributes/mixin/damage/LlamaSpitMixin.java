@@ -20,7 +20,7 @@ public class LlamaSpitMixin {
         double multiplier = 1;
         if (Objects.requireNonNull(llamaSpitEntity.getOwner()).getType() == EntityType.LLAMA) {
             LlamaEntity llamaEntity = (LlamaEntity) llamaSpitEntity.getOwner();
-            if (CONFIG.parentsAlsoAffectBabies() && llamaEntity.isBaby()) {
+            if (CONFIG.adultsAlsoAffectBabies() && llamaEntity.isBaby()) {
                 multiplier = CONFIG.babyLlama.damageMultiplierForBabyLlama() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForLlama() * CONFIG.damageMultiplierForAll();
             }
             else {
@@ -29,7 +29,7 @@ public class LlamaSpitMixin {
         }
         else if (Objects.requireNonNull(llamaSpitEntity.getOwner()).getType() == EntityType.TRADER_LLAMA) {
             TraderLlamaEntity traderLlamaEntity = (TraderLlamaEntity) llamaSpitEntity.getOwner();
-            if (CONFIG.parentsAlsoAffectBabies() && traderLlamaEntity.isBaby()) {
+            if (CONFIG.adultsAlsoAffectBabies() && traderLlamaEntity.isBaby()) {
                 multiplier = CONFIG.babyTraderLlama.damageMultiplierForBabyTraderLlama() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForTraderLlama() * CONFIG.damageMultiplierForAll();
             }
             else {

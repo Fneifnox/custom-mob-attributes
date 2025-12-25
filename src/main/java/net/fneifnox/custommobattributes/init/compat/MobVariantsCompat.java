@@ -29,87 +29,87 @@ public class MobVariantsCompat {
         EntityType zombifiedPiglinBrute = Registries.ENTITY_TYPE.get(Identifier.of("frycmobvariants", "zombified_piglin_brute"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(armoredSpider, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), armoredSpider, CONFIG.mobVariants::healthMultiplierForArmoredSpider, CONFIG.mobVariants::damageMultiplierForArmoredSpider, CONFIG.mobVariants::speedMultiplierForArmoredSpider, CONFIG.mobVariants::scaleMultiplierForArmoredSpider
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForArmoredSpider, CONFIG.mobVariants::damageMultiplierForArmoredSpider, CONFIG.mobVariants::speedMultiplierForArmoredSpider, CONFIG.mobVariants::scaleMultiplierForArmoredSpider
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(bloatedCorpse, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), bloatedCorpse, CONFIG.mobVariants::healthMultiplierForBloatedCorpse, CONFIG.mobVariants::damageMultiplierForBloatedCorpse, CONFIG.mobVariants::speedMultiplierForBloatedCorpse, CONFIG.mobVariants::scaleMultiplierForBloatedCorpse
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForBloatedCorpse, CONFIG.mobVariants::damageMultiplierForBloatedCorpse, CONFIG.mobVariants::speedMultiplierForBloatedCorpse, CONFIG.mobVariants::scaleMultiplierForBloatedCorpse
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(caveCreeper, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), caveCreeper, CONFIG.mobVariants::healthMultiplierForCaveCreeper, CONFIG.mobVariants::damageMultiplierForCaveCreeper, CONFIG.mobVariants::speedMultiplierForCaveCreeper, CONFIG.mobVariants::scaleMultiplierForCaveCreeper
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForCaveCreeper, CONFIG.mobVariants::damageMultiplierForCaveCreeper, CONFIG.mobVariants::speedMultiplierForCaveCreeper, CONFIG.mobVariants::scaleMultiplierForCaveCreeper
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(corsair, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), corsair, CONFIG.mobVariants::healthMultiplierForCorsair, CONFIG.mobVariants::damageMultiplierForCorsair, CONFIG.mobVariants::speedMultiplierForCorsair, CONFIG.mobVariants::scaleMultiplierForCorsair
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForCorsair, CONFIG.mobVariants::damageMultiplierForCorsair, CONFIG.mobVariants::speedMultiplierForCorsair, CONFIG.mobVariants::scaleMultiplierForCorsair
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(executioner, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), executioner, CONFIG.mobVariants::healthMultiplierForExecutioner, CONFIG.mobVariants::damageMultiplierForExecutioner, CONFIG.mobVariants::speedMultiplierForExecutioner, CONFIG.mobVariants::scaleMultiplierForExecutioner
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForExecutioner, CONFIG.mobVariants::damageMultiplierForExecutioner, CONFIG.mobVariants::speedMultiplierForExecutioner, CONFIG.mobVariants::scaleMultiplierForExecutioner
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(explorer, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), explorer, CONFIG.mobVariants::healthMultiplierForExplorer, CONFIG.mobVariants::damageMultiplierForExplorer, CONFIG.mobVariants::speedMultiplierForExplorer, CONFIG.mobVariants::scaleMultiplierForExplorer
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForExplorer, CONFIG.mobVariants::damageMultiplierForExplorer, CONFIG.mobVariants::speedMultiplierForExplorer, CONFIG.mobVariants::scaleMultiplierForExplorer
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(forgotten, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), forgotten, CONFIG.mobVariants::healthMultiplierForForgotten, CONFIG.mobVariants::damageMultiplierForForgotten, CONFIG.mobVariants::speedMultiplierForForgotten, CONFIG.mobVariants::scaleMultiplierForForgotten
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForForgotten, CONFIG.mobVariants::damageMultiplierForForgotten, CONFIG.mobVariants::speedMultiplierForForgotten, CONFIG.mobVariants::scaleMultiplierForForgotten
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(frozenZombie, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), frozenZombie, CONFIG.mobVariants::healthMultiplierForFrozenZombie, CONFIG.mobVariants::damageMultiplierForFrozenZombie, CONFIG.mobVariants::speedMultiplierForFrozenZombie, CONFIG.mobVariants::scaleMultiplierForFrozenZombie
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForFrozenZombie, CONFIG.mobVariants::damageMultiplierForFrozenZombie, CONFIG.mobVariants::speedMultiplierForFrozenZombie, CONFIG.mobVariants::scaleMultiplierForFrozenZombie
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(infectedPiglin, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), infectedPiglin, CONFIG.mobVariants::healthMultiplierForInfectedPiglin, CONFIG.mobVariants::damageMultiplierForInfectedPiglin, CONFIG.mobVariants::speedMultiplierForInfectedPiglin, CONFIG.mobVariants::scaleMultiplierForInfectedPiglin
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForInfectedPiglin, CONFIG.mobVariants::damageMultiplierForInfectedPiglin, CONFIG.mobVariants::speedMultiplierForInfectedPiglin, CONFIG.mobVariants::scaleMultiplierForInfectedPiglin
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(InfectedPiglinBrute, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), InfectedPiglinBrute, CONFIG.mobVariants::healthMultiplierForInfectedPiglinBrute, CONFIG.mobVariants::damageMultiplierForInfectedPiglinBrute, CONFIG.mobVariants::speedMultiplierForInfectedPiglinBrute, CONFIG.mobVariants::scaleMultiplierForInfectedPiglinBrute
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForInfectedPiglinBrute, CONFIG.mobVariants::damageMultiplierForInfectedPiglinBrute, CONFIG.mobVariants::speedMultiplierForInfectedPiglinBrute, CONFIG.mobVariants::scaleMultiplierForInfectedPiglinBrute
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(lavaSlime, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), lavaSlime, CONFIG.mobVariants::healthMultiplierForLavaSlime, CONFIG.mobVariants::damageMultiplierForLavaSlime, CONFIG.mobVariants::speedMultiplierForLavaSlime, CONFIG.mobVariants::scaleMultiplierForLavaSlime
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForLavaSlime, CONFIG.mobVariants::damageMultiplierForLavaSlime, CONFIG.mobVariants::speedMultiplierForLavaSlime, CONFIG.mobVariants::scaleMultiplierForLavaSlime
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(nightmare, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), nightmare, CONFIG.mobVariants::healthMultiplierForNightmare, CONFIG.mobVariants::damageMultiplierForNightmare, CONFIG.mobVariants::speedMultiplierForNightmare, CONFIG.mobVariants::scaleMultiplierForNightmare
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForNightmare, CONFIG.mobVariants::damageMultiplierForNightmare, CONFIG.mobVariants::speedMultiplierForNightmare, CONFIG.mobVariants::scaleMultiplierForNightmare
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(soulStealer, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), soulStealer, CONFIG.mobVariants::healthMultiplierForSoulStealer, CONFIG.mobVariants::damageMultiplierForSoulStealer, CONFIG.mobVariants::speedMultiplierForSoulStealer, CONFIG.mobVariants::scaleMultiplierForSoulStealer
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForSoulStealer, CONFIG.mobVariants::damageMultiplierForSoulStealer, CONFIG.mobVariants::speedMultiplierForSoulStealer, CONFIG.mobVariants::scaleMultiplierForSoulStealer
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(toxicSlime, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), toxicSlime, CONFIG.mobVariants::healthMultiplierForToxicSlime, CONFIG.mobVariants::damageMultiplierForToxicSlime, CONFIG.mobVariants::speedMultiplierForToxicSlime, CONFIG.mobVariants::scaleMultiplierForToxicSlime
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForToxicSlime, CONFIG.mobVariants::damageMultiplierForToxicSlime, CONFIG.mobVariants::speedMultiplierForToxicSlime, CONFIG.mobVariants::scaleMultiplierForToxicSlime
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(tropicalSpider, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), tropicalSpider, CONFIG.mobVariants::healthMultiplierForTropicalSpider, CONFIG.mobVariants::damageMultiplierForTropicalSpider, CONFIG.mobVariants::speedMultiplierForTropicalSpider, CONFIG.mobVariants::scaleMultiplierForTropicalSpider
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForTropicalSpider, CONFIG.mobVariants::damageMultiplierForTropicalSpider, CONFIG.mobVariants::speedMultiplierForTropicalSpider, CONFIG.mobVariants::scaleMultiplierForTropicalSpider
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(undeadWarrior, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), undeadWarrior, CONFIG.mobVariants::healthMultiplierForUndeadWarrior, CONFIG.mobVariants::damageMultiplierForUndeadWarrior, CONFIG.mobVariants::speedMultiplierForUndeadWarrior, CONFIG.mobVariants::scaleMultiplierForUndeadWarrior
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForUndeadWarrior, CONFIG.mobVariants::damageMultiplierForUndeadWarrior, CONFIG.mobVariants::speedMultiplierForUndeadWarrior, CONFIG.mobVariants::scaleMultiplierForUndeadWarrior
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(zombifiedPiglinBrute, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.getWorld(), zombifiedPiglinBrute, CONFIG.mobVariants::healthMultiplierForZombifiedPiglinBrute, CONFIG.mobVariants::damageMultiplierForZombifiedPiglinBrute, CONFIG.mobVariants::speedMultiplierForZombifiedPiglinBrute, CONFIG.mobVariants::scaleMultiplierForZombifiedPiglinBrute
+            AttributeUpdater.configureEntityAttributes(entity.getWorld(), entity, CONFIG.mobVariants::healthMultiplierForZombifiedPiglinBrute, CONFIG.mobVariants::damageMultiplierForZombifiedPiglinBrute, CONFIG.mobVariants::speedMultiplierForZombifiedPiglinBrute, CONFIG.mobVariants::scaleMultiplierForZombifiedPiglinBrute
             );
         });
     }
