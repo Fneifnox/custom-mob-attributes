@@ -1,7 +1,7 @@
 {
   "text.config.custom-mob-attributes.title": "Custom Mob Attributes",
 
-  "text.config.custom-mob-attributes.option.parentsAlsoAffectBabies": "Whether babies should also be affected by the multipliers of their parents",
+  "text.config.custom-mob-attributes.option.adultsAlsoAffectBabies": "Whether babies should also be affected by the multipliers of their adult version",
 
   "text.config.custom-mob-attributes.section.All Mobs": "All Mobs",
   "text.config.custom-mob-attributes.option.healthMultiplierForAll": "Health Multiplier",
@@ -501,7 +501,6 @@
 
   "text.config.custom-mob-attributes.category.babyCow": "Baby Cow",
   "text.config.custom-mob-attributes.option.babyCow.healthMultiplierForBabyCow": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.babyCow.damageMultiplierForBabyCow": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.babyCow.speedMultiplierForBabyCow": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.babyCow.scaleMultiplierForBabyCow": "Scale Multiplier",
 
