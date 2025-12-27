@@ -13,12 +13,12 @@ public class VanillaBackportCompat {
         EntityType happyGhast = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("vanillabackport", "happy_ghast"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(creaking, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), creaking, Config.VANILLA_BACKPORT.healthMultiplierForCreaking, Config.VANILLA_BACKPORT.damageMultiplierForCreaking, Config.VANILLA_BACKPORT.speedMultiplierForCreaking, Config.VANILLA_BACKPORT.scaleMultiplierForCreaking
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.VANILLA_BACKPORT.healthMultiplierForCreaking, Config.VANILLA_BACKPORT.damageMultiplierForCreaking, Config.VANILLA_BACKPORT.speedMultiplierForCreaking, Config.VANILLA_BACKPORT.scaleMultiplierForCreaking
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(happyGhast, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), happyGhast, Config.VANILLA_BACKPORT.healthMultiplierForHappyGhast, Config.VANILLA_BACKPORT.damageMultiplierForHappyGhast, Config.VANILLA_BACKPORT.speedMultiplierForHappyGhast, null
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.VANILLA_BACKPORT.healthMultiplierForHappyGhast, Config.VANILLA_BACKPORT.damageMultiplierForHappyGhast, Config.VANILLA_BACKPORT.speedMultiplierForHappyGhast, null
             );
         });
     }
