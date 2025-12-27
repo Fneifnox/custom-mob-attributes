@@ -17,32 +17,32 @@ public class BetterEndCompat {
         EntityType silkMoth = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("betterend", "silk_moth"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(cubozoa, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), cubozoa, Config.BETTER_END.healthMultiplierForCubozoa, null, null, null
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.BETTER_END.healthMultiplierForCubozoa, null, null, null
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(dragonfly, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), dragonfly, Config.BETTER_END.healthMultiplierForDragonfly, null, null, Config.BETTER_END.scaleMultiplierForDragonfly
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.BETTER_END.healthMultiplierForDragonfly, null, null, Config.BETTER_END.scaleMultiplierForDragonfly
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(endFish, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), endFish, Config.BETTER_END.healthMultiplierForEndFish, null, null, null
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.BETTER_END.healthMultiplierForEndFish, null, null, null
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(endSlime, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), endSlime, Config.BETTER_END.healthMultiplierForEndSlime, Config.BETTER_END.damageMultiplierForEndSlime, Config.BETTER_END.speedMultiplierForEndSlime, Config.BETTER_END.scaleMultiplierForEndSlime
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.BETTER_END.healthMultiplierForEndSlime, Config.BETTER_END.damageMultiplierForEndSlime, Config.BETTER_END.speedMultiplierForEndSlime, Config.BETTER_END.scaleMultiplierForEndSlime
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(shadowWalker, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), shadowWalker, Config.BETTER_END.healthMultiplierForShadowWalker, Config.BETTER_END.damageMultiplierForShadowWalker, Config.BETTER_END.speedMultiplierForShadowWalker, Config.BETTER_END.scaleMultiplierForShadowWalker
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.BETTER_END.healthMultiplierForShadowWalker, Config.BETTER_END.damageMultiplierForShadowWalker, Config.BETTER_END.speedMultiplierForShadowWalker, Config.BETTER_END.scaleMultiplierForShadowWalker
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(silkMoth, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), silkMoth, Config.BETTER_END.healthMultiplierForSilkMoth, null, null, Config.BETTER_END.scaleMultiplierForSilkMoth
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.BETTER_END.healthMultiplierForSilkMoth, null, null, Config.BETTER_END.scaleMultiplierForSilkMoth
             );
         });
     }

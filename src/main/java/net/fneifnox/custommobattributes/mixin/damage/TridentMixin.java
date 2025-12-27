@@ -14,13 +14,13 @@ public class TridentMixin {
     @Redirect(method = "onHitEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
         double multiplier = 1f;
-        TridentEntity trident = (TridentEntity)(Object)this;
-        if (trident.getOwner() instanceof DrownedEntity) {
-            if (CONFIG.adultsAlsoAffectBabies() && ((DrownedEntity) trident.getOwner()).isBaby()) {
-                multiplier = CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
+        ThrownTrident trident = (ThrownTrident)(Object)this;
+        if (trident.getOwner() instanceof Drowned) {
+            if (Config.VANILLA.adultsAlsoAffectBabies.get() && ((Drowned) trident.getOwner()).isBaby()) {
+                multiplier = Config.VANILLA.damageMultiplierForBabyDrowned.get() * Config.VANILLA.damageMultiplierForBabyAll.get() * Config.VANILLA.damageMultiplierForDrowned.get() * Config.VANILLA.damageMultiplierForAll.get();
             }
             else {
-                multiplier = ((DrownedEntity) trident.getOwner()).isBaby() ? CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
+                multiplier = ((Drowned) trident.getOwner()).isBaby() ? Config.VANILLA.damageMultiplierForBabyDrowned.get() * Config.VANILLA.damageMultiplierForBabyAll.get() : Config.VANILLA.damageMultiplierForDrowned.get() * Config.VANILLA.damageMultiplierForAll.get();
             }
         }
 
