@@ -21,47 +21,47 @@ public class FriendsAndFoesCompat {
 
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(copperGolem, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), copperGolem, Config.FRIENDS_AND_FOES.healthMultiplierForCopperGolem, Config.FRIENDS_AND_FOES.damageMultiplierForCopperGolem, Config.FRIENDS_AND_FOES.speedMultiplierForCopperGolem, Config.FRIENDS_AND_FOES.scaleMultiplierForCopperGolem
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.FRIENDS_AND_FOES.healthMultiplierForCopperGolem, Config.FRIENDS_AND_FOES.damageMultiplierForCopperGolem, Config.FRIENDS_AND_FOES.speedMultiplierForCopperGolem, Config.FRIENDS_AND_FOES.scaleMultiplierForCopperGolem
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(crab, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), crab, Config.FRIENDS_AND_FOES.healthMultiplierForCrab, Config.FRIENDS_AND_FOES.damageMultiplierForCrab, Config.FRIENDS_AND_FOES.speedMultiplierForCrab, Config.FRIENDS_AND_FOES.scaleMultiplierForCrab
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.FRIENDS_AND_FOES.healthMultiplierForCrab, Config.FRIENDS_AND_FOES.damageMultiplierForCrab, Config.FRIENDS_AND_FOES.speedMultiplierForCrab, Config.FRIENDS_AND_FOES.scaleMultiplierForCrab
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(glare, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), glare, Config.FRIENDS_AND_FOES.healthMultiplierForGlare, Config.FRIENDS_AND_FOES.damageMultiplierForGlare, Config.FRIENDS_AND_FOES.speedMultiplierForGlare, Config.FRIENDS_AND_FOES.scaleMultiplierForGlare
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.FRIENDS_AND_FOES.healthMultiplierForGlare, Config.FRIENDS_AND_FOES.damageMultiplierForGlare, Config.FRIENDS_AND_FOES.speedMultiplierForGlare, Config.FRIENDS_AND_FOES.scaleMultiplierForGlare
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(iceologer, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), iceologer, Config.FRIENDS_AND_FOES.healthMultiplierForIceologer, Config.FRIENDS_AND_FOES.damageMultiplierForIceologer, Config.FRIENDS_AND_FOES.speedMultiplierForIceologer, Config.FRIENDS_AND_FOES.scaleMultiplierForIceologer
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.FRIENDS_AND_FOES.healthMultiplierForIceologer, Config.FRIENDS_AND_FOES.damageMultiplierForIceologer, Config.FRIENDS_AND_FOES.speedMultiplierForIceologer, Config.FRIENDS_AND_FOES.scaleMultiplierForIceologer
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(mauler, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), mauler, Config.FRIENDS_AND_FOES.healthMultiplierForMauler, Config.FRIENDS_AND_FOES.damageMultiplierForMauler, Config.FRIENDS_AND_FOES.speedMultiplierForMauler, Config.FRIENDS_AND_FOES.scaleMultiplierForMauler
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.FRIENDS_AND_FOES.healthMultiplierForMauler, Config.FRIENDS_AND_FOES.damageMultiplierForMauler, Config.FRIENDS_AND_FOES.speedMultiplierForMauler, Config.FRIENDS_AND_FOES.scaleMultiplierForMauler
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(moobloom, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), moobloom, Config.FRIENDS_AND_FOES.healthMultiplierForMoobloom, Config.FRIENDS_AND_FOES.damageMultiplierForMoobloom, Config.FRIENDS_AND_FOES.speedMultiplierForMoobloom, Config.FRIENDS_AND_FOES.scaleMultiplierForMoobloom
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.FRIENDS_AND_FOES.healthMultiplierForMoobloom, Config.FRIENDS_AND_FOES.damageMultiplierForMoobloom, Config.FRIENDS_AND_FOES.speedMultiplierForMoobloom, Config.FRIENDS_AND_FOES.scaleMultiplierForMoobloom
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(rascal, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), rascal, Config.FRIENDS_AND_FOES.healthMultiplierForRascal, Config.FRIENDS_AND_FOES.damageMultiplierForRascal, Config.FRIENDS_AND_FOES.speedMultiplierForRascal, Config.FRIENDS_AND_FOES.scaleMultiplierForRascal
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.FRIENDS_AND_FOES.healthMultiplierForRascal, Config.FRIENDS_AND_FOES.damageMultiplierForRascal, Config.FRIENDS_AND_FOES.speedMultiplierForRascal, Config.FRIENDS_AND_FOES.scaleMultiplierForRascal
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(tuffGolem, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), tuffGolem, Config.FRIENDS_AND_FOES.healthMultiplierForTuffGolem, Config.FRIENDS_AND_FOES.damageMultiplierForTuffGolem, Config.FRIENDS_AND_FOES.speedMultiplierForTuffGolem, Config.FRIENDS_AND_FOES.scaleMultiplierForTuffGolem
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.FRIENDS_AND_FOES.healthMultiplierForTuffGolem, Config.FRIENDS_AND_FOES.damageMultiplierForTuffGolem, Config.FRIENDS_AND_FOES.speedMultiplierForTuffGolem, Config.FRIENDS_AND_FOES.scaleMultiplierForTuffGolem
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(wildfire, entity -> {
-                AttributeUpdater.configureEntityAttributes(entity.level(), wildfire, Config.FRIENDS_AND_FOES.healthMultiplierForWildfire, Config.FRIENDS_AND_FOES.damageMultiplierForWildfire, Config.FRIENDS_AND_FOES.speedMultiplierForWildfire, Config.FRIENDS_AND_FOES.scaleMultiplierForWildfire
+                AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.FRIENDS_AND_FOES.healthMultiplierForWildfire, Config.FRIENDS_AND_FOES.damageMultiplierForWildfire, Config.FRIENDS_AND_FOES.speedMultiplierForWildfire, Config.FRIENDS_AND_FOES.scaleMultiplierForWildfire
             );
         });
     }

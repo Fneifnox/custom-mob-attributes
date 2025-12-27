@@ -43,7 +43,7 @@ public class AttributeUpdater {
     private static final UUID SCALE_MODIFIER_UUID = UUID.fromString("123e4567-e89b-12d3-a456-426614174003");
 
     public static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
-    private static final Map<LivingEntity, Integer> pendingEntities = new ConcurrentHashMap<>();
+    public static final Map<LivingEntity, Integer> pendingEntities = new ConcurrentHashMap<>();
 
     public static void register() {
         Vanilla.initVanillaAttributeHandlers();
@@ -75,10 +75,10 @@ public class AttributeUpdater {
         if (ModList.get().isLoaded("illagerinvasion")) {
             IllagerInvasionCompat.initIllagerInvasionAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("zombie_variants")) {
+        if (ModList.get().isLoaded("zombie_variants")) {
             ZombieVariantsCompat.initZombieVariantsAttributeHandlers();
         }
-        if (FabricLoader.getInstance().isModLoaded("ribbits")) {
+        if (ModList.get().isLoaded("ribbits")) {
             RibbitsCompat.initRibbitsAttributeHandlers();
         }
     }
@@ -136,49 +136,49 @@ public class AttributeUpdater {
     ) {
         AABB box = new AABB(new Vec3(-1_000_000, -1_000_000, -1_000_000), new Vec3(1_000_000, 1_000_000, 1_000_000));
 
-        if (CONFIG.adultsAlsoAffectBabies() && entity.isBaby()) {
-            var health = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+        if (Config.VANILLA.adultsAlsoAffectBabies.get() && entity.isBaby()) {
+            var health = entity.getAttribute(Attributes.MAX_HEALTH);
             if (health != null && extraMultiplier.length >= 1) {
-                double val = health.getBaseValue() * healthMultiplier.get() * extraMultiplier[0].get() * CONFIG.healthMultiplierForBabyAll() * CONFIG.healthMultiplierForAll();
+                double val = health.getBaseValue() * healthMultiplier.get() * extraMultiplier[0].get() * Config.VANILLA.healthMultiplierForBabyAll.get() * Config.VANILLA.healthMultiplierForAll.get();
                 if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.GENERIC_MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * extraMultiplier[0].get() * CONFIG.healthMultiplierForBabyAll() * CONFIG.healthMultiplierForAll());
+                    updateModifier(entity, Attributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * extraMultiplier[0].get() * Config.VANILLA.healthMultiplierForBabyAll.get() * Config.VANILLA.healthMultiplierForAll.get());
                     entity.setHealth((float) val);
                 }
             }
             if (damageMultiplier != null && extraMultiplier.length >= 2) {
-                updateModifier(entity, EntityAttributes.GENERIC_ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * extraMultiplier[1].get() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForAll());
+                updateModifier(entity, Attributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * extraMultiplier[1].get() * Config.VANILLA.damageMultiplierForBabyAll.get() * Config.VANILLA.damageMultiplierForAll.get());
             }
             if (speedMultiplier != null && extraMultiplier.length >= 3) {
-                updateModifier(entity, EntityAttributes.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * extraMultiplier[2].get() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForAll());
-                if (entity.getAttributeInstance(EntityAttributes.GENERIC_FLYING_SPEED) != null) {
-                    updateModifier(entity, EntityAttributes.GENERIC_FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * extraMultiplier[2].get() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForAll());
+                updateModifier(entity, Attributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * extraMultiplier[2].get() * Config.VANILLA.speedMultiplierForBabyAll.get() * Config.VANILLA.speedMultiplierForAll.get());
+                if (entity.getAttribute(Attributes.FLYING_SPEED) != null) {
+                    updateModifier(entity, Attributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * extraMultiplier[2].get() * Config.VANILLA.speedMultiplierForBabyAll.get() * Config.VANILLA.speedMultiplierForAll.get());
                 }
             }
             if (scaleMultiplier != null && extraMultiplier.length >= 4) {
-                updateModifier(entity, EntityAttributes.GENERIC_SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * extraMultiplier[3].get() * CONFIG.scaleMultiplierForBabyAll() * CONFIG.scaleMultiplierForAll());
+                updateModifier(entity, Attributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * extraMultiplier[3].get() * Config.VANILLA.scaleMultiplierForBabyAll.get() * Config.VANILLA.scaleMultiplierForAll.get());
             }
         }
 
         else {
-            var health = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+            var health = entity.getAttribute(Attributes.MAX_HEALTH);
             if (health != null) {
-                double val = health.getBaseValue() * healthMultiplier.get() * (entity.isBaby() ? CONFIG.healthMultiplierForBabyAll() : CONFIG.healthMultiplierForAll());
+                double val = health.getBaseValue() * healthMultiplier.get() * (entity.isBaby() ? Config.VANILLA.healthMultiplierForBabyAll.get() : Config.VANILLA.healthMultiplierForAll.get());
                 if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.GENERIC_MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * (entity.isBaby() ? CONFIG.healthMultiplierForBabyAll() : CONFIG.healthMultiplierForAll()));
+                    updateModifier(entity, Attributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * (entity.isBaby() ? Config.VANILLA.healthMultiplierForBabyAll.get() : Config.VANILLA.healthMultiplierForAll.get()));
                     entity.setHealth((float) val);
                 }
             }
             if (damageMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * (entity.isBaby() ? CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForAll()));
+                updateModifier(entity, Attributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * (entity.isBaby() ? Config.VANILLA.damageMultiplierForBabyAll.get() : Config.VANILLA.damageMultiplierForAll.get()));
             }
             if (speedMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForAll()));
-                if (entity.getAttributeInstance(EntityAttributes.GENERIC_FLYING_SPEED) != null) {
-                    updateModifier(entity, EntityAttributes.GENERIC_FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForAll()));
+                updateModifier(entity, Attributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? Config.VANILLA.speedMultiplierForBabyAll.get() : Config.VANILLA.speedMultiplierForAll.get()));
+                if (entity.getAttribute(Attributes.FLYING_SPEED) != null) {
+                    updateModifier(entity, Attributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? Config.VANILLA.speedMultiplierForBabyAll.get() : Config.VANILLA.speedMultiplierForAll.get()));
                 }
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, EntityAttributes.GENERIC_SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * (entity.isBaby() ? CONFIG.scaleMultiplierForBabyAll() : CONFIG.scaleMultiplierForAll()));
+                updateModifier(entity, Attributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * (entity.isBaby() ? Config.VANILLA.scaleMultiplierForBabyAll.get() : Config.VANILLA.scaleMultiplierForAll.get()));
             }
         }
     }

@@ -15,22 +15,22 @@ public class VariantsAndVenturesCompat {
         EntityType verdant = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.fromNamespaceAndPath("variantsandventures", "verdant"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(gelid, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), gelid, Config.VARIANTS_AND_VENTURES.healthMultiplierForGelid, Config.VARIANTS_AND_VENTURES.damageMultiplierForGelid, Config.VARIANTS_AND_VENTURES.speedMultiplierForGelid, Config.VARIANTS_AND_VENTURES.scaleMultiplierForGelid
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.VARIANTS_AND_VENTURES.healthMultiplierForGelid, Config.VARIANTS_AND_VENTURES.damageMultiplierForGelid, Config.VARIANTS_AND_VENTURES.speedMultiplierForGelid, Config.VARIANTS_AND_VENTURES.scaleMultiplierForGelid
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(murk, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), murk, Config.VARIANTS_AND_VENTURES.healthMultiplierForMurk, Config.VARIANTS_AND_VENTURES.damageMultiplierForMurk, Config.VARIANTS_AND_VENTURES.speedMultiplierForMurk, Config.VARIANTS_AND_VENTURES.scaleMultiplierForMurk
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.VARIANTS_AND_VENTURES.healthMultiplierForMurk, Config.VARIANTS_AND_VENTURES.damageMultiplierForMurk, Config.VARIANTS_AND_VENTURES.speedMultiplierForMurk, Config.VARIANTS_AND_VENTURES.scaleMultiplierForMurk
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(thicket, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), thicket, Config.VARIANTS_AND_VENTURES.healthMultiplierForThicket, Config.VARIANTS_AND_VENTURES.damageMultiplierForThicket, Config.VARIANTS_AND_VENTURES.speedMultiplierForThicket, Config.VARIANTS_AND_VENTURES.scaleMultiplierForThicket
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.VARIANTS_AND_VENTURES.healthMultiplierForThicket, Config.VARIANTS_AND_VENTURES.damageMultiplierForThicket, Config.VARIANTS_AND_VENTURES.speedMultiplierForThicket, Config.VARIANTS_AND_VENTURES.scaleMultiplierForThicket
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(verdant, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), verdant, Config.VARIANTS_AND_VENTURES.healthMultiplierForVerdant, Config.VARIANTS_AND_VENTURES.damageMultiplierForVerdant, Config.VARIANTS_AND_VENTURES.speedMultiplierForVerdant, Config.VARIANTS_AND_VENTURES.scaleMultiplierForVerdant
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, Config.VARIANTS_AND_VENTURES.healthMultiplierForVerdant, Config.VARIANTS_AND_VENTURES.damageMultiplierForVerdant, Config.VARIANTS_AND_VENTURES.speedMultiplierForVerdant, Config.VARIANTS_AND_VENTURES.scaleMultiplierForVerdant
             );
         });
     }
