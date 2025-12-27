@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Bogged;
 import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.monster.Skeleton;
@@ -26,7 +27,7 @@ public class ArrowMixin {
     @Redirect(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
         AbstractArrow projectile = (AbstractArrow)(Object)this;
-        if (projectile instanceof SpectralArrowEntity && projectile.getOwner() instanceof LivingEntity || projectile instanceof ArrowEntity && projectile.getOwner() instanceof LivingEntity) {
+        if (projectile instanceof SpectralArrow && projectile.getOwner() instanceof LivingEntity || projectile instanceof Arrow && projectile.getOwner() instanceof LivingEntity) {
             double multiplier = 1f;
             if (projectile.getOwner() instanceof Skeleton) {
                 multiplier = Config.VANILLA.damageMultiplierForSkeleton.get() * Config.VANILLA.damageMultiplierForAll.get();
