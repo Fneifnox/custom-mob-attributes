@@ -22,8 +22,9 @@ import java.util.Objects;
 
 @Mixin(AbstractArrow.class)
 public class ArrowMixin {
-    @Redirect(method = "onEntityHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
+    @Redirect(method = "onHitEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"))
     private boolean redirectDamage(Entity entity, DamageSource source, float originalDamage) {
+        System.out.println("===============================ARROW TEST");
         AbstractArrow projectile = (AbstractArrow)(Object)this;
         if (projectile instanceof SpectralArrow && projectile.getOwner() instanceof LivingEntity || projectile instanceof Arrow && projectile.getOwner() instanceof LivingEntity) {
             double multiplier = 1f;

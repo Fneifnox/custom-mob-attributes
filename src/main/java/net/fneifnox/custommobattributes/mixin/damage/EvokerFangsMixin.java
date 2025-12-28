@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(EvokerFangs.class)
 public class EvokerFangsMixin {
-    @ModifyArg(method = "dealDamageTo", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/projectile/EvokerFangs;damageSources()Lnet/minecraft/world/damagesource/DamageSources;"))
+    @ModifyArg(method = "dealDamageTo", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"))
     private float injectCustomDamage(float originalDamage) {
         double multiplier = Config.VANILLA.damageMultiplierForEvoker.get() * Config.VANILLA.damageMultiplierForAll.get();
         return (float) (originalDamage * multiplier);
