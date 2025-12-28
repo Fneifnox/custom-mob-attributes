@@ -88,11 +88,13 @@ minecraft {
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
+            args '--mixin.config', 'custom-mob-attributes.mixins.json'
         }
 
         server {
             property 'forge.enabledGameTestNamespaces', mod_id
             args '--nogui'
+            args '--mixin.config', 'custom-mob-attributes.mixins.json'
         }
 
         // This run config launches GameTestServer and runs all registered gametests, then exits.
@@ -185,7 +187,8 @@ tasks.named('jar', Jar).configure {
             'Specification-Version'   : '1', // We are version 1 of ourselves
             'Implementation-Title'    : project.name,
             'Implementation-Version'  : project.jar.archiveVersion,
-            'Implementation-Vendor'   : mod_authors
+            'Implementation-Vendor'   : mod_authors,
+            'MixinConfigs'   : 'custom-mob-attributes.mixins.json'
         ])
     }
 }
