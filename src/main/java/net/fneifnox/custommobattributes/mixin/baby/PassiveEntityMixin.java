@@ -20,10 +20,10 @@ public class PassiveEntityMixin {
     private void changeMultipliersFromBabyToAdult(CallbackInfo ci) {
         AgeableMob passiveEntity = (AgeableMob)(Object)this;
         System.out.println("==========================TEST 1");
-        if (passiveEntity instanceof LivingEntity living && !passiveEntity.level().isClientSide()) {
+        if (!passiveEntity.level().isClientSide()) {
             Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(passiveEntity.getType());
             if (handler != null) {
-                pendingEntities.put(living, 0);
+                pendingEntities.put(passiveEntity, 0);
             }
         }
     }
