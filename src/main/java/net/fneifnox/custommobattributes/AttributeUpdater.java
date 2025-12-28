@@ -155,7 +155,7 @@ public class AttributeUpdater {
                 }
             }
             if (scaleMultiplier != null && extraMultiplier.length >= 4) {
-                updateModifier(entity, Attributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * extraMultiplier[3].get() * Config.VANILLA.scaleMultiplierForBabyAll.get() * Config.VANILLA.scaleMultiplierForAll.get());
+                updateModifier(entity, CustomMobAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * extraMultiplier[3].get() * Config.VANILLA.scaleMultiplierForBabyAll.get() * Config.VANILLA.scaleMultiplierForAll.get());
             }
         }
 
@@ -178,7 +178,7 @@ public class AttributeUpdater {
                 }
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, Attributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * (entity.isBaby() ? Config.VANILLA.scaleMultiplierForBabyAll.get() : Config.VANILLA.scaleMultiplierForAll.get()));
+                updateModifier(entity, CustomMobAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * (entity.isBaby() ? Config.VANILLA.scaleMultiplierForBabyAll.get() : Config.VANILLA.scaleMultiplierForAll.get()));
             }
         }
     }
