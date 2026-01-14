@@ -13,8 +13,6 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.Box;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -120,8 +118,6 @@ public class AttributeUpdater {
             @Nullable Supplier<Double> scaleMultiplier,
             @Nullable Supplier<Double>... extraMultiplier
     ) {
-        Box box = new Box(new Vec3d(-1_000_000, -1_000_000, -1_000_000), new Vec3d(1_000_000, 1_000_000, 1_000_000));
-
         if (CONFIG.adultsAlsoAffectBabies() && entity.isBaby()) {
             var health = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
             if (health != null && extraMultiplier.length >= 1) {
