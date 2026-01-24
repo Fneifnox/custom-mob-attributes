@@ -18,6 +18,8 @@ public class BatSpeedMixin {
     private Vec3 modifyForwardSpeed(Vec3 original) {
         Bat bat = (Bat)(Object)this;
 
+        if (targetPosition == null) return original;
+
         double d = (double)targetPosition.getX() + 0.5 - bat.getX();
         double e = (double)targetPosition.getY() + 0.1 - bat.getY();
         double f = (double)targetPosition.getZ() + 0.5 - bat.getZ();

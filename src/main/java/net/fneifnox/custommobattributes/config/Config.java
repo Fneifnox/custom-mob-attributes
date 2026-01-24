@@ -81,7 +81,6 @@ public class Config
         public final ForgeConfigSpec.DoubleValue scaleMultiplierForBabyAll;
 
         public final ForgeConfigSpec.DoubleValue healthMultiplierForAllay;
-        public final ForgeConfigSpec.DoubleValue damageMultiplierForAllay;
         public final ForgeConfigSpec.DoubleValue speedMultiplierForAllay;
         public final ForgeConfigSpec.DoubleValue scaleMultiplierForAllay;
 
@@ -348,7 +347,6 @@ public class Config
         public final ForgeConfigSpec.DoubleValue scaleMultiplierForBabyPanda;
 
         public final ForgeConfigSpec.DoubleValue healthMultiplierForParrot;
-        public final ForgeConfigSpec.DoubleValue damageMultiplierForParrot;
         public final ForgeConfigSpec.DoubleValue speedMultiplierForParrot;
         public final ForgeConfigSpec.DoubleValue scaleMultiplierForParrot;
 
@@ -368,7 +366,6 @@ public class Config
         public final ForgeConfigSpec.DoubleValue speedMultiplierForPiglin;
         public final ForgeConfigSpec.DoubleValue scaleMultiplierForPiglin;
         public final ForgeConfigSpec.DoubleValue healthMultiplierForBabyPiglin;
-        public final ForgeConfigSpec.DoubleValue damageMultiplierForBabyPiglin;
         public final ForgeConfigSpec.DoubleValue speedMultiplierForBabyPiglin;
         public final ForgeConfigSpec.DoubleValue scaleMultiplierForBabyPiglin;
 
@@ -616,7 +613,6 @@ public class Config
 
             builder.push("Allay");
             healthMultiplierForAllay = builder.defineInRange("healthMultiplierForAllay", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            damageMultiplierForAllay = builder.defineInRange("damageMultiplierForAllay", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             speedMultiplierForAllay = builder.defineInRange("speedMultiplierForAllay", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             scaleMultiplierForAllay = builder.defineInRange("scaleMultiplierForAllay", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             builder.pop();
@@ -1007,7 +1003,6 @@ public class Config
 
             builder.push("Parrot");
             healthMultiplierForParrot = builder.defineInRange("healthMultiplierForParrot", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            damageMultiplierForParrot = builder.defineInRange("damageMultiplierForParrot", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             speedMultiplierForParrot = builder.defineInRange("speedMultiplierForParrot", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             scaleMultiplierForParrot = builder.defineInRange("scaleMultiplierForParrot", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             builder.pop();
@@ -1036,7 +1031,6 @@ public class Config
             scaleMultiplierForPiglin = builder.defineInRange("scaleMultiplierForPiglin", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             builder.push("Baby Piglin");
             healthMultiplierForBabyPiglin = builder.defineInRange("healthMultiplierForBabyPiglin", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
-            damageMultiplierForBabyPiglin = builder.defineInRange("damageMultiplierForBabyPiglin", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             speedMultiplierForBabyPiglin = builder.defineInRange("speedMultiplierForBabyPiglin", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             scaleMultiplierForBabyPiglin = builder.defineInRange("scaleMultiplierForBabyPiglin", 1.0, Double.MIN_VALUE, Double.MAX_VALUE);
             builder.pop();
