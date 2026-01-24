@@ -14,15 +14,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Environment(EnvType.CLIENT)
 @Mixin(WitherEntityRenderer.class)
 public class WitherEntityRendererMixin {
-    @Inject(method = "scale(Lnet/minecraft/entity/boss/WitherEntity;Lnet/minecraft/client/util/math/MatrixStack;F)V", at = @At("HEAD"), cancellable = true)
-    public void changeWitherScale(WitherEntity wither, MatrixStack matrixStack, float f, CallbackInfo ci) {
-        float g = 2.0F * (float) wither.getAttributeValue(CustomMobAttributes.SCALE);
-        int i = wither.getInvulnerableTimer();
-        if (i > 0) {
-            g -= ((float)i - f) / 220.0F * 0.5F;
-        }
 
-        matrixStack.scale(g, g, g);
-        ci.cancel();
+    @Inject(method = "scale(Lnet/minecraft/entity/boss/WitherEntity;Lnet/minecraft/client/util/math/MatrixStack;F)V", at = @At("TAIL"))
+    public void changeWitherScale(WitherEntity wither, MatrixStack matrixStack, float f, CallbackInfo ci) {
+        float multiplier = (float) wither.getAttributeValue(CustomMobAttributes.SCALE);
+        matrixStack.scale(multiplier, multiplier, multiplier);
     }
 }
