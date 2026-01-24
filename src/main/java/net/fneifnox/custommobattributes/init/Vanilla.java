@@ -11,7 +11,7 @@ public class Vanilla {
     public static void initVanillaAttributeHandlers() {
 
         ATTRIBUTE_HANDLERS.put(EntityType.ALLAY, entity -> {
-            configureEntityAttributes(entity.level(), entity, Config.VANILLA.healthMultiplierForAllay, Config.VANILLA.damageMultiplierForAllay, Config.VANILLA.speedMultiplierForAllay, Config.VANILLA.scaleMultiplierForAllay
+            configureEntityAttributes(entity.level(), entity, Config.VANILLA.healthMultiplierForAllay, null, Config.VANILLA.speedMultiplierForAllay, Config.VANILLA.scaleMultiplierForAllay
             );
         });
 
@@ -321,7 +321,7 @@ public class Vanilla {
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.PARROT, entity -> {
-            configureEntityAttributes(entity.level(), entity, Config.VANILLA.healthMultiplierForParrot, Config.VANILLA.damageMultiplierForParrot, Config.VANILLA.speedMultiplierForParrot, Config.VANILLA.scaleMultiplierForParrot
+            configureEntityAttributes(entity.level(), entity, Config.VANILLA.healthMultiplierForParrot, null, Config.VANILLA.speedMultiplierForParrot, Config.VANILLA.scaleMultiplierForParrot
             );
         });
 
@@ -343,7 +343,7 @@ public class Vanilla {
 
         ATTRIBUTE_HANDLERS.put(EntityType.PIGLIN, entity -> {
             if (entity.isBaby()) {
-                configureEntityAttributes(entity.level(), entity, Config.VANILLA.healthMultiplierForBabyPiglin, Config.VANILLA.damageMultiplierForBabyPiglin, Config.VANILLA.speedMultiplierForBabyPiglin, Config.VANILLA.scaleMultiplierForBabyPiglin, Config.VANILLA.healthMultiplierForPiglin, Config.VANILLA.damageMultiplierForPiglin, Config.VANILLA.speedMultiplierForPiglin, Config.VANILLA.scaleMultiplierForPiglin
+                configureEntityAttributes(entity.level(), entity, Config.VANILLA.healthMultiplierForBabyPiglin, null, Config.VANILLA.speedMultiplierForBabyPiglin, Config.VANILLA.scaleMultiplierForBabyPiglin, Config.VANILLA.healthMultiplierForPiglin, Config.VANILLA.damageMultiplierForPiglin, Config.VANILLA.speedMultiplierForPiglin, Config.VANILLA.scaleMultiplierForPiglin
                 );
             }
             else {
