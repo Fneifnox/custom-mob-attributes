@@ -1,17 +1,20 @@
 package net.fneifnox.custommobattributes.mixin.damage;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
+import net.minecraft.entity.damage.DamageSource;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 @Mixin(EnderDragonEntity.class)
 public class DragonPurgeMixin {
-    @ModifyArg(method = "damageLivingEntities", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
-    private float modifyDamageAmount(float originalDamage) {
+    @WrapOperation(method = "damageLivingEntities", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
+    private boolean modifyDamageAmount(Entity entity, DamageSource source, float originalDamage, Operation<Boolean> original) {
         double multiplier = CONFIG.damageMultiplierForEnderDragon() * CONFIG.damageMultiplierForAll();
-        return (float) (originalDamage * multiplier);
+        return entity.damage(source, (float) (originalDamage * multiplier));
     }
 }
