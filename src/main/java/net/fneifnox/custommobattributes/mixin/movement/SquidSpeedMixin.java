@@ -1,17 +1,18 @@
 package net.fneifnox.custommobattributes.mixin.movement;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.entity.passive.SquidEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 @Mixin(SquidEntity.class)
 public class SquidSpeedMixin {
 
-    @Redirect(method = "tickMovement()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/SquidEntity;setVelocity(DDD)V"))
-    private void redirectSetVelocity(SquidEntity instance, double x, double y, double z) {
+    @WrapOperation(method = "tickMovement()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/SquidEntity;setVelocity(DDD)V"))
+    private void redirectSetVelocity(SquidEntity instance, double x, double y, double z, Operation<Void> original) {
         double speedMultiplier;
         if (CONFIG.adultsAlsoAffectBabies() && instance.isBaby()) {
             speedMultiplier = CONFIG.babySquid.speedMultiplierForBabySquid() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForSquid() * CONFIG.speedMultiplierForAll();
