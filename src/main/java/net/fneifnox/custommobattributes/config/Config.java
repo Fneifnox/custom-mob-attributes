@@ -6,8 +6,8 @@ import io.wispforest.owo.config.annotation.*;
 
 @Sync(Option.SyncMode.OVERRIDE_CLIENT)
 @Modmenu(modId = "custom-mob-attributes")
-@Config(name = "custom-mob-attributes", wrapperName = "CustomMA")
-public class ConfigModel {
+@io.wispforest.owo.config.annotation.Config(name = "custom-mob-attributes", wrapperName = "CustomMA")
+public class Config {
     @Comment("Whether babies should also be affected by the multipliers of their adult version")
     public boolean adultsAlsoAffectBabies = true;
     @SectionHeader("All Mobs")
