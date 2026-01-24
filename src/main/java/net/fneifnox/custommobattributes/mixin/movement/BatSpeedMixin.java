@@ -1,11 +1,8 @@
 package net.fneifnox.custommobattributes.mixin.movement;
 
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.BatEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,6 +18,8 @@ public class BatSpeedMixin {
     @ModifyVariable(method = "mobTick", at = @At("STORE"), ordinal = 1)
     private Vec3d modifyForwardSpeed(Vec3d original) {
         BatEntity bat = (BatEntity)(Object)this;
+
+        if (hangingPosition == null) return original;
 
         double d = (double)hangingPosition.getX() + 0.5 - bat.getX();
         double e = (double)hangingPosition.getY() + 0.1 - bat.getY();
