@@ -11,7 +11,7 @@ public class Vanilla {
     public static void initVanillaAttributeHandlers() {
 
         ATTRIBUTE_HANDLERS.put(EntityType.ALLAY, entity -> {
-            configureEntityAttributes(entity.getWorld(), entity, CONFIG::healthMultiplierForAllay, CONFIG::damageMultiplierForAllay, CONFIG::speedMultiplierForAllay, CONFIG::scaleMultiplierForAllay
+            configureEntityAttributes(entity.getWorld(), entity, CONFIG::healthMultiplierForAllay, null, CONFIG::speedMultiplierForAllay, CONFIG::scaleMultiplierForAllay
             );
         });
 
@@ -358,7 +358,7 @@ public class Vanilla {
         });
 
         ATTRIBUTE_HANDLERS.put(EntityType.PARROT, entity -> {
-            configureEntityAttributes(entity.getWorld(), entity, CONFIG::healthMultiplierForParrot, CONFIG::damageMultiplierForParrot, CONFIG::speedMultiplierForParrot, CONFIG::scaleMultiplierForParrot
+            configureEntityAttributes(entity.getWorld(), entity, CONFIG::healthMultiplierForParrot, null, CONFIG::speedMultiplierForParrot, CONFIG::scaleMultiplierForParrot
             );
         });
 
@@ -380,7 +380,7 @@ public class Vanilla {
 
         ATTRIBUTE_HANDLERS.put(EntityType.PIGLIN, entity -> {
             if (entity.isBaby()) {
-                configureEntityAttributes(entity.getWorld(), entity, CONFIG.babyPiglin::healthMultiplierForBabyPiglin, CONFIG.babyPiglin::damageMultiplierForBabyPiglin, CONFIG.babyPiglin::speedMultiplierForBabyPiglin, CONFIG.babyPiglin::scaleMultiplierForBabyPiglin, CONFIG::healthMultiplierForPiglin, CONFIG::damageMultiplierForPiglin, CONFIG::speedMultiplierForPiglin, CONFIG::scaleMultiplierForPiglin
+                configureEntityAttributes(entity.getWorld(), entity, CONFIG.babyPiglin::healthMultiplierForBabyPiglin, null, CONFIG.babyPiglin::speedMultiplierForBabyPiglin, CONFIG.babyPiglin::scaleMultiplierForBabyPiglin, CONFIG::healthMultiplierForPiglin, CONFIG::damageMultiplierForPiglin, CONFIG::speedMultiplierForPiglin, CONFIG::scaleMultiplierForPiglin
                 );
             }
             else {
