@@ -5,17 +5,17 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fneifnox.custommobattributes.init.Vanilla;
 import net.fneifnox.custommobattributes.init.compat.*;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttribute;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Field;
@@ -28,10 +28,10 @@ import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
 public class AttributeUpdater {
 
-    private static final Identifier HEALTH_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "health_modifier");
-    private static final Identifier DAMAGE_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "damage_modifier");
-    private static final Identifier SPEED_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "speed_modifier");
-    private static final Identifier SCALE_MODIFIER_UUID = Identifier.of("custom_mob_attributes", "scale_modifier");
+    private static final Identifier HEALTH_MODIFIER_UUID = Identifier.fromNamespaceAndPath("custom_mob_attributes", "health_modifier");
+    private static final Identifier DAMAGE_MODIFIER_UUID = Identifier.fromNamespaceAndPath("custom_mob_attributes", "damage_modifier");
+    private static final Identifier SPEED_MODIFIER_UUID = Identifier.fromNamespaceAndPath("custom_mob_attributes", "speed_modifier");
+    private static final Identifier SCALE_MODIFIER_UUID = Identifier.fromNamespaceAndPath("custom_mob_attributes", "scale_modifier");
 
     public static final Map<EntityType<?>, Consumer<LivingEntity>> ATTRIBUTE_HANDLERS = new HashMap<>();
 
@@ -70,7 +70,7 @@ public class AttributeUpdater {
         }
 
         ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
-            if (entity instanceof LivingEntity living && !world.isClient()) {
+            if (entity instanceof LivingEntity living && !world.isClientSide()) {
                 Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(entity.getType());
                 if (handler != null) {
                     handler.accept(living);
@@ -80,8 +80,8 @@ public class AttributeUpdater {
     }
 
     public static void reloadConfig(MinecraftServer server) {
-        for (ServerWorld world : server.getWorlds()) {
-            for (Entity entity : world.iterateEntities()) {
+        for (ServerLevel world : server.getAllLevels()) {
+            for (Entity entity : world.getAllEntities()) {
                 if (!(entity instanceof LivingEntity living)) continue;
 
                 Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(entity.getType());
@@ -108,7 +108,7 @@ public class AttributeUpdater {
 
     @SafeVarargs
     public static <T extends LivingEntity> void configureEntityAttributes(
-            World world,
+            Level world,
             LivingEntity entity,
             @Nullable Supplier<Double> healthMultiplier,
             @Nullable Supplier<Double> damageMultiplier,
@@ -118,59 +118,59 @@ public class AttributeUpdater {
     ) {
 
         if (CONFIG.adultsAlsoAffectBabies() && entity.isBaby()) {
-            var health = entity.getAttributeInstance(EntityAttributes.MAX_HEALTH);
+            var health = entity.getAttribute(Attributes.MAX_HEALTH);
             if (health != null && extraMultiplier.length >= 1) {
                 double val = health.getBaseValue() * healthMultiplier.get() * extraMultiplier[0].get() * CONFIG.healthMultiplierForBabyAll() * CONFIG.healthMultiplierForAll();
                 if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * extraMultiplier[0].get() * CONFIG.healthMultiplierForBabyAll() * CONFIG.healthMultiplierForAll());
+                    updateModifier(entity, Attributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * extraMultiplier[0].get() * CONFIG.healthMultiplierForBabyAll() * CONFIG.healthMultiplierForAll());
                     entity.setHealth((float) val);
                 }
             }
             if (damageMultiplier != null && extraMultiplier.length >= 2) {
-                updateModifier(entity, EntityAttributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * extraMultiplier[1].get() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForAll());
+                updateModifier(entity, Attributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * extraMultiplier[1].get() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForAll());
             }
             if (speedMultiplier != null && extraMultiplier.length >= 3) {
-                updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * extraMultiplier[2].get() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForAll());
-                if (entity.getAttributeInstance(EntityAttributes.FLYING_SPEED) != null) {
-                    updateModifier(entity, EntityAttributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * extraMultiplier[2].get() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForAll());
+                updateModifier(entity, Attributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * extraMultiplier[2].get() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForAll());
+                if (entity.getAttribute(Attributes.FLYING_SPEED) != null) {
+                    updateModifier(entity, Attributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * extraMultiplier[2].get() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForAll());
                 }
             }
             if (scaleMultiplier != null && extraMultiplier.length >= 4) {
-                updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * extraMultiplier[3].get() * CONFIG.scaleMultiplierForBabyAll() * CONFIG.scaleMultiplierForAll());
+                updateModifier(entity, Attributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * extraMultiplier[3].get() * CONFIG.scaleMultiplierForBabyAll() * CONFIG.scaleMultiplierForAll());
             }
         }
 
         else {
-            var health = entity.getAttributeInstance(EntityAttributes.MAX_HEALTH);
+            var health = entity.getAttribute(Attributes.MAX_HEALTH);
             if (health != null) {
                 double val = health.getBaseValue() * healthMultiplier.get() * (entity.isBaby() ? CONFIG.healthMultiplierForBabyAll() : CONFIG.healthMultiplierForAll());
                 if (health.getValue() != val) {
-                    updateModifier(entity, EntityAttributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * (entity.isBaby() ? CONFIG.healthMultiplierForBabyAll() : CONFIG.healthMultiplierForAll()));
+                    updateModifier(entity, Attributes.MAX_HEALTH, HEALTH_MODIFIER_UUID, healthMultiplier.get() * (entity.isBaby() ? CONFIG.healthMultiplierForBabyAll() : CONFIG.healthMultiplierForAll()));
                     entity.setHealth((float) val);
                 }
             }
             if (damageMultiplier != null) {
-                updateModifier(entity, EntityAttributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * (entity.isBaby() ? CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForAll()));
+                updateModifier(entity, Attributes.ATTACK_DAMAGE, DAMAGE_MODIFIER_UUID, damageMultiplier.get() * (entity.isBaby() ? CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForAll()));
             }
             if (speedMultiplier != null) {
-                updateModifier(entity, EntityAttributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForAll()));
-                if (entity.getAttributeInstance(EntityAttributes.FLYING_SPEED) != null) {
-                    updateModifier(entity, EntityAttributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForAll()));
+                updateModifier(entity, Attributes.MOVEMENT_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForAll()));
+                if (entity.getAttribute(Attributes.FLYING_SPEED) != null) {
+                    updateModifier(entity, Attributes.FLYING_SPEED, SPEED_MODIFIER_UUID, speedMultiplier.get() * (entity.isBaby() ? CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForAll()));
                 }
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, EntityAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * (entity.isBaby() ? CONFIG.scaleMultiplierForBabyAll() : CONFIG.scaleMultiplierForAll()));
+                updateModifier(entity, Attributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * (entity.isBaby() ? CONFIG.scaleMultiplierForBabyAll() : CONFIG.scaleMultiplierForAll()));
             }
         }
     }
 
     private static void updateModifier(
             LivingEntity entity,
-            RegistryEntry<EntityAttribute> entry,
+            Holder<Attribute> entry,
             Identifier id,
             double multiplier
     ) {
-        var attrInstance = entity.getAttributeInstance(entry);
+        var attrInstance = entity.getAttribute(entry);
         if (attrInstance == null) return;
 
         var oldModifier = attrInstance.getModifier(id);
@@ -181,12 +181,12 @@ public class AttributeUpdater {
         if (multiplier == 1.0) return;
 
         double amount = attrInstance.getBaseValue() * (multiplier - 1);
-        EntityAttributeModifier modifier = new EntityAttributeModifier(
+        AttributeModifier modifier = new AttributeModifier(
                 id,
                 amount,
-                EntityAttributeModifier.Operation.ADD_VALUE
+                AttributeModifier.Operation.ADD_VALUE
         );
-        attrInstance.addPersistentModifier(modifier);
+        attrInstance.addPermanentModifier(modifier);
     }
 }
 
