@@ -66,6 +66,11 @@
   "text.config.custom-mob-attributes.option.speedMultiplierForCamel": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForCamel": "Scale Multiplier",
 
+  "text.config.custom-mob-attributes.section.Camel Husk": "Camel Husk",
+  "text.config.custom-mob-attributes.option.healthMultiplierForCamelHusk": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForCamelHusk": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.scaleMultiplierForCamelHusk": "Scale Multiplier",
+
   "text.config.custom-mob-attributes.section.Cat": "Cat",
   "text.config.custom-mob-attributes.option.healthMultiplierForCat": "Health Multiplier",
   "text.config.custom-mob-attributes.option.damageMultiplierForCat": "Damage Multiplier",
@@ -252,6 +257,11 @@
   "text.config.custom-mob-attributes.option.speedMultiplierForMule": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForMule": "Scale Multiplier",
 
+  "text.config.custom-mob-attributes.section.Nautilus": "Nautilus",
+  "text.config.custom-mob-attributes.option.healthMultiplierForNautilus": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForNautilus": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.scaleMultiplierForNautilus": "Scale Multiplier",
+
   "text.config.custom-mob-attributes.section.Ocelot": "Ocelot",
   "text.config.custom-mob-attributes.option.healthMultiplierForOcelot": "Health Multiplier",
   "text.config.custom-mob-attributes.option.damageMultiplierForOcelot": "Damage Multiplier",
@@ -263,6 +273,12 @@
   "text.config.custom-mob-attributes.option.damageMultiplierForPanda": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.speedMultiplierForPanda": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForPanda": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.Parched": "Parched",
+  "text.config.custom-mob-attributes.option.healthMultiplierForParched": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.damageMultiplierForParched": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForParched": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.scaleMultiplierForParched": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.section.Parrot": "Parrot",
   "text.config.custom-mob-attributes.option.healthMultiplierForParrot": "Health Multiplier",
@@ -482,6 +498,12 @@
   "text.config.custom-mob-attributes.option.speedMultiplierForZombieHorse": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForZombieHorse": "Scale Multiplier",
 
+  "text.config.custom-mob-attributes.section.Zombie Nautilus": "Zombie Nautilus",
+  "text.config.custom-mob-attributes.option.healthMultiplierForZombieNautilus": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.damageMultiplierForZombieNautilus": "Damage Multiplier",
+  "text.config.custom-mob-attributes.option.speedMultiplierForZombieNautilus": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.scaleMultiplierForZombieNautilus": "Scale Multiplier",
+
   "text.config.custom-mob-attributes.section.Zombie Villager": "Zombie Villager",
   "text.config.custom-mob-attributes.option.healthMultiplierForZombieVillager": "Health Multiplier",
   "text.config.custom-mob-attributes.option.damageMultiplierForZombieVillager": "Damage Multiplier",
@@ -515,6 +537,11 @@
   "text.config.custom-mob-attributes.option.babyCamel.healthMultiplierForBabyCamel": "Health Multiplier",
   "text.config.custom-mob-attributes.option.babyCamel.speedMultiplierForBabyCamel": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.babyCamel.scaleMultiplierForBabyCamel": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.babyCamelHusk": "Baby Camel Husk",
+  "text.config.custom-mob-attributes.option.babyCamelHusk.healthMultiplierForBabyCamelHusk": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.babyCamelHusk.speedMultiplierForBabyCamelHusk": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.babyCamelHusk.scaleMultiplierForBabyCamelHusk": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.category.babyCat": "Baby Cat",
   "text.config.custom-mob-attributes.option.babyCat.healthMultiplierForBabyCat": "Health Multiplier",
@@ -603,6 +630,11 @@
   "text.config.custom-mob-attributes.option.babyMule.healthMultiplierForBabyMule": "Health Multiplier",
   "text.config.custom-mob-attributes.option.babyMule.speedMultiplierForBabyMule": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.babyMule.scaleMultiplierForBabyMule": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.category.babyNautilus": "Baby Nautilus",
+  "text.config.custom-mob-attributes.option.babyNautilus.healthMultiplierForBabyNautilus": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.babyNautilus.speedMultiplierForBabyNautilus": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.babyNautilus.scaleMultiplierForBabyNautilus": "Scale Multiplier",
 
   "text.config.custom-mob-attributes.category.babyOcelot": "Baby Ocelot",
   "text.config.custom-mob-attributes.option.babyOcelot.healthMultiplierForBabyOcelot": "Health Multiplier",

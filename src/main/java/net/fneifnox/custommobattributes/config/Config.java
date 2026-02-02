@@ -103,6 +103,18 @@ public class Config {
         public double speedMultiplierForBabyCamel = 1f;
         public double scaleMultiplierForBabyCamel = 1f;
     }
+    @SectionHeader("Camel Husk")
+    @Comment("Camel Husk")
+    public double healthMultiplierForCamelHusk = 1f;
+    public double speedMultiplierForCamelHusk = 1f;
+    public double scaleMultiplierForCamelHusk = 1f;
+    @Nest
+    public BabyCamelHusk babyCamelHusk = new BabyCamelHusk();
+    public static class BabyCamelHusk {
+        public double healthMultiplierForBabyCamelHusk = 1f;
+        public double speedMultiplierForBabyCamelHusk = 1f;
+        public double scaleMultiplierForBabyCamelHusk = 1f;
+    }
     @SectionHeader("Cat")
     @Comment("Cat")
     public double healthMultiplierForCat = 1f;
@@ -409,6 +421,18 @@ public class Config {
         public double speedMultiplierForBabyMule = 1f;
         public double scaleMultiplierForBabyMule = 1f;
     }
+    @SectionHeader("Nautilus")
+    @Comment("Nautilus")
+    public double healthMultiplierForNautilus = 1f;
+    public double speedMultiplierForNautilus = 1f;
+    public double scaleMultiplierForNautilus = 1f;
+    @Nest
+    public BabyNautilus babyNautilus = new BabyNautilus();
+    public static class BabyNautilus {
+        public double healthMultiplierForBabyNautilus = 1f;
+        public double speedMultiplierForBabyNautilus = 1f;
+        public double scaleMultiplierForBabyNautilus = 1f;
+    }
     @SectionHeader("Ocelot")
     @Comment("Ocelot")
     public double healthMultiplierForOcelot = 1f;
@@ -437,6 +461,12 @@ public class Config {
         public double speedMultiplierForBabyPanda = 1f;
         public double scaleMultiplierForBabyPanda = 1f;
     }
+    @SectionHeader("Parched")
+    @Comment("Parched")
+    public double healthMultiplierForParched = 1f;
+    public double damageMultiplierForParched = 1f;
+    public double speedMultiplierForParched = 1f;
+    public double scaleMultiplierForParched = 1f;
     @SectionHeader("Parrot")
     @Comment("Parrot")
     public double healthMultiplierForParrot = 1f;
@@ -773,6 +803,12 @@ public class Config {
         public double speedMultiplierForBabyZombieHorse = 1f;
         public double scaleMultiplierForBabyZombieHorse = 1f;
     }
+    @SectionHeader("Zombie Nautilus")
+    @Comment("Zombie Nautilus")
+    public double healthMultiplierForZombieNautilus = 1f;
+    public double damageMultiplierForZombieNautilus = 1f;
+    public double speedMultiplierForZombieNautilus = 1f;
+    public double scaleMultiplierForZombieNautilus = 1f;
     @SectionHeader("Zombie Villager")
     @Comment("Zombie Villager")
     public double healthMultiplierForZombieVillager = 1f;

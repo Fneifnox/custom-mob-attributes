@@ -2,17 +2,18 @@ package net.fneifnox.custommobattributes.mixin.movement;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.entity.passive.SquidEntity;
+import net.minecraft.world.entity.animal.squid.Squid;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
 
-@Mixin(SquidEntity.class)
+@Mixin(Squid.class)
 public class SquidSpeedMixin {
 
-    @WrapOperation(method = "tickMovement()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/SquidEntity;setVelocity(DDD)V"))
-    private void redirectSetVelocity(SquidEntity instance, double x, double y, double z, Operation<Void> original) {
+    @WrapOperation(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/animal/squid/Squid;setDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V"))
+    private void redirectSetVelocity(Squid instance, Vec3 vec3, Operation<Void> original) {
         double speedMultiplier;
         if (CONFIG.adultsAlsoAffectBabies() && instance.isBaby()) {
             speedMultiplier = CONFIG.babySquid.speedMultiplierForBabySquid() * CONFIG.speedMultiplierForBabyAll() * CONFIG.speedMultiplierForSquid() * CONFIG.speedMultiplierForAll();
@@ -20,6 +21,6 @@ public class SquidSpeedMixin {
         else {
             speedMultiplier = instance.isBaby() ? CONFIG.babySquid.speedMultiplierForBabySquid() * CONFIG.speedMultiplierForBabyAll() : CONFIG.speedMultiplierForSquid() * CONFIG.speedMultiplierForAll();
         }
-        instance.setVelocity(x * speedMultiplier, y * speedMultiplier, z * speedMultiplier);
+        instance.setDeltaMovement(vec3.x * speedMultiplier, vec3.y * speedMultiplier, vec3.z * speedMultiplier);
     }
 }
