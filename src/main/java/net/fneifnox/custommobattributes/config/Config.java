@@ -25,7 +25,6 @@ public class Config {
     @SectionHeader("Allay")
     @Comment("Allay")
     public double healthMultiplierForAllay = 1f;
-    public double damageMultiplierForAllay = 1f;
     public double speedMultiplierForAllay = 1f;
     public double scaleMultiplierForAllay = 1f;
     @SectionHeader("Armadillo")
@@ -423,7 +422,6 @@ public class Config {
     @SectionHeader("Parrot")
     @Comment("Parrot")
     public double healthMultiplierForParrot = 1f;
-    public double damageMultiplierForParrot = 1f;
     public double speedMultiplierForParrot = 1f;
     public double scaleMultiplierForParrot = 1f;
     @SectionHeader("Phantom")
@@ -453,7 +451,6 @@ public class Config {
     public BabyPiglin babyPiglin = new BabyPiglin();
     public static class BabyPiglin {
         public double healthMultiplierForBabyPiglin = 1f;
-        public double damageMultiplierForBabyPiglin = 1f;
         public double speedMultiplierForBabyPiglin = 1f;
         public double scaleMultiplierForBabyPiglin = 1f;
     }
