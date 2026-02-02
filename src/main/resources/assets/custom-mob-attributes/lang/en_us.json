@@ -17,7 +17,6 @@
 
   "text.config.custom-mob-attributes.section.Allay": "Allay",
   "text.config.custom-mob-attributes.option.healthMultiplierForAllay": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.damageMultiplierForAllay": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.speedMultiplierForAllay": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForAllay": "Scale Multiplier",
 
@@ -282,7 +281,6 @@
 
   "text.config.custom-mob-attributes.section.Parrot": "Parrot",
   "text.config.custom-mob-attributes.option.healthMultiplierForParrot": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.damageMultiplierForParrot": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.speedMultiplierForParrot": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.scaleMultiplierForParrot": "Scale Multiplier",
 
@@ -655,7 +653,6 @@
 
   "text.config.custom-mob-attributes.category.babyPiglin": "Baby Piglin",
   "text.config.custom-mob-attributes.option.babyPiglin.healthMultiplierForBabyPiglin": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.babyPiglin.damageMultiplierForBabyPiglin": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.babyPiglin.speedMultiplierForBabyPiglin": "Speed Multiplier",
   "text.config.custom-mob-attributes.option.babyPiglin.scaleMultiplierForBabyPiglin": "Scale Multiplier",
 
