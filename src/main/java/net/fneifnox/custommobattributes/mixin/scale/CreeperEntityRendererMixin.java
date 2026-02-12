@@ -22,9 +22,9 @@ public class CreeperEntityRendererMixin {
         g *= g;
         float i = (1.0F + g * 0.4F) * h;
         float j = (1.0F + g * 0.1F) / h;
-        matrixStack.scale((float) (i * creeperEntity.getAttributeValue(CustomMobAttributes.SCALE)),
-                (float) (j * creeperEntity.getAttributeValue(CustomMobAttributes.SCALE)),
-                (float) (i * creeperEntity.getAttributeValue(CustomMobAttributes.SCALE)));
+        matrixStack.scale((float) (i * creeperEntity.getAttributeValue(CustomMobAttributes.SCALE.get())),
+                (float) (j * creeperEntity.getAttributeValue(CustomMobAttributes.SCALE.get())),
+                (float) (i * creeperEntity.getAttributeValue(CustomMobAttributes.SCALE.get())));
         ci.cancel();
     }
 }

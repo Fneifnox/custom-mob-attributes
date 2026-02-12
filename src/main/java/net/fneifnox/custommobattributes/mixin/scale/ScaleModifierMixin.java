@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // Priority = 500 for compat reasons
-@Mixin(value = LivingEntity.class, priority = 500)
-    public abstract class ScaleModifierMixin {
+@Mixin(LivingEntity.class)
+public abstract class ScaleModifierMixin {
 
     @Unique
     private double lastScale = 1.0;
@@ -19,9 +19,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
         LivingEntity livingEntity = (LivingEntity)(Object)this;
-        double scale = livingEntity.getAttributeValue(CustomMobAttributes.SCALE);
+
+        double scale = livingEntity.getAttributeValue(CustomMobAttributes.SCALE.get());
 
         if (scale != this.lastScale) {
+            System.out.println("TICK - refreshDimensions");
             this.lastScale = scale;
             livingEntity.refreshDimensions();
         }
@@ -31,8 +33,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
     public float modifyScaleFactor(float original) {
         LivingEntity livingEntity = (LivingEntity)(Object)this;
         if (livingEntity.getAttributes() != null) {
-            return (float) (livingEntity.isBaby() ? (0.5f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE)) : (1.0f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE)));
+            System.out.println("GETSCALE - custom");
+            return (float) (livingEntity.isBaby() ? (0.5f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE.get())) : (1.0f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE.get())));
         }
+        System.out.println("GETSCALE - original");
         return 1f;
     }
 }

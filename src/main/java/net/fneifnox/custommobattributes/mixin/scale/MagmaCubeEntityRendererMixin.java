@@ -14,7 +14,7 @@ public class MagmaCubeEntityRendererMixin {
 
     @Inject(method = "scale(Lnet/minecraft/world/entity/monster/MagmaCube;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", at = @At("TAIL"))
     private void changeMagmaCubeScale(MagmaCube magmaCubeEntity, PoseStack matrixStack, float f, CallbackInfo ci) {
-        float multiplier = (float) magmaCubeEntity.getAttributeValue(CustomMobAttributes.SCALE);
+        float multiplier = (float) magmaCubeEntity.getAttributeValue(CustomMobAttributes.SCALE.get());
         matrixStack.scale(multiplier, multiplier, multiplier);
     }
 }

@@ -24,7 +24,7 @@ public class BatEntityRendererMixin {
 
     @ModifyConstant(method = "scale(Lnet/minecraft/world/entity/ambient/Bat;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", constant = @Constant(floatValue = 0.35f))
     private float changeBatScale(float original) {
-        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE);
+        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE.get());
         return original * multiplier;
     }
 }

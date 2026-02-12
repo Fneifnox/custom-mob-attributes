@@ -14,7 +14,7 @@ public class SlimeEntityRendererMixin {
 
     @Inject(method = "scale(Lnet/minecraft/world/entity/monster/Slime;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", at = @At("TAIL"))
     private void changeSlimeScale(Slime slimeEntity, PoseStack matrixStack, float f, CallbackInfo ci) {
-        float multiplier = (float) slimeEntity.getAttributeValue(CustomMobAttributes.SCALE);
+        float multiplier = (float) slimeEntity.getAttributeValue(CustomMobAttributes.SCALE.get());
         matrixStack.scale(multiplier, multiplier, multiplier);
     }
 }

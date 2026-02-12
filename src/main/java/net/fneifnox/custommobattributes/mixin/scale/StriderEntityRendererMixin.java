@@ -14,7 +14,7 @@ public class StriderEntityRendererMixin {
 
     @Inject(method = "scale(Lnet/minecraft/world/entity/monster/Strider;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", at = @At("TAIL"))
     private void changeStriderScale(Strider striderEntity, PoseStack matrixStack, float f, CallbackInfo ci) {
-        float multiplier = (float) striderEntity.getAttributeValue(CustomMobAttributes.SCALE);
+        float multiplier = (float) striderEntity.getAttributeValue(CustomMobAttributes.SCALE.get());
         matrixStack.scale(multiplier, multiplier, multiplier);
     }
 }

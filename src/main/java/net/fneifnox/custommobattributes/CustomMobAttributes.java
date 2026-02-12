@@ -1,15 +1,15 @@
 package net.fneifnox.custommobattributes;
 
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.rmi.registry.Registry;
 
 import static net.fneifnox.custommobattributes.config.Config.*;
 
@@ -24,11 +24,11 @@ public class CustomMobAttributes {
 		context.registerConfig(ModConfig.Type.SERVER, CONFIG);
 
 		AttributeUpdater.register();
+
+		ATTRIBUTES.register(context.getModEventBus());
 	}
 
-	public static final Attribute SCALE = registerAttribute("scale", 1.0, 0.0625, 16.0);
+	private static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.Keys.ATTRIBUTES, MOD_ID);
 
-	private static Attribute registerAttribute(final String name, double base, double min, double max) {
-		return new RangedAttribute("attribute." + MOD_ID + '.' + name, base, min, max);
-	}
+	public static final RegistryObject<Attribute> SCALE = ATTRIBUTES.register("scale", () -> new RangedAttribute("scale", 1.0, 0.0625, 16.0).setSyncable(true));
 }

@@ -2,6 +2,7 @@
   "required": true,
   "package": "net.fneifnox.custommobattributes.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "custom-mob-attributes.refmap.json",
   "mixins": [
     "baby.PassiveEntityMixin",
     "damage.ArrowMixin",
@@ -46,5 +47,8 @@
     "scale.WitchEntityRendererMixin",
     "scale.WitherEntityRendererMixin",
     "scale.WitherSkeletonEntityRendererMixin"
-  ]
+  ],
+  "mixinextras": {
+    "minVersion": "0.5.3"
+  }
 }

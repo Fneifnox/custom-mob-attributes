@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class LivingEntityAttributesMixin {
     @ModifyReturnValue(method = "createLivingAttributes", at = @At("RETURN"))
     private static AttributeSupplier.Builder addScaleAttribute(AttributeSupplier.Builder builder) {
-        return builder.add(CustomMobAttributes.SCALE);
+        return builder.add(CustomMobAttributes.SCALE.get());
     }
 }

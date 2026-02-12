@@ -23,7 +23,7 @@ public abstract class ElderGuardianEntityRendererMixin {
 
     @Redirect(method = "scale(Lnet/minecraft/world/entity/monster/Guardian;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;scale(FFF)V"))
     private void changeElderGuardianScale(PoseStack matrixStack, float x, float y, float z) {
-        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE);
+        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE.get());
         matrixStack.scale(x * multiplier, y * multiplier, z * multiplier);
     }
 }

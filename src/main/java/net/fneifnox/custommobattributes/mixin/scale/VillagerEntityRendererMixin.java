@@ -24,7 +24,7 @@ public class VillagerEntityRendererMixin {
 
     @ModifyConstant(method = "scale(Lnet/minecraft/world/entity/npc/Villager;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", constant = @Constant(floatValue = 0.9375f))
     private float changeVillagerScale(float original) {
-        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE);
+        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE.get());
         return original * multiplier;
     }
 }

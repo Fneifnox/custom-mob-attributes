@@ -24,7 +24,7 @@ public class WanderingTraderEntityRendererMixin {
 
     @ModifyConstant(method = "scale(Lnet/minecraft/world/entity/npc/WanderingTrader;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", constant = @Constant(floatValue = 0.9375f))
     private float changeWanderingTraderScale(float original) {
-        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE);
+        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE.get());
         return original * multiplier;
     }
 }
