@@ -16,11 +16,10 @@ public abstract class EntityRidingScaleMixin {
     private void onUpdatePassengerPosition(Entity passenger, Entity.MoveFunction positionUpdater, CallbackInfo ci) {
         Entity entity = (Entity)(Object)this;
 
-
         if (!entity.hasPassenger(passenger)) return;
 
         if (entity instanceof LivingEntity livingEntity) {
-            double scale = livingEntity.getAttributeValue(CustomMobAttributes.SCALE);
+            double scale = livingEntity.getAttributeValue(CustomMobAttributes.SCALE.get());
 
             double posX = livingEntity.getX();
             double posY = livingEntity.getY() + (livingEntity.getBbHeight() - (livingEntity.getBbHeight() / scale / 1.85));

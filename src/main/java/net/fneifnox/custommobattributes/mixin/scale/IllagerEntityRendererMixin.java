@@ -24,7 +24,7 @@ public class IllagerEntityRendererMixin {
 
     @ModifyConstant(method = "scale(Lnet/minecraft/world/entity/monster/AbstractIllager;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", constant = @Constant(floatValue = 0.9375f))
     private float changeIllagerScale(float original) {
-        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE);
+        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE.get());
         return original * multiplier;
     }
 }

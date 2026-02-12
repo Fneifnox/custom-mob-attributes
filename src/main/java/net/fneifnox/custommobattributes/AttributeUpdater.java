@@ -3,26 +3,18 @@ package net.fneifnox.custommobattributes;
 import net.fneifnox.custommobattributes.config.Config;
 import net.fneifnox.custommobattributes.init.Vanilla;
 import net.fneifnox.custommobattributes.init.compat.*;
-import net.minecraft.core.Holder;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
@@ -31,7 +23,6 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = CustomMobAttributes.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -134,8 +125,6 @@ public class AttributeUpdater {
             @Nullable Supplier<Double> scaleMultiplier,
             @Nullable Supplier<Double>... extraMultiplier
     ) {
-        AABB box = new AABB(new Vec3(-1_000_000, -1_000_000, -1_000_000), new Vec3(1_000_000, 1_000_000, 1_000_000));
-
         if (Config.VANILLA.adultsAlsoAffectBabies.get() && entity.isBaby()) {
             var health = entity.getAttribute(Attributes.MAX_HEALTH);
             if (health != null && extraMultiplier.length >= 1) {
@@ -155,7 +144,7 @@ public class AttributeUpdater {
                 }
             }
             if (scaleMultiplier != null && extraMultiplier.length >= 4) {
-                updateModifier(entity, CustomMobAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * extraMultiplier[3].get() * Config.VANILLA.scaleMultiplierForBabyAll.get() * Config.VANILLA.scaleMultiplierForAll.get());
+                updateModifier(entity, CustomMobAttributes.SCALE.get(), SCALE_MODIFIER_UUID, scaleMultiplier.get() * extraMultiplier[3].get() * Config.VANILLA.scaleMultiplierForBabyAll.get() * Config.VANILLA.scaleMultiplierForAll.get());
             }
         }
 
@@ -178,7 +167,7 @@ public class AttributeUpdater {
                 }
             }
             if (scaleMultiplier != null) {
-                updateModifier(entity, CustomMobAttributes.SCALE, SCALE_MODIFIER_UUID, scaleMultiplier.get() * (entity.isBaby() ? Config.VANILLA.scaleMultiplierForBabyAll.get() : Config.VANILLA.scaleMultiplierForAll.get()));
+                updateModifier(entity, CustomMobAttributes.SCALE.get(), SCALE_MODIFIER_UUID, scaleMultiplier.get() * (entity.isBaby() ? Config.VANILLA.scaleMultiplierForBabyAll.get() : Config.VANILLA.scaleMultiplierForAll.get()));
             }
         }
     }

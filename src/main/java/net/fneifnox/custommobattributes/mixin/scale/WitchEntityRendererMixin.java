@@ -24,7 +24,7 @@ public class WitchEntityRendererMixin {
 
     @ModifyConstant(method = "scale(Lnet/minecraft/world/entity/monster/Witch;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", constant = @Constant(floatValue = 0.9375f))
     private float changeWitchScale(float original) {
-        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE);
+        float multiplier = (float) entity.getAttributeValue(CustomMobAttributes.SCALE.get());
         return original * multiplier;
     }
 }

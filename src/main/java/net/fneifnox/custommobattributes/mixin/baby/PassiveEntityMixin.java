@@ -19,7 +19,6 @@ public class PassiveEntityMixin {
     @Inject(method = "ageBoundaryReached", at = @At("TAIL"))
     private void changeMultipliersFromBabyToAdult(CallbackInfo ci) {
         AgeableMob passiveEntity = (AgeableMob)(Object)this;
-        System.out.println("==========================TEST 1");
         if (!passiveEntity.level().isClientSide()) {
             Consumer<LivingEntity> handler = ATTRIBUTE_HANDLERS.get(passiveEntity.getType());
             if (handler != null) {

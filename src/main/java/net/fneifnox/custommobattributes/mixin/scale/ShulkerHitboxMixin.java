@@ -18,7 +18,7 @@ public class ShulkerHitboxMixin {
 
         double scale;
         if (shulker.getAttributes() != null) {
-            scale = shulker.getAttributeValue(CustomMobAttributes.SCALE);
+            scale = shulker.getAttributeValue(CustomMobAttributes.SCALE.get());
         }
         else {
             scale = 1f;
