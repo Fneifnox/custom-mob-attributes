@@ -1146,6 +1146,18 @@ public class Config {
     @Nest
     public VanillaBackport vanillaBackport = new VanillaBackport();
     public static class VanillaBackport {
+        @SectionHeader("Armadillo")
+        @Comment("Armadillo")
+        public double healthMultiplierForArmadillo = 1f;
+        public double speedMultiplierForArmadillo = 1f;
+        public double scaleMultiplierForArmadillo = 1f;
+        @Nest
+        public BabyArmadillo babyArmadillo = new BabyArmadillo();
+        public static class BabyArmadillo {
+            public double healthMultiplierForBabyArmadillo = 1f;
+            public double speedMultiplierForBabyArmadillo = 1f;
+            public double scaleMultiplierForBabyArmadillo = 1f;
+        }
         @SectionHeader("Creaking")
         @Comment("Creaking")
         public double healthMultiplierForCreaking = 1f;
@@ -1155,7 +1167,6 @@ public class Config {
         @SectionHeader("Happy Ghast")
         @Comment("Happy Ghast")
         public double healthMultiplierForHappyGhast = 1f;
-        public double damageMultiplierForHappyGhast = 1f;
         public double speedMultiplierForHappyGhast = 1f;
     }
     @Nest
