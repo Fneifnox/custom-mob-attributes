@@ -680,6 +680,16 @@
   "text.config.custom-mob-attributes.section.Modded Mobs": "Modded Mobs",
   "text.config.custom-mob-attributes.category.vanillaBackport": "Vanilla Backport",
 
+  "text.config.custom-mob-attributes.section.Armadillo": "Armadillo",
+  "text.config.custom-mob-attributes.option.vanillaBackport.healthMultiplierForArmadillo": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.vanillaBackport.speedMultiplierForArmadillo": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.vanillaBackport.scaleMultiplierForArmadillo": "Scale Multiplier",
+
+  "text.config.custom-mob-attributes.section.babyArmadillo": "Baby Armadillo",
+  "text.config.custom-mob-attributes.option.vanillaBackport.healthMultiplierForBabyArmadillo": "Health Multiplier",
+  "text.config.custom-mob-attributes.option.vanillaBackport.speedMultiplierForBabyArmadillo": "Speed Multiplier",
+  "text.config.custom-mob-attributes.option.vanillaBackport.scaleMultiplierForBabyArmadillo": "Scale Multiplier",
+
   "text.config.custom-mob-attributes.section.Creaking": "Creaking",
   "text.config.custom-mob-attributes.option.vanillaBackport.healthMultiplierForCreaking": "Health Multiplier",
   "text.config.custom-mob-attributes.option.vanillaBackport.damageMultiplierForCreaking": "Damage Multiplier",
@@ -688,7 +698,6 @@
 
   "text.config.custom-mob-attributes.section.Happy Ghast": "Happy Ghast",
   "text.config.custom-mob-attributes.option.vanillaBackport.healthMultiplierForHappyGhast": "Health Multiplier",
-  "text.config.custom-mob-attributes.option.vanillaBackport.damageMultiplierForHappyGhast": "Damage Multiplier",
   "text.config.custom-mob-attributes.option.vanillaBackport.speedMultiplierForHappyGhast": "Speed Multiplier",
 
   "text.config.custom-mob-attributes.category.mobVariants": "Mob Variants",
