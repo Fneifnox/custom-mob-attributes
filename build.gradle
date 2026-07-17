@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.3-R0.1-SNAPSHOT")
     implementation("net.kyori:adventure-api:5.2.0")
     implementation("net.kyori:adventure-text-minimessage:5.2.0")
     implementation("org.bstats:bstats-bukkit:3.2.1")
@@ -37,15 +37,15 @@ tasks {
             // modrinth("ViaVersion", "5.11.0-SNAPSHOT+1036")
         }
 
-        minecraftVersion("1.21")
-        serverJar(file("run/paper-1.21-130.jar"))
+        minecraftVersion("1.21.3")
+        serverJar(file("run/paper-1.21.3-83.jar"))
     }
 }
 
 tasks.shadowJar {
     relocate 'org.bstats', 'net.fneifnox.bstats'
 
-    archiveBaseName = 'custom-mob-attributes-1.21'
+    archiveBaseName = 'custom-mob-attributes-1.21.3'
     archiveClassifier = ''
 
     configurations = [project.configurations.runtimeClasspath]
