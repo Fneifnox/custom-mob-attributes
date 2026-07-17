@@ -79,25 +79,25 @@ public class AttributeUpdater implements Listener {
         double speedMultiplier = mobMultiplier.speedMultiplier();
         double scaleMultiplier = mobMultiplier.scaleMultiplier();
 
-        var health = entity.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+        var health = entity.getAttribute(Attribute.MAX_HEALTH);
         if (health != null && !Double.isNaN(healthMultiplier)) {
             double val = health.getBaseValue() * healthMultiplier;
             if (health.getValue() != val) {
-                updateModifier(entity, Attribute.GENERIC_MAX_HEALTH, HEALTH_MODIFIER_ID, healthMultiplier);
+                updateModifier(entity, Attribute.MAX_HEALTH, HEALTH_MODIFIER_ID, healthMultiplier);
                 entity.setHealth((float) val);
             }
         }
         if (!Double.isNaN(damageMultiplier)) {
-            updateModifier(entity, Attribute.GENERIC_ATTACK_DAMAGE, DAMAGE_MODIFIER_ID, damageMultiplier);
+            updateModifier(entity, Attribute.ATTACK_DAMAGE, DAMAGE_MODIFIER_ID, damageMultiplier);
         }
         if (!Double.isNaN(speedMultiplier)) {
-            updateModifier(entity, Attribute.GENERIC_MOVEMENT_SPEED, SPEED_MODIFIER_ID, speedMultiplier);
-            if (entity.getAttribute(Attribute.GENERIC_FLYING_SPEED) != null) {
-                updateModifier(entity, Attribute.GENERIC_FLYING_SPEED, SPEED_MODIFIER_ID, speedMultiplier);
+            updateModifier(entity, Attribute.MOVEMENT_SPEED, SPEED_MODIFIER_ID, speedMultiplier);
+            if (entity.getAttribute(Attribute.FLYING_SPEED) != null) {
+                updateModifier(entity, Attribute.FLYING_SPEED, SPEED_MODIFIER_ID, speedMultiplier);
             }
         }
         if (!Double.isNaN(scaleMultiplier)) {
-            updateModifier(entity, Attribute.GENERIC_SCALE, SCALE_MODIFIER_ID, scaleMultiplier);
+            updateModifier(entity, Attribute.SCALE, SCALE_MODIFIER_ID, scaleMultiplier);
         }
     }
 
