@@ -1,0 +1,659 @@
+# Whether babies should also be affected by the multipliers of their adult version
+adultsAlsoAffectBabies: true
+
+# All Mobs
+all_mobs:
+  health_multiplier: 1.0
+  damage_multiplier: 1.0
+  speed_multiplier: 1.0
+  scale_multiplier: 1.0
+
+# All Baby Mobs
+all_baby_mobs:
+  health_multiplier: 1.0
+  damage_multiplier: 1.0
+  speed_multiplier: 1.0
+  scale_multiplier: 1.0
+
+# Individual Mobs (Alphabetical)
+mobs:
+  ALLAY:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  ARMADILLO:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  AXOLOTL:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  BAT:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  BEE:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  BLAZE:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  BOGGED:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  BREEZE:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  CAMEL:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  CAT:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  CAVE_SPIDER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  CHICKEN:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  COD:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  COW:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  CREEPER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  DOLPHIN:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  DONKEY:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  DROWNED:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  ELDER_GUARDIAN:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  ENDER_DRAGON:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+
+  ENDERMAN:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  ENDERMITE:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  EVOKER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  FOX:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  FROG:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  GHAST:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  GIANT:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  GLOW_SQUID:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  GOAT:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  GUARDIAN:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  HOGLIN:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  HORSE:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  HUSK:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  ILLUSIONER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  IRON_GOLEM:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  LLAMA:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  MAGMA_CUBE:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  MOOSHROOM:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  MULE:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  OCELOT:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  PANDA:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  PARROT:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  PHANTOM:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  PIG:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  PIGLIN:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  PIGLIN_BRUTE:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  PILLAGER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  POLAR_BEAR:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  PUFFERFISH:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  RABBIT:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  RAVAGER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  SALMON:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  SHEEP:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  SHULKER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  SILVERFISH:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  SKELETON:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  SKELETON_HORSE:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  SLIME:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  SNIFFER:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  SNOW_GOLEM:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  SPIDER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  SQUID:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  STRAY:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  STRIDER:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  TADPOLE:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  TRADER_LLAMA:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  TROPICAL_FISH:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  TURTLE:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  VEX:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  VILLAGER:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  VINDICATOR:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  WANDERING_TRADER:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  WARDEN:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  WITCH:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  WITHER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  WITHER_SKELETON:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
+  WOLF:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  ZOGLIN:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  ZOMBIE:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  ZOMBIE_HORSE:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  ZOMBIE_VILLAGER:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+  ZOMBIFIED_PIGLIN:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      damage_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
+
+# Do not change this
+config_version: ${config_version}

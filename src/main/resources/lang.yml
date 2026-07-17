@@ -1,0 +1,39 @@
+prefix: "<dark_gray>[<gradient:#be77f8:#8420d6>Custom Mob Attributes<dark_gray>]<reset> "
+
+# {0} = latestAvailableVersion
+generell.noPermission: "<gray>You do not have permission to use this command"
+generell.updateAvailable: "<gray>Update {0} for <gradient:#be77f8:#8420d6>Custom Mob Attributes<gray> is now available on Modrinth. Click <click:open_url:'https://modrinth.com/project/f12jSNQc/versions'><#3198f7><underlined>here</click> to open the Modrinth page"
+
+reloadCustomMobAttributes.reloaded: "<#1fff17>Successfully reloaded the config and language files"
+
+# {0} = mob ; {1} = attribute ; {2} = value ; {3} = attributeColorTag; {4} = minValue; {5} = maxValue
+setMultiplier.generellUsage: "<gray>Usage: /setmultiplier <mob name> <attribute> <value>"
+setMultiplier.usage.mob.notValid: "<gray>{0} is not a valid option"
+setMultiplier.usage.mob.mobDoesntHasAttribute: "<gray>{0} doesn't has the {3}{1} attribute"
+setMultiplier.usage.attribute.notValid: "<gray>{0} is not a valid attribute"
+setMultiplier.usage.value.nonNumber: "<gray>{0} is not a number"
+setMultiplier.workedWithCorrection: "<gray>Values for the <<{3}>>{1} multiplier<gray> must be between {4,number,0.######} and {5}. Therefore, the <<{3}>>{1} multiplier<gray> of {0} has been set to {2,number,0.0######}"
+setMultiplier.worked: "<gray>Successfully set <<{3}>>{1} multiplier<gray> of {0} to {2,number,0.0#####}"
+
+# {0} = mob ; {1} = healthMultiplier ; {2} = damageMultiplier; {3} = speedMultiplier ; {4} = scaleMultiplier
+getMultiplier.generellUsage: "<gray>Usage: /getmultiplier <mob name>"
+getMultiplier.usage.mob.notValid: "<gray>{0} is not a valid option"
+getMultiplier.worked:
+  header: "<gray>Multipliers for {0}:{1}{2}{3}{4}"
+  health_multiplier: "<newline><<health_color>>♥ Health Multiplier:<reset> <gray>{0,number,0.0#####}"
+  damage_multiplier: "<newline><<damage_color>>⚔ Damage Multiplier:<reset> <gray>{0,number,0.0#####}"
+  speed_multiplier: "<newline><<speed_color>>👞 Speed Multiplier:<reset> <gray>{0,number,0.0#####}"
+  scale_multiplier: "<newline><<scale_color>>↕ Scale Multiplier:<reset> <gray>{0,number,0.0#####}"
+
+adultsAlsoAffectBabies.generellUsage: "<gray>Usage: /adultsalsoaffectbabies <true/false>"
+adultsAlsoAffectBabies.worked.true: "<#1fff17>Babies are now also affected by the multipliers of their adult versions"
+adultsAlsoAffectBabies.worked.false: "<#ff1717>Babies are no longer affected by the multipliers of their adult versions"
+
+healthMultiplier.color: "#fa3939"
+damageMultiplier.color: "#fab639"
+speedMultiplier.color: "#39d7fa"
+scaleMultiplier.color: "#66fa39"
+
+
+# Do not change this
+lang_version: ${lang_version}

@@ -1,0 +1,44 @@
+name: custom-mob-attributes
+version: '1.0.0-paper'
+main: net.fneifnox.customMobAttributes.Main
+api-version: '1.21'
+authors: [Fneifnox]
+website: https://discord.gg/bszSDCq5ms
+commands:
+  setmultiplier:
+    description: Set an attribute multiplier of a specific mob
+    usage: /setmultiplier [<mob name>] [<attribute>] [<value>]
+    permission: custommobattributes.command.setmultiplier
+    aliases: [sm, setmult]
+  getmultiplier:
+    description: Get the attribute multipliers of a specific mob
+    usage: /getmultiplier [<mob name>]
+    permission: custommobattributes.command.getmultiplier
+    aliases: [gm, getmult]
+  adultsalsoaffectbabies:
+    description: Whether babies should also be affected by the multipliers of their adult version
+    usage: /adultsalsoaffectbabies [<true/false>]
+    permission: custommobattributes.command.adultsalsoaffectbabies
+    aliases: [adultsaffectbabies]
+  reloadcustommobattributes:
+    description: Reload the language and config file
+    usage: /reloadcustommobattributes
+    permission: custommobattributes.command.reloadcustommobattributes
+    aliases: [reloadcma, rcma]
+
+permissions:
+  custommobattributes.command.setmultiplier:
+    description: Allows a player to use /setmultiplier
+    default: op
+  custommobattributes.command.getmultiplier:
+    description: Allows a player to use /getmultiplier
+    default: op
+  custommobattributes.command.adultsalsoaffectbabies:
+    description: Allows a player to use /adultsalsoaffectbabies
+    default: op
+  custommobattributes.command.reloadcustommobattributes:
+    description: Allows a player to use /reloadcustommobattributes
+    default: op
+  custommobattributes.admin:
+    description: Allows a player to use all commands and to receive update notifications
+    default: op
