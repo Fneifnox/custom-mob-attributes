@@ -45,7 +45,7 @@ tasks {
 tasks.shadowJar {
     relocate 'org.bstats', 'net.fneifnox.bstats'
 
-    archiveBaseName = 'custom-mob-attributes-1.21.3'
+    archiveBaseName = 'custom-mob-attributes-1.21.2'
     archiveClassifier = ''
 
     configurations = [project.configurations.runtimeClasspath]

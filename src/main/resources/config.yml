@@ -85,6 +85,15 @@ mobs:
       speed_multiplier: 1.0
       scale_multiplier: 1.0
 
+  CAMEL_HUSK:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
   CAT:
     health_multiplier: 1.0
     damage_multiplier: 1.0
@@ -111,6 +120,11 @@ mobs:
       speed_multiplier: 1.0
       scale_multiplier: 1.0
 
+  COPPER_GOLEM:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+
   COD:
     health_multiplier: 1.0
     speed_multiplier: 1.0
@@ -124,6 +138,12 @@ mobs:
       health_multiplier: 1.0
       speed_multiplier: 1.0
       scale_multiplier: 1.0
+
+  CREAKING:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
 
   CREEPER:
     health_multiplier: 1.0
@@ -245,6 +265,15 @@ mobs:
     speed_multiplier: 1.0
     scale_multiplier: 1.0
 
+  HAPPY_GHAST:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
   HOGLIN:
     health_multiplier: 1.0
     damage_multiplier: 1.0
@@ -323,6 +352,15 @@ mobs:
       speed_multiplier: 1.0
       scale_multiplier: 1.0
 
+  NAUTILUS:
+    health_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
+    baby:
+      health_multiplier: 1.0
+      speed_multiplier: 1.0
+      scale_multiplier: 1.0
+
   OCELOT:
     health_multiplier: 1.0
     damage_multiplier: 1.0
@@ -344,6 +382,12 @@ mobs:
       damage_multiplier: 1.0
       speed_multiplier: 1.0
       scale_multiplier: 1.0
+
+  PARCHED:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
 
   PARROT:
     health_multiplier: 1.0
@@ -631,6 +675,12 @@ mobs:
       health_multiplier: 1.0
       speed_multiplier: 1.0
       scale_multiplier: 1.0
+
+  ZOMBIE_NAUTILUS:
+    health_multiplier: 1.0
+    damage_multiplier: 1.0
+    speed_multiplier: 1.0
+    scale_multiplier: 1.0
 
   ZOMBIE_VILLAGER:
     health_multiplier: 1.0
