@@ -28,7 +28,6 @@
     "defaultRequire": 1
   },
   "client": [
-    "scale.BatEntityRendererMixin",
     "scale.CaveSpiderEntityRendererMixin",
     "scale.CreeperEntityRendererMixin",
     "scale.ElderGuardianEntityRendererMixin",
