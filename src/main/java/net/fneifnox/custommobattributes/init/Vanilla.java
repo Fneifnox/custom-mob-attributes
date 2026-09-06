@@ -1,6 +1,6 @@
 package net.fneifnox.custommobattributes.init;
 
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 
 import static net.fneifnox.custommobattributes.AttributeUpdater.ATTRIBUTE_HANDLERS;
 import static net.fneifnox.custommobattributes.AttributeUpdater.configureEntityAttributes;
@@ -10,12 +10,12 @@ public class Vanilla {
 
     public static void initVanillaAttributeHandlers() {
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ALLAY, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ALLAY, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForAllay, null, CONFIG::speedMultiplierForAllay, CONFIG::scaleMultiplierForAllay
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ARMADILLO, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ARMADILLO, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyArmadillo::healthMultiplierForBabyArmadillo, null, CONFIG.babyArmadillo::speedMultiplierForBabyArmadillo, CONFIG.babyArmadillo::scaleMultiplierForBabyArmadillo, CONFIG::healthMultiplierForArmadillo, null, CONFIG::speedMultiplierForArmadillo, CONFIG::scaleMultiplierForArmadillo
                 );
@@ -26,7 +26,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.AXOLOTL, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.AXOLOTL, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyAxolotl::healthMultiplierForBabyAxolotl, CONFIG.babyAxolotl::damageMultiplierForBabyAxolotl, CONFIG.babyAxolotl::speedMultiplierForBabyAxolotl, CONFIG.babyAxolotl::scaleMultiplierForBabyAxolotl, CONFIG::healthMultiplierForAxolotl, CONFIG::damageMultiplierForAxolotl, CONFIG::speedMultiplierForAxolotl, CONFIG::scaleMultiplierForAxolotl
                 );
@@ -37,12 +37,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.BAT, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.BAT, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForBat, null, CONFIG::speedMultiplierForBat, CONFIG::scaleMultiplierForBat
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.BEE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.BEE, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyBee::healthMultiplierForBabyBee, CONFIG.babyBee::damageMultiplierForBabyBee, CONFIG.babyBee::speedMultiplierForBabyBee, CONFIG.babyBee::scaleMultiplierForBabyBee, CONFIG::healthMultiplierForBee, CONFIG::damageMultiplierForBee, CONFIG::speedMultiplierForBee, CONFIG::scaleMultiplierForBee
                 );
@@ -53,22 +53,22 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.BLAZE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.BLAZE, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForBlaze, CONFIG::damageMultiplierForBlaze, CONFIG::speedMultiplierForBlaze, CONFIG::scaleMultiplierForBlaze
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.BOGGED, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.BOGGED, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForBogged, CONFIG::damageMultiplierForBogged, CONFIG::speedMultiplierForBogged, CONFIG::scaleMultiplierForBogged
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.BREEZE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.BREEZE, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForBreeze, CONFIG::damageMultiplierForBreeze, CONFIG::speedMultiplierForBreeze, CONFIG::scaleMultiplierForBreeze
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.CAMEL, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.CAMEL, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyCamel::healthMultiplierForBabyCamel, null, CONFIG.babyCamel::speedMultiplierForBabyCamel, CONFIG.babyCamel::scaleMultiplierForBabyCamel, CONFIG::healthMultiplierForCamel, null, CONFIG::speedMultiplierForCamel, CONFIG::scaleMultiplierForCamel
                 );
@@ -79,7 +79,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.CAMEL_HUSK, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.CAMEL_HUSK, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyCamelHusk::healthMultiplierForBabyCamelHusk, null, CONFIG.babyCamelHusk::speedMultiplierForBabyCamelHusk, CONFIG.babyCamelHusk::scaleMultiplierForBabyCamelHusk, CONFIG::healthMultiplierForCamelHusk, null, CONFIG::speedMultiplierForCamelHusk, CONFIG::scaleMultiplierForCamelHusk
                 );
@@ -90,12 +90,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.CAVE_SPIDER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.CAVE_SPIDER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForCaveSpider, CONFIG::damageMultiplierForCaveSpider, CONFIG::speedMultiplierForCaveSpider, CONFIG::scaleMultiplierForCaveSpider
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.CAT, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.CAT, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyCat::healthMultiplierForBabyCat, CONFIG.babyCat::damageMultiplierForBabyCat, CONFIG.babyCat::speedMultiplierForBabyCat, CONFIG.babyCat::scaleMultiplierForBabyCat, CONFIG::healthMultiplierForCat, CONFIG::damageMultiplierForCat, CONFIG::speedMultiplierForCat, CONFIG::scaleMultiplierForCat
                 );
@@ -106,7 +106,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.CHICKEN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.CHICKEN, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyChicken::healthMultiplierForBabyChicken, null, CONFIG.babyChicken::speedMultiplierForBabyChicken, CONFIG.babyChicken::scaleMultiplierForBabyChicken, CONFIG::healthMultiplierForChicken, null, CONFIG::speedMultiplierForChicken, CONFIG::scaleMultiplierForChicken
                 );
@@ -117,17 +117,17 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.COD, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.COD, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForCod, null, null, CONFIG::scaleMultiplierForCod
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.COPPER_GOLEM, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.COPPER_GOLEM, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForCopperGolem, null, CONFIG::speedMultiplierForCopperGolem, CONFIG::scaleMultiplierForCopperGolem
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.COW, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.COW, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyCow::healthMultiplierForBabyCow, null, CONFIG.babyCow::speedMultiplierForBabyCow, CONFIG.babyCow::scaleMultiplierForBabyCow, CONFIG::healthMultiplierForCow, null, CONFIG::speedMultiplierForCow, CONFIG::scaleMultiplierForCow
                 );
@@ -138,17 +138,17 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.CREAKING, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.CREAKING, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForCreaking, CONFIG::damageMultiplierForCreaking, CONFIG::speedMultiplierForCreaking, CONFIG::scaleMultiplierForCreaking
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.CREEPER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.CREEPER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForCreeper, CONFIG::damageMultiplierForCreeper, CONFIG::speedMultiplierForCreeper, CONFIG::scaleMultiplierForCreeper
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.DONKEY, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.DONKEY, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyDonkey::healthMultiplierForBabyDonkey, null, CONFIG.babyDonkey::speedMultiplierForBabyDonkey, CONFIG.babyDonkey::scaleMultiplierForBabyDonkey, CONFIG::healthMultiplierForDonkey, null, CONFIG::speedMultiplierForDonkey, CONFIG::scaleMultiplierForDonkey
                 );
@@ -159,7 +159,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.DOLPHIN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.DOLPHIN, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyDolphin::healthMultiplierForBabyDolphin, CONFIG.babyDolphin::damageMultiplierForBabyDolphin, CONFIG.babyDolphin::speedMultiplierForBabyDolphin, CONFIG.babyDolphin::scaleMultiplierForBabyDolphin, CONFIG::healthMultiplierForDolphin, CONFIG::damageMultiplierForDolphin, CONFIG::speedMultiplierForDolphin, CONFIG::scaleMultiplierForDolphin
                 );
@@ -170,7 +170,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.DROWNED, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.DROWNED, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyDrowned::healthMultiplierForBabyDrowned, CONFIG.babyDrowned::damageMultiplierForBabyDrowned, CONFIG.babyDrowned::speedMultiplierForBabyDrowned, CONFIG.babyDrowned::scaleMultiplierForBabyDrowned, CONFIG::healthMultiplierForDrowned, CONFIG::damageMultiplierForDrowned, CONFIG::speedMultiplierForDrowned, CONFIG::scaleMultiplierForDrowned
                 );
@@ -181,32 +181,32 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ELDER_GUARDIAN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ELDER_GUARDIAN, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForElderGuardian, CONFIG::damageMultiplierForElderGuardian, CONFIG::speedMultiplierForElderGuardian, CONFIG::scaleMultiplierForElderGuardian
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ENDER_DRAGON, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ENDER_DRAGON, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForEnderDragon, CONFIG::damageMultiplierForEnderDragon, null, null
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ENDERMAN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ENDERMAN, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForEnderman, CONFIG::damageMultiplierForEnderman, CONFIG::speedMultiplierForEnderman, CONFIG::scaleMultiplierForEnderman
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ENDERMITE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ENDERMITE, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForEndermite, CONFIG::damageMultiplierForEndermite, CONFIG::speedMultiplierForEndermite, CONFIG::scaleMultiplierForEndermite
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.EVOKER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.EVOKER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForEvoker, CONFIG::damageMultiplierForEvoker, CONFIG::speedMultiplierForEvoker, CONFIG::scaleMultiplierForEvoker
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.FOX, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.FOX, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyFox::healthMultiplierForBabyFox, CONFIG.babyFox::damageMultiplierForBabyFox, CONFIG.babyFox::speedMultiplierForBabyFox, CONFIG.babyFox::scaleMultiplierForBabyFox, CONFIG::healthMultiplierForFox, CONFIG::damageMultiplierForFox, CONFIG::speedMultiplierForFox, CONFIG::scaleMultiplierForFox
                 );
@@ -217,22 +217,22 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.FROG, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.FROG, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForFrog, CONFIG::damageMultiplierForFrog, CONFIG::speedMultiplierForFrog, CONFIG::scaleMultiplierForFrog
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.GHAST, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.GHAST, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForGhast, null, CONFIG::speedMultiplierForGhast, CONFIG::scaleMultiplierForGhast
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.GIANT, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.GIANT, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForGiant, CONFIG::damageMultiplierForGiant, CONFIG::speedMultiplierForGiant, CONFIG::scaleMultiplierForGiant
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.GLOW_SQUID, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.GLOW_SQUID, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyGlowSquid::healthMultiplierForBabyGlowSquid, null, CONFIG.babyGlowSquid::speedMultiplierForBabyGlowSquid, CONFIG.babyGlowSquid::scaleMultiplierForBabyGlowSquid, CONFIG::healthMultiplierForGlowSquid, null, CONFIG::speedMultiplierForGlowSquid, CONFIG::scaleMultiplierForGlowSquid
                 );
@@ -243,7 +243,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.GOAT, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.GOAT, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyGoat::healthMultiplierForBabyGoat, CONFIG.babyGoat::damageMultiplierForBabyGoat, CONFIG.babyGoat::speedMultiplierForBabyGoat, CONFIG.babyGoat::scaleMultiplierForBabyGoat, CONFIG::healthMultiplierForGoat, CONFIG::damageMultiplierForGoat, CONFIG::speedMultiplierForGoat, CONFIG::scaleMultiplierForGoat
                 );
@@ -254,12 +254,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.GUARDIAN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.GUARDIAN, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForGuardian, CONFIG::damageMultiplierForGuardian, CONFIG::speedMultiplierForGuardian, CONFIG::scaleMultiplierForGuardian
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.HAPPY_GHAST, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.HAPPY_GHAST, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyHappyGhast::healthMultiplierForBabyHappyGhast, null, CONFIG.babyHappyGhast::speedMultiplierForBabyHappyGhast, CONFIG.babyHappyGhast::scaleMultiplierForBabyHappyGhast, CONFIG::healthMultiplierForHappyGhast, null, CONFIG::speedMultiplierForHappyGhast, CONFIG::scaleMultiplierForHappyGhast
                 );
@@ -270,7 +270,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.HOGLIN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.HOGLIN, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyHoglin::healthMultiplierForBabyHoglin, CONFIG.babyHoglin::damageMultiplierForBabyHoglin, CONFIG.babyHoglin::speedMultiplierForBabyHoglin, CONFIG.babyHoglin::scaleMultiplierForBabyHoglin, CONFIG::healthMultiplierForHoglin, CONFIG::damageMultiplierForHoglin, CONFIG::speedMultiplierForHoglin, CONFIG::scaleMultiplierForHoglin
                 );
@@ -281,7 +281,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.HORSE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.HORSE, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyHorse::healthMultiplierForBabyHorse, null, CONFIG.babyHorse::speedMultiplierForBabyHorse, CONFIG.babyHorse::scaleMultiplierForBabyHorse, CONFIG::healthMultiplierForHorse, null, CONFIG::speedMultiplierForHorse, CONFIG::scaleMultiplierForHorse
                 );
@@ -292,7 +292,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.HUSK, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.HUSK, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyHusk::healthMultiplierForBabyHusk, CONFIG.babyHusk::damageMultiplierForBabyHusk, CONFIG.babyHusk::speedMultiplierForBabyHusk, CONFIG.babyHusk::scaleMultiplierForBabyHusk, CONFIG::healthMultiplierForHusk, CONFIG::damageMultiplierForHusk, CONFIG::speedMultiplierForHusk, CONFIG::scaleMultiplierForHusk
                 );
@@ -303,17 +303,17 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ILLUSIONER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ILLUSIONER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForIllusioner, CONFIG::damageMultiplierForIllusioner, CONFIG::speedMultiplierForIllusioner, CONFIG::scaleMultiplierForIllusioner
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.IRON_GOLEM, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.IRON_GOLEM, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForIronGolem, CONFIG::damageMultiplierForIronGolem, CONFIG::speedMultiplierForIronGolem, CONFIG::scaleMultiplierForIronGolem
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.LLAMA, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.LLAMA, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyLlama::healthMultiplierForBabyLlama, null, CONFIG.babyLlama::speedMultiplierForBabyLlama, CONFIG.babyLlama::scaleMultiplierForBabyLlama, CONFIG::healthMultiplierForLlama, null, CONFIG::speedMultiplierForLlama, CONFIG::scaleMultiplierForLlama
                 );
@@ -324,12 +324,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.MAGMA_CUBE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.MAGMA_CUBE, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForMagmaCube, CONFIG::damageMultiplierForMagmaCube, CONFIG::speedMultiplierForMagmaCube, CONFIG::scaleMultiplierForMagmaCube
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.MOOSHROOM, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.MOOSHROOM, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyMooshroom::healthMultiplierForBabyMooshroom, null, CONFIG.babyMooshroom::speedMultiplierForBabyMooshroom, CONFIG.babyMooshroom::scaleMultiplierForBabyMooshroom, CONFIG::healthMultiplierForMooshroom, null, CONFIG::speedMultiplierForMooshroom, CONFIG::scaleMultiplierForMooshroom
                 );
@@ -340,7 +340,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.MULE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.MULE, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyMule::healthMultiplierForBabyMule, null, CONFIG.babyMule::speedMultiplierForBabyMule, CONFIG.babyMule::scaleMultiplierForBabyMule, CONFIG::healthMultiplierForMule, null, CONFIG::speedMultiplierForMule, CONFIG::scaleMultiplierForMule
                 );
@@ -351,7 +351,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.NAUTILUS, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.NAUTILUS, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyNautilus::healthMultiplierForBabyNautilus, null, CONFIG.babyNautilus::speedMultiplierForBabyNautilus, CONFIG.babyNautilus::scaleMultiplierForBabyNautilus, CONFIG::healthMultiplierForNautilus, null, CONFIG::speedMultiplierForNautilus, CONFIG::scaleMultiplierForNautilus
                 );
@@ -362,7 +362,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.OCELOT, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.OCELOT, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyOcelot::healthMultiplierForBabyOcelot, CONFIG.babyOcelot::damageMultiplierForBabyOcelot, CONFIG.babyOcelot::speedMultiplierForBabyOcelot, CONFIG.babyOcelot::scaleMultiplierForBabyOcelot, CONFIG::healthMultiplierForOcelot, CONFIG::damageMultiplierForOcelot, CONFIG::speedMultiplierForOcelot, CONFIG::scaleMultiplierForOcelot
                 );
@@ -373,7 +373,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.PANDA, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.PANDA, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyPanda::healthMultiplierForBabyPanda, CONFIG.babyPanda::damageMultiplierForBabyPanda, CONFIG.babyPanda::speedMultiplierForBabyPanda, CONFIG.babyPanda::scaleMultiplierForBabyPanda, CONFIG::healthMultiplierForPanda, CONFIG::damageMultiplierForPanda, CONFIG::speedMultiplierForPanda, CONFIG::scaleMultiplierForPanda
                 );
@@ -384,22 +384,22 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.PARCHED, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.PARCHED, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForParched, CONFIG::damageMultiplierForParched, CONFIG::speedMultiplierForParched, CONFIG::scaleMultiplierForParched
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.PARROT, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.PARROT, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForParrot, null, CONFIG::speedMultiplierForParrot, CONFIG::scaleMultiplierForParrot
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.PHANTOM, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.PHANTOM, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForPhantom, CONFIG::damageMultiplierForPhantom, null, CONFIG::scaleMultiplierForPhantom
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.PIG, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.PIG, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyPig::healthMultiplierForBabyPig, null, CONFIG.babyPig::speedMultiplierForBabyPig, CONFIG.babyPig::scaleMultiplierForBabyPig, CONFIG::healthMultiplierForPig, null, CONFIG::speedMultiplierForPig, CONFIG::scaleMultiplierForPig
                 );
@@ -410,7 +410,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.PIGLIN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.PIGLIN, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyPiglin::healthMultiplierForBabyPiglin, null, CONFIG.babyPiglin::speedMultiplierForBabyPiglin, CONFIG.babyPiglin::scaleMultiplierForBabyPiglin, CONFIG::healthMultiplierForPiglin, CONFIG::damageMultiplierForPiglin, CONFIG::speedMultiplierForPiglin, CONFIG::scaleMultiplierForPiglin
                 );
@@ -421,17 +421,17 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.PIGLIN_BRUTE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.PIGLIN_BRUTE, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForPiglinBrute, CONFIG::damageMultiplierForPiglinBrute, CONFIG::speedMultiplierForPiglinBrute, CONFIG::scaleMultiplierForPiglinBrute
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.PILLAGER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.PILLAGER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForPillager, CONFIG::damageMultiplierForPillager, CONFIG::speedMultiplierForPillager, CONFIG::scaleMultiplierForPillager
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.POLAR_BEAR, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.POLAR_BEAR, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyPolarBear::healthMultiplierForBabyPolarBear, null, CONFIG.babyPolarBear::speedMultiplierForBabyPolarBear, CONFIG.babyPolarBear::scaleMultiplierForBabyPolarBear, CONFIG::healthMultiplierForPolarBear, CONFIG::damageMultiplierForPolarBear, CONFIG::speedMultiplierForPolarBear, CONFIG::scaleMultiplierForPolarBear
                 );
@@ -442,12 +442,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.PUFFERFISH, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.PUFFERFISH, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForPufferfish, null, null, CONFIG::scaleMultiplierForPufferfish
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.RABBIT, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.RABBIT, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyRabbit::healthMultiplierForBabyRabbit, CONFIG.babyRabbit::damageMultiplierForBabyRabbit, CONFIG.babyRabbit::speedMultiplierForBabyRabbit, CONFIG.babyRabbit::scaleMultiplierForBabyRabbit, CONFIG::healthMultiplierForRabbit, CONFIG::damageMultiplierForRabbit, CONFIG::speedMultiplierForRabbit, CONFIG::scaleMultiplierForRabbit
                 );
@@ -458,17 +458,17 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.RAVAGER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.RAVAGER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForRavager, CONFIG::damageMultiplierForRavager, CONFIG::speedMultiplierForRavager, CONFIG::scaleMultiplierForRavager
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SALMON, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SALMON, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForSalmon, null, null, CONFIG::scaleMultiplierForSalmon
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SHEEP, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SHEEP, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babySheep::healthMultiplierForBabySheep, null, CONFIG.babySheep::speedMultiplierForBabySheep, CONFIG.babySheep::scaleMultiplierForBabySheep, CONFIG::healthMultiplierForSheep, null, CONFIG::speedMultiplierForSheep, CONFIG::scaleMultiplierForSheep
                 );
@@ -479,22 +479,22 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SHULKER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SHULKER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForShulker, null, null, CONFIG::scaleMultiplierForShulker
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SILVERFISH, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SILVERFISH, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForSilverfish, CONFIG::damageMultiplierForSilverfish, CONFIG::speedMultiplierForSilverfish, CONFIG::scaleMultiplierForSilverfish
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SKELETON, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SKELETON, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForSkeleton, CONFIG::damageMultiplierForSkeleton, CONFIG::speedMultiplierForSkeleton, CONFIG::scaleMultiplierForSkeleton
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SKELETON_HORSE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SKELETON_HORSE, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babySkeletonHorse::healthMultiplierForBabySkeletonHorse, null, CONFIG.babySkeletonHorse::speedMultiplierForBabySkeletonHorse, CONFIG.babySkeletonHorse::scaleMultiplierForBabySkeletonHorse, CONFIG::healthMultiplierForSkeletonHorse, null, CONFIG::speedMultiplierForSkeletonHorse, CONFIG::scaleMultiplierForSkeletonHorse
                 );
@@ -505,12 +505,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SLIME, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SLIME, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForSlime, CONFIG::damageMultiplierForSlime, CONFIG::speedMultiplierForSlime, CONFIG::scaleMultiplierForSlime
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SNIFFER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SNIFFER, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babySniffer::healthMultiplierForBabySniffer, null, CONFIG.babySniffer::speedMultiplierForBabySniffer, CONFIG.babySniffer::scaleMultiplierForBabySniffer, CONFIG::healthMultiplierForSniffer, null, CONFIG::speedMultiplierForSniffer, CONFIG::scaleMultiplierForSniffer
                 );
@@ -521,17 +521,17 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SNOW_GOLEM, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SNOW_GOLEM, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForSnowGolem, null, CONFIG::speedMultiplierForSnowGolem, CONFIG::scaleMultiplierForSnowGolem
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SPIDER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SPIDER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForSpider, CONFIG::damageMultiplierForSpider, CONFIG::speedMultiplierForSpider, CONFIG::scaleMultiplierForSpider
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.SQUID, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SQUID, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babySquid::healthMultiplierForBabySquid, null, CONFIG.babySquid::speedMultiplierForBabySquid, CONFIG.babySquid::scaleMultiplierForBabySquid, CONFIG::healthMultiplierForSquid, null, CONFIG::speedMultiplierForSquid, CONFIG::scaleMultiplierForSquid
                 );
@@ -542,12 +542,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.STRAY, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.STRAY, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForStray, CONFIG::damageMultiplierForStray, CONFIG::speedMultiplierForStray, CONFIG::scaleMultiplierForStray
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.STRIDER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.STRIDER, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyStrider::healthMultiplierForBabyStrider, null, CONFIG.babyStrider::speedMultiplierForBabyStrider, CONFIG.babyStrider::scaleMultiplierForBabyStrider, CONFIG::healthMultiplierForStrider, null, CONFIG::speedMultiplierForStrider, CONFIG::scaleMultiplierForStrider
                 );
@@ -558,12 +558,23 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.TADPOLE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.SULFUR_CUBE, entity -> {
+            if (entity.isBaby()) {
+                configureEntityAttributes(entity.level(), entity, CONFIG.babySulfurCube::healthMultiplierForBabySulfurCube, null, CONFIG.babySulfurCube::speedMultiplierForBabySulfurCube, CONFIG.babySulfurCube::scaleMultiplierForBabySulfurCube, CONFIG::healthMultiplierForSulfurCube, null, CONFIG::speedMultiplierForSulfurCube, CONFIG::scaleMultiplierForSulfurCube
+                );
+            }
+            else {
+                configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForSulfurCube, null, CONFIG::speedMultiplierForSulfurCube, CONFIG::scaleMultiplierForSulfurCube
+                );
+            }
+        });
+
+        ATTRIBUTE_HANDLERS.put(EntityTypes.TADPOLE, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForTadpole, null, null, CONFIG::scaleMultiplierForTadpole
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.TRADER_LLAMA, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.TRADER_LLAMA, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyTraderLlama::healthMultiplierForBabyTraderLlama, null, CONFIG.babyTraderLlama::speedMultiplierForBabyTraderLlama, CONFIG.babyTraderLlama::scaleMultiplierForBabyTraderLlama, CONFIG::healthMultiplierForTraderLlama, null, CONFIG::speedMultiplierForTraderLlama, CONFIG::scaleMultiplierForTraderLlama
                 );
@@ -574,12 +585,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.TROPICAL_FISH, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.TROPICAL_FISH, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForTropicalFish, null, null, CONFIG::scaleMultiplierForTropicalFish
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.TURTLE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.TURTLE, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyTurtle::healthMultiplierForBabyTurtle, null, CONFIG.babyTurtle::speedMultiplierForBabyTurtle, CONFIG.babyTurtle::scaleMultiplierForBabyTurtle, CONFIG::healthMultiplierForTurtle, null, CONFIG::speedMultiplierForTurtle, CONFIG::scaleMultiplierForTurtle
                 );
@@ -590,12 +601,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.VEX, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.VEX, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForVex, CONFIG::damageMultiplierForVex, CONFIG::speedMultiplierForVex, CONFIG::scaleMultiplierForVex
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.VILLAGER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.VILLAGER, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyVillager::healthMultiplierForBabyVillager, null, CONFIG.babyVillager::speedMultiplierForBabyVillager, CONFIG.babyVillager::scaleMultiplierForBabyVillager, CONFIG::healthMultiplierForVillager, null, CONFIG::speedMultiplierForVillager, CONFIG::scaleMultiplierForVillager
                 );
@@ -606,37 +617,37 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.VINDICATOR, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.VINDICATOR, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForVindicator, CONFIG::damageMultiplierForVindicator, CONFIG::speedMultiplierForVindicator, CONFIG::scaleMultiplierForVindicator
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.WANDERING_TRADER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.WANDERING_TRADER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForWanderingTrader, null, CONFIG::speedMultiplierForWanderingTrader, CONFIG::scaleMultiplierForWanderingTrader
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.WARDEN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.WARDEN, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForWarden, CONFIG::damageMultiplierForWarden, CONFIG::speedMultiplierForWarden, CONFIG::scaleMultiplierForWarden
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.WITCH, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.WITCH, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForWitch, CONFIG::damageMultiplierForWitch, CONFIG::speedMultiplierForWitch, CONFIG::scaleMultiplierForWitch
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.WITHER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.WITHER, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForWither, CONFIG::damageMultiplierForWither, CONFIG::speedMultiplierForWither, CONFIG::scaleMultiplierForWither
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.WITHER_SKELETON, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.WITHER_SKELETON, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForWitherSkeleton, CONFIG::damageMultiplierForWitherSkeleton, CONFIG::speedMultiplierForWitherSkeleton, CONFIG::scaleMultiplierForWitherSkeleton
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.WOLF, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.WOLF, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyWolf::healthMultiplierForBabyWolf, CONFIG.babyWolf::damageMultiplierForBabyWolf, CONFIG.babyWolf::speedMultiplierForBabyWolf, CONFIG.babyWolf::scaleMultiplierForBabyWolf, CONFIG::healthMultiplierForWolf, CONFIG::damageMultiplierForWolf, CONFIG::speedMultiplierForWolf, CONFIG::scaleMultiplierForWolf
                 );
@@ -647,7 +658,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ZOGLIN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ZOGLIN, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyZoglin::healthMultiplierForBabyZoglin, CONFIG.babyZoglin::damageMultiplierForBabyZoglin, CONFIG.babyZoglin::speedMultiplierForBabyZoglin, CONFIG.babyZoglin::scaleMultiplierForBabyZoglin, CONFIG::healthMultiplierForZoglin, CONFIG::damageMultiplierForZoglin, CONFIG::speedMultiplierForZoglin, CONFIG::scaleMultiplierForZoglin
                 );
@@ -658,7 +669,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ZOMBIE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ZOMBIE, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyZombie::healthMultiplierForBabyZombie, CONFIG.babyZombie::damageMultiplierForBabyZombie, CONFIG.babyZombie::speedMultiplierForBabyZombie, CONFIG.babyZombie::scaleMultiplierForBabyZombie, CONFIG::healthMultiplierForZombie, CONFIG::damageMultiplierForZombie, CONFIG::speedMultiplierForZombie, CONFIG::scaleMultiplierForZombie
                 );
@@ -669,7 +680,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ZOMBIE_HORSE, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ZOMBIE_HORSE, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyZombieHorse::healthMultiplierForBabyZombieHorse, null, CONFIG.babyZombieHorse::speedMultiplierForBabyZombieHorse, CONFIG.babyZombieHorse::scaleMultiplierForBabyZombieHorse, CONFIG::healthMultiplierForZombieHorse, null, CONFIG::speedMultiplierForZombieHorse, CONFIG::scaleMultiplierForZombieHorse
                 );
@@ -680,12 +691,12 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ZOMBIE_NAUTILUS, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ZOMBIE_NAUTILUS, entity -> {
             configureEntityAttributes(entity.level(), entity, CONFIG::healthMultiplierForZombieNautilus, CONFIG::damageMultiplierForZombieNautilus, CONFIG::speedMultiplierForZombieNautilus, CONFIG::scaleMultiplierForZombieNautilus
             );
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ZOMBIE_VILLAGER, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ZOMBIE_VILLAGER, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyZombieVillager::healthMultiplierForBabyZombieVillager, CONFIG.babyZombieVillager::damageMultiplierForBabyZombieVillager, CONFIG.babyZombieVillager::speedMultiplierForBabyZombieVillager, CONFIG.babyZombieVillager::scaleMultiplierForBabyZombieVillager, CONFIG::healthMultiplierForZombieVillager, CONFIG::damageMultiplierForZombieVillager, CONFIG::speedMultiplierForZombieVillager, CONFIG::scaleMultiplierForZombieVillager
                 );
@@ -696,7 +707,7 @@ public class Vanilla {
             }
         });
 
-        ATTRIBUTE_HANDLERS.put(EntityType.ZOMBIFIED_PIGLIN, entity -> {
+        ATTRIBUTE_HANDLERS.put(EntityTypes.ZOMBIFIED_PIGLIN, entity -> {
             if (entity.isBaby()) {
                 configureEntityAttributes(entity.level(), entity, CONFIG.babyZombifiedPiglin::healthMultiplierForBabyZombifiedPiglin, CONFIG.babyZombifiedPiglin::damageMultiplierForBabyZombifiedPiglin, CONFIG.babyZombifiedPiglin::speedMultiplierForBabyZombifiedPiglin, CONFIG.babyZombifiedPiglin::scaleMultiplierForBabyZombifiedPiglin, CONFIG::healthMultiplierForZombifiedPiglin, CONFIG::damageMultiplierForZombifiedPiglin, CONFIG::speedMultiplierForZombifiedPiglin, CONFIG::scaleMultiplierForZombifiedPiglin
                 );
