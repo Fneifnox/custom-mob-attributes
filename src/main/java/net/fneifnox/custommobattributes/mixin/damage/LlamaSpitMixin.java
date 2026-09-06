@@ -5,7 +5,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.animal.equine.Llama;
 import net.minecraft.world.entity.animal.equine.TraderLlama;
 import net.minecraft.world.entity.projectile.LlamaSpit;
@@ -22,7 +22,7 @@ public class LlamaSpitMixin {
     private boolean injectCustomDamage(Entity entity, ServerLevel serverWorld, DamageSource source, float originalDamage, Operation<Boolean> original) {
         LlamaSpit llamaSpitEntity = (LlamaSpit)(Object)this;
         double multiplier = 1;
-        if (Objects.requireNonNull(llamaSpitEntity.getOwner()).getType() == EntityType.LLAMA) {
+        if (Objects.requireNonNull(llamaSpitEntity.getOwner()).getType() == EntityTypes.LLAMA) {
             Llama llamaEntity = (Llama) llamaSpitEntity.getOwner();
             if (CONFIG.adultsAlsoAffectBabies() && llamaEntity.isBaby()) {
                 multiplier = CONFIG.babyLlama.damageMultiplierForBabyLlama() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForLlama() * CONFIG.damageMultiplierForAll();
@@ -31,7 +31,7 @@ public class LlamaSpitMixin {
                 multiplier = llamaEntity.isBaby() ? CONFIG.babyLlama.damageMultiplierForBabyLlama() * CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForLlama() * CONFIG.damageMultiplierForAll();
             }
         }
-        else if (Objects.requireNonNull(llamaSpitEntity.getOwner()).getType() == EntityType.TRADER_LLAMA) {
+        else if (Objects.requireNonNull(llamaSpitEntity.getOwner()).getType() == EntityTypes.TRADER_LLAMA) {
             TraderLlama traderLlamaEntity = (TraderLlama) llamaSpitEntity.getOwner();
             if (CONFIG.adultsAlsoAffectBabies() && traderLlamaEntity.isBaby()) {
                 multiplier = CONFIG.babyTraderLlama.damageMultiplierForBabyTraderLlama() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForTraderLlama() * CONFIG.damageMultiplierForAll();

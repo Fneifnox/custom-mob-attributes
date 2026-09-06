@@ -657,6 +657,18 @@ public class Config {
         public double speedMultiplierForBabyStrider = 1f;
         public double scaleMultiplierForBabyStrider = 1f;
     }
+    @SectionHeader("Sulfur Cube")
+    @Comment("Sulfur Cube")
+    public double healthMultiplierForSulfurCube = 1f;
+    public double speedMultiplierForSulfurCube = 1f;
+    public double scaleMultiplierForSulfurCube = 1f;
+    @Nest
+    public BabySulfurCube babySulfurCube = new BabySulfurCube();
+    public static class BabySulfurCube {
+        public double healthMultiplierForBabySulfurCube = 1f;
+        public double speedMultiplierForBabySulfurCube = 1f;
+        public double scaleMultiplierForBabySulfurCube = 1f;
+    }
     @SectionHeader("Tadpole")
     @Comment("Tadpole")
     public double healthMultiplierForTadpole = 1f;
