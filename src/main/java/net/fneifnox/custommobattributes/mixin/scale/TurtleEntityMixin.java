@@ -11,6 +11,7 @@ public class TurtleEntityMixin {
 
     @ModifyReturnValue(method = "getScale", at = @At("RETURN"))
     private float changeTurtleScale(float original) {
+        if (!CustomMobAttributes.SCALE.isPresent()) return original;
         Turtle turtle = (Turtle)(Object)this;
         float multiplier =  (float) turtle.getAttributeValue(CustomMobAttributes.SCALE.get());
         return original * multiplier;

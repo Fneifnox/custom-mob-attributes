@@ -12,6 +12,7 @@ public class ShulkerHitboxMixin {
 
     @ModifyReturnValue(method = "makeBoundingBox", at = @At("RETURN"))
     private AABB changeShulkerScale(AABB originalBox) {
+        if (!CustomMobAttributes.SCALE.isPresent()) return originalBox;
         Shulker shulker = (Shulker)(Object)this;
 
         double scale;

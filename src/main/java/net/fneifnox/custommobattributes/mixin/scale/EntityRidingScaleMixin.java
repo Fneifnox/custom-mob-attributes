@@ -17,6 +17,7 @@ public abstract class EntityRidingScaleMixin {
         Entity entity = (Entity)(Object)this;
 
         if (!entity.hasPassenger(passenger)) return;
+        if (!CustomMobAttributes.SCALE.isPresent()) return;
 
         if (entity instanceof LivingEntity livingEntity) {
             double scale = livingEntity.getAttributeValue(CustomMobAttributes.SCALE.get());

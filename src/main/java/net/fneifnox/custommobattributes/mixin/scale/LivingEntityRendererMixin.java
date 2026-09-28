@@ -17,6 +17,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity> {
 
     @Inject(method = "scale", at = @At("HEAD"))
     private void changeEntityScale(T entity, PoseStack matrices, float amount, CallbackInfo ci) {
+        if (!CustomMobAttributes.SCALE.isPresent()) return;
         double scale = entity.getAttributeValue(CustomMobAttributes.SCALE.get());
         matrices.scale((float)scale, (float)scale, (float)scale);
     }

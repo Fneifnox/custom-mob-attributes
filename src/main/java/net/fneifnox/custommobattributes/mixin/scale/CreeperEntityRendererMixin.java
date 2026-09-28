@@ -14,6 +14,7 @@ public class CreeperEntityRendererMixin {
 
     @Inject(method = "scale(Lnet/minecraft/world/entity/monster/Creeper;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", at = @At(value = "TAIL"))
     private void changeCreeperScale(Creeper creeperEntity, PoseStack matrixStack, float f, CallbackInfo ci) {
+        if (!CustomMobAttributes.SCALE.isPresent()) return;
         float multiplier = (float) creeperEntity.getAttributeValue(CustomMobAttributes.SCALE.get());
         matrixStack.scale(multiplier, multiplier, multiplier);
     }

@@ -17,6 +17,7 @@ public class WitherEntityRendererMixin {
 
     @Inject(method = "scale(Lnet/minecraft/world/entity/boss/wither/WitherBoss;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", at = @At("TAIL"))
     public void changeWitherScale(WitherBoss wither, PoseStack matrixStack, float f, CallbackInfo ci) {
+        if (!CustomMobAttributes.SCALE.isPresent()) return;
         float multiplier = (float) wither.getAttributeValue(CustomMobAttributes.SCALE.get());
         matrixStack.scale(multiplier, multiplier, multiplier);
     }

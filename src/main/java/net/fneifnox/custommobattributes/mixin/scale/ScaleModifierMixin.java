@@ -18,6 +18,7 @@ public abstract class ScaleModifierMixin {
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
+        if (!CustomMobAttributes.SCALE.isPresent()) return;
         LivingEntity livingEntity = (LivingEntity)(Object)this;
 
         double scale = livingEntity.getAttributeValue(CustomMobAttributes.SCALE.get());
@@ -30,6 +31,7 @@ public abstract class ScaleModifierMixin {
 
     @ModifyReturnValue(method = "getScale", at = @At("RETURN"))
     public float modifyScaleFactor(float original) {
+        if (!CustomMobAttributes.SCALE.isPresent()) return original;
         LivingEntity livingEntity = (LivingEntity)(Object)this;
         if (livingEntity.getAttributes() != null) {
             return (float) (livingEntity.isBaby() ? (0.5f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE.get())) : (1.0f * livingEntity.getAttributeValue(CustomMobAttributes.SCALE.get())));

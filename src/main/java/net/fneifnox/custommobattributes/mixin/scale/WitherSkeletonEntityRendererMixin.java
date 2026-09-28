@@ -14,6 +14,7 @@ public class WitherSkeletonEntityRendererMixin {
 
     @Inject(method = "scale(Lnet/minecraft/world/entity/monster/AbstractSkeleton;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", at = @At("TAIL"))
     private void changeWitherSkeletonScale(AbstractSkeleton abstractSkeletonEntity, PoseStack matrixStack, float f, CallbackInfo ci) {
+        if (!CustomMobAttributes.SCALE.isPresent()) return;
         float multiplier = (float) abstractSkeletonEntity.getAttributeValue(CustomMobAttributes.SCALE.get());
         matrixStack.scale(multiplier, multiplier, multiplier);
     }

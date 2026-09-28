@@ -14,6 +14,7 @@ public class GhastEntityRendererMixin {
 
     @Inject(method = "scale(Lnet/minecraft/world/entity/monster/Ghast;Lcom/mojang/blaze3d/vertex/PoseStack;F)V", at = @At("TAIL"))
     private void changeGhastScale(Ghast ghastEntity, PoseStack matrixStack, float f, CallbackInfo ci) {
+        if (!CustomMobAttributes.SCALE.isPresent()) return;
         float multiplier = (float) ghastEntity.getAttributeValue(CustomMobAttributes.SCALE.get());
         matrixStack.scale(multiplier, multiplier, multiplier);
     }
