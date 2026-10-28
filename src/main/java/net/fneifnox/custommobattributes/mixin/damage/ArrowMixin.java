@@ -2,6 +2,7 @@ package net.fneifnox.custommobattributes.mixin.damage;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.fneifnox.custommobattributes.range.RangedMultipliers;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -34,22 +35,22 @@ public class ArrowMixin {
         if (projectile instanceof SpectralArrow && projectile.getOwner() instanceof LivingEntity || projectile instanceof Arrow && projectile.getOwner() instanceof LivingEntity) {
             double multiplier = 1f;
             if (projectile.getOwner() instanceof Skeleton) {
-                multiplier = CONFIG.damageMultiplierForSkeleton() * CONFIG.damageMultiplierForAll();
+                multiplier = RangedMultipliers.get(projectile.getOwner(), "damageMultiplierForSkeleton") * CONFIG.damageMultiplierForAll();
             }
             else if (projectile.getOwner() instanceof Stray) {
-                multiplier = CONFIG.damageMultiplierForStray() * CONFIG.damageMultiplierForAll();
+                multiplier = RangedMultipliers.get(projectile.getOwner(), "damageMultiplierForStray") * CONFIG.damageMultiplierForAll();
             }
             else if (projectile.getOwner() instanceof Bogged) {
-                multiplier = CONFIG.damageMultiplierForBogged() * CONFIG.damageMultiplierForAll();
+                multiplier = RangedMultipliers.get(projectile.getOwner(), "damageMultiplierForBogged") * CONFIG.damageMultiplierForAll();
             }
             else if (projectile.getOwner() instanceof Parched) {
-                multiplier = CONFIG.damageMultiplierForParched() * CONFIG.damageMultiplierForAll();
+                multiplier = RangedMultipliers.get(projectile.getOwner(), "damageMultiplierForParched") * CONFIG.damageMultiplierForAll();
             }
             else if (projectile.getOwner() instanceof Piglin) {
-                multiplier = CONFIG.damageMultiplierForPiglin() * CONFIG.damageMultiplierForAll();
+                multiplier = RangedMultipliers.get(projectile.getOwner(), "damageMultiplierForPiglin") * CONFIG.damageMultiplierForAll();
             }
             else if (projectile.getOwner() instanceof Pillager) {
-                multiplier = CONFIG.damageMultiplierForPillager() * CONFIG.damageMultiplierForAll();
+                multiplier = RangedMultipliers.get(projectile.getOwner(), "damageMultiplierForPillager") * CONFIG.damageMultiplierForAll();
             }
             else {
                 if (FabricLoader.getInstance().isModLoaded("frycmobvariants")) {
@@ -57,17 +58,17 @@ public class ArrowMixin {
                     EntityType<?> undeadWarrior = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("frycmobvariants", "undead_warrior"));
 
                     if (projectile.getOwner().getType() == infectedPiglin) {
-                        multiplier = CONFIG.mobVariants.damageMultiplierForInfectedPiglin() * CONFIG.damageMultiplierForAll();
+                        multiplier = RangedMultipliers.get(projectile.getOwner(), "mobVariants.damageMultiplierForInfectedPiglin") * CONFIG.damageMultiplierForAll();
                     }
                     else if (projectile.getOwner().getType() == undeadWarrior) {
-                        multiplier = CONFIG.mobVariants.damageMultiplierForUndeadWarrior() * CONFIG.damageMultiplierForAll();
+                        multiplier = RangedMultipliers.get(projectile.getOwner(), "mobVariants.damageMultiplierForUndeadWarrior") * CONFIG.damageMultiplierForAll();
                     }
                 }
                 if (FabricLoader.getInstance().isModLoaded("betternether")) {
                     EntityType<?>  jungleSkeleton = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("betternether", "jungle_skeleton"));
 
                     if (Objects.requireNonNull(projectile.getOwner()).getType() == jungleSkeleton) {
-                        multiplier = CONFIG.betterNether.damageMultiplierForJungleSkeleton() * CONFIG.damageMultiplierForAll();
+                        multiplier = RangedMultipliers.get(projectile.getOwner(), "betterNether.damageMultiplierForJungleSkeleton") * CONFIG.damageMultiplierForAll();
                     }
                 }
                 if (FabricLoader.getInstance().isModLoaded("variantsandventures")) {
@@ -75,17 +76,17 @@ public class ArrowMixin {
                     EntityType<?> verdant = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("variantsandventures", "verdant"));
 
                     if (Objects.requireNonNull(projectile.getOwner()).getType() == murk) {
-                        multiplier = CONFIG.variantsAndVentures.damageMultiplierForMurk() * CONFIG.damageMultiplierForAll();
+                        multiplier = RangedMultipliers.get(projectile.getOwner(), "variantsAndVentures.damageMultiplierForMurk") * CONFIG.damageMultiplierForAll();
                     }
                     else if (Objects.requireNonNull(projectile.getOwner()).getType() == verdant) {
-                        multiplier = CONFIG.variantsAndVentures.damageMultiplierForVerdant() * CONFIG.damageMultiplierForAll();
+                        multiplier = RangedMultipliers.get(projectile.getOwner(), "variantsAndVentures.damageMultiplierForVerdant") * CONFIG.damageMultiplierForAll();
                     }
                 }
                 if (FabricLoader.getInstance().isModLoaded("takesapillage")) {
                     EntityType<?> archer = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("takesapillage", "archer"));
 
                     if (Objects.requireNonNull(projectile.getOwner()).getType() == archer) {
-                        multiplier = CONFIG.itTakesAPillageContinuation.damageMultiplierForArcher() * CONFIG.damageMultiplierForAll();
+                        multiplier = RangedMultipliers.get(projectile.getOwner(), "itTakesAPillageContinuation.damageMultiplierForArcher") * CONFIG.damageMultiplierForAll();
                     }
                 }
                 if (FabricLoader.getInstance().isModLoaded("illagerinvasion")) {
@@ -93,10 +94,10 @@ public class ArrowMixin {
                     EntityType<?> provoker = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("illagerinvasion", "provoker"));
 
                     if (Objects.requireNonNull(projectile.getOwner()).getType() == alchemist) {
-                        multiplier = CONFIG.illagerInvasion.damageMultiplierForAlchemist() * CONFIG.damageMultiplierForAll();
+                        multiplier = RangedMultipliers.get(projectile.getOwner(), "illagerInvasion.damageMultiplierForAlchemist") * CONFIG.damageMultiplierForAll();
                     }
                     else if (Objects.requireNonNull(projectile.getOwner()).getType() == provoker) {
-                        multiplier = CONFIG.illagerInvasion.damageMultiplierForProvoker() * CONFIG.damageMultiplierForAll();
+                        multiplier = RangedMultipliers.get(projectile.getOwner(), "illagerInvasion.damageMultiplierForProvoker") * CONFIG.damageMultiplierForAll();
                     }
                 }
             }

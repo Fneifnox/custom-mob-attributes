@@ -2,6 +2,7 @@ package net.fneifnox.custommobattributes.mixin.movement;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.fneifnox.custommobattributes.range.RangedMultipliers;
 import net.minecraft.world.entity.animal.fish.*;
 import net.minecraft.world.entity.animal.frog.Tadpole;
 import net.minecraft.world.phys.Vec3;
@@ -18,19 +19,19 @@ public abstract class FishSpeedMixin {
         double finalSpeed = originalSpeed;
 
         if (instance instanceof Cod) {
-            finalSpeed = originalSpeed * CONFIG.speedMultiplierForCod() * CONFIG.speedMultiplierForAll();
+            finalSpeed = originalSpeed * RangedMultipliers.get(instance, "speedMultiplierForCod") * CONFIG.speedMultiplierForAll();
         }
         else if (instance instanceof TropicalFish) {
-            finalSpeed = originalSpeed * CONFIG.speedMultiplierForTropicalFish() * CONFIG.speedMultiplierForAll();
+            finalSpeed = originalSpeed * RangedMultipliers.get(instance, "speedMultiplierForTropicalFish") * CONFIG.speedMultiplierForAll();
         }
         else if (instance instanceof Salmon) {
-            finalSpeed = originalSpeed * CONFIG.speedMultiplierForSalmon() * CONFIG.speedMultiplierForAll();
+            finalSpeed = originalSpeed * RangedMultipliers.get(instance, "speedMultiplierForSalmon") * CONFIG.speedMultiplierForAll();
         }
         else if (instance instanceof Pufferfish) {
-            finalSpeed = originalSpeed * CONFIG.speedMultiplierForPufferfish() * CONFIG.speedMultiplierForAll();
+            finalSpeed = originalSpeed * RangedMultipliers.get(instance, "speedMultiplierForPufferfish") * CONFIG.speedMultiplierForAll();
         }
         else if (instance instanceof Tadpole) {
-            finalSpeed = originalSpeed * CONFIG.speedMultiplierForTadpole() * CONFIG.speedMultiplierForAll();
+            finalSpeed = originalSpeed * RangedMultipliers.get(instance, "speedMultiplierForTadpole") * CONFIG.speedMultiplierForAll();
         }
 
         instance.moveRelative((float) finalSpeed, movementInput);

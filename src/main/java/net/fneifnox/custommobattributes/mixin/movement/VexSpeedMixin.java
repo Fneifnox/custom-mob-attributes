@@ -1,6 +1,7 @@
 package net.fneifnox.custommobattributes.mixin.movement;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.fneifnox.custommobattributes.range.RangedMultipliers;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.phys.Vec3;
@@ -22,7 +23,7 @@ public abstract class VexSpeedMixin extends MoveControl {
             return vec.scale(originalSpeed);
         }
 
-        double speedMultiplier = CONFIG.speedMultiplierForVex() * CONFIG.speedMultiplierForAll();
+        double speedMultiplier = RangedMultipliers.get(this.mob, "speedMultiplierForVex") * CONFIG.speedMultiplierForAll();
         return vec.scale(originalSpeed * speedMultiplier);
     }
 }

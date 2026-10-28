@@ -2,6 +2,7 @@ package net.fneifnox.custommobattributes.mixin.damage;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.fneifnox.custommobattributes.range.RangedMultipliers;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -19,7 +20,7 @@ public class WindChargeMixin {
         double multiplier = 1f;
         AbstractWindCharge windCharge = (AbstractWindCharge)(Object)this;
         if (windCharge.getOwner() instanceof Breeze) {
-            multiplier = CONFIG.damageMultiplierForBreeze() * CONFIG.damageMultiplierForAll();
+            multiplier = RangedMultipliers.get(windCharge.getOwner(), "damageMultiplierForBreeze") * CONFIG.damageMultiplierForAll();
         }
 
         double finalDamage = originalDamage * multiplier;

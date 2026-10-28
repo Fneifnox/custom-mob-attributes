@@ -2,6 +2,7 @@ package net.fneifnox.custommobattributes.mixin.damage;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.fneifnox.custommobattributes.range.RangedMultipliers;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -19,7 +20,7 @@ public class SnowballMixin {
         double multiplier = 1f;
         Snowball snowball = (Snowball)(Object)this;
         if (snowball.getOwner() instanceof SnowGolem) {
-            multiplier = CONFIG.damageMultiplierForSnowGolem() * CONFIG.damageMultiplierForAll();
+            multiplier = RangedMultipliers.get(snowball.getOwner(), "damageMultiplierForSnowGolem") * CONFIG.damageMultiplierForAll();
         }
 
         double finalDamage = originalDamage * multiplier;

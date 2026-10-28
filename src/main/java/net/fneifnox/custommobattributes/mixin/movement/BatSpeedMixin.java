@@ -1,5 +1,6 @@
 package net.fneifnox.custommobattributes.mixin.movement;
 
+import net.fneifnox.custommobattributes.range.RangedMultipliers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.phys.Vec3;
@@ -27,9 +28,9 @@ public class BatSpeedMixin {
 
         Vec3 finalVec3d = bat.getDeltaMovement();
         Vec3 finalVec3d2 = finalVec3d.add
-                ((Math.signum(d) * 0.5 - finalVec3d.x) * 0.10000000149011612 * CONFIG.speedMultiplierForBat() * CONFIG.speedMultiplierForAll(),
-                        (Math.signum(e) * 0.699999988079071 - finalVec3d.y) * 0.10000000149011612 * CONFIG.speedMultiplierForBat() * CONFIG.speedMultiplierForAll(),
-                        (Math.signum(f) * 0.5 - finalVec3d.z) * 0.10000000149011612 * CONFIG.speedMultiplierForBat() * CONFIG.speedMultiplierForAll());
+                ((Math.signum(d) * 0.5 - finalVec3d.x) * 0.10000000149011612 * RangedMultipliers.get(bat, "speedMultiplierForBat") * CONFIG.speedMultiplierForAll(),
+                        (Math.signum(e) * 0.699999988079071 - finalVec3d.y) * 0.10000000149011612 * RangedMultipliers.get(bat, "speedMultiplierForBat") * CONFIG.speedMultiplierForAll(),
+                        (Math.signum(f) * 0.5 - finalVec3d.z) * 0.10000000149011612 * RangedMultipliers.get(bat, "speedMultiplierForBat") * CONFIG.speedMultiplierForAll());
         return finalVec3d2;
     }
 }

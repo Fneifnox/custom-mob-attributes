@@ -5,7 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
+import static net.fneifnox.custommobattributes.range.RangedMultipliers.ranged;
 
 public class IllagerInvasionCompat {
 
@@ -23,57 +23,57 @@ public class IllagerInvasionCompat {
         EntityType<?> surrendered = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("illagerinvasion", "surrendered"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(alchemist, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForAlchemist, CONFIG.illagerInvasion::damageMultiplierForAlchemist, CONFIG.illagerInvasion::speedMultiplierForAlchemist, CONFIG.illagerInvasion::scaleMultiplierForAlchemist
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForAlchemist"), ranged("illagerInvasion.damageMultiplierForAlchemist"), ranged("illagerInvasion.speedMultiplierForAlchemist"), ranged("illagerInvasion.scaleMultiplierForAlchemist")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(archivist, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForArchivist, CONFIG.illagerInvasion::damageMultiplierForArchivist, CONFIG.illagerInvasion::speedMultiplierForArchivist, CONFIG.illagerInvasion::scaleMultiplierForArchivist
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForArchivist"), ranged("illagerInvasion.damageMultiplierForArchivist"), ranged("illagerInvasion.speedMultiplierForArchivist"), ranged("illagerInvasion.scaleMultiplierForArchivist")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(basher, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForBasher, CONFIG.illagerInvasion::damageMultiplierForBasher, CONFIG.illagerInvasion::speedMultiplierForBasher, CONFIG.illagerInvasion::scaleMultiplierForBasher
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForBasher"), ranged("illagerInvasion.damageMultiplierForBasher"), ranged("illagerInvasion.speedMultiplierForBasher"), ranged("illagerInvasion.scaleMultiplierForBasher")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(firecaller, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForFirecaller, CONFIG.illagerInvasion::damageMultiplierForFirecaller, CONFIG.illagerInvasion::speedMultiplierForFirecaller, CONFIG.illagerInvasion::scaleMultiplierForFirecaller
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForFirecaller"), ranged("illagerInvasion.damageMultiplierForFirecaller"), ranged("illagerInvasion.speedMultiplierForFirecaller"), ranged("illagerInvasion.scaleMultiplierForFirecaller")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(inquisitor, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForInquisitor, CONFIG.illagerInvasion::damageMultiplierForInquisitor, CONFIG.illagerInvasion::speedMultiplierForInquisitor, CONFIG.illagerInvasion::scaleMultiplierForInquisitor
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForInquisitor"), ranged("illagerInvasion.damageMultiplierForInquisitor"), ranged("illagerInvasion.speedMultiplierForInquisitor"), ranged("illagerInvasion.scaleMultiplierForInquisitor")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(invoker, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForInvoker, CONFIG.illagerInvasion::damageMultiplierForInvoker, CONFIG.illagerInvasion::speedMultiplierForInvoker, CONFIG.illagerInvasion::scaleMultiplierForInvoker
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForInvoker"), ranged("illagerInvasion.damageMultiplierForInvoker"), ranged("illagerInvasion.speedMultiplierForInvoker"), ranged("illagerInvasion.scaleMultiplierForInvoker")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(marauder, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForMarauder, CONFIG.illagerInvasion::damageMultiplierForMarauder, CONFIG.illagerInvasion::speedMultiplierForMarauder, CONFIG.illagerInvasion::scaleMultiplierForMarauder
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForMarauder"), ranged("illagerInvasion.damageMultiplierForMarauder"), ranged("illagerInvasion.speedMultiplierForMarauder"), ranged("illagerInvasion.scaleMultiplierForMarauder")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(necromancer, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForNecromancer, CONFIG.illagerInvasion::damageMultiplierForNecromancer, CONFIG.illagerInvasion::speedMultiplierForNecromancer, CONFIG.illagerInvasion::scaleMultiplierForNecromancer
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForNecromancer"), ranged("illagerInvasion.damageMultiplierForNecromancer"), ranged("illagerInvasion.speedMultiplierForNecromancer"), ranged("illagerInvasion.scaleMultiplierForNecromancer")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(provoker, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForProvoker, CONFIG.illagerInvasion::damageMultiplierForProvoker, CONFIG.illagerInvasion::speedMultiplierForProvoker, CONFIG.illagerInvasion::scaleMultiplierForProvoker
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForProvoker"), ranged("illagerInvasion.damageMultiplierForProvoker"), ranged("illagerInvasion.speedMultiplierForProvoker"), ranged("illagerInvasion.scaleMultiplierForProvoker")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sorcerer, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForSorcerer, CONFIG.illagerInvasion::damageMultiplierForSorcerer, CONFIG.illagerInvasion::speedMultiplierForSorcerer, CONFIG.illagerInvasion::scaleMultiplierForSorcerer
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForSorcerer"), ranged("illagerInvasion.damageMultiplierForSorcerer"), ranged("illagerInvasion.speedMultiplierForSorcerer"), ranged("illagerInvasion.scaleMultiplierForSorcerer")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(surrendered, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.illagerInvasion::healthMultiplierForSurrendered, CONFIG.illagerInvasion::damageMultiplierForSurrendered, null, CONFIG.illagerInvasion::scaleMultiplierForSurrendered
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("illagerInvasion.healthMultiplierForSurrendered"), ranged("illagerInvasion.damageMultiplierForSurrendered"), null, ranged("illagerInvasion.scaleMultiplierForSurrendered")
             );
         });
     }

@@ -2,6 +2,7 @@ package net.fneifnox.custommobattributes.mixin.damage;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.fneifnox.custommobattributes.range.RangedMultipliers;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -25,19 +26,19 @@ public class LlamaSpitMixin {
         if (Objects.requireNonNull(llamaSpitEntity.getOwner()).getType() == EntityTypes.LLAMA) {
             Llama llamaEntity = (Llama) llamaSpitEntity.getOwner();
             if (CONFIG.adultsAlsoAffectBabies() && llamaEntity.isBaby()) {
-                multiplier = CONFIG.babyLlama.damageMultiplierForBabyLlama() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForLlama() * CONFIG.damageMultiplierForAll();
+                multiplier = CONFIG.babyLlama.damageMultiplierForBabyLlama() * CONFIG.damageMultiplierForBabyAll() * RangedMultipliers.get(llamaEntity, "damageMultiplierForLlama") * CONFIG.damageMultiplierForAll();
             }
             else {
-                multiplier = llamaEntity.isBaby() ? CONFIG.babyLlama.damageMultiplierForBabyLlama() * CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForLlama() * CONFIG.damageMultiplierForAll();
+                multiplier = llamaEntity.isBaby() ? CONFIG.babyLlama.damageMultiplierForBabyLlama() * CONFIG.damageMultiplierForBabyAll() : RangedMultipliers.get(llamaEntity, "damageMultiplierForLlama") * CONFIG.damageMultiplierForAll();
             }
         }
         else if (Objects.requireNonNull(llamaSpitEntity.getOwner()).getType() == EntityTypes.TRADER_LLAMA) {
             TraderLlama traderLlamaEntity = (TraderLlama) llamaSpitEntity.getOwner();
             if (CONFIG.adultsAlsoAffectBabies() && traderLlamaEntity.isBaby()) {
-                multiplier = CONFIG.babyTraderLlama.damageMultiplierForBabyTraderLlama() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForTraderLlama() * CONFIG.damageMultiplierForAll();
+                multiplier = CONFIG.babyTraderLlama.damageMultiplierForBabyTraderLlama() * CONFIG.damageMultiplierForBabyAll() * RangedMultipliers.get(traderLlamaEntity, "damageMultiplierForTraderLlama") * CONFIG.damageMultiplierForAll();
             }
             else {
-                multiplier = traderLlamaEntity.isBaby() ? CONFIG.babyTraderLlama.damageMultiplierForBabyTraderLlama() * CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForTraderLlama() * CONFIG.damageMultiplierForAll();
+                multiplier = traderLlamaEntity.isBaby() ? CONFIG.babyTraderLlama.damageMultiplierForBabyTraderLlama() * CONFIG.damageMultiplierForBabyAll() : RangedMultipliers.get(traderLlamaEntity, "damageMultiplierForTraderLlama") * CONFIG.damageMultiplierForAll();
             }
         }
         return entity.hurtServer(serverWorld, source, (float) (originalDamage * multiplier));

@@ -5,7 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
+import static net.fneifnox.custommobattributes.range.RangedMultipliers.ranged;
 
 public class DeeperAndDarkerCompat {
 
@@ -20,42 +20,42 @@ public class DeeperAndDarkerCompat {
         EntityType<?> stalker = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("deeperdarker", "stalker"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(anglerFish, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.deeperAndDarker::healthMultiplierForAnglerFish, CONFIG.deeperAndDarker::damageMultiplierForAnglerFish, CONFIG.deeperAndDarker::speedMultiplierForAnglerFish, CONFIG.deeperAndDarker::scaleMultiplierForAnglerFish
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("deeperAndDarker.healthMultiplierForAnglerFish"), ranged("deeperAndDarker.damageMultiplierForAnglerFish"), ranged("deeperAndDarker.speedMultiplierForAnglerFish"), ranged("deeperAndDarker.scaleMultiplierForAnglerFish")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sculkCentipede, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.deeperAndDarker::healthMultiplierForSculkCentipede, CONFIG.deeperAndDarker::damageMultiplierForSculkCentipede, CONFIG.deeperAndDarker::speedMultiplierForSculkCentipede, CONFIG.deeperAndDarker::scaleMultiplierForSculkCentipede
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("deeperAndDarker.healthMultiplierForSculkCentipede"), ranged("deeperAndDarker.damageMultiplierForSculkCentipede"), ranged("deeperAndDarker.speedMultiplierForSculkCentipede"), ranged("deeperAndDarker.scaleMultiplierForSculkCentipede")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sculkLeech, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.deeperAndDarker::healthMultiplierForSculkLeech, CONFIG.deeperAndDarker::damageMultiplierForSculkLeech, CONFIG.deeperAndDarker::speedMultiplierForSculkLeech, CONFIG.deeperAndDarker::scaleMultiplierForSculkLeech
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("deeperAndDarker.healthMultiplierForSculkLeech"), ranged("deeperAndDarker.damageMultiplierForSculkLeech"), ranged("deeperAndDarker.speedMultiplierForSculkLeech"), ranged("deeperAndDarker.scaleMultiplierForSculkLeech")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sculkSnapper, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.deeperAndDarker::healthMultiplierForSculkSnapper, CONFIG.deeperAndDarker::damageMultiplierForSculkSnapper, CONFIG.deeperAndDarker::speedMultiplierForSculkSnapper, CONFIG.deeperAndDarker::scaleMultiplierForSculkSnapper
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("deeperAndDarker.healthMultiplierForSculkSnapper"), ranged("deeperAndDarker.damageMultiplierForSculkSnapper"), ranged("deeperAndDarker.speedMultiplierForSculkSnapper"), ranged("deeperAndDarker.scaleMultiplierForSculkSnapper")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(shattered, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.deeperAndDarker::healthMultiplierForShattered, CONFIG.deeperAndDarker::damageMultiplierForShattered, CONFIG.deeperAndDarker::speedMultiplierForShattered, CONFIG.deeperAndDarker::scaleMultiplierForShattered
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("deeperAndDarker.healthMultiplierForShattered"), ranged("deeperAndDarker.damageMultiplierForShattered"), ranged("deeperAndDarker.speedMultiplierForShattered"), ranged("deeperAndDarker.scaleMultiplierForShattered")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(shriekWorm, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.deeperAndDarker::healthMultiplierForShriekWorm, CONFIG.deeperAndDarker::damageMultiplierForShriekWorm, null, CONFIG.deeperAndDarker::scaleMultiplierForShriekWorm
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("deeperAndDarker.healthMultiplierForShriekWorm"), ranged("deeperAndDarker.damageMultiplierForShriekWorm"), null, ranged("deeperAndDarker.scaleMultiplierForShriekWorm")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(sludge, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.deeperAndDarker::healthMultiplierForSludge, CONFIG.deeperAndDarker::damageMultiplierForSludge, CONFIG.deeperAndDarker::speedMultiplierForSludge, CONFIG.deeperAndDarker::scaleMultiplierForSludge
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("deeperAndDarker.healthMultiplierForSludge"), ranged("deeperAndDarker.damageMultiplierForSludge"), ranged("deeperAndDarker.speedMultiplierForSludge"), ranged("deeperAndDarker.scaleMultiplierForSludge")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(stalker, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.deeperAndDarker::healthMultiplierForStalker, CONFIG.deeperAndDarker::damageMultiplierForStalker, CONFIG.deeperAndDarker::speedMultiplierForStalker, CONFIG.deeperAndDarker::scaleMultiplierForStalker
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("deeperAndDarker.healthMultiplierForStalker"), ranged("deeperAndDarker.damageMultiplierForStalker"), ranged("deeperAndDarker.speedMultiplierForStalker"), ranged("deeperAndDarker.scaleMultiplierForStalker")
             );
         });
     }

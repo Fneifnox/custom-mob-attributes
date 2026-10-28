@@ -5,7 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
+import static net.fneifnox.custommobattributes.range.RangedMultipliers.ranged;
 
 public class BetterEndCompat {
 
@@ -18,32 +18,32 @@ public class BetterEndCompat {
         EntityType<?> silkMoth = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("betterend", "silk_moth"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(cubozoa, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.betterEnd::healthMultiplierForCubozoa, null, null, null
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("betterEnd.healthMultiplierForCubozoa"), null, null, null
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(dragonfly, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.betterEnd::healthMultiplierForDragonfly, null, null, CONFIG.betterEnd::scaleMultiplierForDragonfly
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("betterEnd.healthMultiplierForDragonfly"), null, null, ranged("betterEnd.scaleMultiplierForDragonfly")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(endFish, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.betterEnd::healthMultiplierForEndFish, null, null, null
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("betterEnd.healthMultiplierForEndFish"), null, null, null
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(endSlime, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.betterEnd::healthMultiplierForEndSlime, CONFIG.betterEnd::damageMultiplierForEndSlime, CONFIG.betterEnd::speedMultiplierForEndSlime, CONFIG.betterEnd::scaleMultiplierForEndSlime
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("betterEnd.healthMultiplierForEndSlime"), ranged("betterEnd.damageMultiplierForEndSlime"), ranged("betterEnd.speedMultiplierForEndSlime"), ranged("betterEnd.scaleMultiplierForEndSlime")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(shadowWalker, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.betterEnd::healthMultiplierForShadowWalker, CONFIG.betterEnd::damageMultiplierForShadowWalker, CONFIG.betterEnd::speedMultiplierForShadowWalker, CONFIG.betterEnd::scaleMultiplierForShadowWalker
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("betterEnd.healthMultiplierForShadowWalker"), ranged("betterEnd.damageMultiplierForShadowWalker"), ranged("betterEnd.speedMultiplierForShadowWalker"), ranged("betterEnd.scaleMultiplierForShadowWalker")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(silkMoth, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.betterEnd::healthMultiplierForSilkMoth, null, null, CONFIG.betterEnd::scaleMultiplierForSilkMoth
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("betterEnd.healthMultiplierForSilkMoth"), null, null, ranged("betterEnd.scaleMultiplierForSilkMoth")
             );
         });
     }

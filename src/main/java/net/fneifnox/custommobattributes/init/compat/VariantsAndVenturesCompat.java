@@ -5,7 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 
-import static net.fneifnox.custommobattributes.CustomMobAttributes.CONFIG;
+import static net.fneifnox.custommobattributes.range.RangedMultipliers.ranged;
 
 public class VariantsAndVenturesCompat {
 
@@ -16,22 +16,22 @@ public class VariantsAndVenturesCompat {
         EntityType<?> verdant = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("variantsandventures", "verdant"));
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(gelid, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.variantsAndVentures::healthMultiplierForGelid, CONFIG.variantsAndVentures::damageMultiplierForGelid, CONFIG.variantsAndVentures::speedMultiplierForGelid, CONFIG.variantsAndVentures::scaleMultiplierForGelid
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("variantsAndVentures.healthMultiplierForGelid"), ranged("variantsAndVentures.damageMultiplierForGelid"), ranged("variantsAndVentures.speedMultiplierForGelid"), ranged("variantsAndVentures.scaleMultiplierForGelid")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(murk, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.variantsAndVentures::healthMultiplierForMurk, CONFIG.variantsAndVentures::damageMultiplierForMurk, CONFIG.variantsAndVentures::speedMultiplierForMurk, CONFIG.variantsAndVentures::scaleMultiplierForMurk
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("variantsAndVentures.healthMultiplierForMurk"), ranged("variantsAndVentures.damageMultiplierForMurk"), ranged("variantsAndVentures.speedMultiplierForMurk"), ranged("variantsAndVentures.scaleMultiplierForMurk")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(thicket, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.variantsAndVentures::healthMultiplierForThicket, CONFIG.variantsAndVentures::damageMultiplierForThicket, CONFIG.variantsAndVentures::speedMultiplierForThicket, CONFIG.variantsAndVentures::scaleMultiplierForThicket
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("variantsAndVentures.healthMultiplierForThicket"), ranged("variantsAndVentures.damageMultiplierForThicket"), ranged("variantsAndVentures.speedMultiplierForThicket"), ranged("variantsAndVentures.scaleMultiplierForThicket")
             );
         });
 
         AttributeUpdater.ATTRIBUTE_HANDLERS.put(verdant, entity -> {
-            AttributeUpdater.configureEntityAttributes(entity.level(), entity, CONFIG.variantsAndVentures::healthMultiplierForVerdant, CONFIG.variantsAndVentures::damageMultiplierForVerdant, CONFIG.variantsAndVentures::speedMultiplierForVerdant, CONFIG.variantsAndVentures::scaleMultiplierForVerdant
+            AttributeUpdater.configureEntityAttributes(entity.level(), entity, ranged("variantsAndVentures.healthMultiplierForVerdant"), ranged("variantsAndVentures.damageMultiplierForVerdant"), ranged("variantsAndVentures.speedMultiplierForVerdant"), ranged("variantsAndVentures.scaleMultiplierForVerdant")
             );
         });
     }

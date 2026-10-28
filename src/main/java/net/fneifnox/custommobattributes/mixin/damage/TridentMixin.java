@@ -2,6 +2,7 @@ package net.fneifnox.custommobattributes.mixin.damage;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.fneifnox.custommobattributes.range.RangedMultipliers;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -20,10 +21,10 @@ public class TridentMixin {
         ThrownTrident trident = (ThrownTrident)(Object)this;
         if (trident.getOwner() instanceof Drowned) {
             if (CONFIG.adultsAlsoAffectBabies() && ((Drowned) trident.getOwner()).isBaby()) {
-                multiplier = CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() * CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
+                multiplier = CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() * RangedMultipliers.get(trident.getOwner(), "damageMultiplierForDrowned") * CONFIG.damageMultiplierForAll();
             }
             else {
-                multiplier = ((Drowned) trident.getOwner()).isBaby() ? CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() : CONFIG.damageMultiplierForDrowned() * CONFIG.damageMultiplierForAll();
+                multiplier = ((Drowned) trident.getOwner()).isBaby() ? CONFIG.babyDrowned.damageMultiplierForBabyDrowned() * CONFIG.damageMultiplierForBabyAll() : RangedMultipliers.get(trident.getOwner(), "damageMultiplierForDrowned") * CONFIG.damageMultiplierForAll();
             }
         }
 
